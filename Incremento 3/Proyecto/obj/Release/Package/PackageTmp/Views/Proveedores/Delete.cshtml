@@ -1,0 +1,57 @@
+﻿@model Proyecto.Models.sp_C_ProveedorxRUC_Result
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+
+<div style="margin-top:20px">
+    <h3>Estas seguro que deseas eliminar este proveedor ?</h3>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RUC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RUC)
+        </dd>
+
+        <dt>
+            Nombres:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.provNombres)
+        </dd>
+
+        <dt>
+            Dirección:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.provDireccion)
+        </dd>
+
+        <dt>
+           Teléfono:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.provTelefono)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-primary" /> |
+            @Html.ActionLink("Back to List", "Index",routeValues:null,htmlAttributes:new { @class="btn btn-danger"})
+        </div>
+    }
+</div>

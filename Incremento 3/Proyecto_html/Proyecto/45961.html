@@ -1,0 +1,43 @@
+<html><head><title>destroy.js</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: D:\Proyecto\Proyecto\Scripts\src\methods\destroy.js</h3>
+<SCRIPT>
+defaultStatus = "File: D:\\Proyecto\\Proyecto\\Scripts\\src\\methods\\destroy.js";
+top.document.title  = "destroy.js";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="keyword">import <a href="dictionary_I.html#97863">isModifierEnabled</a> </span><span class="default">from </span><span class="string">'../utils/isModifierEnabled'</span><span class="default">;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default"></span><span class="keyword">import <a href="dictionary_G.html#90177">getSupportedPropertyName</a> </span><span class="default">from </span><span class="string">'../utils/getSupportedPropertyName'</span><span class="default">;</span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span>
+<a name="4"><font size=-1>4     </font></a><span class="default"></span><span class="comment">/**</span>
+<a name="5"><font size=-1>5     </font></a><span class="comment"> * Destroys the popper.</span>
+<a name="6"><font size=-1>6     </font></a><span class="comment"> * @method</span>
+<a name="7"><font size=-1>7     </font></a><span class="comment"> * @memberof Popper</span>
+<a name="8"><font size=-1>8     </font></a><span class="comment"> */</span>
+<a name="9"><font size=-1>9     </font></a><span class="comment"></span><span class="keyword">export default function <a href="dictionary_D.html#68065">destroy</a></span><span class="default">() {</span>
+<a name="10"><font size=-1>10     </font></a><span class="default">  </span><span class="keyword">this</span><span class="default">.<a href="dictionary_S.html#143545">state</a>.<a href="dictionary_I.html#97471">isDestroyed</a> = </span><span class="keyword">true</span><span class="default">;</span>
+<a name="11"><font size=-1>11     </font></a><span class="default"></span>
+<a name="12"><font size=-1>12     </font></a><span class="default">  </span><span class="comment">// touch DOM only if `applyStyle` modifier is enabled</span>
+<a name="13"><font size=-1>13     </font></a><span class="comment">  </span><span class="keyword">if </span><span class="default">(<a href="dictionary_I.html#97864">isModifierEnabled</a>(</span><span class="keyword">this</span><span class="default">.<a href="dictionary_M.html#113139">modifiers</a>, </span><span class="string">'applyStyle'</span><span class="default">)) {</span>
+<a name="14"><font size=-1>14     </font></a><span class="default">    </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#129704">popper</a>.<a href="dictionary_R.html#135519">removeAttribute</a>(</span><span class="string">'x-placement'</span><span class="default">);</span>
+<a name="15"><font size=-1>15     </font></a><span class="default">    </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#129704">popper</a>.<a href="dictionary_S.html#143945">style</a>.<a href="dictionary_P.html#130012">position</a> = </span><span class="string">''</span><span class="default">;</span>
+<a name="16"><font size=-1>16     </font></a><span class="default">    </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#129704">popper</a>.<a href="dictionary_S.html#143945">style</a>.<a href="dictionary_T.html#158597">top</a> = </span><span class="string">''</span><span class="default">;</span>
+<a name="17"><font size=-1>17     </font></a><span class="default">    </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#129704">popper</a>.<a href="dictionary_S.html#143945">style</a>.<a href="dictionary_L.html#100577">left</a> = </span><span class="string">''</span><span class="default">;</span>
+<a name="18"><font size=-1>18     </font></a><span class="default">    </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#129704">popper</a>.<a href="dictionary_S.html#143945">style</a>.<a href="dictionary_R.html#138233">right</a> = </span><span class="string">''</span><span class="default">;</span>
+<a name="19"><font size=-1>19     </font></a><span class="default">    </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#129704">popper</a>.<a href="dictionary_S.html#143945">style</a>.<a href="dictionary_B.html#56042">bottom</a> = </span><span class="string">''</span><span class="default">;</span>
+<a name="20"><font size=-1>20     </font></a><span class="default">    </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#129704">popper</a>.<a href="dictionary_S.html#143945">style</a>.<a href="dictionary_W.html#164984">willChange</a> = </span><span class="string">''</span><span class="default">;</span>
+<a name="21"><font size=-1>21     </font></a><span class="default">    </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#129704">popper</a>.<a href="dictionary_S.html#143945">style</a>[<a href="dictionary_G.html#90182">getSupportedPropertyName</a>(</span><span class="string">'transform'</span><span class="default">)] = </span><span class="string">''</span><span class="default">;</span>
+<a name="22"><font size=-1>22     </font></a><span class="default">  }</span>
+<a name="23"><font size=-1>23     </font></a><span class="default"></span>
+<a name="24"><font size=-1>24     </font></a><span class="default">  </span><span class="keyword">this</span><span class="default">.<a href="dictionary_D.html#69300">disableEventListeners</a>();</span>
+<a name="25"><font size=-1>25     </font></a><span class="default"></span>
+<a name="26"><font size=-1>26     </font></a><span class="default">  </span><span class="comment">// remove the popper if user explicitly asked for the deletion on destroy</span>
+<a name="27"><font size=-1>27     </font></a><span class="comment">  // do not use `remove` because IE11 doesn't support it</span>
+<a name="28"><font size=-1>28     </font></a><span class="comment">  </span><span class="keyword">if </span><span class="default">(</span><span class="keyword">this</span><span class="default">.<a href="dictionary_O.html#123588">options</a>.<a href="dictionary_R.html#135634">removeOnDestroy</a>) {</span>
+<a name="29"><font size=-1>29     </font></a><span class="default">    </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#129704">popper</a>.<a href="dictionary_P.html#128542">parentNode</a>.<a href="dictionary_R.html#135523">removeChild</a>(</span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#129704">popper</a>);</span>
+<a name="30"><font size=-1>30     </font></a><span class="default">  }</span>
+<a name="31"><font size=-1>31     </font></a><span class="default">  </span><span class="keyword">return this</span><span class="default">;</span>
+<a name="32"><font size=-1>32     </font></a><span class="default">}</span>
+<a name="33"><font size=-1>33     </font></a><span class="default"></span>
+</pre></body></html>

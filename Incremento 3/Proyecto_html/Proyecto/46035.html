@@ -1,0 +1,388 @@
+<html><head><title>Microsoft.Owin.Security.Google.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body>
+<h3>File: D:\Proyecto\Proyecto\bin\Microsoft.Owin.Security.Google.xml</h3>
+<SCRIPT>
+ defaultStatus = "File: D:\\Proyecto\\Proyecto\\bin\\Microsoft.Owin.Security.Google.xml";
+top.document.title  = "Microsoft.Owin.Security.Google.xml";
+</SCRIPT>
+<pre><a name="1"><font size=-1>1     </font></a><?xml version="1.0"?>
+<a name="2"><font size=-1>2     </font></a><doc>
+<a name="3"><font size=-1>3     </font></a>    <assembly>
+<a name="4"><font size=-1>4     </font></a>        <name>Microsoft.Owin.Security.Google</name>
+<a name="5"><font size=-1>5     </font></a>    </assembly>
+<a name="6"><font size=-1>6     </font></a>    <members>
+<a name="7"><font size=-1>7     </font></a>        <member name="T:Owin.GoogleAuthenticationExtensions">
+<a name="8"><font size=-1>8     </font></a>            <summary>
+<a name="9"><font size=-1>9     </font></a>            Extension methods for using <see cref="T:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationMiddleware"/>
+<a name="10"><font size=-1>10     </font></a>            </summary>
+<a name="11"><font size=-1>11     </font></a>        </member>
+<a name="12"><font size=-1>12     </font></a>        <member name="M:Owin.GoogleAuthenticationExtensions.UseGoogleAuthentication(Owin.IAppBuilder,Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationOptions)">
+<a name="13"><font size=-1>13     </font></a>            <summary>
+<a name="14"><font size=-1>14     </font></a>            Authenticate users using Google OAuth 2.0
+<a name="15"><font size=-1>15     </font></a>            </summary>
+<a name="16"><font size=-1>16     </font></a>            <param name="app">The <see cref="T:Owin.IAppBuilder"/> passed to the configuration method</param>
+<a name="17"><font size=-1>17     </font></a>            <param name="options">Middleware configuration options</param>
+<a name="18"><font size=-1>18     </font></a>            <returns>The updated <see cref="T:Owin.IAppBuilder"/></returns>
+<a name="19"><font size=-1>19     </font></a>        </member>
+<a name="20"><font size=-1>20     </font></a>        <member name="M:Owin.GoogleAuthenticationExtensions.UseGoogleAuthentication(Owin.IAppBuilder,System.String,System.String)">
+<a name="21"><font size=-1>21     </font></a>            <summary>
+<a name="22"><font size=-1>22     </font></a>            Authenticate users using Google OAuth 2.0
+<a name="23"><font size=-1>23     </font></a>            </summary>
+<a name="24"><font size=-1>24     </font></a>            <param name="app">The <see cref="T:Owin.IAppBuilder"/> passed to the configuration method</param>
+<a name="25"><font size=-1>25     </font></a>            <param name="clientId">The google assigned client id</param>
+<a name="26"><font size=-1>26     </font></a>            <param name="clientSecret">The google assigned client secret</param>
+<a name="27"><font size=-1>27     </font></a>            <returns>The updated <see cref="T:Owin.IAppBuilder"/></returns>
+<a name="28"><font size=-1>28     </font></a>        </member>
+<a name="29"><font size=-1>29     </font></a>        <member name="T:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationMiddleware">
+<a name="30"><font size=-1>30     </font></a>            <summary>
+<a name="31"><font size=-1>31     </font></a>            OWIN middleware for authenticating users using Google OAuth 2.0
+<a name="32"><font size=-1>32     </font></a>            </summary>
+<a name="33"><font size=-1>33     </font></a>        </member>
+<a name="34"><font size=-1>34     </font></a>        <member name="M:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationMiddleware.#ctor(Microsoft.Owin.OwinMiddleware,Owin.IAppBuilder,Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationOptions)">
+<a name="35"><font size=-1>35     </font></a>            <summary>
+<a name="36"><font size=-1>36     </font></a>            Initializes a <see cref="T:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationMiddleware"/>
+<a name="37"><font size=-1>37     </font></a>            </summary>
+<a name="38"><font size=-1>38     </font></a>            <param name="next">The next middleware in the OWIN pipeline to invoke</param>
+<a name="39"><font size=-1>39     </font></a>            <param name="app">The OWIN application</param>
+<a name="40"><font size=-1>40     </font></a>            <param name="options">Configuration options for the middleware</param>
+<a name="41"><font size=-1>41     </font></a>        </member>
+<a name="42"><font size=-1>42     </font></a>        <member name="M:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationMiddleware.CreateHandler">
+<a name="43"><font size=-1>43     </font></a>            <summary>
+<a name="44"><font size=-1>44     </font></a>            Provides the <see cref="T:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler"/> object for processing authentication-related requests.
+<a name="45"><font size=-1>45     </font></a>            </summary>
+<a name="46"><font size=-1>46     </font></a>            <returns>An <see cref="T:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler"/> configured with the <see cref="T:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationOptions"/> supplied to the constructor.</returns>
+<a name="47"><font size=-1>47     </font></a>        </member>
+<a name="48"><font size=-1>48     </font></a>        <member name="T:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationOptions">
+<a name="49"><font size=-1>49     </font></a>            <summary>
+<a name="50"><font size=-1>50     </font></a>            Configuration options for <see cref="T:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationMiddleware"/>
+<a name="51"><font size=-1>51     </font></a>            </summary>
+<a name="52"><font size=-1>52     </font></a>        </member>
+<a name="53"><font size=-1>53     </font></a>        <member name="M:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationOptions.#ctor">
+<a name="54"><font size=-1>54     </font></a>            <summary>
+<a name="55"><font size=-1>55     </font></a>            Initializes a new <see cref="T:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationOptions"/>
+<a name="56"><font size=-1>56     </font></a>            </summary>
+<a name="57"><font size=-1>57     </font></a>        </member>
+<a name="58"><font size=-1>58     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationOptions.ClientId">
+<a name="59"><font size=-1>59     </font></a>            <summary>
+<a name="60"><font size=-1>60     </font></a>            Gets or sets the Google-assigned client id
+<a name="61"><font size=-1>61     </font></a>            </summary>
+<a name="62"><font size=-1>62     </font></a>        </member>
+<a name="63"><font size=-1>63     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationOptions.ClientSecret">
+<a name="64"><font size=-1>64     </font></a>            <summary>
+<a name="65"><font size=-1>65     </font></a>            Gets or sets the Google-assigned client secret
+<a name="66"><font size=-1>66     </font></a>            </summary>
+<a name="67"><font size=-1>67     </font></a>        </member>
+<a name="68"><font size=-1>68     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationOptions.AuthorizationEndpoint">
+<a name="69"><font size=-1>69     </font></a>            <summary>
+<a name="70"><font size=-1>70     </font></a>            Gets or sets the URI where the client will be redirected to authenticate.
+<a name="71"><font size=-1>71     </font></a>            </summary>
+<a name="72"><font size=-1>72     </font></a>        </member>
+<a name="73"><font size=-1>73     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationOptions.TokenEndpoint">
+<a name="74"><font size=-1>74     </font></a>            <summary>
+<a name="75"><font size=-1>75     </font></a>            Gets or sets the URI the middleware will access to exchange the OAuth token.
+<a name="76"><font size=-1>76     </font></a>            </summary>
+<a name="77"><font size=-1>77     </font></a>        </member>
+<a name="78"><font size=-1>78     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationOptions.UserInformationEndpoint">
+<a name="79"><font size=-1>79     </font></a>            <summary>
+<a name="80"><font size=-1>80     </font></a>            Gets or sets the URI the middleware will access to obtain the user information.
+<a name="81"><font size=-1>81     </font></a>            </summary>
+<a name="82"><font size=-1>82     </font></a>        </member>
+<a name="83"><font size=-1>83     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationOptions.BackchannelCertificateValidator">
+<a name="84"><font size=-1>84     </font></a>            <summary>
+<a name="85"><font size=-1>85     </font></a>            Gets or sets the a pinned certificate validator to use to validate the endpoints used
+<a name="86"><font size=-1>86     </font></a>            in back channel communications belong to Google.
+<a name="87"><font size=-1>87     </font></a>            </summary>
+<a name="88"><font size=-1>88     </font></a>            <value>
+<a name="89"><font size=-1>89     </font></a>            The pinned certificate validator.
+<a name="90"><font size=-1>90     </font></a>            </value>
+<a name="91"><font size=-1>91     </font></a>            <remarks>If this property is null then the default certificate checks are performed,
+<a name="92"><font size=-1>92     </font></a>            validating the subject name and if the signing chain is a trusted party.</remarks>
+<a name="93"><font size=-1>93     </font></a>        </member>
+<a name="94"><font size=-1>94     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationOptions.BackchannelTimeout">
+<a name="95"><font size=-1>95     </font></a>            <summary>
+<a name="96"><font size=-1>96     </font></a>            Gets or sets timeout value in milliseconds for back channel communications with Google.
+<a name="97"><font size=-1>97     </font></a>            </summary>
+<a name="98"><font size=-1>98     </font></a>            <value>
+<a name="99"><font size=-1>99     </font></a>            The back channel timeout in milliseconds.
+<a name="100"><font size=-1>100     </font></a>            </value>
+<a name="101"><font size=-1>101     </font></a>        </member>
+<a name="102"><font size=-1>102     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationOptions.BackchannelHttpHandler">
+<a name="103"><font size=-1>103     </font></a>            <summary>
+<a name="104"><font size=-1>104     </font></a>            The HttpMessageHandler used to communicate with Google.
+<a name="105"><font size=-1>105     </font></a>            This cannot be set at the same time as BackchannelCertificateValidator unless the value 
+<a name="106"><font size=-1>106     </font></a>            can be downcast to a WebRequestHandler.
+<a name="107"><font size=-1>107     </font></a>            </summary>
+<a name="108"><font size=-1>108     </font></a>        </member>
+<a name="109"><font size=-1>109     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationOptions.Caption">
+<a name="110"><font size=-1>110     </font></a>            <summary>
+<a name="111"><font size=-1>111     </font></a>            Get or sets the text that the user can display on a sign in user interface.
+<a name="112"><font size=-1>112     </font></a>            </summary>
+<a name="113"><font size=-1>113     </font></a>        </member>
+<a name="114"><font size=-1>114     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationOptions.CallbackPath">
+<a name="115"><font size=-1>115     </font></a>            <summary>
+<a name="116"><font size=-1>116     </font></a>            The request path within the application's base path where the user-agent will be returned.
+<a name="117"><font size=-1>117     </font></a>            The middleware will process this request when it arrives.
+<a name="118"><font size=-1>118     </font></a>            Default value is "/signin-google".
+<a name="119"><font size=-1>119     </font></a>            </summary>
+<a name="120"><font size=-1>120     </font></a>        </member>
+<a name="121"><font size=-1>121     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationOptions.SignInAsAuthenticationType">
+<a name="122"><font size=-1>122     </font></a>            <summary>
+<a name="123"><font size=-1>123     </font></a>            Gets or sets the name of another authentication middleware which will be responsible for actually issuing a user <see cref="T:System.Security.Claims.ClaimsIdentity"/>.
+<a name="124"><font size=-1>124     </font></a>            </summary>
+<a name="125"><font size=-1>125     </font></a>        </member>
+<a name="126"><font size=-1>126     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationOptions.Provider">
+<a name="127"><font size=-1>127     </font></a>            <summary>
+<a name="128"><font size=-1>128     </font></a>            Gets or sets the <see cref="T:Microsoft.Owin.Security.Google.IGoogleOAuth2AuthenticationProvider"/> used to handle authentication events.
+<a name="129"><font size=-1>129     </font></a>            </summary>
+<a name="130"><font size=-1>130     </font></a>        </member>
+<a name="131"><font size=-1>131     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationOptions.StateDataFormat">
+<a name="132"><font size=-1>132     </font></a>            <summary>
+<a name="133"><font size=-1>133     </font></a>            Gets or sets the type used to secure data handled by the middleware.
+<a name="134"><font size=-1>134     </font></a>            </summary>
+<a name="135"><font size=-1>135     </font></a>        </member>
+<a name="136"><font size=-1>136     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationOptions.Scope">
+<a name="137"><font size=-1>137     </font></a>            <summary>
+<a name="138"><font size=-1>138     </font></a>            A list of permissions to request.
+<a name="139"><font size=-1>139     </font></a>            </summary>
+<a name="140"><font size=-1>140     </font></a>        </member>
+<a name="141"><font size=-1>141     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationOptions.AccessType">
+<a name="142"><font size=-1>142     </font></a>            <summary>
+<a name="143"><font size=-1>143     </font></a>            access_type. Set to 'offline' to request a refresh token.
+<a name="144"><font size=-1>144     </font></a>            </summary>
+<a name="145"><font size=-1>145     </font></a>        </member>
+<a name="146"><font size=-1>146     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationOptions.CookieManager">
+<a name="147"><font size=-1>147     </font></a>            <summary>
+<a name="148"><font size=-1>148     </font></a>            An abstraction for reading and setting cookies during the authentication process.
+<a name="149"><font size=-1>149     </font></a>            </summary>
+<a name="150"><font size=-1>150     </font></a>        </member>
+<a name="151"><font size=-1>151     </font></a>        <member name="T:Microsoft.Owin.Security.Google.GoogleOAuth2ApplyRedirectContext">
+<a name="152"><font size=-1>152     </font></a>            <summary>
+<a name="153"><font size=-1>153     </font></a>            Context passed when a Challenge causes a redirect to authorize endpoint in the Google OAuth 2.0 middleware
+<a name="154"><font size=-1>154     </font></a>            </summary>
+<a name="155"><font size=-1>155     </font></a>        </member>
+<a name="156"><font size=-1>156     </font></a>        <member name="M:Microsoft.Owin.Security.Google.GoogleOAuth2ApplyRedirectContext.#ctor(Microsoft.Owin.IOwinContext,Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationOptions,Microsoft.Owin.Security.AuthenticationProperties,System.String)">
+<a name="157"><font size=-1>157     </font></a>            <summary>
+<a name="158"><font size=-1>158     </font></a>            Creates a new context object.
+<a name="159"><font size=-1>159     </font></a>            </summary>
+<a name="160"><font size=-1>160     </font></a>            <param name="context">The OWIN request context</param>
+<a name="161"><font size=-1>161     </font></a>            <param name="options">The Google OAuth 2.0 middleware options</param>
+<a name="162"><font size=-1>162     </font></a>            <param name="properties">The authenticaiton properties of the challenge</param>
+<a name="163"><font size=-1>163     </font></a>            <param name="redirectUri">The initial redirect URI</param>
+<a name="164"><font size=-1>164     </font></a>        </member>
+<a name="165"><font size=-1>165     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2ApplyRedirectContext.RedirectUri">
+<a name="166"><font size=-1>166     </font></a>            <summary>
+<a name="167"><font size=-1>167     </font></a>            Gets the URI used for the redirect operation.
+<a name="168"><font size=-1>168     </font></a>            </summary>
+<a name="169"><font size=-1>169     </font></a>        </member>
+<a name="170"><font size=-1>170     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2ApplyRedirectContext.Properties">
+<a name="171"><font size=-1>171     </font></a>            <summary>
+<a name="172"><font size=-1>172     </font></a>            Gets the authenticaiton properties of the challenge
+<a name="173"><font size=-1>173     </font></a>            </summary>
+<a name="174"><font size=-1>174     </font></a>        </member>
+<a name="175"><font size=-1>175     </font></a>        <member name="T:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticatedContext">
+<a name="176"><font size=-1>176     </font></a>            <summary>
+<a name="177"><font size=-1>177     </font></a>            Contains information about the login session as well as the user <see cref="T:System.Security.Claims.ClaimsIdentity"/>.
+<a name="178"><font size=-1>178     </font></a>            </summary>
+<a name="179"><font size=-1>179     </font></a>        </member>
+<a name="180"><font size=-1>180     </font></a>        <member name="M:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticatedContext.#ctor(Microsoft.Owin.IOwinContext,Newtonsoft.Json.Linq.JObject,System.String,System.String,System.String)">
+<a name="181"><font size=-1>181     </font></a>            <summary>
+<a name="182"><font size=-1>182     </font></a>            Initializes a <see cref="T:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticatedContext"/>
+<a name="183"><font size=-1>183     </font></a>            </summary>
+<a name="184"><font size=-1>184     </font></a>            <param name="context">The OWIN environment</param>
+<a name="185"><font size=-1>185     </font></a>            <param name="user">The JSON-serialized Google user info</param>
+<a name="186"><font size=-1>186     </font></a>            <param name="accessToken">Google OAuth 2.0 access token</param>
+<a name="187"><font size=-1>187     </font></a>            <param name="refreshToken">Goolge OAuth 2.0 refresh token</param>
+<a name="188"><font size=-1>188     </font></a>            <param name="expires">Seconds until expiration</param>
+<a name="189"><font size=-1>189     </font></a>        </member>
+<a name="190"><font size=-1>190     </font></a>        <member name="M:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticatedContext.#ctor(Microsoft.Owin.IOwinContext,Newtonsoft.Json.Linq.JObject,Newtonsoft.Json.Linq.JObject)">
+<a name="191"><font size=-1>191     </font></a>            <summary>
+<a name="192"><font size=-1>192     </font></a>            Initializes a <see cref="T:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticatedContext"/>
+<a name="193"><font size=-1>193     </font></a>            </summary>
+<a name="194"><font size=-1>194     </font></a>            <param name="context">The OWIN environment</param>
+<a name="195"><font size=-1>195     </font></a>            <param name="user">The JSON-serialized Google user info</param>
+<a name="196"><font size=-1>196     </font></a>            <param name="tokenResponse">The JSON-serialized token response Google</param>
+<a name="197"><font size=-1>197     </font></a>        </member>
+<a name="198"><font size=-1>198     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticatedContext.User">
+<a name="199"><font size=-1>199     </font></a>            <summary>
+<a name="200"><font size=-1>200     </font></a>            Gets the JSON-serialized user
+<a name="201"><font size=-1>201     </font></a>            </summary>
+<a name="202"><font size=-1>202     </font></a>            <remarks>
+<a name="203"><font size=-1>203     </font></a>            Contains the Google user obtained from the endpoint https://www.googleapis.com/oauth2/v3/userinfo
+<a name="204"><font size=-1>204     </font></a>            </remarks>
+<a name="205"><font size=-1>205     </font></a>        </member>
+<a name="206"><font size=-1>206     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticatedContext.AccessToken">
+<a name="207"><font size=-1>207     </font></a>            <summary>
+<a name="208"><font size=-1>208     </font></a>            Gets the Google access token
+<a name="209"><font size=-1>209     </font></a>            </summary>
+<a name="210"><font size=-1>210     </font></a>        </member>
+<a name="211"><font size=-1>211     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticatedContext.RefreshToken">
+<a name="212"><font size=-1>212     </font></a>            <summary>
+<a name="213"><font size=-1>213     </font></a>            Gets the Google refresh token
+<a name="214"><font size=-1>214     </font></a>            </summary>
+<a name="215"><font size=-1>215     </font></a>            <remarks>
+<a name="216"><font size=-1>216     </font></a>            This value is not null only when access_type authorize parameter is offline.
+<a name="217"><font size=-1>217     </font></a>            </remarks>
+<a name="218"><font size=-1>218     </font></a>        </member>
+<a name="219"><font size=-1>219     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticatedContext.ExpiresIn">
+<a name="220"><font size=-1>220     </font></a>            <summary>
+<a name="221"><font size=-1>221     </font></a>            Gets the Google access token expiration time
+<a name="222"><font size=-1>222     </font></a>            </summary>
+<a name="223"><font size=-1>223     </font></a>        </member>
+<a name="224"><font size=-1>224     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticatedContext.Id">
+<a name="225"><font size=-1>225     </font></a>            <summary>
+<a name="226"><font size=-1>226     </font></a>            Gets the Google user ID
+<a name="227"><font size=-1>227     </font></a>            </summary>
+<a name="228"><font size=-1>228     </font></a>        </member>
+<a name="229"><font size=-1>229     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticatedContext.Name">
+<a name="230"><font size=-1>230     </font></a>            <summary>
+<a name="231"><font size=-1>231     </font></a>            Gets the user's name
+<a name="232"><font size=-1>232     </font></a>            </summary>
+<a name="233"><font size=-1>233     </font></a>        </member>
+<a name="234"><font size=-1>234     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticatedContext.GivenName">
+<a name="235"><font size=-1>235     </font></a>            <summary>
+<a name="236"><font size=-1>236     </font></a>            Gets the user's given name
+<a name="237"><font size=-1>237     </font></a>            </summary>
+<a name="238"><font size=-1>238     </font></a>        </member>
+<a name="239"><font size=-1>239     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticatedContext.FamilyName">
+<a name="240"><font size=-1>240     </font></a>            <summary>
+<a name="241"><font size=-1>241     </font></a>            Gets the user's family name
+<a name="242"><font size=-1>242     </font></a>            </summary>
+<a name="243"><font size=-1>243     </font></a>        </member>
+<a name="244"><font size=-1>244     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticatedContext.Profile">
+<a name="245"><font size=-1>245     </font></a>            <summary>
+<a name="246"><font size=-1>246     </font></a>            Gets the user's profile link
+<a name="247"><font size=-1>247     </font></a>            </summary>
+<a name="248"><font size=-1>248     </font></a>        </member>
+<a name="249"><font size=-1>249     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticatedContext.Email">
+<a name="250"><font size=-1>250     </font></a>            <summary>
+<a name="251"><font size=-1>251     </font></a>            Gets the user's email
+<a name="252"><font size=-1>252     </font></a>            </summary>
+<a name="253"><font size=-1>253     </font></a>        </member>
+<a name="254"><font size=-1>254     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticatedContext.Identity">
+<a name="255"><font size=-1>255     </font></a>            <summary>
+<a name="256"><font size=-1>256     </font></a>            Gets the <see cref="T:System.Security.Claims.ClaimsIdentity"/> representing the user
+<a name="257"><font size=-1>257     </font></a>            </summary>
+<a name="258"><font size=-1>258     </font></a>        </member>
+<a name="259"><font size=-1>259     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticatedContext.TokenResponse">
+<a name="260"><font size=-1>260     </font></a>            <summary>
+<a name="261"><font size=-1>261     </font></a>            Token response from Google
+<a name="262"><font size=-1>262     </font></a>            </summary>
+<a name="263"><font size=-1>263     </font></a>        </member>
+<a name="264"><font size=-1>264     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticatedContext.Properties">
+<a name="265"><font size=-1>265     </font></a>            <summary>
+<a name="266"><font size=-1>266     </font></a>            Gets or sets a property bag for common authentication properties
+<a name="267"><font size=-1>267     </font></a>            </summary>
+<a name="268"><font size=-1>268     </font></a>        </member>
+<a name="269"><font size=-1>269     </font></a>        <member name="T:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationProvider">
+<a name="270"><font size=-1>270     </font></a>            <summary>
+<a name="271"><font size=-1>271     </font></a>            Default <see cref="T:Microsoft.Owin.Security.Google.IGoogleOAuth2AuthenticationProvider"/> implementation.
+<a name="272"><font size=-1>272     </font></a>            </summary>
+<a name="273"><font size=-1>273     </font></a>        </member>
+<a name="274"><font size=-1>274     </font></a>        <member name="T:Microsoft.Owin.Security.Google.IGoogleOAuth2AuthenticationProvider">
+<a name="275"><font size=-1>275     </font></a>            <summary>
+<a name="276"><font size=-1>276     </font></a>            Specifies callback methods which the <see cref="T:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationMiddleware"></see> invokes to enable developer control over the authentication process. /&gt;
+<a name="277"><font size=-1>277     </font></a>            </summary>
+<a name="278"><font size=-1>278     </font></a>        </member>
+<a name="279"><font size=-1>279     </font></a>        <member name="M:Microsoft.Owin.Security.Google.IGoogleOAuth2AuthenticationProvider.Authenticated(Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticatedContext)">
+<a name="280"><font size=-1>280     </font></a>            <summary>
+<a name="281"><font size=-1>281     </font></a>            Invoked whenever Google succesfully authenticates a user
+<a name="282"><font size=-1>282     </font></a>            </summary>
+<a name="283"><font size=-1>283     </font></a>            <param name="context">Contains information about the login session as well as the user <see cref="T:System.Security.Claims.ClaimsIdentity"/>.</param>
+<a name="284"><font size=-1>284     </font></a>            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the completed operation.</returns>
+<a name="285"><font size=-1>285     </font></a>        </member>
+<a name="286"><font size=-1>286     </font></a>        <member name="M:Microsoft.Owin.Security.Google.IGoogleOAuth2AuthenticationProvider.ReturnEndpoint(Microsoft.Owin.Security.Google.GoogleOAuth2ReturnEndpointContext)">
+<a name="287"><font size=-1>287     </font></a>            <summary>
+<a name="288"><font size=-1>288     </font></a>            Invoked prior to the <see cref="T:System.Security.Claims.ClaimsIdentity"/> being saved in a local cookie and the browser being redirected to the originally requested URL.
+<a name="289"><font size=-1>289     </font></a>            </summary>
+<a name="290"><font size=-1>290     </font></a>            <param name="context">Contains context information and authentication ticket of the return endpoint.</param>
+<a name="291"><font size=-1>291     </font></a>            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the completed operation.</returns>
+<a name="292"><font size=-1>292     </font></a>        </member>
+<a name="293"><font size=-1>293     </font></a>        <member name="M:Microsoft.Owin.Security.Google.IGoogleOAuth2AuthenticationProvider.ApplyRedirect(Microsoft.Owin.Security.Google.GoogleOAuth2ApplyRedirectContext)">
+<a name="294"><font size=-1>294     </font></a>            <summary>
+<a name="295"><font size=-1>295     </font></a>            Called when a Challenge causes a redirect to authorize endpoint in the Google OAuth 2.0 middleware
+<a name="296"><font size=-1>296     </font></a>            </summary>
+<a name="297"><font size=-1>297     </font></a>            <param name="context">Contains redirect URI and <see cref="T:Microsoft.Owin.Security.AuthenticationProperties"/> of the challenge </param>
+<a name="298"><font size=-1>298     </font></a>        </member>
+<a name="299"><font size=-1>299     </font></a>        <member name="M:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationProvider.#ctor">
+<a name="300"><font size=-1>300     </font></a>            <summary>
+<a name="301"><font size=-1>301     </font></a>            Initializes a <see cref="T:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationProvider"/>
+<a name="302"><font size=-1>302     </font></a>            </summary>
+<a name="303"><font size=-1>303     </font></a>        </member>
+<a name="304"><font size=-1>304     </font></a>        <member name="M:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationProvider.Authenticated(Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticatedContext)">
+<a name="305"><font size=-1>305     </font></a>            <summary>
+<a name="306"><font size=-1>306     </font></a>            Invoked whenever Google succesfully authenticates a user
+<a name="307"><font size=-1>307     </font></a>            </summary>
+<a name="308"><font size=-1>308     </font></a>            <param name="context">Contains information about the login session as well as the user <see cref="T:System.Security.Claims.ClaimsIdentity"/>.</param>
+<a name="309"><font size=-1>309     </font></a>            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the completed operation.</returns>
+<a name="310"><font size=-1>310     </font></a>        </member>
+<a name="311"><font size=-1>311     </font></a>        <member name="M:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationProvider.ReturnEndpoint(Microsoft.Owin.Security.Google.GoogleOAuth2ReturnEndpointContext)">
+<a name="312"><font size=-1>312     </font></a>            <summary>
+<a name="313"><font size=-1>313     </font></a>            Invoked prior to the <see cref="T:System.Security.Claims.ClaimsIdentity"/> being saved in a local cookie and the browser being redirected to the originally requested URL.
+<a name="314"><font size=-1>314     </font></a>            </summary>
+<a name="315"><font size=-1>315     </font></a>            <param name="context">Contains context information and authentication ticket of the return endpoint.</param>
+<a name="316"><font size=-1>316     </font></a>            <returns>A <see cref="T:System.Threading.Tasks.Task"/> representing the completed operation.</returns>
+<a name="317"><font size=-1>317     </font></a>        </member>
+<a name="318"><font size=-1>318     </font></a>        <member name="M:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationProvider.ApplyRedirect(Microsoft.Owin.Security.Google.GoogleOAuth2ApplyRedirectContext)">
+<a name="319"><font size=-1>319     </font></a>            <summary>
+<a name="320"><font size=-1>320     </font></a>            Called when a Challenge causes a redirect to authorize endpoint in the Google OAuth 2.0 middleware
+<a name="321"><font size=-1>321     </font></a>            </summary>
+<a name="322"><font size=-1>322     </font></a>            <param name="context">Contains redirect URI and <see cref="T:Microsoft.Owin.Security.AuthenticationProperties"/> of the challenge </param>
+<a name="323"><font size=-1>323     </font></a>        </member>
+<a name="324"><font size=-1>324     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationProvider.OnAuthenticated">
+<a name="325"><font size=-1>325     </font></a>            <summary>
+<a name="326"><font size=-1>326     </font></a>            Gets or sets the function that is invoked when the Authenticated method is invoked.
+<a name="327"><font size=-1>327     </font></a>            </summary>
+<a name="328"><font size=-1>328     </font></a>        </member>
+<a name="329"><font size=-1>329     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationProvider.OnReturnEndpoint">
+<a name="330"><font size=-1>330     </font></a>            <summary>
+<a name="331"><font size=-1>331     </font></a>            Gets or sets the function that is invoked when the ReturnEndpoint method is invoked.
+<a name="332"><font size=-1>332     </font></a>            </summary>
+<a name="333"><font size=-1>333     </font></a>        </member>
+<a name="334"><font size=-1>334     </font></a>        <member name="P:Microsoft.Owin.Security.Google.GoogleOAuth2AuthenticationProvider.OnApplyRedirect">
+<a name="335"><font size=-1>335     </font></a>            <summary>
+<a name="336"><font size=-1>336     </font></a>            Gets or sets the delegate that is invoked when the ApplyRedirect method is invoked.
+<a name="337"><font size=-1>337     </font></a>            </summary>
+<a name="338"><font size=-1>338     </font></a>        </member>
+<a name="339"><font size=-1>339     </font></a>        <member name="T:Microsoft.Owin.Security.Google.GoogleOAuth2ReturnEndpointContext">
+<a name="340"><font size=-1>340     </font></a>            <summary>
+<a name="341"><font size=-1>341     </font></a>            Provides context information to middleware providers.
+<a name="342"><font size=-1>342     </font></a>            </summary>
+<a name="343"><font size=-1>343     </font></a>        </member>
+<a name="344"><font size=-1>344     </font></a>        <member name="M:Microsoft.Owin.Security.Google.GoogleOAuth2ReturnEndpointContext.#ctor(Microsoft.Owin.IOwinContext,Microsoft.Owin.Security.AuthenticationTicket)">
+<a name="345"><font size=-1>345     </font></a>            <summary>
+<a name="346"><font size=-1>346     </font></a>            Initialize a <see cref="T:Microsoft.Owin.Security.Google.GoogleOAuth2ReturnEndpointContext"/>
+<a name="347"><font size=-1>347     </font></a>            </summary>
+<a name="348"><font size=-1>348     </font></a>            <param name="context">OWIN environment</param>
+<a name="349"><font size=-1>349     </font></a>            <param name="ticket">The authentication ticket</param>
+<a name="350"><font size=-1>350     </font></a>        </member>
+<a name="351"><font size=-1>351     </font></a>        <member name="T:Microsoft.Owin.Security.Google.Resources">
+<a name="352"><font size=-1>352     </font></a>            <summary>
+<a name="353"><font size=-1>353     </font></a>              A strongly-typed resource class, for looking up localized strings, etc.
+<a name="354"><font size=-1>354     </font></a>            </summary>
+<a name="355"><font size=-1>355     </font></a>        </member>
+<a name="356"><font size=-1>356     </font></a>        <member name="P:Microsoft.Owin.Security.Google.Resources.ResourceManager">
+<a name="357"><font size=-1>357     </font></a>            <summary>
+<a name="358"><font size=-1>358     </font></a>              Returns the cached ResourceManager instance used by this class.
+<a name="359"><font size=-1>359     </font></a>            </summary>
+<a name="360"><font size=-1>360     </font></a>        </member>
+<a name="361"><font size=-1>361     </font></a>        <member name="P:Microsoft.Owin.Security.Google.Resources.Culture">
+<a name="362"><font size=-1>362     </font></a>            <summary>
+<a name="363"><font size=-1>363     </font></a>              Overrides the current thread's CurrentUICulture property for all
+<a name="364"><font size=-1>364     </font></a>              resource lookups using this strongly typed resource class.
+<a name="365"><font size=-1>365     </font></a>            </summary>
+<a name="366"><font size=-1>366     </font></a>        </member>
+<a name="367"><font size=-1>367     </font></a>        <member name="P:Microsoft.Owin.Security.Google.Resources.Exception_OptionMustBeProvided">
+<a name="368"><font size=-1>368     </font></a>            <summary>
+<a name="369"><font size=-1>369     </font></a>              Looks up a localized string similar to The &apos;{0}&apos; option must be provided..
+<a name="370"><font size=-1>370     </font></a>            </summary>
+<a name="371"><font size=-1>371     </font></a>        </member>
+<a name="372"><font size=-1>372     </font></a>        <member name="P:Microsoft.Owin.Security.Google.Resources.Exception_ValidatorHandlerMismatch">
+<a name="373"><font size=-1>373     </font></a>            <summary>
+<a name="374"><font size=-1>374     </font></a>              Looks up a localized string similar to An ICertificateValidator cannot be specified at the same time as an HttpMessageHandler unless it is a WebRequestHandler..
+<a name="375"><font size=-1>375     </font></a>            </summary>
+<a name="376"><font size=-1>376     </font></a>        </member>
+<a name="377"><font size=-1>377     </font></a>    </members>
+<a name="378"><font size=-1>378     </font></a></doc>
+</pre></body></html>

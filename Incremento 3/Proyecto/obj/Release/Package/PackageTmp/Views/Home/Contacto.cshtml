@@ -1,0 +1,56 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Contacto</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <style>
+        .linkincio {
+            color: white;
+        }
+
+            .linkincio:hover {
+                color: gray;
+            }
+    </style>
+    <header>
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container d-flex justify-content-between">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <img src="~/Imagenes/rebaja.png" alt="Alternate Text" width="50" height="50" />
+                    <h3><strong>Edicas</strong></h3>
+                </a>
+                <ul class="nav" style="color:gray">
+                    @Html.ActionLink("Inicio", "Index", "Home", routeValues: null, htmlAttributes: new { @class = "nav-link linkincio" })
+                    @Html.ActionLink("Acerca de", "Acerca", "Home", routeValues: null, htmlAttributes: new { @class = "nav-link linkincio" })
+                    @Html.ActionLink("Contacto", "Contacto", "Home", routeValues: null, htmlAttributes: new { @class = "nav-link linkincio disabled" })
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Contactanos</h2>
+
+        <address>
+            Jr. Las violetas 666<br />
+            Huancayo<br />
+            <abbr title="Phone">P:</abbr>
+            064-256985
+        </address>
+
+        <address>
+            <strong>Facebook:</strong>   <a href="https://www.facebook.com/">Facebook</a><br />
+            <strong>Instagram:</strong> <a href="https://www.instagram.com/?hl=es-la">Instagram</a>
+        </address>
+    </div>
+    
+</body>
+</html>

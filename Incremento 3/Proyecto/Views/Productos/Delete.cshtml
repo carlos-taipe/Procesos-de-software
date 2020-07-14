@@ -1,0 +1,71 @@
+﻿@model Proyecto.Models.sp_C_ProductoxID_Result
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<div class="container" style="margin-top:20px">
+    <h3>Estas seguro que deseas eliminar ?</h3>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Nombre:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.proNombre)
+            </dd>
+
+            <dt>
+                Cantidad:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.proCantidad)
+            </dd>
+
+            <dt>
+                Precio:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.proPrecioVenta)
+            </dd>
+
+            <dt>
+                Proveedor:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.provNombres)
+            </dd>
+
+            <dt>
+                Categoría:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.catNombre)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-primary" />
+            </div>
+        }
+    </div>
+
+
+
+</div>
+<div style="margin-top:20px">
+    @Html.ActionLink("Volver a la lista", "Index", null, new { @class = "btn btn-danger" })
+</div>
+
+

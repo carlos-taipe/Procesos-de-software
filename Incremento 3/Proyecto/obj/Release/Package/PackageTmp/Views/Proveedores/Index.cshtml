@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Proyecto.Models.sp_C_Proveedores_Result>
+
+@{
+    ViewBag.Title = "Proveedores";
+}
+
+<div class="bg-light">
+    <div class="card bg-dark" style="margin-bottom:15px">
+        <div class="card-body text-center">
+            <h2 class="text-white">Proveedores</h2>
+            <p style="margin-top:50px">
+                @Html.ActionLink("Crear nuevo", "Create", routeValues: null, htmlAttributes: new { @class = "btn btn-primary my-2" })
+            </p>
+        </div>
+        <img src="~/Imagenes/Proveedores.jpg" class="card-img-top" style="height:350px;object-fit:cover">
+    </div>
+    <div class="container overflow-auto">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr class="text-uppercase">
+                    <th scope="col">#</th>
+                    <th scope="col">
+                        Nombres
+                    </th>
+                    <th scope="col">
+                       Dirección
+                    </th>
+                    <th scope="col">
+                       Teléfono
+                    </th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">#</th>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.provNombres)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.provDireccion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.provTelefono)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { ruc = item.RUC }, htmlAttributes: new { @class = "btn btn-primary" }) |
+                        @Html.ActionLink("Delete", "Delete", new { ruc = item.RUC, @class = "btn btn-danger" }, htmlAttributes: new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+            }
+        </table>
+
+    </div>
+</div>
+

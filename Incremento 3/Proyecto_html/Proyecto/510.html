@@ -1,0 +1,48 @@
+<html><head><title>Productos.cs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: D:\Proyecto\Proyecto\Models\Productos.cs</h3>
+<SCRIPT>
+defaultStatus = "File: D:\\Proyecto\\Proyecto\\Models\\Productos.cs";
+top.document.title  = "Productos.cs";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="comment">//------------------------------------------------------------------------------</span>
+<a name="2"><font size=-1>2     </font></a><span class="comment">// &lt;auto-generated&gt;</span>
+<a name="3"><font size=-1>3     </font></a><span class="comment">//     Este cÃ³digo se generÃ³ a partir de una plantilla.</span>
+<a name="4"><font size=-1>4     </font></a><span class="comment">//</span>
+<a name="5"><font size=-1>5     </font></a><span class="comment">//     Los cambios manuales en este archivo pueden causar un comportamiento inesperado de la aplicaciÃ³n.</span>
+<a name="6"><font size=-1>6     </font></a><span class="comment">//     Los cambios manuales en este archivo se sobrescribirÃ¡n si se regenera el cÃ³digo.</span>
+<a name="7"><font size=-1>7     </font></a><span class="comment">// &lt;/auto-generated&gt;</span>
+<a name="8"><font size=-1>8     </font></a><span class="comment">//------------------------------------------------------------------------------</span>
+<a name="9"><font size=-1>9     </font></a><span class="comment"></span>
+<a name="10"><font size=-1>10     </font></a><span class="comment"></span><span class="keyword">namespace </span><span class="default">Proyecto.Models</span>
+<a name="11"><font size=-1>11     </font></a><span class="default">{</span>
+<a name="12"><font size=-1>12     </font></a><span class="default">    </span><span class="keyword">using </span><span class="default">System;</span>
+<a name="13"><font size=-1>13     </font></a><span class="default">    </span><span class="keyword">using </span><span class="default">System.Collections.Generic;</span>
+<a name="14"><font size=-1>14     </font></a><span class="default">    </span>
+<a name="15"><font size=-1>15     </font></a><span class="default">    </span><span class="keyword">public </span><span class="default">partial </span><span class="keyword">class <a href="dictionary_P.html#336">Productos</a></span>
+<a name="16"><font size=-1>16     </font></a><span class="keyword">    </span><span class="default">{</span>
+<a name="17"><font size=-1>17     </font></a><span class="default">        [System.Diagnostics.CodeAnalysis.SuppressMessage(</span><span class="string">&quot;Microsoft.Usage&quot;</span><span class="default">, </span><span class="string">&quot;CA2214:DoNotCallOverridableMethodsInConstructors&quot;</span><span class="default">)]</span>
+<a name="18"><font size=-1>18     </font></a><span class="default">        </span><span class="keyword">public <a href="dictionary_P.html#527">Productos</a></span><span class="default">()</span>
+<a name="19"><font size=-1>19     </font></a><span class="default">        {</span>
+<a name="20"><font size=-1>20     </font></a><span class="default">            </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#515">DetalleVenta</a> = </span><span class="keyword">new </span><span class="default">HashSet&lt;<a href="dictionary_P.html#302">DetalleVenta</a>&gt;();</span>
+<a name="21"><font size=-1>21     </font></a><span class="default">        }</span>
+<a name="22"><font size=-1>22     </font></a><span class="default">    </span>
+<a name="23"><font size=-1>23     </font></a><span class="default">        </span><span class="keyword">public int <a href="dictionary_P.html#523">IDProducto</a> </span><span class="default">{ <a href="dictionary_P.html#524">get</a>; <a href="dictionary_P.html#525">set</a>; }</span>
+<a name="24"><font size=-1>24     </font></a><span class="default">        </span><span class="keyword">public string <a href="dictionary_P.html#548">proNombre</a> </span><span class="default">{ <a href="dictionary_P.html#549">get</a>; <a href="dictionary_P.html#550">set</a>; }</span>
+<a name="25"><font size=-1>25     </font></a><span class="default">        </span><span class="keyword">public int <a href="dictionary_P.html#536">proCantidad</a> </span><span class="default">{ <a href="dictionary_P.html#537">get</a>; <a href="dictionary_P.html#538">set</a>; }</span>
+<a name="26"><font size=-1>26     </font></a><span class="default">        </span><span class="keyword">public decimal <a href="dictionary_P.html#552">proPrecioVenta</a> </span><span class="default">{ <a href="dictionary_P.html#553">get</a>; <a href="dictionary_P.html#554">set</a>; }</span>
+<a name="27"><font size=-1>27     </font></a><span class="default">        </span><span class="keyword">public int <a href="dictionary_P.html#519">IDCategoria</a> </span><span class="default">{ <a href="dictionary_P.html#520">get</a>; <a href="dictionary_P.html#521">set</a>; }</span>
+<a name="28"><font size=-1>28     </font></a><span class="default">        </span><span class="keyword">public string <a href="dictionary_P.html#532">RUC</a> </span><span class="default">{ <a href="dictionary_P.html#533">get</a>; <a href="dictionary_P.html#534">set</a>; }</span>
+<a name="29"><font size=-1>29     </font></a><span class="default">        </span><span class="keyword">public byte</span><span class="default">[] <a href="dictionary_P.html#544">proImagen</a> { <a href="dictionary_P.html#545">get</a>; <a href="dictionary_P.html#546">set</a>; }</span>
+<a name="30"><font size=-1>30     </font></a><span class="default">        </span><span class="keyword">public bool <a href="dictionary_P.html#540">proEstado</a> </span><span class="default">{ <a href="dictionary_P.html#541">get</a>; <a href="dictionary_P.html#542">set</a>; }</span>
+<a name="31"><font size=-1>31     </font></a><span class="default">    </span>
+<a name="32"><font size=-1>32     </font></a><span class="default">        </span><span class="keyword">public virtual <a href="dictionary_P.html#556">Categorias</a> <a href="dictionary_P.html#556">Categorias</a> </span><span class="default">{ <a href="dictionary_P.html#512">get</a>; <a href="dictionary_P.html#513">set</a>; }</span>
+<a name="33"><font size=-1>33     </font></a><span class="default">        </span><span class="keyword">public virtual <a href="dictionary_P.html#557">Proveedores</a> <a href="dictionary_P.html#557">Proveedores</a> </span><span class="default">{ <a href="dictionary_P.html#529">get</a>; <a href="dictionary_P.html#530">set</a>; }</span>
+<a name="34"><font size=-1>34     </font></a><span class="default">        [System.Diagnostics.CodeAnalysis.SuppressMessage(</span><span class="string">&quot;Microsoft.Usage&quot;</span><span class="default">, </span><span class="string">&quot;CA2227:CollectionPropertiesShouldBeReadOnly&quot;</span><span class="default">)]</span>
+<a name="35"><font size=-1>35     </font></a><span class="default">        </span><span class="keyword">public virtual </span><span class="default">ICollection&lt;<a href="dictionary_P.html#302">DetalleVenta</a>&gt; <a href="dictionary_P.html#515">DetalleVenta</a> { <a href="dictionary_P.html#516">get</a>; <a href="dictionary_P.html#517">set</a>; }</span>
+<a name="36"><font size=-1>36     </font></a><span class="default">    }</span>
+<a name="37"><font size=-1>37     </font></a><span class="default">}</span>
+<a name="38"><font size=-1>38     </font></a><span class="default"></span>
+</pre></body></html>

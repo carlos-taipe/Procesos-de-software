@@ -1,0 +1,504 @@
+<html><head><title>Microsoft.Owin.Security.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body>
+<h3>File: D:\Proyecto\Proyecto\bin\Microsoft.Owin.Security.xml</h3>
+<SCRIPT>
+ defaultStatus = "File: D:\\Proyecto\\Proyecto\\bin\\Microsoft.Owin.Security.xml";
+top.document.title  = "Microsoft.Owin.Security.xml";
+</SCRIPT>
+<pre><a name="1"><font size=-1>1     </font></a><?xml version="1.0"?>
+<a name="2"><font size=-1>2     </font></a><doc>
+<a name="3"><font size=-1>3     </font></a>    <assembly>
+<a name="4"><font size=-1>4     </font></a>        <name>Microsoft.Owin.Security</name>
+<a name="5"><font size=-1>5     </font></a>    </assembly>
+<a name="6"><font size=-1>6     </font></a>    <members>
+<a name="7"><font size=-1>7     </font></a>        <member name="T:Microsoft.Owin.Security.AppBuilderSecurityExtensions">
+<a name="8"><font size=-1>8     </font></a>            <summary>
+<a name="9"><font size=-1>9     </font></a>            Provides extensions methods for app.Property values that are only needed by implementations of authentication middleware.
+<a name="10"><font size=-1>10     </font></a>            </summary>
+<a name="11"><font size=-1>11     </font></a>        </member>
+<a name="12"><font size=-1>12     </font></a>        <member name="M:Microsoft.Owin.Security.AppBuilderSecurityExtensions.GetDefaultSignInAsAuthenticationType(Owin.IAppBuilder)">
+<a name="13"><font size=-1>13     </font></a>            <summary>
+<a name="14"><font size=-1>14     </font></a>            Returns the previously set AuthenticationType that external sign in middleware should use when the
+<a name="15"><font size=-1>15     </font></a>            browser navigates back to their return url.
+<a name="16"><font size=-1>16     </font></a>            </summary>
+<a name="17"><font size=-1>17     </font></a>            <param name="app">App builder passed to the application startup code</param>
+<a name="18"><font size=-1>18     </font></a>            <returns></returns>
+<a name="19"><font size=-1>19     </font></a>        </member>
+<a name="20"><font size=-1>20     </font></a>        <member name="M:Microsoft.Owin.Security.AppBuilderSecurityExtensions.SetDefaultSignInAsAuthenticationType(Owin.IAppBuilder,System.String)">
+<a name="21"><font size=-1>21     </font></a>            <summary>
+<a name="22"><font size=-1>22     </font></a>            Called by middleware to change the name of the AuthenticationType that external middleware should use
+<a name="23"><font size=-1>23     </font></a>            when the browser navigates back to their return url.
+<a name="24"><font size=-1>24     </font></a>            </summary>
+<a name="25"><font size=-1>25     </font></a>            <param name="app">App builder passed to the application startup code</param>
+<a name="26"><font size=-1>26     </font></a>            <param name="authenticationType">AuthenticationType that external middleware should sign in as.</param>
+<a name="27"><font size=-1>27     </font></a>        </member>
+<a name="28"><font size=-1>28     </font></a>        <member name="T:Microsoft.Owin.Security.AuthenticationMode">
+<a name="29"><font size=-1>29     </font></a>            <summary>
+<a name="30"><font size=-1>30     </font></a>            Controls the behavior of authentication middleware
+<a name="31"><font size=-1>31     </font></a>            </summary>
+<a name="32"><font size=-1>32     </font></a>        </member>
+<a name="33"><font size=-1>33     </font></a>        <member name="F:Microsoft.Owin.Security.AuthenticationMode.Active">
+<a name="34"><font size=-1>34     </font></a>            <summary>
+<a name="35"><font size=-1>35     </font></a>            In Active mode the authentication middleware will alter the user identity as the request arrives, and
+<a name="36"><font size=-1>36     </font></a>            will also alter a plain 401 as the response leaves.
+<a name="37"><font size=-1>37     </font></a>            </summary>
+<a name="38"><font size=-1>38     </font></a>        </member>
+<a name="39"><font size=-1>39     </font></a>        <member name="F:Microsoft.Owin.Security.AuthenticationMode.Passive">
+<a name="40"><font size=-1>40     </font></a>            <summary>
+<a name="41"><font size=-1>41     </font></a>            In Passive mode the authentication middleware will only provide user identity when asked, and will only
+<a name="42"><font size=-1>42     </font></a>            alter 401 responses where the authentication type named in the extra challenge data.
+<a name="43"><font size=-1>43     </font></a>            </summary>
+<a name="44"><font size=-1>44     </font></a>        </member>
+<a name="45"><font size=-1>45     </font></a>        <member name="T:Microsoft.Owin.Security.AuthenticationOptions">
+<a name="46"><font size=-1>46     </font></a>            <summary>
+<a name="47"><font size=-1>47     </font></a>            Base Options for all authentication middleware
+<a name="48"><font size=-1>48     </font></a>            </summary>
+<a name="49"><font size=-1>49     </font></a>        </member>
+<a name="50"><font size=-1>50     </font></a>        <member name="M:Microsoft.Owin.Security.AuthenticationOptions.#ctor(System.String)">
+<a name="51"><font size=-1>51     </font></a>            <summary>
+<a name="52"><font size=-1>52     </font></a>            Initialize properties of AuthenticationOptions base class
+<a name="53"><font size=-1>53     </font></a>            </summary>
+<a name="54"><font size=-1>54     </font></a>            <param name="authenticationType">Assigned to the AuthenticationType property</param>
+<a name="55"><font size=-1>55     </font></a>        </member>
+<a name="56"><font size=-1>56     </font></a>        <member name="P:Microsoft.Owin.Security.AuthenticationOptions.AuthenticationType">
+<a name="57"><font size=-1>57     </font></a>            <summary>
+<a name="58"><font size=-1>58     </font></a>            The AuthenticationType in the options corresponds to the IIdentity AuthenticationType property. A different
+<a name="59"><font size=-1>59     </font></a>            value may be assigned in order to use the same authentication middleware type more than once in a pipeline.
+<a name="60"><font size=-1>60     </font></a>            </summary>
+<a name="61"><font size=-1>61     </font></a>        </member>
+<a name="62"><font size=-1>62     </font></a>        <member name="P:Microsoft.Owin.Security.AuthenticationOptions.AuthenticationMode">
+<a name="63"><font size=-1>63     </font></a>            <summary>
+<a name="64"><font size=-1>64     </font></a>            If Active the authentication middleware alter the request user coming in and
+<a name="65"><font size=-1>65     </font></a>            alter 401 Unauthorized responses going out. If Passive the authentication middleware will only provide
+<a name="66"><font size=-1>66     </font></a>            identity and alter responses when explicitly indicated by the AuthenticationType.
+<a name="67"><font size=-1>67     </font></a>            </summary>
+<a name="68"><font size=-1>68     </font></a>        </member>
+<a name="69"><font size=-1>69     </font></a>        <member name="P:Microsoft.Owin.Security.AuthenticationOptions.Description">
+<a name="70"><font size=-1>70     </font></a>            <summary>
+<a name="71"><font size=-1>71     </font></a>            Additional information about the authentication type which is made available to the application.
+<a name="72"><font size=-1>72     </font></a>            </summary>
+<a name="73"><font size=-1>73     </font></a>        </member>
+<a name="74"><font size=-1>74     </font></a>        <member name="T:Microsoft.Owin.Security.Constants">
+<a name="75"><font size=-1>75     </font></a>            <summary>
+<a name="76"><font size=-1>76     </font></a>            String constants used only by the Security assembly
+<a name="77"><font size=-1>77     </font></a>            </summary>
+<a name="78"><font size=-1>78     </font></a>        </member>
+<a name="79"><font size=-1>79     </font></a>        <member name="F:Microsoft.Owin.Security.Constants.DefaultSignInAsAuthenticationType">
+<a name="80"><font size=-1>80     </font></a>            <summary>
+<a name="81"><font size=-1>81     </font></a>            Used by middleware extension methods to coordinate the default value Options property SignInAsAuthenticationType
+<a name="82"><font size=-1>82     </font></a>            </summary>
+<a name="83"><font size=-1>83     </font></a>        </member>
+<a name="84"><font size=-1>84     </font></a>        <member name="T:Microsoft.Owin.Security.DataProtection.IDataProtectionProvider">
+<a name="85"><font size=-1>85     </font></a>            <summary>
+<a name="86"><font size=-1>86     </font></a>            Factory used to create IDataProtection instances
+<a name="87"><font size=-1>87     </font></a>            </summary>
+<a name="88"><font size=-1>88     </font></a>        </member>
+<a name="89"><font size=-1>89     </font></a>        <member name="M:Microsoft.Owin.Security.DataProtection.IDataProtectionProvider.Create(System.String[])">
+<a name="90"><font size=-1>90     </font></a>            <summary>
+<a name="91"><font size=-1>91     </font></a>            Returns a new instance of IDataProtection for the provider.
+<a name="92"><font size=-1>92     </font></a>            </summary>
+<a name="93"><font size=-1>93     </font></a>            <param name="purposes">Additional entropy used to ensure protected data may only be unprotected for the correct purposes.</param>
+<a name="94"><font size=-1>94     </font></a>            <returns>An instance of a data protection service</returns>
+<a name="95"><font size=-1>95     </font></a>        </member>
+<a name="96"><font size=-1>96     </font></a>        <member name="T:Microsoft.Owin.Security.DataProtection.IDataProtector">
+<a name="97"><font size=-1>97     </font></a>            <summary>
+<a name="98"><font size=-1>98     </font></a>            Service used to protect and unprotect data
+<a name="99"><font size=-1>99     </font></a>            </summary>
+<a name="100"><font size=-1>100     </font></a>        </member>
+<a name="101"><font size=-1>101     </font></a>        <member name="M:Microsoft.Owin.Security.DataProtection.IDataProtector.Protect(System.Byte[])">
+<a name="102"><font size=-1>102     </font></a>            <summary>
+<a name="103"><font size=-1>103     </font></a>            Called to protect user data.
+<a name="104"><font size=-1>104     </font></a>            </summary>
+<a name="105"><font size=-1>105     </font></a>            <param name="userData">The original data that must be protected</param>
+<a name="106"><font size=-1>106     </font></a>            <returns>A different byte array that may be unprotected or altered only by software that has access to 
+<a name="107"><font size=-1>107     </font></a>            the an identical IDataProtection service.</returns>
+<a name="108"><font size=-1>108     </font></a>        </member>
+<a name="109"><font size=-1>109     </font></a>        <member name="M:Microsoft.Owin.Security.DataProtection.IDataProtector.Unprotect(System.Byte[])">
+<a name="110"><font size=-1>110     </font></a>            <summary>
+<a name="111"><font size=-1>111     </font></a>            Called to unprotect user data
+<a name="112"><font size=-1>112     </font></a>            </summary>
+<a name="113"><font size=-1>113     </font></a>            <param name="protectedData">The byte array returned by a call to Protect on an identical IDataProtection service.</param>
+<a name="114"><font size=-1>114     </font></a>            <returns>The byte array identical to the original userData passed to Protect.</returns>
+<a name="115"><font size=-1>115     </font></a>        </member>
+<a name="116"><font size=-1>116     </font></a>        <member name="T:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler`1">
+<a name="117"><font size=-1>117     </font></a>            <summary>
+<a name="118"><font size=-1>118     </font></a>            Base class for the per-request work performed by most authentication middleware.
+<a name="119"><font size=-1>119     </font></a>            </summary>
+<a name="120"><font size=-1>120     </font></a>            <typeparam name="TOptions">Specifies which type for of AuthenticationOptions property</typeparam>
+<a name="121"><font size=-1>121     </font></a>        </member>
+<a name="122"><font size=-1>122     </font></a>        <member name="T:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler">
+<a name="123"><font size=-1>123     </font></a>            <summary>
+<a name="124"><font size=-1>124     </font></a>            Base class for the per-request work performed by most authentication middleware.
+<a name="125"><font size=-1>125     </font></a>            </summary>
+<a name="126"><font size=-1>126     </font></a>        </member>
+<a name="127"><font size=-1>127     </font></a>        <member name="M:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler.TeardownAsync">
+<a name="128"><font size=-1>128     </font></a>            <summary>
+<a name="129"><font size=-1>129     </font></a>            Called once per request after Initialize and Invoke. 
+<a name="130"><font size=-1>130     </font></a>            </summary>
+<a name="131"><font size=-1>131     </font></a>            <returns>async completion</returns>
+<a name="132"><font size=-1>132     </font></a>        </member>
+<a name="133"><font size=-1>133     </font></a>        <member name="M:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler.InvokeAsync">
+<a name="134"><font size=-1>134     </font></a>            <summary>
+<a name="135"><font size=-1>135     </font></a>            Called once by common code after initialization. If an authentication middleware responds directly to
+<a name="136"><font size=-1>136     </font></a>            specifically known paths it must override this virtual, compare the request path to it's known paths, 
+<a name="137"><font size=-1>137     </font></a>            provide any response information as appropriate, and true to stop further processing.
+<a name="138"><font size=-1>138     </font></a>            </summary>
+<a name="139"><font size=-1>139     </font></a>            <returns>Returning false will cause the common code to call the next middleware in line. Returning true will
+<a name="140"><font size=-1>140     </font></a>            cause the common code to begin the async completion journey without calling the rest of the middleware
+<a name="141"><font size=-1>141     </font></a>            pipeline.</returns>
+<a name="142"><font size=-1>142     </font></a>        </member>
+<a name="143"><font size=-1>143     </font></a>        <member name="M:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler.AuthenticateAsync">
+<a name="144"><font size=-1>144     </font></a>            <summary>
+<a name="145"><font size=-1>145     </font></a>            Causes the authentication logic in AuthenticateCore to be performed for the current request 
+<a name="146"><font size=-1>146     </font></a>            at most once and returns the results. Calling Authenticate more than once will always return 
+<a name="147"><font size=-1>147     </font></a>            the original value. 
+<a name="148"><font size=-1>148     </font></a>            
+<a name="149"><font size=-1>149     </font></a>            This method should always be called instead of calling AuthenticateCore directly.
+<a name="150"><font size=-1>150     </font></a>            </summary>
+<a name="151"><font size=-1>151     </font></a>            <returns>The ticket data provided by the authentication logic</returns>
+<a name="152"><font size=-1>152     </font></a>        </member>
+<a name="153"><font size=-1>153     </font></a>        <member name="M:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler.AuthenticateCoreAsync">
+<a name="154"><font size=-1>154     </font></a>            <summary>
+<a name="155"><font size=-1>155     </font></a>            The core authentication logic which must be provided by the handler. Will be invoked at most
+<a name="156"><font size=-1>156     </font></a>            once per request. Do not call directly, call the wrapping Authenticate method instead.
+<a name="157"><font size=-1>157     </font></a>            </summary>
+<a name="158"><font size=-1>158     </font></a>            <returns>The ticket data provided by the authentication logic</returns>
+<a name="159"><font size=-1>159     </font></a>        </member>
+<a name="160"><font size=-1>160     </font></a>        <member name="M:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler.ApplyResponseAsync">
+<a name="161"><font size=-1>161     </font></a>            <summary>
+<a name="162"><font size=-1>162     </font></a>            Causes the ApplyResponseCore to be invoked at most once per request. This method will be
+<a name="163"><font size=-1>163     </font></a>            invoked either earlier, when the response headers are sent as a result of a response write or flush,
+<a name="164"><font size=-1>164     </font></a>            or later, as the last step when the original async call to the middleware is returning.
+<a name="165"><font size=-1>165     </font></a>            </summary>
+<a name="166"><font size=-1>166     </font></a>            <returns></returns>
+<a name="167"><font size=-1>167     </font></a>        </member>
+<a name="168"><font size=-1>168     </font></a>        <member name="M:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler.ApplyResponseCoreAsync">
+<a name="169"><font size=-1>169     </font></a>            <summary>
+<a name="170"><font size=-1>170     </font></a>            Core method that may be overridden by handler. The default behavior is to call two common response 
+<a name="171"><font size=-1>171     </font></a>            activities, one that deals with sign-in/sign-out concerns, and a second to deal with 401 challenges.
+<a name="172"><font size=-1>172     </font></a>            </summary>
+<a name="173"><font size=-1>173     </font></a>            <returns></returns>
+<a name="174"><font size=-1>174     </font></a>        </member>
+<a name="175"><font size=-1>175     </font></a>        <member name="M:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler.ApplyResponseGrantAsync">
+<a name="176"><font size=-1>176     </font></a>            <summary>
+<a name="177"><font size=-1>177     </font></a>            Override this method to dela with sign-in/sign-out concerns, if an authentication scheme in question
+<a name="178"><font size=-1>178     </font></a>            deals with grant/revoke as part of it's request flow. (like setting/deleting cookies)
+<a name="179"><font size=-1>179     </font></a>            </summary>
+<a name="180"><font size=-1>180     </font></a>            <returns></returns>
+<a name="181"><font size=-1>181     </font></a>        </member>
+<a name="182"><font size=-1>182     </font></a>        <member name="M:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler.ApplyResponseChallengeAsync">
+<a name="183"><font size=-1>183     </font></a>            <summary>
+<a name="184"><font size=-1>184     </font></a>            Override this method to deal with 401 challenge concerns, if an authentication scheme in question
+<a name="185"><font size=-1>185     </font></a>            deals an authentication interaction as part of it's request flow. (like adding a response header, or
+<a name="186"><font size=-1>186     </font></a>            changing the 401 result to 302 of a login page or external sign-in location.)
+<a name="187"><font size=-1>187     </font></a>            </summary>
+<a name="188"><font size=-1>188     </font></a>            <returns></returns>
+<a name="189"><font size=-1>189     </font></a>        </member>
+<a name="190"><font size=-1>190     </font></a>        <member name="M:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler`1.Initialize(`0,Microsoft.Owin.IOwinContext)">
+<a name="191"><font size=-1>191     </font></a>            <summary>
+<a name="192"><font size=-1>192     </font></a>            Initialize is called once per request to contextualize this instance with appropriate state.
+<a name="193"><font size=-1>193     </font></a>            </summary>
+<a name="194"><font size=-1>194     </font></a>            <param name="options">The original options passed by the application control behavior</param>
+<a name="195"><font size=-1>195     </font></a>            <param name="context">The utility object to observe the current request and response</param>
+<a name="196"><font size=-1>196     </font></a>            <returns>async completion</returns>
+<a name="197"><font size=-1>197     </font></a>        </member>
+<a name="198"><font size=-1>198     </font></a>        <member name="T:Microsoft.Owin.Security.AuthenticationTicket">
+<a name="199"><font size=-1>199     </font></a>            <summary>
+<a name="200"><font size=-1>200     </font></a>            Contains user identity information as well as additional authentication state.
+<a name="201"><font size=-1>201     </font></a>            </summary>
+<a name="202"><font size=-1>202     </font></a>        </member>
+<a name="203"><font size=-1>203     </font></a>        <member name="M:Microsoft.Owin.Security.AuthenticationTicket.#ctor(System.Security.Claims.ClaimsIdentity,Microsoft.Owin.Security.AuthenticationProperties)">
+<a name="204"><font size=-1>204     </font></a>            <summary>
+<a name="205"><font size=-1>205     </font></a>            Initializes a new instance of the <see cref="T:Microsoft.Owin.Security.AuthenticationTicket"/> class
+<a name="206"><font size=-1>206     </font></a>            </summary>
+<a name="207"><font size=-1>207     </font></a>            <param name="identity"></param>
+<a name="208"><font size=-1>208     </font></a>            <param name="properties"></param>
+<a name="209"><font size=-1>209     </font></a>        </member>
+<a name="210"><font size=-1>210     </font></a>        <member name="P:Microsoft.Owin.Security.AuthenticationTicket.Identity">
+<a name="211"><font size=-1>211     </font></a>            <summary>
+<a name="212"><font size=-1>212     </font></a>            Gets the authenticated user identity.
+<a name="213"><font size=-1>213     </font></a>            </summary>
+<a name="214"><font size=-1>214     </font></a>        </member>
+<a name="215"><font size=-1>215     </font></a>        <member name="P:Microsoft.Owin.Security.AuthenticationTicket.Properties">
+<a name="216"><font size=-1>216     </font></a>            <summary>
+<a name="217"><font size=-1>217     </font></a>            Additional state values for the authentication session.
+<a name="218"><font size=-1>218     </font></a>            </summary>
+<a name="219"><font size=-1>219     </font></a>        </member>
+<a name="220"><font size=-1>220     </font></a>        <member name="T:Microsoft.Owin.Security.ICertificateValidator">
+<a name="221"><font size=-1>221     </font></a>            <summary>
+<a name="222"><font size=-1>222     </font></a>            Interface for providing pinned certificate validation, which checks HTTPS 
+<a name="223"><font size=-1>223     </font></a>            communication against a known good list of certificates to protect against 
+<a name="224"><font size=-1>224     </font></a>            compromised or rogue CAs issuing certificates for hosts without the 
+<a name="225"><font size=-1>225     </font></a>            knowledge of the host owner.
+<a name="226"><font size=-1>226     </font></a>            </summary>
+<a name="227"><font size=-1>227     </font></a>        </member>
+<a name="228"><font size=-1>228     </font></a>        <member name="M:Microsoft.Owin.Security.ICertificateValidator.Validate(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)">
+<a name="229"><font size=-1>229     </font></a>            <summary>
+<a name="230"><font size=-1>230     </font></a>            Verifies the remote Secure Sockets Layer (SSL) certificate used for authentication.
+<a name="231"><font size=-1>231     </font></a>            </summary>
+<a name="232"><font size=-1>232     </font></a>            <param name="sender">An object that contains state information for this validation.</param>
+<a name="233"><font size=-1>233     </font></a>            <param name="certificate">The certificate used to authenticate the remote party.</param>
+<a name="234"><font size=-1>234     </font></a>            <param name="chain">The chain of certificate authorities associated with the remote certificate.</param>
+<a name="235"><font size=-1>235     </font></a>            <param name="sslPolicyErrors">One or more errors associated with the remote certificate.</param>
+<a name="236"><font size=-1>236     </font></a>            <returns>A Boolean value that determines whether the specified certificate is accepted for authentication.</returns>
+<a name="237"><font size=-1>237     </font></a>        </member>
+<a name="238"><font size=-1>238     </font></a>        <member name="T:Microsoft.Owin.Security.CertificateThumbprintValidator">
+<a name="239"><font size=-1>239     </font></a>            <summary>
+<a name="240"><font size=-1>240     </font></a>            Provides pinned certificate validation based on the certificate thumbprint.
+<a name="241"><font size=-1>241     </font></a>            </summary>
+<a name="242"><font size=-1>242     </font></a>        </member>
+<a name="243"><font size=-1>243     </font></a>        <member name="M:Microsoft.Owin.Security.CertificateThumbprintValidator.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+<a name="244"><font size=-1>244     </font></a>            <summary>
+<a name="245"><font size=-1>245     </font></a>            Initializes a new instance of the <see cref="T:Microsoft.Owin.Security.CertificateThumbprintValidator"/> class.
+<a name="246"><font size=-1>246     </font></a>            </summary>
+<a name="247"><font size=-1>247     </font></a>            <param name="validThumbprints">A set of thumbprints which are valid for an HTTPS request.</param>
+<a name="248"><font size=-1>248     </font></a>        </member>
+<a name="249"><font size=-1>249     </font></a>        <member name="M:Microsoft.Owin.Security.CertificateThumbprintValidator.Validate(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)">
+<a name="250"><font size=-1>250     </font></a>            <summary>
+<a name="251"><font size=-1>251     </font></a>            Validates that the certificate thumbprints in the signing chain match at least one whitelisted thumbprint.
+<a name="252"><font size=-1>252     </font></a>            </summary>
+<a name="253"><font size=-1>253     </font></a>            <param name="sender">An object that contains state information for this validation.</param>
+<a name="254"><font size=-1>254     </font></a>            <param name="certificate">The certificate used to authenticate the remote party.</param>
+<a name="255"><font size=-1>255     </font></a>            <param name="chain">The chain of certificate authorities associated with the remote certificate.</param>
+<a name="256"><font size=-1>256     </font></a>            <param name="sslPolicyErrors">One or more errors associated with the remote certificate.</param>
+<a name="257"><font size=-1>257     </font></a>            <returns>A Boolean value that determines whether the specified certificate is accepted for authentication.</returns>
+<a name="258"><font size=-1>258     </font></a>        </member>
+<a name="259"><font size=-1>259     </font></a>        <member name="T:Microsoft.Owin.Security.Provider.BaseContext`1">
+<a name="260"><font size=-1>260     </font></a>            <summary>
+<a name="261"><font size=-1>261     </font></a>            Base class used for certain event contexts
+<a name="262"><font size=-1>262     </font></a>            </summary>
+<a name="263"><font size=-1>263     </font></a>        </member>
+<a name="264"><font size=-1>264     </font></a>        <member name="M:Microsoft.Owin.Security.Notifications.BaseNotification`1.HandleResponse">
+<a name="265"><font size=-1>265     </font></a>            <summary>
+<a name="266"><font size=-1>266     </font></a>            Discontinue all processing for this request and return to the client.
+<a name="267"><font size=-1>267     </font></a>            The caller is responsible for generating the full response.
+<a name="268"><font size=-1>268     </font></a>            </summary>
+<a name="269"><font size=-1>269     </font></a>        </member>
+<a name="270"><font size=-1>270     </font></a>        <member name="M:Microsoft.Owin.Security.Notifications.BaseNotification`1.SkipToNextMiddleware">
+<a name="271"><font size=-1>271     </font></a>            <summary>
+<a name="272"><font size=-1>272     </font></a>            Discontinue processing the request in the current middleware and pass control to the next one.
+<a name="273"><font size=-1>273     </font></a>            </summary>
+<a name="274"><font size=-1>274     </font></a>        </member>
+<a name="275"><font size=-1>275     </font></a>        <member name="F:Microsoft.Owin.Security.Notifications.NotificationResultState.Continue">
+<a name="276"><font size=-1>276     </font></a>            <summary>
+<a name="277"><font size=-1>277     </font></a>            Continue with normal processing.
+<a name="278"><font size=-1>278     </font></a>            </summary>
+<a name="279"><font size=-1>279     </font></a>        </member>
+<a name="280"><font size=-1>280     </font></a>        <member name="F:Microsoft.Owin.Security.Notifications.NotificationResultState.Skipped">
+<a name="281"><font size=-1>281     </font></a>            <summary>
+<a name="282"><font size=-1>282     </font></a>            Discontinue processing the request in the current middleware and pass control to the next one.
+<a name="283"><font size=-1>283     </font></a>            </summary>
+<a name="284"><font size=-1>284     </font></a>        </member>
+<a name="285"><font size=-1>285     </font></a>        <member name="F:Microsoft.Owin.Security.Notifications.NotificationResultState.HandledResponse">
+<a name="286"><font size=-1>286     </font></a>            <summary>
+<a name="287"><font size=-1>287     </font></a>            Discontinue all processing for this request.
+<a name="288"><font size=-1>288     </font></a>            </summary>
+<a name="289"><font size=-1>289     </font></a>        </member>
+<a name="290"><font size=-1>290     </font></a>        <member name="M:Microsoft.Owin.Security.Notifications.RedirectToIdentityProviderNotification`2.HandleResponse">
+<a name="291"><font size=-1>291     </font></a>            <summary>
+<a name="292"><font size=-1>292     </font></a>            Discontinue all processing for this request and return to the client.
+<a name="293"><font size=-1>293     </font></a>            The caller is responsible for generating the full response.
+<a name="294"><font size=-1>294     </font></a>            </summary>
+<a name="295"><font size=-1>295     </font></a>        </member>
+<a name="296"><font size=-1>296     </font></a>        <member name="P:Microsoft.Owin.Security.Notifications.SecurityTokenValidatedNotification`2.AuthenticationTicket">
+<a name="297"><font size=-1>297     </font></a>            <summary>
+<a name="298"><font size=-1>298     </font></a>            Gets or set the <see cref="P:Microsoft.Owin.Security.Notifications.SecurityTokenValidatedNotification`2.AuthenticationTicket"/>
+<a name="299"><font size=-1>299     </font></a>            </summary>
+<a name="300"><font size=-1>300     </font></a>        </member>
+<a name="301"><font size=-1>301     </font></a>        <member name="P:Microsoft.Owin.Security.Notifications.SecurityTokenValidatedNotification`2.ProtocolMessage">
+<a name="302"><font size=-1>302     </font></a>            <summary>
+<a name="303"><font size=-1>303     </font></a>            Gets or sets the Protocol message
+<a name="304"><font size=-1>304     </font></a>            </summary>
+<a name="305"><font size=-1>305     </font></a>        </member>
+<a name="306"><font size=-1>306     </font></a>        <member name="T:Microsoft.Owin.Security.DataProtection.DpapiDataProtectionProvider">
+<a name="307"><font size=-1>307     </font></a>            <summary>
+<a name="308"><font size=-1>308     </font></a>            Used to provide the data protection services that are derived from the Data Protection API. It is the best choice of
+<a name="309"><font size=-1>309     </font></a>            data protection when you application is not hosted by ASP.NET and all processes are running as the same domain identity. 
+<a name="310"><font size=-1>310     </font></a>            </summary>
+<a name="311"><font size=-1>311     </font></a>        </member>
+<a name="312"><font size=-1>312     </font></a>        <member name="M:Microsoft.Owin.Security.DataProtection.DpapiDataProtectionProvider.#ctor">
+<a name="313"><font size=-1>313     </font></a>            <summary>
+<a name="314"><font size=-1>314     </font></a>            Initializes a new DpapiDataProtectionProvider with a random application
+<a name="315"><font size=-1>315     </font></a>            name. This is only useful to protect data for the duration of the
+<a name="316"><font size=-1>316     </font></a>            current application execution.
+<a name="317"><font size=-1>317     </font></a>            </summary>
+<a name="318"><font size=-1>318     </font></a>        </member>
+<a name="319"><font size=-1>319     </font></a>        <member name="M:Microsoft.Owin.Security.DataProtection.DpapiDataProtectionProvider.#ctor(System.String)">
+<a name="320"><font size=-1>320     </font></a>            <summary>
+<a name="321"><font size=-1>321     </font></a>            Initializes a new DpapiDataProtectionProvider which uses the given
+<a name="322"><font size=-1>322     </font></a>            appName as part of the protection algorithm
+<a name="323"><font size=-1>323     </font></a>            </summary>
+<a name="324"><font size=-1>324     </font></a>            <param name="appName">A user provided value needed to round-trip secured
+<a name="325"><font size=-1>325     </font></a>            data. The default value comes from the IAppBuilder.Properties["owin.AppName"] 
+<a name="326"><font size=-1>326     </font></a>            when self-hosted.</param>
+<a name="327"><font size=-1>327     </font></a>        </member>
+<a name="328"><font size=-1>328     </font></a>        <member name="M:Microsoft.Owin.Security.DataProtection.DpapiDataProtectionProvider.Create(System.String[])">
+<a name="329"><font size=-1>329     </font></a>            <summary>
+<a name="330"><font size=-1>330     </font></a>            Returns a new instance of IDataProtection for the provider.
+<a name="331"><font size=-1>331     </font></a>            </summary>
+<a name="332"><font size=-1>332     </font></a>            <param name="purposes">Additional entropy used to ensure protected data may only be unprotected for the correct purposes.</param>
+<a name="333"><font size=-1>333     </font></a>            <returns>An instance of a data protection service</returns>
+<a name="334"><font size=-1>334     </font></a>        </member>
+<a name="335"><font size=-1>335     </font></a>        <member name="T:Microsoft.Owin.Security.Infrastructure.SecurityHelper">
+<a name="336"><font size=-1>336     </font></a>            <summary>
+<a name="337"><font size=-1>337     </font></a>            Helper code used when implementing authentication middleware
+<a name="338"><font size=-1>338     </font></a>            </summary>
+<a name="339"><font size=-1>339     </font></a>        </member>
+<a name="340"><font size=-1>340     </font></a>        <member name="M:Microsoft.Owin.Security.Infrastructure.SecurityHelper.#ctor(Microsoft.Owin.IOwinContext)">
+<a name="341"><font size=-1>341     </font></a>            <summary>
+<a name="342"><font size=-1>342     </font></a>            Helper code used when implementing authentication middleware
+<a name="343"><font size=-1>343     </font></a>            </summary>
+<a name="344"><font size=-1>344     </font></a>            <param name="context"></param>
+<a name="345"><font size=-1>345     </font></a>        </member>
+<a name="346"><font size=-1>346     </font></a>        <member name="M:Microsoft.Owin.Security.Infrastructure.SecurityHelper.AddUserIdentity(System.Security.Principal.IIdentity)">
+<a name="347"><font size=-1>347     </font></a>            <summary>
+<a name="348"><font size=-1>348     </font></a>            Add an additional ClaimsIdentity to the ClaimsPrincipal in the "server.User" environment key
+<a name="349"><font size=-1>349     </font></a>            </summary>
+<a name="350"><font size=-1>350     </font></a>            <param name="identity"></param>
+<a name="351"><font size=-1>351     </font></a>        </member>
+<a name="352"><font size=-1>352     </font></a>        <member name="M:Microsoft.Owin.Security.Infrastructure.SecurityHelper.LookupChallenge(System.String,Microsoft.Owin.Security.AuthenticationMode)">
+<a name="353"><font size=-1>353     </font></a>            <summary>
+<a name="354"><font size=-1>354     </font></a>            Find response challenge details for a specific authentication middleware
+<a name="355"><font size=-1>355     </font></a>            </summary>
+<a name="356"><font size=-1>356     </font></a>            <param name="authenticationType">The authentication type to look for</param>
+<a name="357"><font size=-1>357     </font></a>            <param name="authenticationMode">The authentication mode the middleware is running under</param>
+<a name="358"><font size=-1>358     </font></a>            <returns>The information instructing the middleware how it should behave</returns>
+<a name="359"><font size=-1>359     </font></a>        </member>
+<a name="360"><font size=-1>360     </font></a>        <member name="M:Microsoft.Owin.Security.Infrastructure.SecurityHelper.LookupSignIn(System.String)">
+<a name="361"><font size=-1>361     </font></a>            <summary>
+<a name="362"><font size=-1>362     </font></a>            Find response sign-in details for a specific authentication middleware
+<a name="363"><font size=-1>363     </font></a>            </summary>
+<a name="364"><font size=-1>364     </font></a>            <param name="authenticationType">The authentication type to look for</param>
+<a name="365"><font size=-1>365     </font></a>            <returns>The information instructing the middleware how it should behave</returns>
+<a name="366"><font size=-1>366     </font></a>        </member>
+<a name="367"><font size=-1>367     </font></a>        <member name="M:Microsoft.Owin.Security.Infrastructure.SecurityHelper.LookupSignOut(System.String,Microsoft.Owin.Security.AuthenticationMode)">
+<a name="368"><font size=-1>368     </font></a>            <summary>
+<a name="369"><font size=-1>369     </font></a>            Find response sign-out details for a specific authentication middleware
+<a name="370"><font size=-1>370     </font></a>            </summary>
+<a name="371"><font size=-1>371     </font></a>            <param name="authenticationType">The authentication type to look for</param>
+<a name="372"><font size=-1>372     </font></a>            <param name="authenticationMode">The authentication mode the middleware is running under</param>
+<a name="373"><font size=-1>373     </font></a>            <returns>The information instructing the middleware how it should behave</returns>
+<a name="374"><font size=-1>374     </font></a>        </member>
+<a name="375"><font size=-1>375     </font></a>        <member name="T:Microsoft.Owin.Security.Provider.EndpointContext`1">
+<a name="376"><font size=-1>376     </font></a>            <summary>
+<a name="377"><font size=-1>377     </font></a>            Base class used for certain event contexts
+<a name="378"><font size=-1>378     </font></a>            </summary>
+<a name="379"><font size=-1>379     </font></a>        </member>
+<a name="380"><font size=-1>380     </font></a>        <member name="M:Microsoft.Owin.Security.Provider.EndpointContext`1.#ctor(Microsoft.Owin.IOwinContext,`0)">
+<a name="381"><font size=-1>381     </font></a>            <summary>
+<a name="382"><font size=-1>382     </font></a>            Creates an instance of this context
+<a name="383"><font size=-1>383     </font></a>            </summary>
+<a name="384"><font size=-1>384     </font></a>        </member>
+<a name="385"><font size=-1>385     </font></a>        <member name="M:Microsoft.Owin.Security.Provider.EndpointContext`1.RequestCompleted">
+<a name="386"><font size=-1>386     </font></a>            <summary>
+<a name="387"><font size=-1>387     </font></a>            Prevents the request from being processed further by other components. 
+<a name="388"><font size=-1>388     </font></a>            IsRequestCompleted becomes true after calling.
+<a name="389"><font size=-1>389     </font></a>            </summary>
+<a name="390"><font size=-1>390     </font></a>        </member>
+<a name="391"><font size=-1>391     </font></a>        <member name="P:Microsoft.Owin.Security.Provider.EndpointContext`1.IsRequestCompleted">
+<a name="392"><font size=-1>392     </font></a>            <summary>
+<a name="393"><font size=-1>393     </font></a>            True if the request should not be processed further by other components.
+<a name="394"><font size=-1>394     </font></a>            </summary>
+<a name="395"><font size=-1>395     </font></a>        </member>
+<a name="396"><font size=-1>396     </font></a>        <member name="T:Microsoft.Owin.Security.Resources">
+<a name="397"><font size=-1>397     </font></a>            <summary>
+<a name="398"><font size=-1>398     </font></a>              A strongly-typed resource class, for looking up localized strings, etc.
+<a name="399"><font size=-1>399     </font></a>            </summary>
+<a name="400"><font size=-1>400     </font></a>        </member>
+<a name="401"><font size=-1>401     </font></a>        <member name="P:Microsoft.Owin.Security.Resources.ResourceManager">
+<a name="402"><font size=-1>402     </font></a>            <summary>
+<a name="403"><font size=-1>403     </font></a>              Returns the cached ResourceManager instance used by this class.
+<a name="404"><font size=-1>404     </font></a>            </summary>
+<a name="405"><font size=-1>405     </font></a>        </member>
+<a name="406"><font size=-1>406     </font></a>        <member name="P:Microsoft.Owin.Security.Resources.Culture">
+<a name="407"><font size=-1>407     </font></a>            <summary>
+<a name="408"><font size=-1>408     </font></a>              Overrides the current thread's CurrentUICulture property for all
+<a name="409"><font size=-1>409     </font></a>              resource lookups using this strongly typed resource class.
+<a name="410"><font size=-1>410     </font></a>            </summary>
+<a name="411"><font size=-1>411     </font></a>        </member>
+<a name="412"><font size=-1>412     </font></a>        <member name="P:Microsoft.Owin.Security.Resources.Exception_AuthenticationTokenDoesNotProvideSyncMethods">
+<a name="413"><font size=-1>413     </font></a>            <summary>
+<a name="414"><font size=-1>414     </font></a>              Looks up a localized string similar to The AuthenticationTokenProvider&apos;s required synchronous events have not been registered..
+<a name="415"><font size=-1>415     </font></a>            </summary>
+<a name="416"><font size=-1>416     </font></a>        </member>
+<a name="417"><font size=-1>417     </font></a>        <member name="P:Microsoft.Owin.Security.Resources.Exception_DefaultDpapiRequiresAppNameKey">
+<a name="418"><font size=-1>418     </font></a>            <summary>
+<a name="419"><font size=-1>419     </font></a>              Looks up a localized string similar to The default data protection provider may only be used when the IAppBuilder.Properties contains an appropriate &apos;host.AppName&apos; key..
+<a name="420"><font size=-1>420     </font></a>            </summary>
+<a name="421"><font size=-1>421     </font></a>        </member>
+<a name="422"><font size=-1>422     </font></a>        <member name="P:Microsoft.Owin.Security.Resources.Exception_MissingDefaultSignInAsAuthenticationType">
+<a name="423"><font size=-1>423     </font></a>            <summary>
+<a name="424"><font size=-1>424     </font></a>              Looks up a localized string similar to A default value for SignInAsAuthenticationType was not found in IAppBuilder Properties. This can happen if your authentication middleware are added in the wrong order, or if one is missing..
+<a name="425"><font size=-1>425     </font></a>            </summary>
+<a name="426"><font size=-1>426     </font></a>        </member>
+<a name="427"><font size=-1>427     </font></a>        <member name="P:Microsoft.Owin.Security.Resources.Exception_UnhookAuthenticationStateType">
+<a name="428"><font size=-1>428     </font></a>            <summary>
+<a name="429"><font size=-1>429     </font></a>              Looks up a localized string similar to The state passed to UnhookAuthentication may only be the return value from HookAuthentication..
+<a name="430"><font size=-1>430     </font></a>            </summary>
+<a name="431"><font size=-1>431     </font></a>        </member>
+<a name="432"><font size=-1>432     </font></a>        <member name="T:Microsoft.Owin.Security.CertificateSubjectKeyIdentifierValidator">
+<a name="433"><font size=-1>433     </font></a>            <summary>
+<a name="434"><font size=-1>434     </font></a>            Provides pinned certificate validation based on the subject key identifier of the certificate.
+<a name="435"><font size=-1>435     </font></a>            </summary>
+<a name="436"><font size=-1>436     </font></a>        </member>
+<a name="437"><font size=-1>437     </font></a>        <member name="M:Microsoft.Owin.Security.CertificateSubjectKeyIdentifierValidator.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+<a name="438"><font size=-1>438     </font></a>            <summary>
+<a name="439"><font size=-1>439     </font></a>            Initializes a new instance of the <see cref="T:Microsoft.Owin.Security.CertificateSubjectKeyIdentifierValidator"/> class.
+<a name="440"><font size=-1>440     </font></a>            </summary>
+<a name="441"><font size=-1>441     </font></a>            <param name="validSubjectKeyIdentifiers">A set of subject key identifiers which are valid for an HTTPS request.</param>
+<a name="442"><font size=-1>442     </font></a>        </member>
+<a name="443"><font size=-1>443     </font></a>        <member name="M:Microsoft.Owin.Security.CertificateSubjectKeyIdentifierValidator.Validate(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)">
+<a name="444"><font size=-1>444     </font></a>            <summary>
+<a name="445"><font size=-1>445     </font></a>            Verifies the remote Secure Sockets Layer (SSL) certificate used for authentication.
+<a name="446"><font size=-1>446     </font></a>            </summary>
+<a name="447"><font size=-1>447     </font></a>            <param name="sender">An object that contains state information for this validation.</param>
+<a name="448"><font size=-1>448     </font></a>            <param name="certificate">The certificate used to authenticate the remote party.</param>
+<a name="449"><font size=-1>449     </font></a>            <param name="chain">The chain of certificate authorities associated with the remote certificate.</param>
+<a name="450"><font size=-1>450     </font></a>            <param name="sslPolicyErrors">One or more errors associated with the remote certificate.</param>
+<a name="451"><font size=-1>451     </font></a>            <returns>A Boolean value that determines whether the specified certificate is accepted for authentication.</returns>
+<a name="452"><font size=-1>452     </font></a>        </member>
+<a name="453"><font size=-1>453     </font></a>        <member name="T:Microsoft.Owin.Security.SubjectPublicKeyInfoAlgorithm">
+<a name="454"><font size=-1>454     </font></a>            <summary>
+<a name="455"><font size=-1>455     </font></a>            The algorithm used to generate the subject public key information blob hashes.
+<a name="456"><font size=-1>456     </font></a>            </summary>
+<a name="457"><font size=-1>457     </font></a>        </member>
+<a name="458"><font size=-1>458     </font></a>        <member name="T:Microsoft.Owin.Security.CertificateSubjectPublicKeyInfoValidator">
+<a name="459"><font size=-1>459     </font></a>            <summary>
+<a name="460"><font size=-1>460     </font></a>            Implements a cert pinning validator passed on 
+<a name="461"><font size=-1>461     </font></a>            http://datatracker.ietf.org/doc/draft-ietf-websec-key-pinning/?include_text=1
+<a name="462"><font size=-1>462     </font></a>            </summary>
+<a name="463"><font size=-1>463     </font></a>        </member>
+<a name="464"><font size=-1>464     </font></a>        <member name="M:Microsoft.Owin.Security.CertificateSubjectPublicKeyInfoValidator.#ctor(System.Collections.Generic.IEnumerable{System.String},Microsoft.Owin.Security.SubjectPublicKeyInfoAlgorithm)">
+<a name="465"><font size=-1>465     </font></a>            <summary>
+<a name="466"><font size=-1>466     </font></a>            Initializes a new instance of the <see cref="T:Microsoft.Owin.Security.CertificateSubjectPublicKeyInfoValidator"/> class.
+<a name="467"><font size=-1>467     </font></a>            </summary>
+<a name="468"><font size=-1>468     </font></a>            <param name="validBase64EncodedSubjectPublicKeyInfoHashes">A collection of valid base64 encoded hashes of the certificate public key information blob.</param>
+<a name="469"><font size=-1>469     </font></a>            <param name="algorithm">The algorithm used to generate the hashes.</param>
+<a name="470"><font size=-1>470     </font></a>        </member>
+<a name="471"><font size=-1>471     </font></a>        <member name="M:Microsoft.Owin.Security.CertificateSubjectPublicKeyInfoValidator.Validate(System.Object,System.Security.Cryptography.X509Certificates.X509Certificate,System.Security.Cryptography.X509Certificates.X509Chain,System.Net.Security.SslPolicyErrors)">
+<a name="472"><font size=-1>472     </font></a>            <summary>
+<a name="473"><font size=-1>473     </font></a>            Validates at least one SPKI hash is known.
+<a name="474"><font size=-1>474     </font></a>            </summary>
+<a name="475"><font size=-1>475     </font></a>            <param name="sender">An object that contains state information for this validation.</param>
+<a name="476"><font size=-1>476     </font></a>            <param name="certificate">The certificate used to authenticate the remote party.</param>
+<a name="477"><font size=-1>477     </font></a>            <param name="chain">The chain of certificate authorities associated with the remote certificate.</param>
+<a name="478"><font size=-1>478     </font></a>            <param name="sslPolicyErrors">One or more errors associated with the remote certificate.</param>
+<a name="479"><font size=-1>479     </font></a>            <returns>A Boolean value that determines whether the specified certificate is accepted for authentication.</returns>
+<a name="480"><font size=-1>480     </font></a>        </member>
+<a name="481"><font size=-1>481     </font></a>        <member name="M:Microsoft.Win32.NativeMethods.CryptEncodeObject(System.UInt32,System.IntPtr,Microsoft.Win32.NativeMethods.CERT_PUBLIC_KEY_INFO@,System.Byte[],System.UInt32@)">
+<a name="482"><font size=-1>482     </font></a>            <summary>
+<a name="483"><font size=-1>483     </font></a>            Encodes a structure of the type indicated by the value of the lpszStructType parameter.
+<a name="484"><font size=-1>484     </font></a>            </summary>
+<a name="485"><font size=-1>485     </font></a>            <param name="dwCertEncodingType">Type of encoding used.</param>
+<a name="486"><font size=-1>486     </font></a>            <param name="lpszStructType">The high-order word is zero, the low-order word specifies the integer identifier for the type of the specified structure so
+<a name="487"><font size=-1>487     </font></a>            we can use the constants in http://msdn.microsoft.com/en-us/library/windows/desktop/aa378145%28v=vs.85%29.aspx</param>
+<a name="488"><font size=-1>488     </font></a>            <param name="pvStructInfo">A pointer to the structure to be encoded.</param>
+<a name="489"><font size=-1>489     </font></a>            <param name="pbEncoded">A pointer to a buffer to receive the encoded structure. This parameter can be NULL to retrieve the size of this information for memory allocation purposes.</param>
+<a name="490"><font size=-1>490     </font></a>            <param name="pcbEncoded">A pointer to a DWORD variable that contains the size, in bytes, of the buffer pointed to by the pbEncoded parameter.</param>
+<a name="491"><font size=-1>491     </font></a>            <returns></returns>
+<a name="492"><font size=-1>492     </font></a>        </member>
+<a name="493"><font size=-1>493     </font></a>    </members>
+<a name="494"><font size=-1>494     </font></a></doc>
+</pre></body></html>

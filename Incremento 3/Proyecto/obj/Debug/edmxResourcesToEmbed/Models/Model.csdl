@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EdicasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EdicasEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categorias" EntityType="EdicasModel.Categorias" />
+    <EntitySet Name="Productos" EntityType="EdicasModel.Productos" />
+    <AssociationSet Name="FK__Table__IDCategor__2C3393D0" Association="EdicasModel.FK__Table__IDCategor__2C3393D0">
+      <End Role="Categorias" EntitySet="Categorias" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <EntitySet Name="Proveedores" EntityType="EdicasModel.Proveedores" />
+    <AssociationSet Name="FK__Productos__RUC__300424B4" Association="EdicasModel.FK__Productos__RUC__300424B4">
+      <End Role="Proveedores" EntitySet="Proveedores" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <FunctionImport Name="sp_C_Productos" ReturnType="Collection(EdicasModel.sp_C_Productos_Result)" />
+    <FunctionImport Name="sp_A_Producto">
+      <Parameter Name="proNombre" Mode="In" Type="String" />
+      <Parameter Name="proCantidad" Mode="In" Type="Int32" />
+      <Parameter Name="proPrecioVenta" Mode="In" Type="Decimal" />
+      <Parameter Name="proImagen" Mode="In" Type="Binary" />
+      <Parameter Name="IDCategoria" Mode="In" Type="Int32" />
+      <Parameter Name="RUC" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_E_Producto">
+      <Parameter Name="IDProducto" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_M_Producto">
+      <Parameter Name="IDProducto" Mode="In" Type="Int32" />
+      <Parameter Name="proNombre" Mode="In" Type="String" />
+      <Parameter Name="proCantidad" Mode="In" Type="Int32" />
+      <Parameter Name="proPrecioVenta" Mode="In" Type="Decimal" />
+      <Parameter Name="proImagen" Mode="In" Type="Binary" />
+      <Parameter Name="IDCategoria" Mode="In" Type="Int32" />
+      <Parameter Name="RUC" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="Categorias">
+    <Key>
+      <PropertyRef Name="IDCategoria" />
+    </Key>
+    <Property Name="IDCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="catNombre" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Productos" Relationship="EdicasModel.FK__Table__IDCategor__2C3393D0" FromRole="Categorias" ToRole="Productos" />
+  </EntityType>
+  <EntityType Name="Productos">
+    <Key>
+      <PropertyRef Name="IDProducto" />
+    </Key>
+    <Property Name="IDProducto" Type="Int32" Nullable="false" />
+    <Property Name="proNombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="proCantidad" Type="Int32" Nullable="false" />
+    <Property Name="proPrecioVenta" Type="Decimal" Nullable="false" Precision="7" Scale="2" />
+    <Property Name="proImagen" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="proEstado" Type="Boolean" Nullable="false" />
+    <Property Name="IDCategoria" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Categorias" Relationship="EdicasModel.FK__Table__IDCategor__2C3393D0" FromRole="Productos" ToRole="Categorias" />
+    <Property Name="RUC" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Proveedores" Relationship="EdicasModel.FK__Productos__RUC__300424B4" FromRole="Productos" ToRole="Proveedores" />
+  </EntityType>
+  <Association Name="FK__Table__IDCategor__2C3393D0">
+    <End Type="EdicasModel.Categorias" Role="Categorias" Multiplicity="1" />
+    <End Type="EdicasModel.Productos" Role="Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorias">
+        <PropertyRef Name="IDCategoria" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="IDCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Proveedores">
+    <Key>
+      <PropertyRef Name="RUC" />
+    </Key>
+    <Property Name="RUC" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="provNombres" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="provDireccion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="provTelefono" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="provEstado" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Productos" Relationship="EdicasModel.FK__Productos__RUC__300424B4" FromRole="Proveedores" ToRole="Productos" />
+  </EntityType>
+  <Association Name="FK__Productos__RUC__300424B4">
+    <End Type="EdicasModel.Proveedores" Role="Proveedores" Multiplicity="1" />
+    <End Type="EdicasModel.Productos" Role="Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedores">
+        <PropertyRef Name="RUC" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="RUC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_C_Productos_Result">
+    <Property Type="String" Name="proNombre" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="proCantidad" Nullable="false" />
+    <Property Type="Decimal" Name="proPrecioVenta" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Binary" Name="proImagen" Nullable="false" />
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="catNombre" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="provNombres" Nullable="false" MaxLength="50" />
+  </ComplexType>
+</Schema>

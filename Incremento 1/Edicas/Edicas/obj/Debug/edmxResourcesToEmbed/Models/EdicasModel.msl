@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TienditaModelStoreContainer" CdmEntityContainer="TienditaEntities">
+    <EntitySetMapping Name="Categorias">
+      <EntityTypeMapping TypeName="TienditaModel.Categoria">
+        <MappingFragment StoreEntitySet="Categorias">
+          <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+          <ScalarProperty Name="catNombre" ColumnName="catNombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Productos">
+      <EntityTypeMapping TypeName="TienditaModel.Producto">
+        <MappingFragment StoreEntitySet="Productos">
+          <ScalarProperty Name="RUC" ColumnName="RUC" />
+          <ScalarProperty Name="proImagen" ColumnName="proImagen" />
+          <ScalarProperty Name="proCantidad" ColumnName="proCantidad" />
+          <ScalarProperty Name="proEstado" ColumnName="proEstado" />
+          <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+          <ScalarProperty Name="proNombre" ColumnName="proNombre" />
+          <ScalarProperty Name="proPrecio" ColumnName="proPrecio" />
+          <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_A_Producto" FunctionName="TienditaModel.Store.sp_A_Producto" />
+    <FunctionImportMapping FunctionImportName="sp_E_Producto" FunctionName="TienditaModel.Store.sp_E_Producto" />
+    <FunctionImportMapping FunctionImportName="sp_C_Productos" FunctionName="TienditaModel.Store.sp_C_Productos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TienditaModel.sp_C_Productos_Result">
+          <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+          <ScalarProperty Name="proNombre" ColumnName="proNombre" />
+          <ScalarProperty Name="proCantidad" ColumnName="proCantidad" />
+          <ScalarProperty Name="proPrecio" ColumnName="proPrecio" />
+          <ScalarProperty Name="catNombre" ColumnName="catNombre" />
+          <ScalarProperty Name="proImagen" ColumnName="proImagen" />
+          <ScalarProperty Name="provNombre" ColumnName="provNombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_C_ProductoxID" FunctionName="TienditaModel.Store.sp_C_ProductoxID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TienditaModel.sp_C_ProductoxID_Result">
+          <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+          <ScalarProperty Name="proNombre" ColumnName="proNombre" />
+          <ScalarProperty Name="proCantidad" ColumnName="proCantidad" />
+          <ScalarProperty Name="proPrecio" ColumnName="proPrecio" />
+          <ScalarProperty Name="proImagen" ColumnName="proImagen" />
+          <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+          <ScalarProperty Name="catNombre" ColumnName="catNombre" />
+          <ScalarProperty Name="RUC" ColumnName="RUC" />
+          <ScalarProperty Name="provNombre" ColumnName="provNombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_M_Producto" FunctionName="TienditaModel.Store.sp_M_Producto" />
+    <EntitySetMapping Name="Proveedores">
+      <EntityTypeMapping TypeName="TienditaModel.Proveedore">
+        <MappingFragment StoreEntitySet="Proveedores">
+          <ScalarProperty Name="provEstado" ColumnName="provEstado" />
+          <ScalarProperty Name="provTelefono" ColumnName="provTelefono" />
+          <ScalarProperty Name="provDireccion" ColumnName="provDireccion" />
+          <ScalarProperty Name="provNombre" ColumnName="provNombre" />
+          <ScalarProperty Name="RUC" ColumnName="RUC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_A_Proveedor" FunctionName="TienditaModel.Store.sp_A_Proveedor" />
+    <FunctionImportMapping FunctionImportName="sp_C_Proveedores" FunctionName="TienditaModel.Store.sp_C_Proveedores">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TienditaModel.sp_C_Proveedores_Result">
+          <ScalarProperty Name="RUC" ColumnName="RUC" />
+          <ScalarProperty Name="provNombre" ColumnName="provNombre" />
+          <ScalarProperty Name="provDireccion" ColumnName="provDireccion" />
+          <ScalarProperty Name="provTelefono" ColumnName="provTelefono" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_C_ProveedorxRUC" FunctionName="TienditaModel.Store.sp_C_ProveedorxRUC">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TienditaModel.sp_C_ProveedorxRUC_Result">
+          <ScalarProperty Name="RUC" ColumnName="RUC" />
+          <ScalarProperty Name="provNombre" ColumnName="provNombre" />
+          <ScalarProperty Name="provDireccion" ColumnName="provDireccion" />
+          <ScalarProperty Name="provTelefono" ColumnName="provTelefono" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_E_Proveedor" FunctionName="TienditaModel.Store.sp_E_Proveedor" />
+    <FunctionImportMapping FunctionImportName="sp_M_Proveedor" FunctionName="TienditaModel.Store.sp_M_Proveedor" />
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="TienditaModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="rolNombre" ColumnName="rolNombre" />
+          <ScalarProperty Name="IDRol" ColumnName="IDRol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="TienditaModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="IDRol" ColumnName="IDRol" />
+          <ScalarProperty Name="usuNombre" ColumnName="usuNombre" />
+          <ScalarProperty Name="usuContraseña" ColumnName="usuContraseña" />
+          <ScalarProperty Name="usuEmail" ColumnName="usuEmail" />
+          <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_A_Usuario" FunctionName="TienditaModel.Store.sp_A_Usuario" />
+    <FunctionImportMapping FunctionImportName="sp_C_Usuario" FunctionName="TienditaModel.Store.sp_C_Usuario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TienditaModel.sp_C_Usuario_Result">
+          <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+          <ScalarProperty Name="usuNombre" ColumnName="usuNombre" />
+          <ScalarProperty Name="IDRol" ColumnName="IDRol" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,849 @@
+<html><head><title>System.Web.Helpers.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body>
+<h3>File: D:\Proyecto\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.xml</h3>
+<SCRIPT>
+ defaultStatus = "File: D:\\Proyecto\\packages\\Microsoft.AspNet.WebPages.3.2.4\\lib\\net45\\System.Web.Helpers.xml";
+top.document.title  = "System.Web.Helpers.xml";
+</SCRIPT>
+<pre><a name="1"><font size=-1>1     </font></a><?xml version="1.0" encoding="utf-8"?>
+<a name="2"><font size=-1>2     </font></a><doc>
+<a name="3"><font size=-1>3     </font></a>  <assembly>
+<a name="4"><font size=-1>4     </font></a>    <name>System.Web.Helpers</name>
+<a name="5"><font size=-1>5     </font></a>  </assembly>
+<a name="6"><font size=-1>6     </font></a>  <members>
+<a name="7"><font size=-1>7     </font></a>    <member name="T:System.Web.Helpers.Chart">
+<a name="8"><font size=-1>8     </font></a>      <summary>Displays data in the form of a graphical chart.</summary>
+<a name="9"><font size=-1>9     </font></a>    </member>
+<a name="10"><font size=-1>10     </font></a>    <member name="M:System.Web.Helpers.Chart.#ctor(System.Int32,System.Int32,System.String,System.String)">
+<a name="11"><font size=-1>11     </font></a>      <summary>Initializes a new instance of the <see cref="T:System.Web.Helpers.Chart" /> class.</summary>
+<a name="12"><font size=-1>12     </font></a>      <param name="width">The width, in pixels, of the complete chart image.</param>
+<a name="13"><font size=-1>13     </font></a>      <param name="height">The height, in pixels, of the complete chart image.</param>
+<a name="14"><font size=-1>14     </font></a>      <param name="theme">(Optional) The template (theme) to apply to the chart.</param>
+<a name="15"><font size=-1>15     </font></a>      <param name="themePath">(Optional) The template (theme) path and file name to apply to the chart.</param>
+<a name="16"><font size=-1>16     </font></a>    </member>
+<a name="17"><font size=-1>17     </font></a>    <member name="M:System.Web.Helpers.Chart.AddLegend(System.String,System.String)">
+<a name="18"><font size=-1>18     </font></a>      <summary>Adds a legend to the chart.</summary>
+<a name="19"><font size=-1>19     </font></a>      <returns>The chart.</returns>
+<a name="20"><font size=-1>20     </font></a>      <param name="title">The text of the legend title.</param>
+<a name="21"><font size=-1>21     </font></a>      <param name="name">The unique name of the legend.</param>
+<a name="22"><font size=-1>22     </font></a>    </member>
+<a name="23"><font size=-1>23     </font></a>    <member name="M:System.Web.Helpers.Chart.AddSeries(System.String,System.String,System.String,System.String,System.String,System.Int32,System.Collections.IEnumerable,System.String,System.Collections.IEnumerable,System.String)">
+<a name="24"><font size=-1>24     </font></a>      <summary>Provides data points and series attributes for the chart.</summary>
+<a name="25"><font size=-1>25     </font></a>      <returns>The chart.</returns>
+<a name="26"><font size=-1>26     </font></a>      <param name="name">The unique name of the series.</param>
+<a name="27"><font size=-1>27     </font></a>      <param name="chartType">The chart type of a series.</param>
+<a name="28"><font size=-1>28     </font></a>      <param name="chartArea">The name of the chart area that is used to plot the data series.</param>
+<a name="29"><font size=-1>29     </font></a>      <param name="axisLabel">The axis label text for the series.</param>
+<a name="30"><font size=-1>30     </font></a>      <param name="legend">The name of the series that is associated with the legend.</param>
+<a name="31"><font size=-1>31     </font></a>      <param name="markerStep">The granularity of data point markers.</param>
+<a name="32"><font size=-1>32     </font></a>      <param name="xValue">The values to plot along the x-axis.</param>
+<a name="33"><font size=-1>33     </font></a>      <param name="xField">The name of the field for x-values.</param>
+<a name="34"><font size=-1>34     </font></a>      <param name="yValues">The values to plot along the y-axis.</param>
+<a name="35"><font size=-1>35     </font></a>      <param name="yFields">A comma-separated list of name or names of the field or fields for y-values.</param>
+<a name="36"><font size=-1>36     </font></a>    </member>
+<a name="37"><font size=-1>37     </font></a>    <member name="M:System.Web.Helpers.Chart.AddTitle(System.String,System.String)">
+<a name="38"><font size=-1>38     </font></a>      <summary>Adds a title to the chart.</summary>
+<a name="39"><font size=-1>39     </font></a>      <returns>The chart.</returns>
+<a name="40"><font size=-1>40     </font></a>      <param name="text">The title text.</param>
+<a name="41"><font size=-1>41     </font></a>      <param name="name">The unique name of the title.</param>
+<a name="42"><font size=-1>42     </font></a>    </member>
+<a name="43"><font size=-1>43     </font></a>    <member name="M:System.Web.Helpers.Chart.DataBindCrossTable(System.Collections.IEnumerable,System.String,System.String,System.String,System.String,System.String)">
+<a name="44"><font size=-1>44     </font></a>      <summary>Binds a chart to a data table, where one series is created for each unique value in a column.</summary>
+<a name="45"><font size=-1>45     </font></a>      <returns>The chart.</returns>
+<a name="46"><font size=-1>46     </font></a>      <param name="dataSource">The chart data source.</param>
+<a name="47"><font size=-1>47     </font></a>      <param name="groupByField">The name of the column that is used to group data into the series.</param>
+<a name="48"><font size=-1>48     </font></a>      <param name="xField">The name of the column for x-values.</param>
+<a name="49"><font size=-1>49     </font></a>      <param name="yFields">A comma-separated list of names of the columns for y-values.</param>
+<a name="50"><font size=-1>50     </font></a>      <param name="otherFields">Other data point properties that can be bound.</param>
+<a name="51"><font size=-1>51     </font></a>      <param name="pointSortOrder">The order in which the series will be sorted. The default is "Ascending".</param>
+<a name="52"><font size=-1>52     </font></a>    </member>
+<a name="53"><font size=-1>53     </font></a>    <member name="M:System.Web.Helpers.Chart.DataBindTable(System.Collections.IEnumerable,System.String)">
+<a name="54"><font size=-1>54     </font></a>      <summary>Creates and binds series data to the specified data table, and optionally populates multiple x-values.</summary>
+<a name="55"><font size=-1>55     </font></a>      <returns>The chart.</returns>
+<a name="56"><font size=-1>56     </font></a>      <param name="dataSource">The chart data source. This can be can be any <see cref="T:System.Collections.IEnumerable" /> object.</param>
+<a name="57"><font size=-1>57     </font></a>      <param name="xField">The name of the table column used for the series x-values.</param>
+<a name="58"><font size=-1>58     </font></a>    </member>
+<a name="59"><font size=-1>59     </font></a>    <member name="P:System.Web.Helpers.Chart.FileName">
+<a name="60"><font size=-1>60     </font></a>      <summary>Gets or sets the name of the file that contains the chart image.</summary>
+<a name="61"><font size=-1>61     </font></a>      <returns>The name of the file.</returns>
+<a name="62"><font size=-1>62     </font></a>    </member>
+<a name="63"><font size=-1>63     </font></a>    <member name="M:System.Web.Helpers.Chart.GetBytes(System.String)">
+<a name="64"><font size=-1>64     </font></a>      <summary>Returns a chart image as a byte array.</summary>
+<a name="65"><font size=-1>65     </font></a>      <returns>The chart.</returns>
+<a name="66"><font size=-1>66     </font></a>      <param name="format">The image format. The default is "jpeg".</param>
+<a name="67"><font size=-1>67     </font></a>    </member>
+<a name="68"><font size=-1>68     </font></a>    <member name="M:System.Web.Helpers.Chart.GetFromCache(System.String)">
+<a name="69"><font size=-1>69     </font></a>      <summary>Retrieves the specified chart from the cache.</summary>
+<a name="70"><font size=-1>70     </font></a>      <returns>The chart.</returns>
+<a name="71"><font size=-1>71     </font></a>      <param name="key">The ID of the cache item that contains the chart to retrieve. The key is set when you call the <see cref="M:System.Web.Helpers.Chart.SaveToCache(System.String,System.Int32,System.Boolean)" /> method.</param>
+<a name="72"><font size=-1>72     </font></a>    </member>
+<a name="73"><font size=-1>73     </font></a>    <member name="P:System.Web.Helpers.Chart.Height">
+<a name="74"><font size=-1>74     </font></a>      <summary>Gets or sets the height, in pixels, of the chart image.</summary>
+<a name="75"><font size=-1>75     </font></a>      <returns>The chart height.</returns>
+<a name="76"><font size=-1>76     </font></a>    </member>
+<a name="77"><font size=-1>77     </font></a>    <member name="M:System.Web.Helpers.Chart.Save(System.String,System.String)">
+<a name="78"><font size=-1>78     </font></a>      <summary>Saves a chart image to the specified file.</summary>
+<a name="79"><font size=-1>79     </font></a>      <returns>The chart.</returns>
+<a name="80"><font size=-1>80     </font></a>      <param name="path">The location and name of the image file.</param>
+<a name="81"><font size=-1>81     </font></a>      <param name="format">The image file format, such as "png" or "jpeg".</param>
+<a name="82"><font size=-1>82     </font></a>    </member>
+<a name="83"><font size=-1>83     </font></a>    <member name="M:System.Web.Helpers.Chart.SaveToCache(System.String,System.Int32,System.Boolean)">
+<a name="84"><font size=-1>84     </font></a>      <summary>Saves a chart in the system cache.</summary>
+<a name="85"><font size=-1>85     </font></a>      <returns>The ID of the cache item that contains the chart.</returns>
+<a name="86"><font size=-1>86     </font></a>      <param name="key">The ID of the chart in the cache.</param>
+<a name="87"><font size=-1>87     </font></a>      <param name="minutesToCache">The number of minutes to keep the chart image in the cache. The default is 20.</param>
+<a name="88"><font size=-1>88     </font></a>      <param name="slidingExpiration">true to indicate that the chart cache item's expiration is reset each time the item is accessed, or false to indicate that the expiration is based on an absolute interval since the time that the item was added to the cache. The default is true.</param>
+<a name="89"><font size=-1>89     </font></a>    </member>
+<a name="90"><font size=-1>90     </font></a>    <member name="M:System.Web.Helpers.Chart.SaveXml(System.String)">
+<a name="91"><font size=-1>91     </font></a>      <summary>Saves a chart as an XML file.</summary>
+<a name="92"><font size=-1>92     </font></a>      <returns>The chart.</returns>
+<a name="93"><font size=-1>93     </font></a>      <param name="path">The path and name of the XML file.</param>
+<a name="94"><font size=-1>94     </font></a>    </member>
+<a name="95"><font size=-1>95     </font></a>    <member name="M:System.Web.Helpers.Chart.SetXAxis(System.String,System.Double,System.Double)">
+<a name="96"><font size=-1>96     </font></a>      <summary>Sets values for the horizontal axis.</summary>
+<a name="97"><font size=-1>97     </font></a>      <returns>The chart.</returns>
+<a name="98"><font size=-1>98     </font></a>      <param name="title">The title of the x-axis.</param>
+<a name="99"><font size=-1>99     </font></a>      <param name="min">The minimum value for the x-axis.</param>
+<a name="100"><font size=-1>100     </font></a>      <param name="max">The maximum value for the x-axis.</param>
+<a name="101"><font size=-1>101     </font></a>    </member>
+<a name="102"><font size=-1>102     </font></a>    <member name="M:System.Web.Helpers.Chart.SetYAxis(System.String,System.Double,System.Double)">
+<a name="103"><font size=-1>103     </font></a>      <summary>Sets values for the vertical axis.</summary>
+<a name="104"><font size=-1>104     </font></a>      <returns>The chart.</returns>
+<a name="105"><font size=-1>105     </font></a>      <param name="title">The title of the y-axis.</param>
+<a name="106"><font size=-1>106     </font></a>      <param name="min">The minimum value for the y-axis.</param>
+<a name="107"><font size=-1>107     </font></a>      <param name="max">The maximum value for the y-axis.</param>
+<a name="108"><font size=-1>108     </font></a>    </member>
+<a name="109"><font size=-1>109     </font></a>    <member name="M:System.Web.Helpers.Chart.ToWebImage(System.String)">
+<a name="110"><font size=-1>110     </font></a>      <summary>Creates a <see cref="T:System.Web.Helpers.WebImage" /> object based on the current <see cref="T:System.Web.Helpers.Chart" /> object.</summary>
+<a name="111"><font size=-1>111     </font></a>      <returns>The chart.</returns>
+<a name="112"><font size=-1>112     </font></a>      <param name="format">The format of the image to save the <see cref="T:System.Web.Helpers.WebImage" /> object as. The default is "jpeg". The <paramref name="format" /> parameter is not case sensitive.</param>
+<a name="113"><font size=-1>113     </font></a>    </member>
+<a name="114"><font size=-1>114     </font></a>    <member name="P:System.Web.Helpers.Chart.Width">
+<a name="115"><font size=-1>115     </font></a>      <summary>Gets or set the width, in pixels, of the chart image.</summary>
+<a name="116"><font size=-1>116     </font></a>      <returns>The chart width.</returns>
+<a name="117"><font size=-1>117     </font></a>    </member>
+<a name="118"><font size=-1>118     </font></a>    <member name="M:System.Web.Helpers.Chart.Write(System.String)">
+<a name="119"><font size=-1>119     </font></a>      <summary>Renders the output of the <see cref="T:System.Web.Helpers.Chart" /> object as an image.</summary>
+<a name="120"><font size=-1>120     </font></a>      <returns>The chart.</returns>
+<a name="121"><font size=-1>121     </font></a>      <param name="format">The format of the image. The default is "jpeg".</param>
+<a name="122"><font size=-1>122     </font></a>    </member>
+<a name="123"><font size=-1>123     </font></a>    <member name="M:System.Web.Helpers.Chart.WriteFromCache(System.String,System.String)">
+<a name="124"><font size=-1>124     </font></a>      <summary>Renders the output of a <see cref="T:System.Web.Helpers.Chart" /> object that has been cached as an image.</summary>
+<a name="125"><font size=-1>125     </font></a>      <returns>The chart.</returns>
+<a name="126"><font size=-1>126     </font></a>      <param name="key">The ID of the chart in the cache.</param>
+<a name="127"><font size=-1>127     </font></a>      <param name="format">The format of the image. The default is "jpeg".</param>
+<a name="128"><font size=-1>128     </font></a>    </member>
+<a name="129"><font size=-1>129     </font></a>    <member name="T:System.Web.Helpers.ChartTheme">
+<a name="130"><font size=-1>130     </font></a>      <summary>Specifies visual themes for a <see cref="T:System.Web.Helpers.Chart" /> object.</summary>
+<a name="131"><font size=-1>131     </font></a>    </member>
+<a name="132"><font size=-1>132     </font></a>    <member name="F:System.Web.Helpers.ChartTheme.Blue">
+<a name="133"><font size=-1>133     </font></a>      <summary>A theme for 2D charting that features a visual container with a blue gradient, rounded edges, drop-shadowing, and high-contrast gridlines.</summary>
+<a name="134"><font size=-1>134     </font></a>    </member>
+<a name="135"><font size=-1>135     </font></a>    <member name="F:System.Web.Helpers.ChartTheme.Green">
+<a name="136"><font size=-1>136     </font></a>      <summary>A theme for 2D charting that features a visual container with a green gradient, rounded edges, drop-shadowing, and low-contrast gridlines.</summary>
+<a name="137"><font size=-1>137     </font></a>    </member>
+<a name="138"><font size=-1>138     </font></a>    <member name="F:System.Web.Helpers.ChartTheme.Vanilla">
+<a name="139"><font size=-1>139     </font></a>      <summary>A theme for 2D charting that features no visual container and no gridlines.</summary>
+<a name="140"><font size=-1>140     </font></a>    </member>
+<a name="141"><font size=-1>141     </font></a>    <member name="F:System.Web.Helpers.ChartTheme.Vanilla3D">
+<a name="142"><font size=-1>142     </font></a>      <summary>A theme for 3D charting that features no visual container, limited labeling and, sparse, high-contrast gridlines.</summary>
+<a name="143"><font size=-1>143     </font></a>    </member>
+<a name="144"><font size=-1>144     </font></a>    <member name="F:System.Web.Helpers.ChartTheme.Yellow">
+<a name="145"><font size=-1>145     </font></a>      <summary>A theme for 2D charting that features a visual container that has a yellow gradient, rounded edges, drop-shadowing, and high-contrast gridlines.</summary>
+<a name="146"><font size=-1>146     </font></a>    </member>
+<a name="147"><font size=-1>147     </font></a>    <member name="T:System.Web.Helpers.Crypto">
+<a name="148"><font size=-1>148     </font></a>      <summary>Provides methods to generate hash values and encrypt passwords or other sensitive data.</summary>
+<a name="149"><font size=-1>149     </font></a>    </member>
+<a name="150"><font size=-1>150     </font></a>    <member name="M:System.Web.Helpers.Crypto.GenerateSalt(System.Int32)">
+<a name="151"><font size=-1>151     </font></a>      <summary>Generates a cryptographically strong sequence of random byte values.</summary>
+<a name="152"><font size=-1>152     </font></a>      <returns>The generated salt value as a base-64-encoded string.</returns>
+<a name="153"><font size=-1>153     </font></a>      <param name="byteLength">The number of cryptographically random bytes to generate.</param>
+<a name="154"><font size=-1>154     </font></a>    </member>
+<a name="155"><font size=-1>155     </font></a>    <member name="M:System.Web.Helpers.Crypto.Hash(System.Byte[],System.String)">
+<a name="156"><font size=-1>156     </font></a>      <summary>Returns a hash value for the specified byte array.</summary>
+<a name="157"><font size=-1>157     </font></a>      <returns>The hash value for <paramref name="input" /> as a string of hexadecimal characters.</returns>
+<a name="158"><font size=-1>158     </font></a>      <param name="input">The data to provide a hash value for.</param>
+<a name="159"><font size=-1>159     </font></a>      <param name="algorithm">The algorithm that is used to generate the hash value. The default is "sha256".</param>
+<a name="160"><font size=-1>160     </font></a>      <exception cref="T:System.ArgumentNullException">
+<a name="161"><font size=-1>161     </font></a>        <paramref name="input" /> is null.</exception>
+<a name="162"><font size=-1>162     </font></a>    </member>
+<a name="163"><font size=-1>163     </font></a>    <member name="M:System.Web.Helpers.Crypto.Hash(System.String,System.String)">
+<a name="164"><font size=-1>164     </font></a>      <summary>Returns a hash value for the specified string.</summary>
+<a name="165"><font size=-1>165     </font></a>      <returns>The hash value for <paramref name="input" /> as a string of hexadecimal characters.</returns>
+<a name="166"><font size=-1>166     </font></a>      <param name="input">The data to provide a hash value for.</param>
+<a name="167"><font size=-1>167     </font></a>      <param name="algorithm">The algorithm that is used to generate the hash value. The default is "sha256".</param>
+<a name="168"><font size=-1>168     </font></a>      <exception cref="T:System.ArgumentNullException">
+<a name="169"><font size=-1>169     </font></a>        <paramref name="input" /> is null.</exception>
+<a name="170"><font size=-1>170     </font></a>    </member>
+<a name="171"><font size=-1>171     </font></a>    <member name="M:System.Web.Helpers.Crypto.HashPassword(System.String)">
+<a name="172"><font size=-1>172     </font></a>      <summary>Returns an RFC 2898 hash value for the specified password.</summary>
+<a name="173"><font size=-1>173     </font></a>      <returns>The hash value for <paramref name="password" /> as a base-64-encoded string.</returns>
+<a name="174"><font size=-1>174     </font></a>      <param name="password">The password to generate a hash value for.</param>
+<a name="175"><font size=-1>175     </font></a>      <exception cref="T:System.ArgumentNullException">
+<a name="176"><font size=-1>176     </font></a>        <paramref name="password" /> is null.</exception>
+<a name="177"><font size=-1>177     </font></a>    </member>
+<a name="178"><font size=-1>178     </font></a>    <member name="M:System.Web.Helpers.Crypto.SHA1(System.String)">
+<a name="179"><font size=-1>179     </font></a>      <summary>Returns a SHA-1 hash value for the specified string.</summary>
+<a name="180"><font size=-1>180     </font></a>      <returns>The SHA-1 hash value for <paramref name="input" /> as a string of hexadecimal characters.</returns>
+<a name="181"><font size=-1>181     </font></a>      <param name="input">The data to provide a hash value for.</param>
+<a name="182"><font size=-1>182     </font></a>      <exception cref="T:System.ArgumentNullException">
+<a name="183"><font size=-1>183     </font></a>        <paramref name="input" /> is null.</exception>
+<a name="184"><font size=-1>184     </font></a>    </member>
+<a name="185"><font size=-1>185     </font></a>    <member name="M:System.Web.Helpers.Crypto.SHA256(System.String)">
+<a name="186"><font size=-1>186     </font></a>      <summary>Returns a SHA-256 hash value for the specified string.</summary>
+<a name="187"><font size=-1>187     </font></a>      <returns>The SHA-256 hash value for <paramref name="input" /> as a string of hexadecimal characters.</returns>
+<a name="188"><font size=-1>188     </font></a>      <param name="input">The data to provide a hash value for.</param>
+<a name="189"><font size=-1>189     </font></a>      <exception cref="T:System.ArgumentNullException">
+<a name="190"><font size=-1>190     </font></a>        <paramref name="input" /> is null.</exception>
+<a name="191"><font size=-1>191     </font></a>    </member>
+<a name="192"><font size=-1>192     </font></a>    <member name="M:System.Web.Helpers.Crypto.VerifyHashedPassword(System.String,System.String)">
+<a name="193"><font size=-1>193     </font></a>      <summary>Determines whether the specified RFC 2898 hash and password are a cryptographic match.</summary>
+<a name="194"><font size=-1>194     </font></a>      <returns>true if the hash value is a cryptographic match for the password; otherwise, false.</returns>
+<a name="195"><font size=-1>195     </font></a>      <param name="hashedPassword">The previously-computed RFC 2898 hash value as a base-64-encoded string.</param>
+<a name="196"><font size=-1>196     </font></a>      <param name="password">The plaintext password to cryptographically compare with <paramref name="hashedPassword" />.</param>
+<a name="197"><font size=-1>197     </font></a>      <exception cref="T:System.ArgumentNullException">
+<a name="198"><font size=-1>198     </font></a>        <paramref name="hashedPassword" /> or <paramref name="password" /> is null.</exception>
+<a name="199"><font size=-1>199     </font></a>    </member>
+<a name="200"><font size=-1>200     </font></a>    <member name="T:System.Web.Helpers.DynamicJsonArray">
+<a name="201"><font size=-1>201     </font></a>      <summary>Represents a series of values as a JavaScript-like array by using the dynamic capabilities of the Dynamic Language Runtime (DLR).</summary>
+<a name="202"><font size=-1>202     </font></a>    </member>
+<a name="203"><font size=-1>203     </font></a>    <member name="M:System.Web.Helpers.DynamicJsonArray.#ctor(System.Object[])">
+<a name="204"><font size=-1>204     </font></a>      <summary>Initializes a new instance of the <see cref="T:System.Web.Helpers.DynamicJsonArray" /> class using the specified array element values.</summary>
+<a name="205"><font size=-1>205     </font></a>      <param name="arrayValues">An array of objects that contains the values to add to the <see cref="T:System.Web.Helpers.DynamicJsonArray" /> instance.</param>
+<a name="206"><font size=-1>206     </font></a>    </member>
+<a name="207"><font size=-1>207     </font></a>    <member name="M:System.Web.Helpers.DynamicJsonArray.GetEnumerator">
+<a name="208"><font size=-1>208     </font></a>      <summary>Returns an enumerator that can be used to iterate through the elements of the <see cref="T:System.Web.Helpers.DynamicJsonArray" /> instance.</summary>
+<a name="209"><font size=-1>209     </font></a>      <returns>An enumerator that can be used to iterate through the elements of the JSON array.</returns>
+<a name="210"><font size=-1>210     </font></a>    </member>
+<a name="211"><font size=-1>211     </font></a>    <member name="P:System.Web.Helpers.DynamicJsonArray.Item(System.Int32)">
+<a name="212"><font size=-1>212     </font></a>      <summary>Returns the value at the specified index in the <see cref="T:System.Web.Helpers.DynamicJsonArray" /> instance.</summary>
+<a name="213"><font size=-1>213     </font></a>      <returns>The value at the specified index.</returns>
+<a name="214"><font size=-1>214     </font></a>    </member>
+<a name="215"><font size=-1>215     </font></a>    <member name="P:System.Web.Helpers.DynamicJsonArray.Length">
+<a name="216"><font size=-1>216     </font></a>      <summary>Returns the number of elements in the <see cref="T:System.Web.Helpers.DynamicJsonArray" /> instance.</summary>
+<a name="217"><font size=-1>217     </font></a>      <returns>The number of elements in the JSON array.</returns>
+<a name="218"><font size=-1>218     </font></a>    </member>
+<a name="219"><font size=-1>219     </font></a>    <member name="M:System.Web.Helpers.DynamicJsonArray.op_Implicit(System.Web.Helpers.DynamicJsonArray)~System.Object[]">
+<a name="220"><font size=-1>220     </font></a>      <summary>Converts a <see cref="T:System.Web.Helpers.DynamicJsonArray" /> instance to an array of objects.</summary>
+<a name="221"><font size=-1>221     </font></a>      <returns>The array of objects that represents the JSON array.</returns>
+<a name="222"><font size=-1>222     </font></a>      <param name="obj">The JSON array to convert.</param>
+<a name="223"><font size=-1>223     </font></a>    </member>
+<a name="224"><font size=-1>224     </font></a>    <member name="M:System.Web.Helpers.DynamicJsonArray.op_Implicit(System.Web.Helpers.DynamicJsonArray)~System.Array">
+<a name="225"><font size=-1>225     </font></a>      <summary>Converts a <see cref="T:System.Web.Helpers.DynamicJsonArray" /> instance to an array of objects.</summary>
+<a name="226"><font size=-1>226     </font></a>      <returns>The array of objects that represents the JSON array.</returns>
+<a name="227"><font size=-1>227     </font></a>      <param name="obj">The JSON array to convert.</param>
+<a name="228"><font size=-1>228     </font></a>    </member>
+<a name="229"><font size=-1>229     </font></a>    <member name="M:System.Web.Helpers.DynamicJsonArray.System#Collections#Generic#IEnumerable{T}#GetEnumerator">
+<a name="230"><font size=-1>230     </font></a>      <summary>Returns an enumerator that can be used to iterate through a collection.</summary>
+<a name="231"><font size=-1>231     </font></a>      <returns>An enumerator that can be used to iterate through the collection.</returns>
+<a name="232"><font size=-1>232     </font></a>    </member>
+<a name="233"><font size=-1>233     </font></a>    <member name="M:System.Web.Helpers.DynamicJsonArray.TryConvert(System.Dynamic.ConvertBinder,System.Object@)">
+<a name="234"><font size=-1>234     </font></a>      <summary>Converts the <see cref="T:System.Web.Helpers.DynamicJsonArray" /> instance to a compatible type.</summary>
+<a name="235"><font size=-1>235     </font></a>      <returns>true if the conversion was successful; otherwise, false.</returns>
+<a name="236"><font size=-1>236     </font></a>      <param name="binder">Provides information about the conversion operation.</param>
+<a name="237"><font size=-1>237     </font></a>      <param name="result">When this method returns, contains the result of the type conversion operation. This parameter is passed uninitialized.</param>
+<a name="238"><font size=-1>238     </font></a>    </member>
+<a name="239"><font size=-1>239     </font></a>    <member name="M:System.Web.Helpers.DynamicJsonArray.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)">
+<a name="240"><font size=-1>240     </font></a>      <summary>Tests the <see cref="T:System.Web.Helpers.DynamicJsonArray" /> instance for dynamic members (which are not supported) in a way that does not cause an exception to be thrown.</summary>
+<a name="241"><font size=-1>241     </font></a>      <returns>true in all cases.</returns>
+<a name="242"><font size=-1>242     </font></a>      <param name="binder">Provides information about the get operation.</param>
+<a name="243"><font size=-1>243     </font></a>      <param name="result">When this method returns, contains null. This parameter is passed uninitialized.</param>
+<a name="244"><font size=-1>244     </font></a>    </member>
+<a name="245"><font size=-1>245     </font></a>    <member name="T:System.Web.Helpers.DynamicJsonObject">
+<a name="246"><font size=-1>246     </font></a>      <summary>Represents a collection of values as a JavaScript-like object by using the capabilities of the Dynamic Language Runtime.</summary>
+<a name="247"><font size=-1>247     </font></a>    </member>
+<a name="248"><font size=-1>248     </font></a>    <member name="M:System.Web.Helpers.DynamicJsonObject.#ctor(System.Collections.Generic.IDictionary{System.String,System.Object})">
+<a name="249"><font size=-1>249     </font></a>      <summary>Initializes a new instance of the <see cref="T:System.Web.Helpers.DynamicJsonObject" /> class using the specified field values.</summary>
+<a name="250"><font size=-1>250     </font></a>      <param name="values">A dictionary of property names and values to add to the <see cref="T:System.Web.Helpers.DynamicJsonObject" /> instance as dynamic members.</param>
+<a name="251"><font size=-1>251     </font></a>    </member>
+<a name="252"><font size=-1>252     </font></a>    <member name="M:System.Web.Helpers.DynamicJsonObject.GetDynamicMemberNames">
+<a name="253"><font size=-1>253     </font></a>      <summary>Returns a list that contains the name of all dynamic members (JSON fields) of the <see cref="T:System.Web.Helpers.DynamicJsonObject" /> instance.</summary>
+<a name="254"><font size=-1>254     </font></a>      <returns>A list that contains the name of every dynamic member (JSON field).</returns>
+<a name="255"><font size=-1>255     </font></a>    </member>
+<a name="256"><font size=-1>256     </font></a>    <member name="M:System.Web.Helpers.DynamicJsonObject.TryConvert(System.Dynamic.ConvertBinder,System.Object@)">
+<a name="257"><font size=-1>257     </font></a>      <summary>Converts the <see cref="T:System.Web.Helpers.DynamicJsonObject" /> instance to a compatible type.</summary>
+<a name="258"><font size=-1>258     </font></a>      <returns>true in all cases.</returns>
+<a name="259"><font size=-1>259     </font></a>      <param name="binder">Provides information about the conversion operation.</param>
+<a name="260"><font size=-1>260     </font></a>      <param name="result">When this method returns, contains the result of the type conversion operation. This parameter is passed uninitialized.</param>
+<a name="261"><font size=-1>261     </font></a>      <exception cref="T:System.InvalidOperationException">The <see cref="T:System.Web.Helpers.DynamicJsonObject" /> instance could not be converted to the specified type.</exception>
+<a name="262"><font size=-1>262     </font></a>    </member>
+<a name="263"><font size=-1>263     </font></a>    <member name="M:System.Web.Helpers.DynamicJsonObject.TryGetIndex(System.Dynamic.GetIndexBinder,System.Object[],System.Object@)">
+<a name="264"><font size=-1>264     </font></a>      <summary>Gets the value of a <see cref="T:System.Web.Helpers.DynamicJsonObject" /> field using the specified index.</summary>
+<a name="265"><font size=-1>265     </font></a>      <returns>true in all cases.</returns>
+<a name="266"><font size=-1>266     </font></a>      <param name="binder">Provides information about the indexed get operation.</param>
+<a name="267"><font size=-1>267     </font></a>      <param name="indexes">An array that contains a single object that indexes the field by name. The object must be convertible to a string that specifies the name of the JSON field to return. If multiple indexes are specified, <paramref name="result" /> contains null when this method returns.</param>
+<a name="268"><font size=-1>268     </font></a>      <param name="result">When this method returns, contains the value of the indexed field, or null if the get operation was unsuccessful. This parameter is passed uninitialized.</param>
+<a name="269"><font size=-1>269     </font></a>    </member>
+<a name="270"><font size=-1>270     </font></a>    <member name="M:System.Web.Helpers.DynamicJsonObject.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)">
+<a name="271"><font size=-1>271     </font></a>      <summary>Gets the value of a <see cref="T:System.Web.Helpers.DynamicJsonObject" /> field using the specified name.</summary>
+<a name="272"><font size=-1>272     </font></a>      <returns>true in all cases.</returns>
+<a name="273"><font size=-1>273     </font></a>      <param name="binder">Provides information about the get operation.</param>
+<a name="274"><font size=-1>274     </font></a>      <param name="result">When this method returns, contains the value of the field, or null if the get operation was unsuccessful. This parameter is passed uninitialized.</param>
+<a name="275"><font size=-1>275     </font></a>    </member>
+<a name="276"><font size=-1>276     </font></a>    <member name="M:System.Web.Helpers.DynamicJsonObject.TrySetIndex(System.Dynamic.SetIndexBinder,System.Object[],System.Object)">
+<a name="277"><font size=-1>277     </font></a>      <summary>Sets the value of a <see cref="T:System.Web.Helpers.DynamicJsonObject" /> field using the specified index.</summary>
+<a name="278"><font size=-1>278     </font></a>      <returns>true in all cases.</returns>
+<a name="279"><font size=-1>279     </font></a>      <param name="binder">Provides information about the indexed set operation.</param>
+<a name="280"><font size=-1>280     </font></a>      <param name="indexes">An array that contains a single object that indexes the field by name. The object must be convertible to a string that specifies the name of the JSON field to return. If multiple indexes are specified, no field is changed or added.</param>
+<a name="281"><font size=-1>281     </font></a>      <param name="value">The value to set the field to.</param>
+<a name="282"><font size=-1>282     </font></a>    </member>
+<a name="283"><font size=-1>283     </font></a>    <member name="M:System.Web.Helpers.DynamicJsonObject.TrySetMember(System.Dynamic.SetMemberBinder,System.Object)">
+<a name="284"><font size=-1>284     </font></a>      <summary>Sets the value of a <see cref="T:System.Web.Helpers.DynamicJsonObject" /> field using the specified name.</summary>
+<a name="285"><font size=-1>285     </font></a>      <returns>true in all cases.</returns>
+<a name="286"><font size=-1>286     </font></a>      <param name="binder">Provides information about the set operation.</param>
+<a name="287"><font size=-1>287     </font></a>      <param name="value">The value to set the field to.</param>
+<a name="288"><font size=-1>288     </font></a>    </member>
+<a name="289"><font size=-1>289     </font></a>    <member name="T:System.Web.Helpers.Json">
+<a name="290"><font size=-1>290     </font></a>      <summary>Provides methods for working with data in JavaScript Object Notation (JSON) format.</summary>
+<a name="291"><font size=-1>291     </font></a>    </member>
+<a name="292"><font size=-1>292     </font></a>    <member name="M:System.Web.Helpers.Json.Decode``1(System.String)">
+<a name="293"><font size=-1>293     </font></a>      <summary>Converts data in JavaScript Object Notation (JSON) format into the specified strongly typed data list.</summary>
+<a name="294"><font size=-1>294     </font></a>      <returns>The JSON-encoded data converted to a strongly typed list.</returns>
+<a name="295"><font size=-1>295     </font></a>      <param name="value">The JSON-encoded string to convert.</param>
+<a name="296"><font size=-1>296     </font></a>      <typeparam name="T">The type of the strongly typed list to convert JSON data into.</typeparam>
+<a name="297"><font size=-1>297     </font></a>    </member>
+<a name="298"><font size=-1>298     </font></a>    <member name="M:System.Web.Helpers.Json.Decode(System.String)">
+<a name="299"><font size=-1>299     </font></a>      <summary>Converts data in JavaScript Object Notation (JSON) format into a data object.</summary>
+<a name="300"><font size=-1>300     </font></a>      <returns>The JSON-encoded data converted to a data object.</returns>
+<a name="301"><font size=-1>301     </font></a>      <param name="value">The JSON-encoded string to convert.</param>
+<a name="302"><font size=-1>302     </font></a>    </member>
+<a name="303"><font size=-1>303     </font></a>    <member name="M:System.Web.Helpers.Json.Decode(System.String,System.Type)">
+<a name="304"><font size=-1>304     </font></a>      <summary>Converts data in JavaScript Object Notation (JSON) format into a data object of a specified type.</summary>
+<a name="305"><font size=-1>305     </font></a>      <returns>The JSON-encoded data converted to the specified type.</returns>
+<a name="306"><font size=-1>306     </font></a>      <param name="value">The JSON-encoded string to convert.</param>
+<a name="307"><font size=-1>307     </font></a>      <param name="targetType">The type that the <paramref name="value" /> data should be converted to.</param>
+<a name="308"><font size=-1>308     </font></a>    </member>
+<a name="309"><font size=-1>309     </font></a>    <member name="M:System.Web.Helpers.Json.Encode(System.Object)">
+<a name="310"><font size=-1>310     </font></a>      <summary>Converts a data object to a string that is in the JavaScript Object Notation (JSON) format.</summary>
+<a name="311"><font size=-1>311     </font></a>      <returns>Returns a string of data converted to the JSON format.</returns>
+<a name="312"><font size=-1>312     </font></a>      <param name="value">The data object to convert.</param>
+<a name="313"><font size=-1>313     </font></a>    </member>
+<a name="314"><font size=-1>314     </font></a>    <member name="M:System.Web.Helpers.Json.Write(System.Object,System.IO.TextWriter)">
+<a name="315"><font size=-1>315     </font></a>      <summary>Converts a data object to a string in JavaScript Object Notation (JSON) format and adds the string to the specified <see cref="T:System.IO.TextWriter" /> object.</summary>
+<a name="316"><font size=-1>316     </font></a>      <param name="value">The data object to convert.</param>
+<a name="317"><font size=-1>317     </font></a>      <param name="writer">The object that contains the converted JSON data.</param>
+<a name="318"><font size=-1>318     </font></a>    </member>
+<a name="319"><font size=-1>319     </font></a>    <member name="T:System.Web.Helpers.ObjectInfo">
+<a name="320"><font size=-1>320     </font></a>      <summary>Renders the property names and values of the specified object and of any subobjects that it references.</summary>
+<a name="321"><font size=-1>321     </font></a>    </member>
+<a name="322"><font size=-1>322     </font></a>    <member name="M:System.Web.Helpers.ObjectInfo.Print(System.Object,System.Int32,System.Int32)">
+<a name="323"><font size=-1>323     </font></a>      <summary>Renders the property names and values of the specified object and of any subobjects.</summary>
+<a name="324"><font size=-1>324     </font></a>      <returns>For a simple variable, returns the type and the value. For an object that contains multiple items, returns the property name or key and the value for each property.</returns>
+<a name="325"><font size=-1>325     </font></a>      <param name="value">The object to render information for.</param>
+<a name="326"><font size=-1>326     </font></a>      <param name="depth">Optional. Specifies the depth of nested subobjects to render information for. The default is 10.</param>
+<a name="327"><font size=-1>327     </font></a>      <param name="enumerationLength">Optional. Specifies the maximum number of characters that the method displays for object values. The default is 1000.</param>
+<a name="328"><font size=-1>328     </font></a>      <exception cref="T:System.ArgumentOutOfRangeException">
+<a name="329"><font size=-1>329     </font></a>        <paramref name="depth" /> is less than zero.</exception>
+<a name="330"><font size=-1>330     </font></a>      <exception cref="T:System.ArgumentOutOfRangeException">
+<a name="331"><font size=-1>331     </font></a>        <paramref name="enumerationLength" /> is less than or equal to zero.</exception>
+<a name="332"><font size=-1>332     </font></a>    </member>
+<a name="333"><font size=-1>333     </font></a>    <member name="T:System.Web.Helpers.ServerInfo">
+<a name="334"><font size=-1>334     </font></a>      <summary>Displays information about the web server environment that hosts the current web page.</summary>
+<a name="335"><font size=-1>335     </font></a>    </member>
+<a name="336"><font size=-1>336     </font></a>    <member name="M:System.Web.Helpers.ServerInfo.GetHtml">
+<a name="337"><font size=-1>337     </font></a>      <summary>Displays information about the web server environment.</summary>
+<a name="338"><font size=-1>338     </font></a>      <returns>A string of name-value pairs that contains information about the web server. </returns>
+<a name="339"><font size=-1>339     </font></a>    </member>
+<a name="340"><font size=-1>340     </font></a>    <member name="T:System.Web.Helpers.SortDirection">
+<a name="341"><font size=-1>341     </font></a>      <summary>Specifies the direction in which to sort a list of items.</summary>
+<a name="342"><font size=-1>342     </font></a>    </member>
+<a name="343"><font size=-1>343     </font></a>    <member name="F:System.Web.Helpers.SortDirection.Ascending">
+<a name="344"><font size=-1>344     </font></a>      <summary>Sort from smallest to largest —for example, from 1 to 10.</summary>
+<a name="345"><font size=-1>345     </font></a>    </member>
+<a name="346"><font size=-1>346     </font></a>    <member name="F:System.Web.Helpers.SortDirection.Descending">
+<a name="347"><font size=-1>347     </font></a>      <summary>Sort from largest to smallest — for example, from 10 to 1.</summary>
+<a name="348"><font size=-1>348     </font></a>    </member>
+<a name="349"><font size=-1>349     </font></a>    <member name="T:System.Web.Helpers.WebCache">
+<a name="350"><font size=-1>350     </font></a>      <summary>Provides a cache to store frequently accessed data.</summary>
+<a name="351"><font size=-1>351     </font></a>    </member>
+<a name="352"><font size=-1>352     </font></a>    <member name="M:System.Web.Helpers.WebCache.Get(System.String)">
+<a name="353"><font size=-1>353     </font></a>      <summary>Retrieves the specified item from the <see cref="T:System.Web.Helpers.WebCache" /> object.</summary>
+<a name="354"><font size=-1>354     </font></a>      <returns>The item retrieved from the cache, or null if the item is not found.</returns>
+<a name="355"><font size=-1>355     </font></a>      <param name="key">The identifier for the cache item to retrieve.</param>
+<a name="356"><font size=-1>356     </font></a>    </member>
+<a name="357"><font size=-1>357     </font></a>    <member name="M:System.Web.Helpers.WebCache.Remove(System.String)">
+<a name="358"><font size=-1>358     </font></a>      <summary>Removes the specified item from the <see cref="T:System.Web.Helpers.WebCache" /> object.</summary>
+<a name="359"><font size=-1>359     </font></a>      <returns>The item removed from the <see cref="T:System.Web.Helpers.WebCache" /> object. If the item is not found, returns null.</returns>
+<a name="360"><font size=-1>360     </font></a>      <param name="key">The identifier for the cache item to remove.</param>
+<a name="361"><font size=-1>361     </font></a>    </member>
+<a name="362"><font size=-1>362     </font></a>    <member name="M:System.Web.Helpers.WebCache.Set(System.String,System.Object,System.Int32,System.Boolean)">
+<a name="363"><font size=-1>363     </font></a>      <summary>Inserts an item into the <see cref="T:System.Web.Helpers.WebCache" /> object.</summary>
+<a name="364"><font size=-1>364     </font></a>      <param name="key">The identifier for the cache item.</param>
+<a name="365"><font size=-1>365     </font></a>      <param name="value">The data to insert into the cache.</param>
+<a name="366"><font size=-1>366     </font></a>      <param name="minutesToCache">Optional. The number of minutes to keep an item in the cache. The default is 20.</param>
+<a name="367"><font size=-1>367     </font></a>      <param name="slidingExpiration">Optional. true to indicate that the cache item expiration is reset each time the item is accessed, or false to indicate that the expiration is based the absolute time since the item was added to the cache. The default is true. In that case, if you also use the default value for the <paramref name="minutesToCache" /> parameter, a cached item expires 20 minutes after it was last accessed.</param>
+<a name="368"><font size=-1>368     </font></a>      <exception cref="T:System.ArgumentOutOfRangeException">The value of <paramref name="minutesToCache" /> is less than or equal to zero.</exception>
+<a name="369"><font size=-1>369     </font></a>      <exception cref="T:System.ArgumentOutOfRangeException">Sliding expiration is enabled and the value of <paramref name="minutesToCache" /> is greater than a year.</exception>
+<a name="370"><font size=-1>370     </font></a>    </member>
+<a name="371"><font size=-1>371     </font></a>    <member name="T:System.Web.Helpers.WebGrid">
+<a name="372"><font size=-1>372     </font></a>      <summary>Displays data on a web page using an HTML table element.</summary>
+<a name="373"><font size=-1>373     </font></a>    </member>
+<a name="374"><font size=-1>374     </font></a>    <member name="M:System.Web.Helpers.WebGrid.#ctor(System.Collections.Generic.IEnumerable{System.Object},System.Collections.Generic.IEnumerable{System.String},System.String,System.Int32,System.Boolean,System.Boolean,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+<a name="375"><font size=-1>375     </font></a>      <summary>Initializes a new instance of the <see cref="T:System.Web.Helpers.WebGrid" /> class.</summary>
+<a name="376"><font size=-1>376     </font></a>      <param name="source">The data to display.</param>
+<a name="377"><font size=-1>377     </font></a>      <param name="columnNames">A collection that contains the names of the data columns to display. By default, this value is auto-populated according to the values in the <paramref name="source" /> parameter.</param>
+<a name="378"><font size=-1>378     </font></a>      <param name="defaultSort">The name of the data column that is used to sort the grid by default.</param>
+<a name="379"><font size=-1>379     </font></a>      <param name="rowsPerPage">The number of rows that are displayed on each page of the grid when paging is enabled. The default is 10.</param>
+<a name="380"><font size=-1>380     </font></a>      <param name="canPage">true to specify that paging is enabled for the <see cref="T:System.Web.Helpers.WebGrid" /> instance; otherwise false. The default is true. </param>
+<a name="381"><font size=-1>381     </font></a>      <param name="canSort">true to specify that sorting is enabled for the <see cref="T:System.Web.Helpers.WebGrid" /> instance; otherwise, false. The default is true.</param>
+<a name="382"><font size=-1>382     </font></a>      <param name="ajaxUpdateContainerId">The value of the HTML id attribute that is used to mark the HTML element that gets dynamic Ajax updates that are associated with the <see cref="T:System.Web.Helpers.WebGrid" /> instance.</param>
+<a name="383"><font size=-1>383     </font></a>      <param name="ajaxUpdateCallback">The name of the JavaScript function that is called after the HTML element specified by the <see cref="P:System.Web.Helpers.WebGrid.AjaxUpdateContainerId" /> property has been updated. If the name of a function is not provided, no function will be called. If the specified function does not exist, a JavaScript error will occur if it is invoked.</param>
+<a name="384"><font size=-1>384     </font></a>      <param name="fieldNamePrefix">The prefix that is applied to all query-string fields that are associated with the <see cref="T:System.Web.Helpers.WebGrid" /> instance. This value is used in order to support multiple <see cref="T:System.Web.Helpers.WebGrid" /> instances on the same web page.</param>
+<a name="385"><font size=-1>385     </font></a>      <param name="pageFieldName">The name of the query-string field that is used to specify the current page of the <see cref="T:System.Web.Helpers.WebGrid" /> instance.</param>
+<a name="386"><font size=-1>386     </font></a>      <param name="selectionFieldName">The name of the query-string field that is used to specify the currently selected row of the <see cref="T:System.Web.Helpers.WebGrid" /> instance.</param>
+<a name="387"><font size=-1>387     </font></a>      <param name="sortFieldName">The name of the query-string field that is used to specify the name of the data column that the <see cref="T:System.Web.Helpers.WebGrid" /> instance is sorted by.</param>
+<a name="388"><font size=-1>388     </font></a>      <param name="sortDirectionFieldName">The name of the query-string field that is used to specify the direction in which the <see cref="T:System.Web.Helpers.WebGrid" /> instance is sorted.</param>
+<a name="389"><font size=-1>389     </font></a>    </member>
+<a name="390"><font size=-1>390     </font></a>    <member name="M:System.Web.Helpers.WebGrid.AddSorter``2(System.String,System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+<a name="391"><font size=-1>391     </font></a>      <summary>Adds a specific sort function for a given column.</summary>
+<a name="392"><font size=-1>392     </font></a>      <returns>The current grid, with the new custom sorter applied.</returns>
+<a name="393"><font size=-1>393     </font></a>      <param name="columnName">The column name (as used for sorting)</param>
+<a name="394"><font size=-1>394     </font></a>      <param name="keySelector">The function used to select a key to sort by, for each element in the grid's source.</param>
+<a name="395"><font size=-1>395     </font></a>      <typeparam name="TElement">The type of elements in the grid's source.</typeparam>
+<a name="396"><font size=-1>396     </font></a>      <typeparam name="TProperty">The column type, usually inferred from the keySelector function's return type.</typeparam>
+<a name="397"><font size=-1>397     </font></a>    </member>
+<a name="398"><font size=-1>398     </font></a>    <member name="P:System.Web.Helpers.WebGrid.AjaxUpdateCallback">
+<a name="399"><font size=-1>399     </font></a>      <summary>Gets the name of the JavaScript function to call after the HTML element that is associated with the <see cref="T:System.Web.Helpers.WebGrid" /> instance has been updated in response to an Ajax update request.</summary>
+<a name="400"><font size=-1>400     </font></a>      <returns>The name of the function.</returns>
+<a name="401"><font size=-1>401     </font></a>    </member>
+<a name="402"><font size=-1>402     </font></a>    <member name="P:System.Web.Helpers.WebGrid.AjaxUpdateContainerId">
+<a name="403"><font size=-1>403     </font></a>      <summary>Gets the value of the HTML id attribute that marks an HTML element on the web page that gets dynamic Ajax updates that are associated with the <see cref="T:System.Web.Helpers.WebGrid" /> instance.</summary>
+<a name="404"><font size=-1>404     </font></a>      <returns>The value of the id attribute.</returns>
+<a name="405"><font size=-1>405     </font></a>    </member>
+<a name="406"><font size=-1>406     </font></a>    <member name="M:System.Web.Helpers.WebGrid.Bind(System.Collections.Generic.IEnumerable{System.Object},System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Int32)">
+<a name="407"><font size=-1>407     </font></a>      <summary>Binds the specified data to the <see cref="T:System.Web.Helpers.WebGrid" /> instance.</summary>
+<a name="408"><font size=-1>408     </font></a>      <returns>The bound and populated <see cref="T:System.Web.Helpers.WebGrid" /> instance.</returns>
+<a name="409"><font size=-1>409     </font></a>      <param name="source">The data to display.</param>
+<a name="410"><font size=-1>410     </font></a>      <param name="columnNames">A collection that contains the names of the data columns to bind.</param>
+<a name="411"><font size=-1>411     </font></a>      <param name="autoSortAndPage">true to enable sorting and paging of the <see cref="T:System.Web.Helpers.WebGrid" /> instance; otherwise, false.</param>
+<a name="412"><font size=-1>412     </font></a>      <param name="rowCount">The number of rows to display on each page of the grid.</param>
+<a name="413"><font size=-1>413     </font></a>    </member>
+<a name="414"><font size=-1>414     </font></a>    <member name="P:System.Web.Helpers.WebGrid.CanSort">
+<a name="415"><font size=-1>415     </font></a>      <summary>Gets a value that indicates whether the <see cref="T:System.Web.Helpers.WebGrid" /> instance supports sorting.</summary>
+<a name="416"><font size=-1>416     </font></a>      <returns>true if the instance supports sorting; otherwise, false.</returns>
+<a name="417"><font size=-1>417     </font></a>    </member>
+<a name="418"><font size=-1>418     </font></a>    <member name="M:System.Web.Helpers.WebGrid.Column(System.String,System.String,System.Func{System.Object,System.Object},System.String,System.Boolean)">
+<a name="419"><font size=-1>419     </font></a>      <summary>Creates a new <see cref="T:System.Web.Helpers.WebGridColumn" /> instance.</summary>
+<a name="420"><font size=-1>420     </font></a>      <returns>The new column.</returns>
+<a name="421"><font size=-1>421     </font></a>      <param name="columnName">The name of the data column to associate with the <see cref="T:System.Web.Helpers.WebGridColumn" /> instance.</param>
+<a name="422"><font size=-1>422     </font></a>      <param name="header">The text that is rendered in the header of the HTML table column that is associated with the <see cref="T:System.Web.Helpers.WebGridColumn" /> instance.</param>
+<a name="423"><font size=-1>423     </font></a>      <param name="format">The function that is used to format the data values that are associated with the <see cref="T:System.Web.Helpers.WebGridColumn" /> instance.</param>
+<a name="424"><font size=-1>424     </font></a>      <param name="style">A string that specifies the name of the CSS class that is used to style the HTML table cells that are associated with the <see cref="T:System.Web.Helpers.WebGridColumn" /> instance.</param>
+<a name="425"><font size=-1>425     </font></a>      <param name="canSort">true to enable sorting in the <see cref="T:System.Web.Helpers.WebGrid" /> instance by the data values that are associated with the <see cref="T:System.Web.Helpers.WebGridColumn" /> instance; otherwise, false. The default is true.</param>
+<a name="426"><font size=-1>426     </font></a>    </member>
+<a name="427"><font size=-1>427     </font></a>    <member name="P:System.Web.Helpers.WebGrid.ColumnNames">
+<a name="428"><font size=-1>428     </font></a>      <summary>Gets a collection that contains the name of each data column that is bound to the <see cref="T:System.Web.Helpers.WebGrid" /> instance.</summary>
+<a name="429"><font size=-1>429     </font></a>      <returns>The collection of data column names.</returns>
+<a name="430"><font size=-1>430     </font></a>    </member>
+<a name="431"><font size=-1>431     </font></a>    <member name="M:System.Web.Helpers.WebGrid.Columns(System.Web.Helpers.WebGridColumn[])">
+<a name="432"><font size=-1>432     </font></a>      <summary>Returns an array that contains the specified <see cref="T:System.Web.Helpers.WebGridColumn" /> instances.</summary>
+<a name="433"><font size=-1>433     </font></a>      <returns>An array of columns.</returns>
+<a name="434"><font size=-1>434     </font></a>      <param name="columnSet">A variable number of <see cref="T:System.Web.Helpers.WebGridColumn" /> column instances.</param>
+<a name="435"><font size=-1>435     </font></a>    </member>
+<a name="436"><font size=-1>436     </font></a>    <member name="P:System.Web.Helpers.WebGrid.FieldNamePrefix">
+<a name="437"><font size=-1>437     </font></a>      <summary>Gets the prefix that is applied to all query-string fields that are associated with the <see cref="T:System.Web.Helpers.WebGrid" /> instance.</summary>
+<a name="438"><font size=-1>438     </font></a>      <returns>The query-string field prefix of the <see cref="T:System.Web.Helpers.WebGrid" /> instance.</returns>
+<a name="439"><font size=-1>439     </font></a>    </member>
+<a name="440"><font size=-1>440     </font></a>    <member name="M:System.Web.Helpers.WebGrid.GetContainerUpdateScript(System.String)">
+<a name="441"><font size=-1>441     </font></a>      <summary>Returns a JavaScript statement that can be used to update the HTML element that is associated with the <see cref="T:System.Web.Helpers.WebGrid" /> instance on the specified web page.</summary>
+<a name="442"><font size=-1>442     </font></a>      <returns>A JavaScript statement that can be used to update the HTML element in a web page that is associated with the <see cref="T:System.Web.Helpers.WebGrid" /> instance.</returns>
+<a name="443"><font size=-1>443     </font></a>      <param name="path">The URL of the web page that contains the <see cref="T:System.Web.Helpers.WebGrid" /> instance that is being updated. The URL can include query-string arguments.</param>
+<a name="444"><font size=-1>444     </font></a>    </member>
+<a name="445"><font size=-1>445     </font></a>    <member name="M:System.Web.Helpers.WebGrid.GetHtml(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.String,System.Collections.Generic.IEnumerable{System.Web.Helpers.WebGridColumn},System.Collections.Generic.IEnumerable{System.String},System.Web.Helpers.WebGridPagerModes,System.String,System.String,System.String,System.String,System.Int32,System.Object)">
+<a name="446"><font size=-1>446     </font></a>      <summary>Returns the HTML markup that is used to render the <see cref="T:System.Web.Helpers.WebGrid" /> instance and using the specified paging options.</summary>
+<a name="447"><font size=-1>447     </font></a>      <returns>The HTML markup that represents the fully-populated <see cref="T:System.Web.Helpers.WebGrid" /> instance.</returns>
+<a name="448"><font size=-1>448     </font></a>      <param name="tableStyle">The name of the CSS class that is used to style the whole table.</param>
+<a name="449"><font size=-1>449     </font></a>      <param name="headerStyle">The name of the CSS class that is used to style the table header.</param>
+<a name="450"><font size=-1>450     </font></a>      <param name="footerStyle">The name of the CSS class that is used to style the table footer.</param>
+<a name="451"><font size=-1>451     </font></a>      <param name="rowStyle">The name of the CSS class that is used to style each table row.</param>
+<a name="452"><font size=-1>452     </font></a>      <param name="alternatingRowStyle">The name of the CSS class that is used to style even-numbered table rows.</param>
+<a name="453"><font size=-1>453     </font></a>      <param name="selectedRowStyle">The name of the CSS class that is used to style the selected table row. (Only one row can be selected at a time.)</param>
+<a name="454"><font size=-1>454     </font></a>      <param name="caption">The table caption.</param>
+<a name="455"><font size=-1>455     </font></a>      <param name="displayHeader">true to display the table header; otherwise, false. The default is true.</param>
+<a name="456"><font size=-1>456     </font></a>      <param name="fillEmptyRows">true to insert additional rows in the last page when there are insufficient data items to fill the last page; otherwise, false. The default is false. Additional rows are populated using the text specified by the <paramref name="emptyRowCellValue" /> parameter.</param>
+<a name="457"><font size=-1>457     </font></a>      <param name="emptyRowCellValue">The text that is used to populate additional rows in a page when there are insufficient data items to fill the last page. The <paramref name="fillEmptyRows" /> parameter must be set to true to display these additional rows.</param>
+<a name="458"><font size=-1>458     </font></a>      <param name="columns">A collection of <see cref="T:System.Web.Helpers.WebGridColumn" /> instances that specify how each column is displayed. This includes which data column is associated with each grid column, and how to format the data values that each grid column contains.</param>
+<a name="459"><font size=-1>459     </font></a>      <param name="exclusions">A collection that contains the names of the data columns to exclude when the grid auto-populates columns.</param>
+<a name="460"><font size=-1>460     </font></a>      <param name="mode">A bitwise combination of the enumeration values that specify methods that are provided for moving between pages of the <see cref="T:System.Web.Helpers.WebGrid" /> instance.</param>
+<a name="461"><font size=-1>461     </font></a>      <param name="firstText">The text for the HTML link element that is used to link to the first page of the <see cref="T:System.Web.Helpers.WebGrid" /> instance. The <see cref="F:System.Web.Helpers.WebGridPagerModes.FirstLast" /> flag of the <paramref name="mode" /> parameter must be set to display this page navigation element.</param>
+<a name="462"><font size=-1>462     </font></a>      <param name="previousText">The text for the HTML link element that is used to link to previous page of the <see cref="T:System.Web.Helpers.WebGrid" /> instance. The <see cref="F:System.Web.Helpers.WebGridPagerModes.NextPrevious" /> flag of the <paramref name="mode" /> parameter must be set to display this page navigation element.</param>
+<a name="463"><font size=-1>463     </font></a>      <param name="nextText">The text for the HTML link element that is used to link to the next page of the <see cref="T:System.Web.Helpers.WebGrid" /> instance. The <see cref="F:System.Web.Helpers.WebGridPagerModes.NextPrevious" /> flag of the <paramref name="mode" /> parameter must be set to display this page navigation element.</param>
+<a name="464"><font size=-1>464     </font></a>      <param name="lastText">The text for the HTML link element that is used to link to the last page of the <see cref="T:System.Web.Helpers.WebGrid" /> instance. The <see cref="F:System.Web.Helpers.WebGridPagerModes.FirstLast" /> flag of the <paramref name="mode" /> parameter must be set to display this page navigation element.</param>
+<a name="465"><font size=-1>465     </font></a>      <param name="numericLinksCount">The number of numeric page links that are provided to nearby <see cref="T:System.Web.Helpers.WebGrid" /> pages. The text of each numeric page link contains the page number. The <see cref="F:System.Web.Helpers.WebGridPagerModes.Numeric" /> flag of the <paramref name="mode" /> parameter must be set to display these page navigation elements.</param>
+<a name="466"><font size=-1>466     </font></a>      <param name="htmlAttributes">An object that represents a collection of attributes (names and values) to set for the HTML table element that represents the <see cref="T:System.Web.Helpers.WebGrid" /> instance.</param>
+<a name="467"><font size=-1>467     </font></a>    </member>
+<a name="468"><font size=-1>468     </font></a>    <member name="M:System.Web.Helpers.WebGrid.GetPageUrl(System.Int32)">
+<a name="469"><font size=-1>469     </font></a>      <summary>Returns a URL that can be used to display the specified data page of the <see cref="T:System.Web.Helpers.WebGrid" /> instance.</summary>
+<a name="470"><font size=-1>470     </font></a>      <returns>A URL that can be used to display the specified data page of the grid.</returns>
+<a name="471"><font size=-1>471     </font></a>      <param name="pageIndex">The index of the <see cref="T:System.Web.Helpers.WebGrid" /> page to display.</param>
+<a name="472"><font size=-1>472     </font></a>    </member>
+<a name="473"><font size=-1>473     </font></a>    <member name="M:System.Web.Helpers.WebGrid.GetSortUrl(System.String)">
+<a name="474"><font size=-1>474     </font></a>      <summary>Returns a URL that can be used to sort the <see cref="T:System.Web.Helpers.WebGrid" /> instance by the specified column.</summary>
+<a name="475"><font size=-1>475     </font></a>      <returns>A URL that can be used to sort the grid.</returns>
+<a name="476"><font size=-1>476     </font></a>      <param name="column">The name of the data column to sort by.</param>
+<a name="477"><font size=-1>477     </font></a>    </member>
+<a name="478"><font size=-1>478     </font></a>    <member name="P:System.Web.Helpers.WebGrid.HasSelection">
+<a name="479"><font size=-1>479     </font></a>      <summary>Gets a value that indicates whether a row in the <see cref="T:System.Web.Helpers.WebGrid" /> instance is selected.</summary>
+<a name="480"><font size=-1>480     </font></a>      <returns>true if a row is currently selected; otherwise, false.</returns>
+<a name="481"><font size=-1>481     </font></a>    </member>
+<a name="482"><font size=-1>482     </font></a>    <member name="P:System.Web.Helpers.WebGrid.IsAjaxEnabled">
+<a name="483"><font size=-1>483     </font></a>      <summary>Returns a value that indicates whether the <see cref="T:System.Web.Helpers.WebGrid" /> instance can use Ajax calls to refresh the display.</summary>
+<a name="484"><font size=-1>484     </font></a>      <returns>true if the instance supports Ajax calls; otherwise, false..</returns>
+<a name="485"><font size=-1>485     </font></a>    </member>
+<a name="486"><font size=-1>486     </font></a>    <member name="P:System.Web.Helpers.WebGrid.PageCount">
+<a name="487"><font size=-1>487     </font></a>      <summary>Gets the number of pages that the <see cref="T:System.Web.Helpers.WebGrid" /> instance contains.</summary>
+<a name="488"><font size=-1>488     </font></a>      <returns>The page count.</returns>
+<a name="489"><font size=-1>489     </font></a>    </member>
+<a name="490"><font size=-1>490     </font></a>    <member name="P:System.Web.Helpers.WebGrid.PageFieldName">
+<a name="491"><font size=-1>491     </font></a>      <summary>Gets the full name of the query-string field that is used to specify the current page of the <see cref="T:System.Web.Helpers.WebGrid" /> instance.</summary>
+<a name="492"><font size=-1>492     </font></a>      <returns>The full name of the query string field that is used to specify the current page of the grid.</returns>
+<a name="493"><font size=-1>493     </font></a>    </member>
+<a name="494"><font size=-1>494     </font></a>    <member name="P:System.Web.Helpers.WebGrid.PageIndex">
+<a name="495"><font size=-1>495     </font></a>      <summary>Gets or sets the index of the current page of the <see cref="T:System.Web.Helpers.WebGrid" /> instance.</summary>
+<a name="496"><font size=-1>496     </font></a>      <returns>The index of the current page.</returns>
+<a name="497"><font size=-1>497     </font></a>    </member>
+<a name="498"><font size=-1>498     </font></a>    <member name="M:System.Web.Helpers.WebGrid.Pager(System.Web.Helpers.WebGridPagerModes,System.String,System.String,System.String,System.String,System.Int32)">
+<a name="499"><font size=-1>499     </font></a>      <summary>Returns the HTML markup that is used to provide the specified paging support for the <see cref="T:System.Web.Helpers.WebGrid" /> instance.</summary>
+<a name="500"><font size=-1>500     </font></a>      <returns>The HTML markup that provides paging support for the grid.</returns>
+<a name="501"><font size=-1>501     </font></a>      <param name="mode">A bitwise combination of the enumeration values that specify the methods that are provided for moving between the pages of the grid. The default is the bitwise OR of the <see cref="F:System.Web.Helpers.WebGridPagerModes.NextPrevious" /> and <see cref="F:System.Web.Helpers.WebGridPagerModes.Numeric" /> flags.</param>
+<a name="502"><font size=-1>502     </font></a>      <param name="firstText">The text for the HTML link element that navigates to the first page of the grid.</param>
+<a name="503"><font size=-1>503     </font></a>      <param name="previousText">The text for the HTML link element that navigates to the previous page of the grid.</param>
+<a name="504"><font size=-1>504     </font></a>      <param name="nextText">The text for the HTML link element that navigates to the next page of the grid.</param>
+<a name="505"><font size=-1>505     </font></a>      <param name="lastText">The text for the HTML link element that navigates to the last page of the grid.</param>
+<a name="506"><font size=-1>506     </font></a>      <param name="numericLinksCount">The number of numeric page links to display. The default is 5.</param>
+<a name="507"><font size=-1>507     </font></a>    </member>
+<a name="508"><font size=-1>508     </font></a>    <member name="P:System.Web.Helpers.WebGrid.Rows">
+<a name="509"><font size=-1>509     </font></a>      <summary>Gets a list that contains the rows that are on the current page of  the <see cref="T:System.Web.Helpers.WebGrid" /> instance after the grid has been sorted.</summary>
+<a name="510"><font size=-1>510     </font></a>      <returns>The list of rows.</returns>
+<a name="511"><font size=-1>511     </font></a>    </member>
+<a name="512"><font size=-1>512     </font></a>    <member name="P:System.Web.Helpers.WebGrid.RowsPerPage">
+<a name="513"><font size=-1>513     </font></a>      <summary>Gets the number of rows that are displayed on each page of the <see cref="T:System.Web.Helpers.WebGrid" /> instance.</summary>
+<a name="514"><font size=-1>514     </font></a>      <returns>The number of rows that are displayed on each page of the grid.</returns>
+<a name="515"><font size=-1>515     </font></a>    </member>
+<a name="516"><font size=-1>516     </font></a>    <member name="P:System.Web.Helpers.WebGrid.SelectedIndex">
+<a name="517"><font size=-1>517     </font></a>      <summary>Gets or sets the index of the selected row relative to the current page of the <see cref="T:System.Web.Helpers.WebGrid" /> instance.</summary>
+<a name="518"><font size=-1>518     </font></a>      <returns>The index of the selected row relative to the current page.</returns>
+<a name="519"><font size=-1>519     </font></a>    </member>
+<a name="520"><font size=-1>520     </font></a>    <member name="P:System.Web.Helpers.WebGrid.SelectedRow">
+<a name="521"><font size=-1>521     </font></a>      <summary>Gets the currently selected row of the <see cref="T:System.Web.Helpers.WebGrid" /> instance.</summary>
+<a name="522"><font size=-1>522     </font></a>      <returns>The currently selected row.</returns>
+<a name="523"><font size=-1>523     </font></a>    </member>
+<a name="524"><font size=-1>524     </font></a>    <member name="P:System.Web.Helpers.WebGrid.SelectionFieldName">
+<a name="525"><font size=-1>525     </font></a>      <summary>Gets the full name of the query-string field that is used to specify the selected row of the <see cref="T:System.Web.Helpers.WebGrid" /> instance.</summary>
+<a name="526"><font size=-1>526     </font></a>      <returns>The full name of the query string field that is used to specify the selected row of the grid.</returns>
+<a name="527"><font size=-1>527     </font></a>    </member>
+<a name="528"><font size=-1>528     </font></a>    <member name="P:System.Web.Helpers.WebGrid.SortColumn">
+<a name="529"><font size=-1>529     </font></a>      <summary>Gets or sets the name of the data column that the <see cref="T:System.Web.Helpers.WebGrid" /> instance is sorted by.</summary>
+<a name="530"><font size=-1>530     </font></a>      <returns>The name of the data column that is used to sort the grid.</returns>
+<a name="531"><font size=-1>531     </font></a>    </member>
+<a name="532"><font size=-1>532     </font></a>    <member name="P:System.Web.Helpers.WebGrid.SortDirection">
+<a name="533"><font size=-1>533     </font></a>      <summary>Gets or sets the direction in which the <see cref="T:System.Web.Helpers.WebGrid" /> instance is sorted.</summary>
+<a name="534"><font size=-1>534     </font></a>      <returns>The sort direction.</returns>
+<a name="535"><font size=-1>535     </font></a>    </member>
+<a name="536"><font size=-1>536     </font></a>    <member name="P:System.Web.Helpers.WebGrid.SortDirectionFieldName">
+<a name="537"><font size=-1>537     </font></a>      <summary>Gets the full name of the query-string field that is used to specify the sort direction of the <see cref="T:System.Web.Helpers.WebGrid" /> instance.</summary>
+<a name="538"><font size=-1>538     </font></a>      <returns>The full name of the query string field that is used to specify the sort direction of the grid.</returns>
+<a name="539"><font size=-1>539     </font></a>    </member>
+<a name="540"><font size=-1>540     </font></a>    <member name="P:System.Web.Helpers.WebGrid.SortFieldName">
+<a name="541"><font size=-1>541     </font></a>      <summary>Gets the full name of the query-string field that is used to specify the name of the data column that the <see cref="T:System.Web.Helpers.WebGrid" /> instance is sorted by.</summary>
+<a name="542"><font size=-1>542     </font></a>      <returns>The full name of the query-string field that is used to specify the name of the data column that the grid is sorted by.</returns>
+<a name="543"><font size=-1>543     </font></a>    </member>
+<a name="544"><font size=-1>544     </font></a>    <member name="M:System.Web.Helpers.WebGrid.Table(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean,System.String,System.Collections.Generic.IEnumerable{System.Web.Helpers.WebGridColumn},System.Collections.Generic.IEnumerable{System.String},System.Func{System.Object,System.Object},System.Object)">
+<a name="545"><font size=-1>545     </font></a>      <summary>Returns the HTML markup that is used to render the <see cref="T:System.Web.Helpers.WebGrid" /> instance.</summary>
+<a name="546"><font size=-1>546     </font></a>      <returns>The HTML markup that represents the fully-populated <see cref="T:System.Web.Helpers.WebGrid" /> instance.</returns>
+<a name="547"><font size=-1>547     </font></a>      <param name="tableStyle">The name of the CSS class that is used to style the whole table.</param>
+<a name="548"><font size=-1>548     </font></a>      <param name="headerStyle">The name of the CSS class that is used to style the table header.</param>
+<a name="549"><font size=-1>549     </font></a>      <param name="footerStyle">The name of the CSS class that is used to style the table footer.</param>
+<a name="550"><font size=-1>550     </font></a>      <param name="rowStyle">The name of the CSS class that is used to style each table row.</param>
+<a name="551"><font size=-1>551     </font></a>      <param name="alternatingRowStyle">The name of the CSS class that is used to style even-numbered table rows.</param>
+<a name="552"><font size=-1>552     </font></a>      <param name="selectedRowStyle">The name of the CSS class that is used use to style the selected table row.</param>
+<a name="553"><font size=-1>553     </font></a>      <param name="caption">The table caption.</param>
+<a name="554"><font size=-1>554     </font></a>      <param name="displayHeader">true to display the table header; otherwise, false. The default is true.</param>
+<a name="555"><font size=-1>555     </font></a>      <param name="fillEmptyRows">true to insert additional rows in the last page when there are insufficient data items to fill the last page; otherwise, false. The default is false. Additional rows are populated using the text specified by the <paramref name="emptyRowCellValue" /> parameter.</param>
+<a name="556"><font size=-1>556     </font></a>      <param name="emptyRowCellValue">The text that is used to populate additional rows in the last page when there are insufficient data items to fill the last page. The <paramref name="fillEmptyRows" /> parameter must be set to true to display these additional rows.</param>
+<a name="557"><font size=-1>557     </font></a>      <param name="columns">A collection of <see cref="T:System.Web.Helpers.WebGridColumn" /> instances that specify how each column is displayed. This includes which data column is associated with each grid column, and how to format the data values that each grid column contains.</param>
+<a name="558"><font size=-1>558     </font></a>      <param name="exclusions">A collection that contains the names of the data columns to exclude when the grid auto-populates columns.</param>
+<a name="559"><font size=-1>559     </font></a>      <param name="footer">A function that returns the HTML markup that is used to render the table footer.</param>
+<a name="560"><font size=-1>560     </font></a>      <param name="htmlAttributes">An object that represents a collection of attributes (names and values) to set for the HTML table element that represents the <see cref="T:System.Web.Helpers.WebGrid" /> instance.</param>
+<a name="561"><font size=-1>561     </font></a>    </member>
+<a name="562"><font size=-1>562     </font></a>    <member name="P:System.Web.Helpers.WebGrid.TotalRowCount">
+<a name="563"><font size=-1>563     </font></a>      <summary>Gets the total number of rows that the <see cref="T:System.Web.Helpers.WebGrid" /> instance contains.</summary>
+<a name="564"><font size=-1>564     </font></a>      <returns>The total number of rows in the grid. This value includes all rows from every page, but does not include the additional rows inserted in the last page when there are insufficient data items to fill the last page.</returns>
+<a name="565"><font size=-1>565     </font></a>    </member>
+<a name="566"><font size=-1>566     </font></a>    <member name="T:System.Web.Helpers.WebGridColumn">
+<a name="567"><font size=-1>567     </font></a>      <summary>Represents a column in a <see cref="T:System.Web.Helpers.WebGrid" /> instance.</summary>
+<a name="568"><font size=-1>568     </font></a>    </member>
+<a name="569"><font size=-1>569     </font></a>    <member name="M:System.Web.Helpers.WebGridColumn.#ctor">
+<a name="570"><font size=-1>570     </font></a>      <summary>Initializes a new instance of the <see cref="T:System.Web.Helpers.WebGridColumn" /> class.</summary>
+<a name="571"><font size=-1>571     </font></a>    </member>
+<a name="572"><font size=-1>572     </font></a>    <member name="P:System.Web.Helpers.WebGridColumn.CanSort">
+<a name="573"><font size=-1>573     </font></a>      <summary>Gets or sets a value that indicates whether the <see cref="T:System.Web.Helpers.WebGrid" /> column can be sorted.</summary>
+<a name="574"><font size=-1>574     </font></a>      <returns>true to indicate that the column can be sorted; otherwise, false.</returns>
+<a name="575"><font size=-1>575     </font></a>    </member>
+<a name="576"><font size=-1>576     </font></a>    <member name="P:System.Web.Helpers.WebGridColumn.ColumnName">
+<a name="577"><font size=-1>577     </font></a>      <summary>Gets or sets the name of the data item that is associated with the <see cref="T:System.Web.Helpers.WebGrid" /> column.</summary>
+<a name="578"><font size=-1>578     </font></a>      <returns>The name of the data item.</returns>
+<a name="579"><font size=-1>579     </font></a>    </member>
+<a name="580"><font size=-1>580     </font></a>    <member name="P:System.Web.Helpers.WebGridColumn.Format">
+<a name="581"><font size=-1>581     </font></a>      <summary>Gets or sets a function that is used to format the data item that is associated with the <see cref="T:System.Web.Helpers.WebGrid" /> column.</summary>
+<a name="582"><font size=-1>582     </font></a>      <returns>The function that is used to format that data item that is associated with the column.</returns>
+<a name="583"><font size=-1>583     </font></a>    </member>
+<a name="584"><font size=-1>584     </font></a>    <member name="P:System.Web.Helpers.WebGridColumn.Header">
+<a name="585"><font size=-1>585     </font></a>      <summary>Gets or sets the text that is rendered in the header of the <see cref="T:System.Web.Helpers.WebGrid" /> column.</summary>
+<a name="586"><font size=-1>586     </font></a>      <returns>The text that is rendered to the column header.</returns>
+<a name="587"><font size=-1>587     </font></a>    </member>
+<a name="588"><font size=-1>588     </font></a>    <member name="P:System.Web.Helpers.WebGridColumn.Style">
+<a name="589"><font size=-1>589     </font></a>      <summary>Gets or sets the CSS class attribute that is rendered as part of the HTML table cells that are associated with the <see cref="T:System.Web.Helpers.WebGrid" /> column.</summary>
+<a name="590"><font size=-1>590     </font></a>      <returns>The CSS class attribute that is applied to cells that are associated with the column.</returns>
+<a name="591"><font size=-1>591     </font></a>    </member>
+<a name="592"><font size=-1>592     </font></a>    <member name="T:System.Web.Helpers.WebGridPagerModes">
+<a name="593"><font size=-1>593     </font></a>      <summary>Specifies flags that describe the methods that are provided for moving between the pages of a <see cref="T:System.Web.Helpers.WebGrid" /> instance.This enumeration has a <see cref="T:System.FlagsAttribute" /> attribute that allows a bitwise combination of its member values.</summary>
+<a name="594"><font size=-1>594     </font></a>    </member>
+<a name="595"><font size=-1>595     </font></a>    <member name="F:System.Web.Helpers.WebGridPagerModes.All">
+<a name="596"><font size=-1>596     </font></a>      <summary>Indicates that all methods for moving between <see cref="T:System.Web.Helpers.WebGrid" /> pages are provided.</summary>
+<a name="597"><font size=-1>597     </font></a>    </member>
+<a name="598"><font size=-1>598     </font></a>    <member name="F:System.Web.Helpers.WebGridPagerModes.FirstLast">
+<a name="599"><font size=-1>599     </font></a>      <summary>Indicates that methods for moving directly to the first or last <see cref="F:System.Web.Helpers.WebGrid" /> page are provided.</summary>
+<a name="600"><font size=-1>600     </font></a>    </member>
+<a name="601"><font size=-1>601     </font></a>    <member name="F:System.Web.Helpers.WebGridPagerModes.NextPrevious">
+<a name="602"><font size=-1>602     </font></a>      <summary>Indicates that methods for moving to the next or previous <see cref="F:System.Web.Helpers.WebGrid" /> page are provided.</summary>
+<a name="603"><font size=-1>603     </font></a>    </member>
+<a name="604"><font size=-1>604     </font></a>    <member name="F:System.Web.Helpers.WebGridPagerModes.Numeric">
+<a name="605"><font size=-1>605     </font></a>      <summary>Indicates that methods for moving to a nearby <see cref="F:System.Web.Helpers.WebGrid" /> page by using a page number are provided.</summary>
+<a name="606"><font size=-1>606     </font></a>    </member>
+<a name="607"><font size=-1>607     </font></a>    <member name="T:System.Web.Helpers.WebGridRow">
+<a name="608"><font size=-1>608     </font></a>      <summary>Represents a row in a <see cref="T:System.Web.Helpers.WebGrid" /> instance.</summary>
+<a name="609"><font size=-1>609     </font></a>    </member>
+<a name="610"><font size=-1>610     </font></a>    <member name="M:System.Web.Helpers.WebGridRow.#ctor(System.Web.Helpers.WebGrid,System.Object,System.Int32)">
+<a name="611"><font size=-1>611     </font></a>      <summary>Initializes a new instance of the <see cref="T:System.Web.Helpers.WebGridRow" /> class using the specified <see cref="T:System.Web.Helpers.WebGrid" /> instance, row value, and index.</summary>
+<a name="612"><font size=-1>612     </font></a>      <param name="webGrid">The <see cref="T:System.Web.Helpers.WebGrid" /> instance that contains the row.</param>
+<a name="613"><font size=-1>613     </font></a>      <param name="value">An object that contains a property member for each value in the row.</param>
+<a name="614"><font size=-1>614     </font></a>      <param name="rowIndex">The index of the row.</param>
+<a name="615"><font size=-1>615     </font></a>    </member>
+<a name="616"><font size=-1>616     </font></a>    <member name="M:System.Web.Helpers.WebGridRow.GetEnumerator">
+<a name="617"><font size=-1>617     </font></a>      <summary>Returns an enumerator that can be used to iterate through the values of the <see cref="T:System.Web.Helpers.WebGridRow" /> instance.</summary>
+<a name="618"><font size=-1>618     </font></a>      <returns>An enumerator that can be used to iterate through the values of the row.</returns>
+<a name="619"><font size=-1>619     </font></a>    </member>
+<a name="620"><font size=-1>620     </font></a>    <member name="M:System.Web.Helpers.WebGridRow.GetSelectLink(System.String)">
+<a name="621"><font size=-1>621     </font></a>      <summary>Returns an HTML element (a link) that users can use to select the row.</summary>
+<a name="622"><font size=-1>622     </font></a>      <returns>The link that users can click to select the row.</returns>
+<a name="623"><font size=-1>623     </font></a>      <param name="text">The inner text of the link element. If <paramref name="text" /> is empty or null, "Select" is used.</param>
+<a name="624"><font size=-1>624     </font></a>    </member>
+<a name="625"><font size=-1>625     </font></a>    <member name="M:System.Web.Helpers.WebGridRow.GetSelectUrl">
+<a name="626"><font size=-1>626     </font></a>      <summary>Returns the URL that can be used to select the row.</summary>
+<a name="627"><font size=-1>627     </font></a>      <returns>The URL that is used to select a row.</returns>
+<a name="628"><font size=-1>628     </font></a>    </member>
+<a name="629"><font size=-1>629     </font></a>    <member name="P:System.Web.Helpers.WebGridRow.Item(System.Int32)">
+<a name="630"><font size=-1>630     </font></a>      <summary>Returns the value at the specified index in the <see cref="T:System.Web.Helpers.WebGridRow" /> instance.</summary>
+<a name="631"><font size=-1>631     </font></a>      <returns>The value at the specified index.</returns>
+<a name="632"><font size=-1>632     </font></a>      <param name="index">The zero-based index of the value in the row to return.</param>
+<a name="633"><font size=-1>633     </font></a>      <exception cref="T:System.ArgumentOutOfRangeException">
+<a name="634"><font size=-1>634     </font></a>        <paramref name="index" /> is less than 0 or greater than or equal to the number of values in the row.</exception>
+<a name="635"><font size=-1>635     </font></a>    </member>
+<a name="636"><font size=-1>636     </font></a>    <member name="P:System.Web.Helpers.WebGridRow.Item(System.String)">
+<a name="637"><font size=-1>637     </font></a>      <summary>Returns the value that has the specified name in the <see cref="T:System.Web.Helpers.WebGridRow" /> instance.</summary>
+<a name="638"><font size=-1>638     </font></a>      <returns>The specified value.</returns>
+<a name="639"><font size=-1>639     </font></a>      <param name="name">The name of the value in the row to return.</param>
+<a name="640"><font size=-1>640     </font></a>      <exception cref="T:System.ArgumentException">
+<a name="641"><font size=-1>641     </font></a>        <paramref name="name" /> is Nothing or empty.</exception>
+<a name="642"><font size=-1>642     </font></a>      <exception cref="T:System.InvalidOperationException">
+<a name="643"><font size=-1>643     </font></a>        <paramref name="name" /> specifies a value that does not exist.</exception>
+<a name="644"><font size=-1>644     </font></a>    </member>
+<a name="645"><font size=-1>645     </font></a>    <member name="M:System.Web.Helpers.WebGridRow.System#Collections#IEnumerable#GetEnumerator">
+<a name="646"><font size=-1>646     </font></a>      <summary>Returns an enumerator that can be used to iterate through a collection.</summary>
+<a name="647"><font size=-1>647     </font></a>      <returns>An enumerator that can be used to iterate through the collection.</returns>
+<a name="648"><font size=-1>648     </font></a>    </member>
+<a name="649"><font size=-1>649     </font></a>    <member name="M:System.Web.Helpers.WebGridRow.ToString">
+<a name="650"><font size=-1>650     </font></a>      <summary>Returns a string that represents all of the values of the <see cref="T:System.Web.Helpers.WebGridRow" /> instance.</summary>
+<a name="651"><font size=-1>651     </font></a>      <returns>A string that represents the row's values.</returns>
+<a name="652"><font size=-1>652     </font></a>    </member>
+<a name="653"><font size=-1>653     </font></a>    <member name="M:System.Web.Helpers.WebGridRow.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)">
+<a name="654"><font size=-1>654     </font></a>      <summary>Returns the value of a <see cref="T:System.Web.Helpers.WebGridRow" /> member that is described by the specified binder.</summary>
+<a name="655"><font size=-1>655     </font></a>      <returns>true if the value of the item was successfully retrieved; otherwise, false.</returns>
+<a name="656"><font size=-1>656     </font></a>      <param name="binder">The getter of the bound property member.</param>
+<a name="657"><font size=-1>657     </font></a>      <param name="result">When this method returns, contains an object that holds the value of the item described by <paramref name="binder" />. This parameter is passed uninitialized.</param>
+<a name="658"><font size=-1>658     </font></a>    </member>
+<a name="659"><font size=-1>659     </font></a>    <member name="P:System.Web.Helpers.WebGridRow.Value">
+<a name="660"><font size=-1>660     </font></a>      <summary>Gets an object that contains a property member for each value in the row.</summary>
+<a name="661"><font size=-1>661     </font></a>      <returns>An object that contains each value in the row as a property.</returns>
+<a name="662"><font size=-1>662     </font></a>    </member>
+<a name="663"><font size=-1>663     </font></a>    <member name="P:System.Web.Helpers.WebGridRow.WebGrid">
+<a name="664"><font size=-1>664     </font></a>      <summary>Gets the <see cref="T:System.Web.Helpers.WebGrid" /> instance that the row belongs to.</summary>
+<a name="665"><font size=-1>665     </font></a>      <returns>The <see cref="T:System.Web.Helpers.WebGrid" /> instance that contains the row.</returns>
+<a name="666"><font size=-1>666     </font></a>    </member>
+<a name="667"><font size=-1>667     </font></a>    <member name="T:System.Web.Helpers.WebImage">
+<a name="668"><font size=-1>668     </font></a>      <summary>Represents an object that lets you display and manage images in a web page.</summary>
+<a name="669"><font size=-1>669     </font></a>    </member>
+<a name="670"><font size=-1>670     </font></a>    <member name="M:System.Web.Helpers.WebImage.#ctor(System.Byte[])">
+<a name="671"><font size=-1>671     </font></a>      <summary>Initializes a new instance of the <see cref="T:System.Web.Helpers.WebImage" /> class using a byte array to represent the image.</summary>
+<a name="672"><font size=-1>672     </font></a>      <param name="content">The image.</param>
+<a name="673"><font size=-1>673     </font></a>    </member>
+<a name="674"><font size=-1>674     </font></a>    <member name="M:System.Web.Helpers.WebImage.#ctor(System.IO.Stream)">
+<a name="675"><font size=-1>675     </font></a>      <summary>Initializes a new instance of the <see cref="T:System.Web.Helpers.WebImage" /> class using a stream to represent the image.</summary>
+<a name="676"><font size=-1>676     </font></a>      <param name="imageStream">The image.</param>
+<a name="677"><font size=-1>677     </font></a>    </member>
+<a name="678"><font size=-1>678     </font></a>    <member name="M:System.Web.Helpers.WebImage.#ctor(System.String)">
+<a name="679"><font size=-1>679     </font></a>      <summary>Initializes a new instance of the <see cref="T:System.Web.Helpers.WebImage" /> class using a path to represent the image location.</summary>
+<a name="680"><font size=-1>680     </font></a>      <param name="filePath">The path of the file that contains the image.</param>
+<a name="681"><font size=-1>681     </font></a>    </member>
+<a name="682"><font size=-1>682     </font></a>    <member name="M:System.Web.Helpers.WebImage.AddImageWatermark(System.String,System.Int32,System.Int32,System.String,System.String,System.Int32,System.Int32)">
+<a name="683"><font size=-1>683     </font></a>      <summary>Adds a watermark image using a path to the watermark image.</summary>
+<a name="684"><font size=-1>684     </font></a>      <returns>The watermarked image.</returns>
+<a name="685"><font size=-1>685     </font></a>      <param name="watermarkImageFilePath">The path of a file that contains the watermark image.</param>
+<a name="686"><font size=-1>686     </font></a>      <param name="width">The width, in pixels, of the watermark image.</param>
+<a name="687"><font size=-1>687     </font></a>      <param name="height">The height, in pixels, of the watermark image.</param>
+<a name="688"><font size=-1>688     </font></a>      <param name="horizontalAlign">The horizontal alignment for watermark image. Values can be "Left", "Right", or "Center".</param>
+<a name="689"><font size=-1>689     </font></a>      <param name="verticalAlign">The vertical alignment for the watermark image. Values can be "Top", "Middle", or "Bottom".</param>
+<a name="690"><font size=-1>690     </font></a>      <param name="opacity">The opacity for the watermark image, specified as a value between 0 and 100.</param>
+<a name="691"><font size=-1>691     </font></a>      <param name="padding">The size, in pixels, of the padding around the watermark image.</param>
+<a name="692"><font size=-1>692     </font></a>    </member>
+<a name="693"><font size=-1>693     </font></a>    <member name="M:System.Web.Helpers.WebImage.AddImageWatermark(System.Web.Helpers.WebImage,System.Int32,System.Int32,System.String,System.String,System.Int32,System.Int32)">
+<a name="694"><font size=-1>694     </font></a>      <summary>Adds a watermark image using the specified image object.</summary>
+<a name="695"><font size=-1>695     </font></a>      <returns>The watermarked image.</returns>
+<a name="696"><font size=-1>696     </font></a>      <param name="watermarkImage">A <see cref="T:System.Web.Helpers.WebImage" /> object.</param>
+<a name="697"><font size=-1>697     </font></a>      <param name="width">The width, in pixels, of the watermark image.</param>
+<a name="698"><font size=-1>698     </font></a>      <param name="height">The height, in pixels, of the watermark image.</param>
+<a name="699"><font size=-1>699     </font></a>      <param name="horizontalAlign">The horizontal alignment for watermark image. Values can be "Left", "Right", or "Center".</param>
+<a name="700"><font size=-1>700     </font></a>      <param name="verticalAlign">The vertical alignment for the watermark image. Values can be "Top", "Middle", or "Bottom".</param>
+<a name="701"><font size=-1>701     </font></a>      <param name="opacity">The opacity for the watermark image, specified as a value between 0 and 100.</param>
+<a name="702"><font size=-1>702     </font></a>      <param name="padding">The size, in pixels, of the padding around the watermark image.</param>
+<a name="703"><font size=-1>703     </font></a>    </member>
+<a name="704"><font size=-1>704     </font></a>    <member name="M:System.Web.Helpers.WebImage.AddTextWatermark(System.String,System.String,System.Int32,System.String,System.String,System.String,System.String,System.Int32,System.Int32)">
+<a name="705"><font size=-1>705     </font></a>      <summary>Adds watermark text to the image.</summary>
+<a name="706"><font size=-1>706     </font></a>      <returns>The watermarked image.</returns>
+<a name="707"><font size=-1>707     </font></a>      <param name="text">The text to use as a watermark.</param>
+<a name="708"><font size=-1>708     </font></a>      <param name="fontColor">The color of the watermark text.</param>
+<a name="709"><font size=-1>709     </font></a>      <param name="fontSize">The font size of the watermark text.</param>
+<a name="710"><font size=-1>710     </font></a>      <param name="fontStyle">The font style of the watermark text.</param>
+<a name="711"><font size=-1>711     </font></a>      <param name="fontFamily">The font type of the watermark text.</param>
+<a name="712"><font size=-1>712     </font></a>      <param name="horizontalAlign">The horizontal alignment for watermark text. Values can be "Left", "Right", or "Center".</param>
+<a name="713"><font size=-1>713     </font></a>      <param name="verticalAlign">The vertical alignment for the watermark text. Values can be "Top", "Middle", or "Bottom".</param>
+<a name="714"><font size=-1>714     </font></a>      <param name="opacity">The opacity for the watermark image, specified as a value between 0 and 100.</param>
+<a name="715"><font size=-1>715     </font></a>      <param name="padding">The size, in pixels, of the padding around the watermark text.</param>
+<a name="716"><font size=-1>716     </font></a>    </member>
+<a name="717"><font size=-1>717     </font></a>    <member name="M:System.Web.Helpers.WebImage.Clone">
+<a name="718"><font size=-1>718     </font></a>      <summary>Copies the <see cref="T:System.Web.Helpers.WebImage" /> object.</summary>
+<a name="719"><font size=-1>719     </font></a>      <returns>The image.</returns>
+<a name="720"><font size=-1>720     </font></a>    </member>
+<a name="721"><font size=-1>721     </font></a>    <member name="M:System.Web.Helpers.WebImage.Crop(System.Int32,System.Int32,System.Int32,System.Int32)">
+<a name="722"><font size=-1>722     </font></a>      <summary>Crops an image.</summary>
+<a name="723"><font size=-1>723     </font></a>      <returns>The cropped image.</returns>
+<a name="724"><font size=-1>724     </font></a>      <param name="top">The number of pixels to remove from the top.</param>
+<a name="725"><font size=-1>725     </font></a>      <param name="left">The number of pixels to remove from the left.</param>
+<a name="726"><font size=-1>726     </font></a>      <param name="bottom">The number of pixels to remove from the bottom.</param>
+<a name="727"><font size=-1>727     </font></a>      <param name="right">The number of pixels to remove from the right.</param>
+<a name="728"><font size=-1>728     </font></a>    </member>
+<a name="729"><font size=-1>729     </font></a>    <member name="P:System.Web.Helpers.WebImage.FileName">
+<a name="730"><font size=-1>730     </font></a>      <summary>Gets or sets the file name of the <see cref="T:System.Web.Helpers.WebImage" /> object.</summary>
+<a name="731"><font size=-1>731     </font></a>      <returns>The file name.</returns>
+<a name="732"><font size=-1>732     </font></a>    </member>
+<a name="733"><font size=-1>733     </font></a>    <member name="M:System.Web.Helpers.WebImage.FlipHorizontal">
+<a name="734"><font size=-1>734     </font></a>      <summary>Flips an image horizontally.</summary>
+<a name="735"><font size=-1>735     </font></a>      <returns>The flipped image.</returns>
+<a name="736"><font size=-1>736     </font></a>    </member>
+<a name="737"><font size=-1>737     </font></a>    <member name="M:System.Web.Helpers.WebImage.FlipVertical">
+<a name="738"><font size=-1>738     </font></a>      <summary>Flips an image vertically.</summary>
+<a name="739"><font size=-1>739     </font></a>      <returns>The flipped image.</returns>
+<a name="740"><font size=-1>740     </font></a>    </member>
+<a name="741"><font size=-1>741     </font></a>    <member name="M:System.Web.Helpers.WebImage.GetBytes(System.String)">
+<a name="742"><font size=-1>742     </font></a>      <summary>Returns the image as a byte array.</summary>
+<a name="743"><font size=-1>743     </font></a>      <returns>The image.</returns>
+<a name="744"><font size=-1>744     </font></a>      <param name="requestedFormat">The <see cref="P:System.Web.Helpers.WebImage.ImageFormat" /> value of the <see cref="T:System.Web.Helpers.WebImage" /> object.</param>
+<a name="745"><font size=-1>745     </font></a>    </member>
+<a name="746"><font size=-1>746     </font></a>    <member name="M:System.Web.Helpers.WebImage.GetImageFromRequest(System.String)">
+<a name="747"><font size=-1>747     </font></a>      <summary>Returns an image that has been uploaded using the browser.</summary>
+<a name="748"><font size=-1>748     </font></a>      <returns>The image.</returns>
+<a name="749"><font size=-1>749     </font></a>      <param name="postedFileName">(Optional) The name of the file that has been posted. If no file name is specified, the first file that was uploaded is returned.</param>
+<a name="750"><font size=-1>750     </font></a>    </member>
+<a name="751"><font size=-1>751     </font></a>    <member name="P:System.Web.Helpers.WebImage.Height">
+<a name="752"><font size=-1>752     </font></a>      <summary>Gets the height, in pixels, of the image.</summary>
+<a name="753"><font size=-1>753     </font></a>      <returns>The height.</returns>
+<a name="754"><font size=-1>754     </font></a>    </member>
+<a name="755"><font size=-1>755     </font></a>    <member name="P:System.Web.Helpers.WebImage.ImageFormat">
+<a name="756"><font size=-1>756     </font></a>      <summary>Gets the format of the image (for example, "jpeg" or "png").</summary>
+<a name="757"><font size=-1>757     </font></a>      <returns>The file format of the image.</returns>
+<a name="758"><font size=-1>758     </font></a>    </member>
+<a name="759"><font size=-1>759     </font></a>    <member name="M:System.Web.Helpers.WebImage.Resize(System.Int32,System.Int32,System.Boolean,System.Boolean)">
+<a name="760"><font size=-1>760     </font></a>      <summary>Resizes an image.</summary>
+<a name="761"><font size=-1>761     </font></a>      <returns>The resized image.</returns>
+<a name="762"><font size=-1>762     </font></a>      <param name="width">The width, in pixels, of the <see cref="T:System.Web.Helpers.WebImage" /> object.</param>
+<a name="763"><font size=-1>763     </font></a>      <param name="height">The height, in pixels, of the <see cref="T:System.Web.Helpers.WebImage" /> object.</param>
+<a name="764"><font size=-1>764     </font></a>      <param name="preserveAspectRatio">true to preserve the aspect ratio of the image; otherwise, false.</param>
+<a name="765"><font size=-1>765     </font></a>      <param name="preventEnlarge">true to prevent the enlargement of the image; otherwise, false.</param>
+<a name="766"><font size=-1>766     </font></a>    </member>
+<a name="767"><font size=-1>767     </font></a>    <member name="M:System.Web.Helpers.WebImage.RotateLeft">
+<a name="768"><font size=-1>768     </font></a>      <summary>Rotates an image to the left.</summary>
+<a name="769"><font size=-1>769     </font></a>      <returns>The rotated image.</returns>
+<a name="770"><font size=-1>770     </font></a>    </member>
+<a name="771"><font size=-1>771     </font></a>    <member name="M:System.Web.Helpers.WebImage.RotateRight">
+<a name="772"><font size=-1>772     </font></a>      <summary>Rotates an image to the right.</summary>
+<a name="773"><font size=-1>773     </font></a>      <returns>The rotated image.</returns>
+<a name="774"><font size=-1>774     </font></a>    </member>
+<a name="775"><font size=-1>775     </font></a>    <member name="M:System.Web.Helpers.WebImage.Save(System.String,System.String,System.Boolean)">
+<a name="776"><font size=-1>776     </font></a>      <summary>Saves the image using the specified file name.</summary>
+<a name="777"><font size=-1>777     </font></a>      <returns>The image.</returns>
+<a name="778"><font size=-1>778     </font></a>      <param name="filePath">The path to save the image to.</param>
+<a name="779"><font size=-1>779     </font></a>      <param name="imageFormat">The format to use when the image file is saved, such as "gif", or "png".</param>
+<a name="780"><font size=-1>780     </font></a>      <param name="forceCorrectExtension">true to force the correct file-name extension to be used for the format that is specified in <paramref name="imageFormat" />; otherwise, false. If there is a mismatch between the file type and the specified file-name extension, and if <paramref name="forceCorrectExtension" /> is true, the correct extension will be appended to the file name. For example, a PNG file named Photograph.txt is saved using the name Photograph.txt.png.</param>
+<a name="781"><font size=-1>781     </font></a>    </member>
+<a name="782"><font size=-1>782     </font></a>    <member name="P:System.Web.Helpers.WebImage.Width">
+<a name="783"><font size=-1>783     </font></a>      <summary>Gets the width, in pixels, of the image.</summary>
+<a name="784"><font size=-1>784     </font></a>      <returns>The width.</returns>
+<a name="785"><font size=-1>785     </font></a>    </member>
+<a name="786"><font size=-1>786     </font></a>    <member name="M:System.Web.Helpers.WebImage.Write(System.String)">
+<a name="787"><font size=-1>787     </font></a>      <summary>Renders an image to the browser.</summary>
+<a name="788"><font size=-1>788     </font></a>      <returns>The image.</returns>
+<a name="789"><font size=-1>789     </font></a>      <param name="requestedFormat">(Optional) The file format to use when the image is written.</param>
+<a name="790"><font size=-1>790     </font></a>    </member>
+<a name="791"><font size=-1>791     </font></a>    <member name="T:System.Web.Helpers.WebMail">
+<a name="792"><font size=-1>792     </font></a>      <summary>Provides a way to construct and send an email message using Simple Mail Transfer Protocol (SMTP).</summary>
+<a name="793"><font size=-1>793     </font></a>    </member>
+<a name="794"><font size=-1>794     </font></a>    <member name="P:System.Web.Helpers.WebMail.EnableSsl">
+<a name="795"><font size=-1>795     </font></a>      <summary>Gets or sets a value that indicates whether Secure Sockets Layer (SSL) is used to encrypt the connection when an email message is sent.</summary>
+<a name="796"><font size=-1>796     </font></a>      <returns>true if SSL is used to encrypt the connection; otherwise, false.</returns>
+<a name="797"><font size=-1>797     </font></a>    </member>
+<a name="798"><font size=-1>798     </font></a>    <member name="P:System.Web.Helpers.WebMail.From">
+<a name="799"><font size=-1>799     </font></a>      <summary>Gets or sets the email address of the sender.</summary>
+<a name="800"><font size=-1>800     </font></a>      <returns>The email address of the sender.</returns>
+<a name="801"><font size=-1>801     </font></a>    </member>
+<a name="802"><font size=-1>802     </font></a>    <member name="P:System.Web.Helpers.WebMail.Password">
+<a name="803"><font size=-1>803     </font></a>      <summary>Gets or sets the password of the sender's email account.</summary>
+<a name="804"><font size=-1>804     </font></a>      <returns>The sender's password.</returns>
+<a name="805"><font size=-1>805     </font></a>    </member>
+<a name="806"><font size=-1>806     </font></a>    <member name="M:System.Web.Helpers.WebMail.Send(System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Collections.Generic.IEnumerable{System.String},System.String,System.String,System.String,System.String,System.String)">
+<a name="807"><font size=-1>807     </font></a>      <summary>Sends the specified message to an SMTP server for delivery.</summary>
+<a name="808"><font size=-1>808     </font></a>      <param name="to">The email address of the recipient or recipients. Separate multiple recipients using a semicolon (;).</param>
+<a name="809"><font size=-1>809     </font></a>      <param name="subject">The subject line for the email message.</param>
+<a name="810"><font size=-1>810     </font></a>      <param name="body">The body of the email message. If <paramref name="isBodyHtml" /> is true, HTML in the body is interpreted as markup.</param>
+<a name="811"><font size=-1>811     </font></a>      <param name="from">(Optional) The email address of the message sender, or null to not specify a sender. The default value is null.</param>
+<a name="812"><font size=-1>812     </font></a>      <param name="cc">(Optional) The email addresses of additional recipients to send a copy of the message to, or null if there are no additional recipients. Separate multiple recipients using a semicolon (;). The default value is null.</param>
+<a name="813"><font size=-1>813     </font></a>      <param name="filesToAttach">(Optional) A collection of file names that specifies the files to attach to the email message, or null if there are no files to attach. The default value is null.</param>
+<a name="814"><font size=-1>814     </font></a>      <param name="isBodyHtml">(Optional) true to specify that the email message body is in HTML format; false to indicate that the body is in plain-text format. The default value is true.</param>
+<a name="815"><font size=-1>815     </font></a>      <param name="additionalHeaders">(Optional) A collection of headers to add to the normal SMTP headers included in this email message, or null to send no additional headers. The default value is null.</param>
+<a name="816"><font size=-1>816     </font></a>      <param name="bcc">(Optional) The email addresses of additional recipients to send a "blind" copy of the message to, or null if there are no additional recipients. Separate multiple recipients using a semicolon (;). The default value is null.</param>
+<a name="817"><font size=-1>817     </font></a>      <param name="contentEncoding">(Optional) The encoding to use for the body of the message. Possible values are property values for the <see cref="T:System.Text.Encoding" /> class, such as <see cref="P:System.Text.Encoding.UTF8" />. The default value is null.</param>
+<a name="818"><font size=-1>818     </font></a>      <param name="headerEncoding">(Optional) The encoding to use for the header of the message. Possible values are property values for the <see cref="T:System.Text.Encoding" /> class, such as <see cref="P:System.Text.Encoding.UTF8" />. The default value is null.</param>
+<a name="819"><font size=-1>819     </font></a>      <param name="priority">(Optional) A value ("Normal", "Low", "High") that specifies the priority of the message. The default is "Normal".</param>
+<a name="820"><font size=-1>820     </font></a>      <param name="replyTo">(Optional) The email address that will be used when the recipient replies to the message. The default value is null, which indicates that the reply address is the value of the From property. </param>
+<a name="821"><font size=-1>821     </font></a>    </member>
+<a name="822"><font size=-1>822     </font></a>    <member name="P:System.Web.Helpers.WebMail.SmtpPort">
+<a name="823"><font size=-1>823     </font></a>      <summary>Gets or sets the port that is used for SMTP transactions.</summary>
+<a name="824"><font size=-1>824     </font></a>      <returns>The port that is used for SMTP transactions.</returns>
+<a name="825"><font size=-1>825     </font></a>    </member>
+<a name="826"><font size=-1>826     </font></a>    <member name="P:System.Web.Helpers.WebMail.SmtpServer">
+<a name="827"><font size=-1>827     </font></a>      <summary>Gets or sets the name of the SMTP server that is used to transmit the email message.</summary>
+<a name="828"><font size=-1>828     </font></a>      <returns>The SMTP server.</returns>
+<a name="829"><font size=-1>829     </font></a>    </member>
+<a name="830"><font size=-1>830     </font></a>    <member name="P:System.Web.Helpers.WebMail.SmtpUseDefaultCredentials">
+<a name="831"><font size=-1>831     </font></a>      <summary>Gets or sets a value that indicates whether the default credentials are sent with the requests.</summary>
+<a name="832"><font size=-1>832     </font></a>      <returns>true if credentials are sent with the email message; otherwise, false.</returns>
+<a name="833"><font size=-1>833     </font></a>    </member>
+<a name="834"><font size=-1>834     </font></a>    <member name="P:System.Web.Helpers.WebMail.UserName">
+<a name="835"><font size=-1>835     </font></a>      <summary>Gets or sets the name of email account that is used to send email.</summary>
+<a name="836"><font size=-1>836     </font></a>      <returns>The name of the user account.</returns>
+<a name="837"><font size=-1>837     </font></a>    </member>
+<a name="838"><font size=-1>838     </font></a>  </members>
+<a name="839"><font size=-1>839     </font></a></doc>
+</pre></body></html>

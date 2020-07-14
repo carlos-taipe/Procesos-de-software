@@ -1,0 +1,494 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TienditaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Categorias">
+          <Key>
+            <PropertyRef Name="IDCategoria" />
+          </Key>
+          <Property Name="IDCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="catNombre" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Productos">
+          <Key>
+            <PropertyRef Name="IDProducto" />
+          </Key>
+          <Property Name="IDProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="proNombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="proCantidad" Type="int" />
+          <Property Name="proPrecio" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="proEstado" Type="bit" Nullable="false" />
+          <Property Name="proImagen" Type="varbinary(max)" />
+          <Property Name="IDCategoria" Type="int" Nullable="false" />
+          <Property Name="RUC" Type="varchar" MaxLength="11" />
+        </EntityType>
+        <EntityType Name="Proveedores">
+          <Key>
+            <PropertyRef Name="RUC" />
+          </Key>
+          <Property Name="RUC" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="provNombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="provDireccion" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="provTelefono" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="provEstado" Type="bit" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="IDRol" />
+          </Key>
+          <Property Name="IDRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rolNombre" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="IDUsuario" />
+          </Key>
+          <Property Name="IDUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usuEmail" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="usuContraseña" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="usuNombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="IDRol" Type="int" />
+        </EntityType>
+        <Association Name="FK__Productos__RUC__3B75D760">
+          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
+          <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="RUC" />
+            </Principal>
+            <Dependent Role="Productos">
+              <PropertyRef Name="RUC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuarios_Roles">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="IDRol" />
+            </Principal>
+            <Dependent Role="Usuarios">
+              <PropertyRef Name="IDRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="sp_A_Producto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="proNombre" Type="varchar" Mode="In" />
+          <Parameter Name="proCantidad" Type="int" Mode="In" />
+          <Parameter Name="proPrecio" Type="decimal" Mode="In" />
+          <Parameter Name="proImagen" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="IDCategoria" Type="int" Mode="In" />
+          <Parameter Name="RUC" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_A_Proveedor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RUC" Type="varchar" Mode="In" />
+          <Parameter Name="provNombre" Type="varchar" Mode="In" />
+          <Parameter Name="provDireccion" Type="varchar" Mode="In" />
+          <Parameter Name="provTelefono" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_A_Usuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usuEmail" Type="varchar" Mode="In" />
+          <Parameter Name="usuContraseña" Type="nvarchar" Mode="In" />
+          <Parameter Name="usuNombre" Type="varchar" Mode="In" />
+          <Parameter Name="IDRol" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_C_Productos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_C_ProductoxID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDProducto" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_C_Proveedores" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_C_ProveedorxRUC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RUC" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_C_Usuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="usuEmail" Type="varchar" Mode="In" />
+          <Parameter Name="usuContraseña" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_E_Producto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDProducto" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_E_Proveedor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RUC" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_M_Producto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDProducto" Type="int" Mode="In" />
+          <Parameter Name="proNombre" Type="varchar" Mode="In" />
+          <Parameter Name="proCantidad" Type="int" Mode="In" />
+          <Parameter Name="proPrecio" Type="decimal" Mode="In" />
+          <Parameter Name="proImagen" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="IDCategoria" Type="int" Mode="In" />
+          <Parameter Name="RUC" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_M_Proveedor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RUC" Type="varchar" Mode="In" />
+          <Parameter Name="provNombre" Type="varchar" Mode="In" />
+          <Parameter Name="provDireccion" Type="varchar" Mode="In" />
+          <Parameter Name="provTelefono" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="TienditaModelStoreContainer">
+          <EntitySet Name="Categorias" EntityType="Self.Categorias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Productos" EntityType="Self.Productos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proveedores" EntityType="Self.Proveedores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Productos__RUC__3B75D760" Association="Self.FK__Productos__RUC__3B75D760">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="Productos" EntitySet="Productos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuarios_Roles" Association="Self.FK_Usuarios_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Usuarios" EntitySet="Usuarios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TienditaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Categoria">
+          <Key>
+            <PropertyRef Name="IDCategoria" />
+          </Key>
+          <Property Name="IDCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="catNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Productos" Relationship="Self.FK__Productos__IDCat__15502E78" FromRole="Categorias" ToRole="Productos" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="IDProducto" />
+          </Key>
+          <Property Name="IDProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="proNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="proPrecio" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="IDCategoria" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Categoria" Relationship="Self.FK__Productos__IDCat__15502E78" FromRole="Productos" ToRole="Categorias" />
+          <Property Name="proEstado" Type="Boolean" Nullable="false" />
+          <Property Name="proCantidad" Type="Int32" />
+          <Property Name="proImagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="RUC" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Proveedore" Relationship="TienditaModel.FK__Productos__RUC__3B75D760" FromRole="Producto" ToRole="Proveedore" />
+        </EntityType>
+        <Association Name="FK__Productos__IDCat__15502E78">
+          <End Role="Categorias" Type="Self.Categoria" Multiplicity="1" />
+          <End Role="Productos" Type="Self.Producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categorias">
+              <PropertyRef Name="IDCategoria" />
+            </Principal>
+            <Dependent Role="Productos">
+              <PropertyRef Name="IDCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TienditaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Categorias" EntityType="Self.Categoria" />
+          <EntitySet Name="Productos" EntityType="Self.Producto" />
+          <AssociationSet Name="FK__Productos__IDCat__15502E78" Association="Self.FK__Productos__IDCat__15502E78">
+            <End Role="Categorias" EntitySet="Categorias" />
+            <End Role="Productos" EntitySet="Productos" />
+          </AssociationSet>
+          <FunctionImport Name="sp_A_Producto">
+            <Parameter Name="proNombre" Mode="In" Type="String" />
+            <Parameter Name="proCantidad" Mode="In" Type="Int32" />
+            <Parameter Name="proPrecio" Mode="In" Type="Decimal" />
+            <Parameter Name="proImagen" Mode="In" Type="Binary" />
+            <Parameter Name="IDCategoria" Mode="In" Type="Int32" />
+            <Parameter Name="RUC" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_E_Producto">
+          <Parameter Name="IDProducto" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_C_Productos" ReturnType="Collection(TienditaModel.sp_C_Productos_Result)" />
+          <FunctionImport Name="sp_C_ProductoxID" ReturnType="Collection(TienditaModel.sp_C_ProductoxID_Result)">
+          <Parameter Name="IDProducto" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_M_Producto">
+            <Parameter Name="IDProducto" Mode="In" Type="Int32" />
+            <Parameter Name="proNombre" Mode="In" Type="String" />
+            <Parameter Name="proCantidad" Mode="In" Type="Int32" />
+            <Parameter Name="proPrecio" Mode="In" Type="Decimal" />
+            <Parameter Name="proImagen" Mode="In" Type="Binary" />
+            <Parameter Name="IDCategoria" Mode="In" Type="Int32" />
+            <Parameter Name="RUC" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Proveedores" EntityType="TienditaModel.Proveedore" />
+          <AssociationSet Name="FK__Productos__RUC__3B75D760" Association="TienditaModel.FK__Productos__RUC__3B75D760">
+            <End Role="Proveedore" EntitySet="Proveedores" />
+            <End Role="Producto" EntitySet="Productos" />
+          </AssociationSet>
+          <FunctionImport Name="sp_A_Proveedor">
+            <Parameter Name="RUC" Mode="In" Type="String" />
+            <Parameter Name="provNombre" Mode="In" Type="String" />
+            <Parameter Name="provDireccion" Mode="In" Type="String" />
+            <Parameter Name="provTelefono" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_C_Proveedores" ReturnType="Collection(TienditaModel.sp_C_Proveedores_Result)" />
+          <FunctionImport Name="sp_C_ProveedorxRUC" ReturnType="Collection(TienditaModel.sp_C_ProveedorxRUC_Result)">
+          <Parameter Name="RUC" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_E_Proveedor">
+          <Parameter Name="RUC" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_M_Proveedor">
+            <Parameter Name="RUC" Mode="In" Type="String" />
+            <Parameter Name="provNombre" Mode="In" Type="String" />
+            <Parameter Name="provDireccion" Mode="In" Type="String" />
+            <Parameter Name="provTelefono" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Roles" EntityType="TienditaModel.Role" />
+          <EntitySet Name="Usuarios" EntityType="TienditaModel.Usuario" />
+          <AssociationSet Name="FK_Usuarios_Roles" Association="TienditaModel.FK_Usuarios_Roles">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="Usuario" EntitySet="Usuarios" />
+          </AssociationSet>
+          <FunctionImport Name="sp_A_Usuario">
+            <Parameter Name="usuEmail" Mode="In" Type="String" />
+            <Parameter Name="usuContraseña" Mode="In" Type="String" />
+            <Parameter Name="usuNombre" Mode="In" Type="String" />
+            <Parameter Name="IDRol" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_C_Usuario" ReturnType="Collection(TienditaModel.sp_C_Usuario_Result)">
+            <Parameter Name="usuEmail" Mode="In" Type="String" />
+            <Parameter Name="usuContraseña" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="sp_C_Productos_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="proNombre" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="proCantidad" Nullable="true" />
+          <Property Type="Decimal" Name="proPrecio" Nullable="false" Precision="7" Scale="2" />
+          <Property Type="String" Name="catNombre" Nullable="false" MaxLength="50" />
+          <Property Type="Binary" Name="proImagen" Nullable="true" />
+          <Property Type="String" Name="provNombre" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="sp_C_ProductoxID_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="proNombre" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="proCantidad" Nullable="true" />
+          <Property Type="Decimal" Name="proPrecio" Nullable="false" Precision="7" Scale="2" />
+          <Property Type="Binary" Name="proImagen" Nullable="true" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="String" Name="catNombre" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="RUC" Nullable="false" MaxLength="11" />
+          <Property Type="String" Name="provNombre" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <EntityType Name="Proveedore">
+          <Key>
+            <PropertyRef Name="RUC" />
+          </Key>
+          <Property Name="RUC" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="provNombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="provDireccion" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="provTelefono" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Productos" Relationship="TienditaModel.FK__Productos__RUC__3B75D760" FromRole="Proveedore" ToRole="Producto" />
+          <Property Name="provEstado" Type="Boolean" />
+        </EntityType>
+        <Association Name="FK__Productos__RUC__3B75D760">
+          <End Type="TienditaModel.Proveedore" Role="Proveedore" Multiplicity="0..1" />
+          <End Type="TienditaModel.Producto" Role="Producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedore">
+              <PropertyRef Name="RUC" />
+            </Principal>
+            <Dependent Role="Producto">
+              <PropertyRef Name="RUC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="sp_C_Proveedores_Result">
+          <Property Type="String" Name="RUC" Nullable="false" MaxLength="11" />
+          <Property Type="String" Name="provNombre" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="provDireccion" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="provTelefono" Nullable="false" MaxLength="12" />
+        </ComplexType>
+        <ComplexType Name="sp_C_ProveedorxRUC_Result">
+          <Property Type="String" Name="RUC" Nullable="false" MaxLength="11" />
+          <Property Type="String" Name="provNombre" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="provDireccion" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="provTelefono" Nullable="false" MaxLength="12" />
+        </ComplexType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="IDRol" />
+          </Key>
+          <Property Name="IDRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rolNombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Usuarios" Relationship="TienditaModel.FK_Usuarios_Roles" FromRole="Role" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="IDUsuario" />
+          </Key>
+          <Property Name="IDUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usuEmail" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="usuContraseña" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="usuNombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IDRol" Type="Int32" />
+          <NavigationProperty Name="Role" Relationship="TienditaModel.FK_Usuarios_Roles" FromRole="Usuario" ToRole="Role" />
+        </EntityType>
+        <Association Name="FK_Usuarios_Roles">
+          <End Type="TienditaModel.Role" Role="Role" Multiplicity="0..1" />
+          <End Type="TienditaModel.Usuario" Role="Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="IDRol" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="IDRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="sp_C_Usuario_Result">
+          <Property Type="Int32" Name="IDUsuario" Nullable="false" />
+          <Property Type="String" Name="usuNombre" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="IDRol" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TienditaModelStoreContainer" CdmEntityContainer="TienditaEntities">
+          <EntitySetMapping Name="Categorias">
+            <EntityTypeMapping TypeName="TienditaModel.Categoria">
+              <MappingFragment StoreEntitySet="Categorias">
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="catNombre" ColumnName="catNombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Productos">
+            <EntityTypeMapping TypeName="TienditaModel.Producto">
+              <MappingFragment StoreEntitySet="Productos">
+                <ScalarProperty Name="RUC" ColumnName="RUC" />
+                <ScalarProperty Name="proImagen" ColumnName="proImagen" />
+                <ScalarProperty Name="proCantidad" ColumnName="proCantidad" />
+                <ScalarProperty Name="proEstado" ColumnName="proEstado" />
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="proNombre" ColumnName="proNombre" />
+                <ScalarProperty Name="proPrecio" ColumnName="proPrecio" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_A_Producto" FunctionName="TienditaModel.Store.sp_A_Producto" />
+          <FunctionImportMapping FunctionImportName="sp_E_Producto" FunctionName="TienditaModel.Store.sp_E_Producto" />
+          <FunctionImportMapping FunctionImportName="sp_C_Productos" FunctionName="TienditaModel.Store.sp_C_Productos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TienditaModel.sp_C_Productos_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="proNombre" ColumnName="proNombre" />
+                <ScalarProperty Name="proCantidad" ColumnName="proCantidad" />
+                <ScalarProperty Name="proPrecio" ColumnName="proPrecio" />
+                <ScalarProperty Name="catNombre" ColumnName="catNombre" />
+                <ScalarProperty Name="proImagen" ColumnName="proImagen" />
+                <ScalarProperty Name="provNombre" ColumnName="provNombre" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_C_ProductoxID" FunctionName="TienditaModel.Store.sp_C_ProductoxID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TienditaModel.sp_C_ProductoxID_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="proNombre" ColumnName="proNombre" />
+                <ScalarProperty Name="proCantidad" ColumnName="proCantidad" />
+                <ScalarProperty Name="proPrecio" ColumnName="proPrecio" />
+                <ScalarProperty Name="proImagen" ColumnName="proImagen" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="catNombre" ColumnName="catNombre" />
+                <ScalarProperty Name="RUC" ColumnName="RUC" />
+                <ScalarProperty Name="provNombre" ColumnName="provNombre" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_M_Producto" FunctionName="TienditaModel.Store.sp_M_Producto" />
+          <EntitySetMapping Name="Proveedores">
+            <EntityTypeMapping TypeName="TienditaModel.Proveedore">
+              <MappingFragment StoreEntitySet="Proveedores">
+                <ScalarProperty Name="provEstado" ColumnName="provEstado" />
+                <ScalarProperty Name="provTelefono" ColumnName="provTelefono" />
+                <ScalarProperty Name="provDireccion" ColumnName="provDireccion" />
+                <ScalarProperty Name="provNombre" ColumnName="provNombre" />
+                <ScalarProperty Name="RUC" ColumnName="RUC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_A_Proveedor" FunctionName="TienditaModel.Store.sp_A_Proveedor" />
+          <FunctionImportMapping FunctionImportName="sp_C_Proveedores" FunctionName="TienditaModel.Store.sp_C_Proveedores">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TienditaModel.sp_C_Proveedores_Result">
+                <ScalarProperty Name="RUC" ColumnName="RUC" />
+                <ScalarProperty Name="provNombre" ColumnName="provNombre" />
+                <ScalarProperty Name="provDireccion" ColumnName="provDireccion" />
+                <ScalarProperty Name="provTelefono" ColumnName="provTelefono" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_C_ProveedorxRUC" FunctionName="TienditaModel.Store.sp_C_ProveedorxRUC">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TienditaModel.sp_C_ProveedorxRUC_Result">
+                <ScalarProperty Name="RUC" ColumnName="RUC" />
+                <ScalarProperty Name="provNombre" ColumnName="provNombre" />
+                <ScalarProperty Name="provDireccion" ColumnName="provDireccion" />
+                <ScalarProperty Name="provTelefono" ColumnName="provTelefono" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_E_Proveedor" FunctionName="TienditaModel.Store.sp_E_Proveedor" />
+          <FunctionImportMapping FunctionImportName="sp_M_Proveedor" FunctionName="TienditaModel.Store.sp_M_Proveedor" />
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="TienditaModel.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="rolNombre" ColumnName="rolNombre" />
+                <ScalarProperty Name="IDRol" ColumnName="IDRol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="TienditaModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="IDRol" ColumnName="IDRol" />
+                <ScalarProperty Name="usuNombre" ColumnName="usuNombre" />
+                <ScalarProperty Name="usuContraseña" ColumnName="usuContraseña" />
+                <ScalarProperty Name="usuEmail" ColumnName="usuEmail" />
+                <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_A_Usuario" FunctionName="TienditaModel.Store.sp_A_Usuario" />
+          <FunctionImportMapping FunctionImportName="sp_C_Usuario" FunctionName="TienditaModel.Store.sp_C_Usuario">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="TienditaModel.sp_C_Usuario_Result">
+                <ScalarProperty Name="IDUsuario" ColumnName="IDUsuario" />
+                <ScalarProperty Name="usuNombre" ColumnName="usuNombre" />
+                <ScalarProperty Name="IDRol" ColumnName="IDRol" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

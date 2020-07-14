@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Edicas.Models.sp_C_Productos_Result>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <h1>Bienvenido usuario @(User.Identity.IsAuthenticated ? HttpContext.Current.User.Identity.Name : "Guest")</h1>
+    <a href="@Url.Action("Login","Usuarios","Usuarios")">Salir</a>
+}
+
+<h2>Index</h2>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")    
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.proNombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.proCantidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.proPrecio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.catNombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.provNombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.proImagen)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.proNombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.proCantidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.proPrecio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.catNombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.provNombre)
+        </td>
+        <td>
+            <img width="100" height="100" src="@Url.Action("obtenerImagen","Productos",new { id = item.IDProducto})" alt="Alternate Text" />
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.IDProducto }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.IDProducto })
+        </td>
+    </tr>
+}
+
+</table>

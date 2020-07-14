@@ -1,0 +1,238 @@
+<html><head><title>Microsoft.Owin.Security.Twitter.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body>
+<h3>File: D:\Proyecto\packages\Microsoft.Owin.Security.Twitter.es.4.0.0\lib\net45\es\Microsoft.Owin.Security.Twitter.xml</h3>
+<SCRIPT>
+ defaultStatus = "File: D:\\Proyecto\\packages\\Microsoft.Owin.Security.Twitter.es.4.0.0\\lib\\net45\\es\\Microsoft.Owin.Security.Twitter.xml";
+top.document.title  = "Microsoft.Owin.Security.Twitter.xml";
+</SCRIPT>
+<pre><a name="1"><font size=-1>1     </font></a><?xml version="1.0" encoding="utf-8"?>
+<a name="2"><font size=-1>2     </font></a><doc>
+<a name="3"><font size=-1>3     </font></a>  <assembly>
+<a name="4"><font size=-1>4     </font></a>    <name>Microsoft.Owin.Security.Twitter</name>
+<a name="5"><font size=-1>5     </font></a>  </assembly>
+<a name="6"><font size=-1>6     </font></a>  <members>
+<a name="7"><font size=-1>7     </font></a>    <member name="T:Microsoft.Owin.Security.Twitter.ITwitterAuthenticationProvider">
+<a name="8"><font size=-1>8     </font></a>      <summary>Especifica los métodos de devolución de llamada que el objeto <see cref="T:Microsoft.Owin.Security.Twitter.TwitterAuthenticationMiddleware" /> invoca para habilitar el control del desarrollador sobre el proceso de autenticación./&amp;amp;gt;</summary>
+<a name="9"><font size=-1>9     </font></a>    </member>
+<a name="10"><font size=-1>10     </font></a>    <member name="M:Microsoft.Owin.Security.Twitter.ITwitterAuthenticationProvider.ApplyRedirect(Microsoft.Owin.Security.Twitter.TwitterApplyRedirectContext)">
+<a name="11"><font size=-1>11     </font></a>      <summary>Se llama cuando un elemento Challenge da lugar a un redireccionamiento para autorizar un extremo en el middleware de Twitter</summary>
+<a name="12"><font size=-1>12     </font></a>      <param name="context">Contiene el URI de redireccionamiento y <see cref="T:Microsoft.Owin.Security.AuthenticationProperties" /> del desafío</param>
+<a name="13"><font size=-1>13     </font></a>    </member>
+<a name="14"><font size=-1>14     </font></a>    <member name="M:Microsoft.Owin.Security.Twitter.ITwitterAuthenticationProvider.Authenticated(Microsoft.Owin.Security.Twitter.TwitterAuthenticatedContext)">
+<a name="15"><font size=-1>15     </font></a>      <summary>Se invoca cuando Twitter autentica un usuario correctamente</summary>
+<a name="16"><font size=-1>16     </font></a>      <returns>Un objeto <see cref="T:System.Threading.Tasks.Task" /> que representa la operación completada.</returns>
+<a name="17"><font size=-1>17     </font></a>      <param name="context">Contiene información acerca de la sesión de inicio de sesión, así como el objeto <see cref="T:System.Security.Claims.ClaimsIdentity" /> del usuario.</param>
+<a name="18"><font size=-1>18     </font></a>    </member>
+<a name="19"><font size=-1>19     </font></a>    <member name="M:Microsoft.Owin.Security.Twitter.ITwitterAuthenticationProvider.ReturnEndpoint(Microsoft.Owin.Security.Twitter.TwitterReturnEndpointContext)">
+<a name="20"><font size=-1>20     </font></a>      <summary>Se invoca antes de que el objeto <see cref="T:System.Security.Claims.ClaimsIdentity" /> se guarde en una cookie local y el explorador se redirija a la dirección URL solicitada originalmente.</summary>
+<a name="21"><font size=-1>21     </font></a>      <returns>Un objeto <see cref="T:System.Threading.Tasks.Task" /> que representa la operación completada.</returns>
+<a name="22"><font size=-1>22     </font></a>    </member>
+<a name="23"><font size=-1>23     </font></a>    <member name="T:Microsoft.Owin.Security.Twitter.TwitterApplyRedirectContext">
+<a name="24"><font size=-1>24     </font></a>      <summary>El contexto se pasa cuando un elemento Challenge da lugar a un redireccionamiento para autorizar un extremo en el middleware de Twitter</summary>
+<a name="25"><font size=-1>25     </font></a>    </member>
+<a name="26"><font size=-1>26     </font></a>    <member name="M:Microsoft.Owin.Security.Twitter.TwitterApplyRedirectContext.#ctor(Microsoft.Owin.IOwinContext,Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions,Microsoft.Owin.Security.AuthenticationProperties,System.String)">
+<a name="27"><font size=-1>27     </font></a>      <summary>Crea un objeto de contexto nuevo.</summary>
+<a name="28"><font size=-1>28     </font></a>      <param name="context">Contexto de solicitud OWIN</param>
+<a name="29"><font size=-1>29     </font></a>      <param name="options">Opciones de middleware de Facebook</param>
+<a name="30"><font size=-1>30     </font></a>      <param name="properties">Propiedades de autenticación del desafío</param>
+<a name="31"><font size=-1>31     </font></a>      <param name="redirectUri">URI de redireccionamiento inicial</param>
+<a name="32"><font size=-1>32     </font></a>    </member>
+<a name="33"><font size=-1>33     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.TwitterApplyRedirectContext.Properties">
+<a name="34"><font size=-1>34     </font></a>      <summary>Obtiene las propiedades de autenticación del desafío</summary>
+<a name="35"><font size=-1>35     </font></a>    </member>
+<a name="36"><font size=-1>36     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.TwitterApplyRedirectContext.RedirectUri">
+<a name="37"><font size=-1>37     </font></a>      <summary>Obtiene el URI usado para la operación de redireccionamiento.</summary>
+<a name="38"><font size=-1>38     </font></a>    </member>
+<a name="39"><font size=-1>39     </font></a>    <member name="T:Microsoft.Owin.Security.Twitter.TwitterAuthenticatedContext">
+<a name="40"><font size=-1>40     </font></a>      <summary>Contiene información acerca de la sesión de inicio de sesión, así como el objeto <see cref="T:System.Security.Claims.ClaimsIdentity" /> del usuario.</summary>
+<a name="41"><font size=-1>41     </font></a>    </member>
+<a name="42"><font size=-1>42     </font></a>    <member name="M:Microsoft.Owin.Security.Twitter.TwitterAuthenticatedContext.#ctor(Microsoft.Owin.IOwinContext,System.String,System.String,System.String,System.String)">
+<a name="43"><font size=-1>43     </font></a>      <summary>Inicializa un objeto <see cref="T:Microsoft.Owin.Security.Twitter.TwitterAuthenticatedContext" /></summary>
+<a name="44"><font size=-1>44     </font></a>      <param name="context">El entorno OWIN.</param>
+<a name="45"><font size=-1>45     </font></a>      <param name="userId">Identificador del usuario de Twitter</param>
+<a name="46"><font size=-1>46     </font></a>      <param name="screenName">Nombre de pantalla de Twitter</param>
+<a name="47"><font size=-1>47     </font></a>      <param name="accessToken">Token de acceso de Twitter</param>
+<a name="48"><font size=-1>48     </font></a>      <param name="accessTokenSecret">El secreto del token de acceso de Twitter</param>
+<a name="49"><font size=-1>49     </font></a>    </member>
+<a name="50"><font size=-1>50     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticatedContext.AccessToken">
+<a name="51"><font size=-1>51     </font></a>      <summary>Obtiene el token de acceso de Twitter</summary>
+<a name="52"><font size=-1>52     </font></a>    </member>
+<a name="53"><font size=-1>53     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticatedContext.AccessTokenSecret">
+<a name="54"><font size=-1>54     </font></a>      <summary>Obtiene el secreto del token de acceso de Twitter</summary>
+<a name="55"><font size=-1>55     </font></a>    </member>
+<a name="56"><font size=-1>56     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticatedContext.Identity">
+<a name="57"><font size=-1>57     </font></a>      <summary>Obtiene el objeto <see cref="T:System.Security.Claims.ClaimsIdentity" /> que representa el usuario</summary>
+<a name="58"><font size=-1>58     </font></a>    </member>
+<a name="59"><font size=-1>59     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticatedContext.Properties">
+<a name="60"><font size=-1>60     </font></a>      <summary>Obtiene o establece un contenedor de propiedades para las propiedades de autenticación comunes</summary>
+<a name="61"><font size=-1>61     </font></a>    </member>
+<a name="62"><font size=-1>62     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticatedContext.ScreenName">
+<a name="63"><font size=-1>63     </font></a>      <summary>Obtiene el nombre de pantalla de Twitter</summary>
+<a name="64"><font size=-1>64     </font></a>    </member>
+<a name="65"><font size=-1>65     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticatedContext.UserId">
+<a name="66"><font size=-1>66     </font></a>      <summary>Obtiene el identificador de usuario de Twitter</summary>
+<a name="67"><font size=-1>67     </font></a>    </member>
+<a name="68"><font size=-1>68     </font></a>    <member name="T:Microsoft.Owin.Security.Twitter.TwitterAuthenticationMiddleware">
+<a name="69"><font size=-1>69     </font></a>      <summary>Middleware de OWIN para la autenticación de usuarios mediante Twitter</summary>
+<a name="70"><font size=-1>70     </font></a>    </member>
+<a name="71"><font size=-1>71     </font></a>    <member name="M:Microsoft.Owin.Security.Twitter.TwitterAuthenticationMiddleware.#ctor(Microsoft.Owin.OwinMiddleware,Owin.IAppBuilder,Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions)">
+<a name="72"><font size=-1>72     </font></a>      <summary>Inicializa un objeto <see cref="T:Microsoft.Owin.Security.Twitter.TwitterAuthenticationMiddleware" /></summary>
+<a name="73"><font size=-1>73     </font></a>      <param name="next">El siguiente middleware en la canalización OWIN que se debe invocar</param>
+<a name="74"><font size=-1>74     </font></a>      <param name="app">La aplicación OWIN</param>
+<a name="75"><font size=-1>75     </font></a>      <param name="options">Las opciones de configuración del middleware</param>
+<a name="76"><font size=-1>76     </font></a>    </member>
+<a name="77"><font size=-1>77     </font></a>    <member name="M:Microsoft.Owin.Security.Twitter.TwitterAuthenticationMiddleware.CreateHandler">
+<a name="78"><font size=-1>78     </font></a>      <summary>Proporciona el objeto <see cref="T:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler" /> para el procesamiento de las solicitudes relacionadas con la autenticación.</summary>
+<a name="79"><font size=-1>79     </font></a>      <returns>Un objeto <see cref="T:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler" /> configurado con el objeto <see cref="T:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions" /> que se proporciona al constructor.</returns>
+<a name="80"><font size=-1>80     </font></a>    </member>
+<a name="81"><font size=-1>81     </font></a>    <member name="T:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions">
+<a name="82"><font size=-1>82     </font></a>      <summary>Opciones del middleware de autenticación de Twitter.</summary>
+<a name="83"><font size=-1>83     </font></a>    </member>
+<a name="84"><font size=-1>84     </font></a>    <member name="M:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions.#ctor">
+<a name="85"><font size=-1>85     </font></a>      <summary>Inicializa una nueva instancia de la clase <see cref="T:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions" />.</summary>
+<a name="86"><font size=-1>86     </font></a>    </member>
+<a name="87"><font size=-1>87     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions.BackchannelCertificateValidator">
+<a name="88"><font size=-1>88     </font></a>      <summary>Obtiene o establece un validador de certificado anclado que se usará para validar los extremos que se usan en las comunicaciones de canal secundario que pertenecen a Twitter.</summary>
+<a name="89"><font size=-1>89     </font></a>      <returns>El validador de certificado anclado.</returns>
+<a name="90"><font size=-1>90     </font></a>    </member>
+<a name="91"><font size=-1>91     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions.BackchannelHttpHandler">
+<a name="92"><font size=-1>92     </font></a>      <summary>El objeto HttpMessageHandler que se usa para comunicarse con Twitter.Esto no puede establecerse al mismo tiempo que el objeto BackchannelCertificateValidator a menos que el valor se pueda convertir a tipo heredado de un objeto WebRequestHandler.</summary>
+<a name="93"><font size=-1>93     </font></a>    </member>
+<a name="94"><font size=-1>94     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions.BackchannelTimeout">
+<a name="95"><font size=-1>95     </font></a>      <summary>Obtiene o establece un valor de tiempo de espera en milisegundos para las comunicaciones de canal secundario con Twitter.</summary>
+<a name="96"><font size=-1>96     </font></a>      <returns>El tiempo de espera del canal secundario.</returns>
+<a name="97"><font size=-1>97     </font></a>    </member>
+<a name="98"><font size=-1>98     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions.CallbackPath">
+<a name="99"><font size=-1>99     </font></a>      <summary>La ruta de acceso de la solicitud en la ruta de acceso base de la aplicación en la que se devolverá el agente de usuario.El middleware procesará esta solicitud cuando llegue.El valor predeterminados es "/signin-twitter".</summary>
+<a name="100"><font size=-1>100     </font></a>    </member>
+<a name="101"><font size=-1>101     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions.Caption">
+<a name="102"><font size=-1>102     </font></a>      <summary>Obtiene o establece el texto que el usuario puede mostrar en una interfaz de usuario de inicio de sesión.</summary>
+<a name="103"><font size=-1>103     </font></a>    </member>
+<a name="104"><font size=-1>104     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions.ConsumerKey">
+<a name="105"><font size=-1>105     </font></a>      <summary>Obtiene o establece la clave de consumidor para comunicarse con Twitter.</summary>
+<a name="106"><font size=-1>106     </font></a>      <returns>La clave de consumidor que se usa para comunicarse con Twitter.</returns>
+<a name="107"><font size=-1>107     </font></a>    </member>
+<a name="108"><font size=-1>108     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions.ConsumerSecret">
+<a name="109"><font size=-1>109     </font></a>      <summary>Obtiene o establece el secreto de consumidor que se usa para firmar solicitudes a Twitter.</summary>
+<a name="110"><font size=-1>110     </font></a>      <returns>El secreto de consumidor que se usa para firmar solicitudes a Twitter.</returns>
+<a name="111"><font size=-1>111     </font></a>    </member>
+<a name="112"><font size=-1>112     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions.Provider">
+<a name="113"><font size=-1>113     </font></a>      <summary>Obtiene o establece el objeto <see cref="T:Microsoft.Owin.Security.Twitter.ITwitterAuthenticationProvider" /> que se utiliza para controlar los eventos de autenticación.</summary>
+<a name="114"><font size=-1>114     </font></a>    </member>
+<a name="115"><font size=-1>115     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions.SignInAsAuthenticationType">
+<a name="116"><font size=-1>116     </font></a>      <summary>Obtiene o establece el nombre de otro middleware de autenticación que será responsable de emitir realmente un objeto <see cref="T:System.Security.Claims.ClaimsIdentity" /> de usuario.</summary>
+<a name="117"><font size=-1>117     </font></a>    </member>
+<a name="118"><font size=-1>118     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions.StateDataFormat">
+<a name="119"><font size=-1>119     </font></a>      <summary>Obtiene o establece el tipo que se usa para proteger los datos que controla el middleware.</summary>
+<a name="120"><font size=-1>120     </font></a>    </member>
+<a name="121"><font size=-1>121     </font></a>    <member name="T:Microsoft.Owin.Security.Twitter.TwitterAuthenticationProvider">
+<a name="122"><font size=-1>122     </font></a>      <summary>Implementación de <see cref="T:Microsoft.Owin.Security.Twitter.ITwitterAuthenticationProvider" /> predeterminada.</summary>
+<a name="123"><font size=-1>123     </font></a>    </member>
+<a name="124"><font size=-1>124     </font></a>    <member name="M:Microsoft.Owin.Security.Twitter.TwitterAuthenticationProvider.#ctor">
+<a name="125"><font size=-1>125     </font></a>      <summary>Inicializa un objeto <see cref="T:Microsoft.Owin.Security.Twitter.TwitterAuthenticationProvider" /></summary>
+<a name="126"><font size=-1>126     </font></a>    </member>
+<a name="127"><font size=-1>127     </font></a>    <member name="M:Microsoft.Owin.Security.Twitter.TwitterAuthenticationProvider.ApplyRedirect(Microsoft.Owin.Security.Twitter.TwitterApplyRedirectContext)">
+<a name="128"><font size=-1>128     </font></a>      <summary>Se llama cuando un elemento Challenge da lugar a un redireccionamiento para autorizar un extremo en el middleware de Twitter</summary>
+<a name="129"><font size=-1>129     </font></a>      <param name="context">Contiene el URI de redireccionamiento y <see cref="T:Microsoft.Owin.Security.AuthenticationProperties" /> del desafío</param>
+<a name="130"><font size=-1>130     </font></a>    </member>
+<a name="131"><font size=-1>131     </font></a>    <member name="M:Microsoft.Owin.Security.Twitter.TwitterAuthenticationProvider.Authenticated(Microsoft.Owin.Security.Twitter.TwitterAuthenticatedContext)">
+<a name="132"><font size=-1>132     </font></a>      <summary>Se invoca cuando Twitter autentica un usuario correctamente</summary>
+<a name="133"><font size=-1>133     </font></a>      <returns>Un objeto <see cref="T:System.Threading.Tasks.Task" /> que representa la operación completada.</returns>
+<a name="134"><font size=-1>134     </font></a>      <param name="context">Contiene información acerca de la sesión de inicio de sesión, así como el objeto <see cref="T:System.Security.Claims.ClaimsIdentity" /> del usuario.</param>
+<a name="135"><font size=-1>135     </font></a>    </member>
+<a name="136"><font size=-1>136     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationProvider.OnApplyRedirect">
+<a name="137"><font size=-1>137     </font></a>      <summary>Obtiene o establece el delegado que se invoca cuando se invoca el método ApplyRedirect.</summary>
+<a name="138"><font size=-1>138     </font></a>    </member>
+<a name="139"><font size=-1>139     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationProvider.OnAuthenticated">
+<a name="140"><font size=-1>140     </font></a>      <summary>Obtiene o establece la función que se invoca cuando se invoca el método Authenticated.</summary>
+<a name="141"><font size=-1>141     </font></a>    </member>
+<a name="142"><font size=-1>142     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.TwitterAuthenticationProvider.OnReturnEndpoint">
+<a name="143"><font size=-1>143     </font></a>      <summary>Obtiene o establece la función que se invoca cuando se invoca el método ReturnEndpoint.</summary>
+<a name="144"><font size=-1>144     </font></a>    </member>
+<a name="145"><font size=-1>145     </font></a>    <member name="M:Microsoft.Owin.Security.Twitter.TwitterAuthenticationProvider.ReturnEndpoint(Microsoft.Owin.Security.Twitter.TwitterReturnEndpointContext)">
+<a name="146"><font size=-1>146     </font></a>      <summary>Se invoca antes de que el objeto <see cref="T:System.Security.Claims.ClaimsIdentity" /> se guarde en una cookie local y el explorador se redirija a la dirección URL solicitada originalmente.</summary>
+<a name="147"><font size=-1>147     </font></a>      <returns>Un objeto <see cref="T:System.Threading.Tasks.Task" /> que representa la operación completada.</returns>
+<a name="148"><font size=-1>148     </font></a>    </member>
+<a name="149"><font size=-1>149     </font></a>    <member name="T:Microsoft.Owin.Security.Twitter.TwitterReturnEndpointContext">
+<a name="150"><font size=-1>150     </font></a>      <summary>Proporciona información de contexto a los proveedores de middleware.</summary>
+<a name="151"><font size=-1>151     </font></a>    </member>
+<a name="152"><font size=-1>152     </font></a>    <member name="M:Microsoft.Owin.Security.Twitter.TwitterReturnEndpointContext.#ctor(Microsoft.Owin.IOwinContext,Microsoft.Owin.Security.AuthenticationTicket)">
+<a name="153"><font size=-1>153     </font></a>      <summary>Inicializa un <see cref="T:Microsoft.Owin.Security.Twitter.TwitterReturnEndpointContext" /> nuevo.</summary>
+<a name="154"><font size=-1>154     </font></a>      <param name="context">Entorno OWIN</param>
+<a name="155"><font size=-1>155     </font></a>      <param name="ticket">El vale de autenticación.</param>
+<a name="156"><font size=-1>156     </font></a>    </member>
+<a name="157"><font size=-1>157     </font></a>    <member name="T:Microsoft.Owin.Security.Twitter.Messages.AccessToken">
+<a name="158"><font size=-1>158     </font></a>      <summary>Token de acceso de Twitter</summary>
+<a name="159"><font size=-1>159     </font></a>    </member>
+<a name="160"><font size=-1>160     </font></a>    <member name="M:Microsoft.Owin.Security.Twitter.Messages.AccessToken.#ctor"></member>
+<a name="161"><font size=-1>161     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.Messages.AccessToken.ScreenName">
+<a name="162"><font size=-1>162     </font></a>      <summary>Obtiene o establece el nombre de pantalla de Twitter</summary>
+<a name="163"><font size=-1>163     </font></a>    </member>
+<a name="164"><font size=-1>164     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.Messages.AccessToken.UserId">
+<a name="165"><font size=-1>165     </font></a>      <summary>Obtiene o establece el identificador de usuario de Twitter</summary>
+<a name="166"><font size=-1>166     </font></a>    </member>
+<a name="167"><font size=-1>167     </font></a>    <member name="T:Microsoft.Owin.Security.Twitter.Messages.RequestToken">
+<a name="168"><font size=-1>168     </font></a>      <summary>Token de solicitud de Twitter</summary>
+<a name="169"><font size=-1>169     </font></a>    </member>
+<a name="170"><font size=-1>170     </font></a>    <member name="M:Microsoft.Owin.Security.Twitter.Messages.RequestToken.#ctor"></member>
+<a name="171"><font size=-1>171     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.Messages.RequestToken.CallbackConfirmed"></member>
+<a name="172"><font size=-1>172     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.Messages.RequestToken.Properties">
+<a name="173"><font size=-1>173     </font></a>      <summary>Obtiene o establece un contenedor de propiedades para las propiedades de autenticación comunes</summary>
+<a name="174"><font size=-1>174     </font></a>    </member>
+<a name="175"><font size=-1>175     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.Messages.RequestToken.Token">
+<a name="176"><font size=-1>176     </font></a>      <summary>Obtiene o establece el token de Twitter</summary>
+<a name="177"><font size=-1>177     </font></a>    </member>
+<a name="178"><font size=-1>178     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.Messages.RequestToken.TokenSecret">
+<a name="179"><font size=-1>179     </font></a>      <summary>Obtiene o establece el secreto del token de Twitter</summary>
+<a name="180"><font size=-1>180     </font></a>    </member>
+<a name="181"><font size=-1>181     </font></a>    <member name="T:Microsoft.Owin.Security.Twitter.Messages.RequestTokenSerializer">
+<a name="182"><font size=-1>182     </font></a>      <summary>Serializa y deserializa los tokens de solicitud y acceso de Twitter para que los puedan usar otros componentes de aplicación.</summary>
+<a name="183"><font size=-1>183     </font></a>    </member>
+<a name="184"><font size=-1>184     </font></a>    <member name="M:Microsoft.Owin.Security.Twitter.Messages.RequestTokenSerializer.#ctor"></member>
+<a name="185"><font size=-1>185     </font></a>    <member name="M:Microsoft.Owin.Security.Twitter.Messages.RequestTokenSerializer.Deserialize(System.Byte[])">
+<a name="186"><font size=-1>186     </font></a>      <summary>Deserializa un token de solicitud</summary>
+<a name="187"><font size=-1>187     </font></a>      <returns>El token de solicitud de Twitter</returns>
+<a name="188"><font size=-1>188     </font></a>      <param name="data">Una matriz de bytes que contiene el token serializado</param>
+<a name="189"><font size=-1>189     </font></a>    </member>
+<a name="190"><font size=-1>190     </font></a>    <member name="M:Microsoft.Owin.Security.Twitter.Messages.RequestTokenSerializer.Read(System.IO.BinaryReader)">
+<a name="191"><font size=-1>191     </font></a>      <summary>Lee un token de solicitud de Twitter de una serie de bytes.Lo usa el método <see cref="M:Microsoft.Owin.Security.Twitter.Messages.RequestTokenSerializer.Deserialize(System.Byte[])" />.</summary>
+<a name="192"><font size=-1>192     </font></a>      <returns>El token</returns>
+<a name="193"><font size=-1>193     </font></a>      <param name="reader">El lector que se usa para la lectura de los bytes del token</param>
+<a name="194"><font size=-1>194     </font></a>    </member>
+<a name="195"><font size=-1>195     </font></a>    <member name="M:Microsoft.Owin.Security.Twitter.Messages.RequestTokenSerializer.Serialize(Microsoft.Owin.Security.Twitter.Messages.RequestToken)">
+<a name="196"><font size=-1>196     </font></a>      <summary>Serializa un token de solicitud</summary>
+<a name="197"><font size=-1>197     </font></a>      <returns>Una matriz de bytes que contiene el token serializado</returns>
+<a name="198"><font size=-1>198     </font></a>      <param name="model">El token que se va a serializar</param>
+<a name="199"><font size=-1>199     </font></a>    </member>
+<a name="200"><font size=-1>200     </font></a>    <member name="M:Microsoft.Owin.Security.Twitter.Messages.RequestTokenSerializer.Write(System.IO.BinaryWriter,Microsoft.Owin.Security.Twitter.Messages.RequestToken)">
+<a name="201"><font size=-1>201     </font></a>      <summary>Escribe un token de solicitud de Twitter como una serie de bytes.Lo usa el método <see cref="M:Microsoft.Owin.Security.Twitter.Messages.RequestTokenSerializer.Serialize(Microsoft.Owin.Security.Twitter.Messages.RequestToken)" />.</summary>
+<a name="202"><font size=-1>202     </font></a>      <param name="writer">El editor que se usa en la escritura del token</param>
+<a name="203"><font size=-1>203     </font></a>      <param name="token">El token que se va a escribir.</param>
+<a name="204"><font size=-1>204     </font></a>    </member>
+<a name="205"><font size=-1>205     </font></a>    <member name="T:Microsoft.Owin.Security.Twitter.Messages.Serializers">
+<a name="206"><font size=-1>206     </font></a>      <summary>Proporciona acceso a un serializador de token de solicitud</summary>
+<a name="207"><font size=-1>207     </font></a>    </member>
+<a name="208"><font size=-1>208     </font></a>    <member name="P:Microsoft.Owin.Security.Twitter.Messages.Serializers.RequestToken">
+<a name="209"><font size=-1>209     </font></a>      <summary>Obtiene o establece un objeto de serializador disponible estáticamente.El valor de esta propiedad será <see cref="T:Microsoft.Owin.Security.Twitter.Messages.RequestTokenSerializer" /> de forma predeterminada.</summary>
+<a name="210"><font size=-1>210     </font></a>    </member>
+<a name="211"><font size=-1>211     </font></a>    <member name="T:Owin.TwitterAuthenticationExtensions">
+<a name="212"><font size=-1>212     </font></a>      <summary>Métodos de extensión para usar <see cref="T:Microsoft.Owin.Security.Twitter.TwitterAuthenticationMiddleware" /></summary>
+<a name="213"><font size=-1>213     </font></a>    </member>
+<a name="214"><font size=-1>214     </font></a>    <member name="M:Owin.TwitterAuthenticationExtensions.UseTwitterAuthentication(Owin.IAppBuilder,Microsoft.Owin.Security.Twitter.TwitterAuthenticationOptions)">
+<a name="215"><font size=-1>215     </font></a>      <summary>Autenticar usuarios mediante Twitter</summary>
+<a name="216"><font size=-1>216     </font></a>      <returns>El objeto <see cref="T:Owin.IAppBuilder" /> actualizado</returns>
+<a name="217"><font size=-1>217     </font></a>      <param name="app">El objeto <see cref="T:Owin.IAppBuilder" /> se pasa al método de configuración</param>
+<a name="218"><font size=-1>218     </font></a>      <param name="options">Opciones de configuración de middleware</param>
+<a name="219"><font size=-1>219     </font></a>    </member>
+<a name="220"><font size=-1>220     </font></a>    <member name="M:Owin.TwitterAuthenticationExtensions.UseTwitterAuthentication(Owin.IAppBuilder,System.String,System.String)">
+<a name="221"><font size=-1>221     </font></a>      <summary>Autenticar usuarios mediante Twitter</summary>
+<a name="222"><font size=-1>222     </font></a>      <returns>El objeto <see cref="T:Owin.IAppBuilder" /> actualizado</returns>
+<a name="223"><font size=-1>223     </font></a>      <param name="app">El objeto <see cref="T:Owin.IAppBuilder" /> se pasa al método de configuración</param>
+<a name="224"><font size=-1>224     </font></a>      <param name="consumerKey">La clave de consumidor que emite Twitter</param>
+<a name="225"><font size=-1>225     </font></a>      <param name="consumerSecret">El secreto de la clave de consumidor que emite Twitter</param>
+<a name="226"><font size=-1>226     </font></a>    </member>
+<a name="227"><font size=-1>227     </font></a>  </members>
+<a name="228"><font size=-1>228     </font></a></doc>
+</pre></body></html>

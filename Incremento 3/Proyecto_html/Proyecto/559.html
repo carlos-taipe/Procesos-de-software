@@ -1,0 +1,120 @@
+<html><head><title>IdentityConfig.cs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: D:\Proyecto\Proyecto\App_Start\IdentityConfig.cs</h3>
+<SCRIPT>
+defaultStatus = "File: D:\\Proyecto\\Proyecto\\App_Start\\IdentityConfig.cs";
+top.document.title  = "IdentityConfig.cs";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="keyword">using </span><span class="default">System;</span>
+<a name="2"><font size=-1>2     </font></a><span class="default"></span><span class="keyword">using </span><span class="default">System.Collections.Generic;</span>
+<a name="3"><font size=-1>3     </font></a><span class="default"></span><span class="keyword">using </span><span class="default">System.Data.Entity;</span>
+<a name="4"><font size=-1>4     </font></a><span class="default"></span><span class="keyword">using </span><span class="default">System.Linq;</span>
+<a name="5"><font size=-1>5     </font></a><span class="default"></span><span class="keyword">using </span><span class="default">System.Security.Claims;</span>
+<a name="6"><font size=-1>6     </font></a><span class="default"></span><span class="keyword">using </span><span class="default">System.Threading.Tasks;</span>
+<a name="7"><font size=-1>7     </font></a><span class="default"></span><span class="keyword">using </span><span class="default">System.Web;</span>
+<a name="8"><font size=-1>8     </font></a><span class="default"></span><span class="keyword">using </span><span class="default">Microsoft.AspNet.Identity;</span>
+<a name="9"><font size=-1>9     </font></a><span class="default"></span><span class="keyword">using </span><span class="default">Microsoft.AspNet.Identity.EntityFramework;</span>
+<a name="10"><font size=-1>10     </font></a><span class="default"></span><span class="keyword">using </span><span class="default">Microsoft.AspNet.Identity.Owin;</span>
+<a name="11"><font size=-1>11     </font></a><span class="default"></span><span class="keyword">using </span><span class="default">Microsoft.Owin;</span>
+<a name="12"><font size=-1>12     </font></a><span class="default"></span><span class="keyword">using </span><span class="default">Microsoft.Owin.Security;</span>
+<a name="13"><font size=-1>13     </font></a><span class="default"></span><span class="keyword">using </span><span class="default">Proyecto.Models;</span>
+<a name="14"><font size=-1>14     </font></a><span class="default"></span>
+<a name="15"><font size=-1>15     </font></a><span class="default"></span><span class="keyword">namespace </span><span class="default">Proyecto</span>
+<a name="16"><font size=-1>16     </font></a><span class="default">{</span>
+<a name="17"><font size=-1>17     </font></a><span class="default">    </span><span class="keyword">public class <a href="dictionary_P.html#591">EmailService</a> </span><span class="default">: <a href="dictionary_I.html#570">IIdentityMessageService</a></span>
+<a name="18"><font size=-1>18     </font></a><span class="default">    {</span>
+<a name="19"><font size=-1>19     </font></a><span class="default">        </span><span class="keyword">public </span><span class="default">Task <a href="dictionary_P.html#592">SendAsync</a>(<a href="dictionary_I.html#36">IdentityMessage</a> <a href="dictionary_P.html#593">message</a>)</span>
+<a name="20"><font size=-1>20     </font></a><span class="default">        {</span>
+<a name="21"><font size=-1>21     </font></a><span class="default">            </span><span class="comment">// Conecte su servicio de correo electrónico aquí para enviar correo electrónico.</span>
+<a name="22"><font size=-1>22     </font></a><span class="comment">            </span><span class="keyword">return </span><span class="default">Task.FromResult(</span><span class="number">0</span><span class="default">);</span>
+<a name="23"><font size=-1>23     </font></a><span class="default">        }</span>
+<a name="24"><font size=-1>24     </font></a><span class="default">    }</span>
+<a name="25"><font size=-1>25     </font></a><span class="default"></span>
+<a name="26"><font size=-1>26     </font></a><span class="default">    </span><span class="keyword">public class <a href="dictionary_P.html#594">SmsService</a> </span><span class="default">: <a href="dictionary_I.html#570">IIdentityMessageService</a></span>
+<a name="27"><font size=-1>27     </font></a><span class="default">    {</span>
+<a name="28"><font size=-1>28     </font></a><span class="default">        </span><span class="keyword">public </span><span class="default">Task <a href="dictionary_P.html#595">SendAsync</a>(<a href="dictionary_I.html#36">IdentityMessage</a> <a href="dictionary_P.html#596">message</a>)</span>
+<a name="29"><font size=-1>29     </font></a><span class="default">        {</span>
+<a name="30"><font size=-1>30     </font></a><span class="default">            </span><span class="comment">// Conecte el servicio SMS aquí para enviar un mensaje de texto.</span>
+<a name="31"><font size=-1>31     </font></a><span class="comment">            </span><span class="keyword">return </span><span class="default">Task.FromResult(</span><span class="number">0</span><span class="default">);</span>
+<a name="32"><font size=-1>32     </font></a><span class="default">        }</span>
+<a name="33"><font size=-1>33     </font></a><span class="default">    }</span>
+<a name="34"><font size=-1>34     </font></a><span class="default"></span>
+<a name="35"><font size=-1>35     </font></a><span class="default">    </span><span class="comment">// Configure el administrador de usuarios de aplicación que se usa en esta aplicación. UserManager se define en ASP.NET Identity y se usa en la aplicación.</span>
+<a name="36"><font size=-1>36     </font></a><span class="comment">    </span><span class="keyword">public class <a href="dictionary_P.html#185">ApplicationUserManager</a> </span><span class="default">: <a href="dictionary_U.html#607">UserManager</a>&lt;<a href="dictionary_P.html#613">ApplicationUser</a>&gt;</span>
+<a name="37"><font size=-1>37     </font></a><span class="default">    {</span>
+<a name="38"><font size=-1>38     </font></a><span class="default">        </span><span class="keyword">public <a href="dictionary_P.html#585">ApplicationUserManager</a></span><span class="default">(<a href="dictionary_I.html#572">IUserStore</a>&lt;<a href="dictionary_P.html#613">ApplicationUser</a>&gt; <a href="dictionary_P.html#586">store</a>)</span>
+<a name="39"><font size=-1>39     </font></a><span class="default">            : </span><span class="keyword">base</span><span class="default">(<a href="dictionary_P.html#586">store</a>)</span>
+<a name="40"><font size=-1>40     </font></a><span class="default">        {</span>
+<a name="41"><font size=-1>41     </font></a><span class="default">        }</span>
+<a name="42"><font size=-1>42     </font></a><span class="default"></span>
+<a name="43"><font size=-1>43     </font></a><span class="default">        </span><span class="keyword">public static <a href="dictionary_P.html#185">ApplicationUserManager</a> <a href="dictionary_P.html#394">Create</a></span><span class="default">(<a href="dictionary_I.html#573">IdentityFactoryOptions</a>&lt;<a href="dictionary_P.html#185">ApplicationUserManager</a>&gt; <a href="dictionary_P.html#590">options</a>, <a href="dictionary_I.html#571">IOwinContext</a> <a href="dictionary_P.html#587">context</a>) </span>
+<a name="44"><font size=-1>44     </font></a><span class="default">        {</span>
+<a name="45"><font size=-1>45     </font></a><span class="default">            var <a href="dictionary_P.html#589">manager</a> = </span><span class="keyword">new <a href="dictionary_P.html#585">ApplicationUserManager</a></span><span class="default">(</span><span class="keyword">new </span><span class="default">UserStore&lt;<a href="dictionary_P.html#613">ApplicationUser</a>&gt;(<a href="dictionary_P.html#587">context</a>.<a href="dictionary_G.html#23">Get</a>&lt;ApplicationDbContext&gt;()));</span>
+<a name="46"><font size=-1>46     </font></a><span class="default">            </span><span class="comment">// Configure la lógica de validación de nombres de usuario</span>
+<a name="47"><font size=-1>47     </font></a><span class="comment">            <a href="dictionary_P.html#589">manager</a></span><span class="default">.<a href="dictionary_U.html#610">UserValidator</a> = </span><span class="keyword">new </span><span class="default">UserValidator&lt;<a href="dictionary_P.html#613">ApplicationUser</a>&gt;(<a href="dictionary_P.html#589">manager</a>)</span>
+<a name="48"><font size=-1>48     </font></a><span class="default">            {</span>
+<a name="49"><font size=-1>49     </font></a><span class="default">                <a href="dictionary_A.html#560">AllowOnlyAlphanumericUserNames</a> = </span><span class="keyword">false</span><span class="default">,</span>
+<a name="50"><font size=-1>50     </font></a><span class="default">                <a href="dictionary_R.html#601">RequireUniqueEmail</a> = </span><span class="keyword">true</span>
+<a name="51"><font size=-1>51     </font></a><span class="keyword">            </span><span class="default">};</span>
+<a name="52"><font size=-1>52     </font></a><span class="default"></span>
+<a name="53"><font size=-1>53     </font></a><span class="default">            </span><span class="comment">// Configure la lógica de validación de contraseñas</span>
+<a name="54"><font size=-1>54     </font></a><span class="comment">            <a href="dictionary_P.html#589">manager</a></span><span class="default">.<a href="dictionary_P.html#576">PasswordValidator</a> = </span><span class="keyword">new </span><span class="default">PasswordValidator</span>
+<a name="55"><font size=-1>55     </font></a><span class="default">            {</span>
+<a name="56"><font size=-1>56     </font></a><span class="default">                <a href="dictionary_R.html#603">RequiredLength</a> = </span><span class="number">6</span><span class="default">,</span>
+<a name="57"><font size=-1>57     </font></a><span class="default">                <a href="dictionary_R.html#600">RequireNonLetterOrDigit</a> = </span><span class="keyword">false</span><span class="default">,</span>
+<a name="58"><font size=-1>58     </font></a><span class="default">                <a href="dictionary_R.html#598">RequireDigit</a> = </span><span class="keyword">false</span><span class="default">,</span>
+<a name="59"><font size=-1>59     </font></a><span class="default">                <a href="dictionary_R.html#599">RequireLowercase</a> = </span><span class="keyword">true</span><span class="default">,</span>
+<a name="60"><font size=-1>60     </font></a><span class="default">                <a href="dictionary_R.html#602">RequireUppercase</a> = </span><span class="keyword">false</span><span class="default">,</span>
+<a name="61"><font size=-1>61     </font></a><span class="default">            };</span>
+<a name="62"><font size=-1>62     </font></a><span class="default"></span>
+<a name="63"><font size=-1>63     </font></a><span class="default">            </span><span class="comment">// Configurar valores predeterminados para bloqueo de usuario</span>
+<a name="64"><font size=-1>64     </font></a><span class="comment">            <a href="dictionary_P.html#589">manager</a></span><span class="default">.<a href="dictionary_U.html#606">UserLockoutEnabledByDefault</a> = </span><span class="keyword">true</span><span class="default">;</span>
+<a name="65"><font size=-1>65     </font></a><span class="default">            <a href="dictionary_P.html#589">manager</a>.<a href="dictionary_D.html#565">DefaultAccountLockoutTimeSpan</a> = TimeSpan.FromMinutes(</span><span class="number">5</span><span class="default">);</span>
+<a name="66"><font size=-1>66     </font></a><span class="default">            <a href="dictionary_P.html#589">manager</a>.<a href="dictionary_M.html#574">MaxFailedAccessAttemptsBeforeLockout</a> = </span><span class="number">5</span><span class="default">;</span>
+<a name="67"><font size=-1>67     </font></a><span class="default"></span>
+<a name="68"><font size=-1>68     </font></a><span class="default">            </span><span class="comment">// Registre proveedores de autenticación en dos fases. Esta aplicación usa los pasos Teléfono y Correo electrónico para recibir un código para comprobar el usuario</span>
+<a name="69"><font size=-1>69     </font></a><span class="comment">            // Puede escribir su propio proveedor y conectarlo aquí.</span>
+<a name="70"><font size=-1>70     </font></a><span class="comment">            <a href="dictionary_P.html#589">manager</a></span><span class="default">.<a href="dictionary_R.html#597">RegisterTwoFactorProvider</a>(</span><span class="string">&quot;Código telefónico&quot;</span><span class="default">, </span><span class="keyword">new </span><span class="default">PhoneNumberTokenProvider&lt;<a href="dictionary_P.html#613">ApplicationUser</a>&gt;</span>
+<a name="71"><font size=-1>71     </font></a><span class="default">            {</span>
+<a name="72"><font size=-1>72     </font></a><span class="default">                <a href="dictionary_M.html#575">MessageFormat</a> = </span><span class="string">&quot;Su código de seguridad es {0}&quot;</span>
+<a name="73"><font size=-1>73     </font></a><span class="string">            </span><span class="default">});</span>
+<a name="74"><font size=-1>74     </font></a><span class="default">            <a href="dictionary_P.html#589">manager</a>.<a href="dictionary_R.html#597">RegisterTwoFactorProvider</a>(</span><span class="string">&quot;Código de correo electrónico&quot;</span><span class="default">, </span><span class="keyword">new </span><span class="default">EmailTokenProvider&lt;<a href="dictionary_P.html#613">ApplicationUser</a>&gt;</span>
+<a name="75"><font size=-1>75     </font></a><span class="default">            {</span>
+<a name="76"><font size=-1>76     </font></a><span class="default">                <a href="dictionary_S.html#605">Subject</a> = </span><span class="string">&quot;Código de seguridad&quot;</span><span class="default">,</span>
+<a name="77"><font size=-1>77     </font></a><span class="default">                <a href="dictionary_B.html#561">BodyFormat</a> = </span><span class="string">&quot;Su código de seguridad es {0}&quot;</span>
+<a name="78"><font size=-1>78     </font></a><span class="string">            </span><span class="default">});</span>
+<a name="79"><font size=-1>79     </font></a><span class="default">            <a href="dictionary_P.html#589">manager</a>.<a href="dictionary_E.html#566">EmailService</a> = </span><span class="keyword">new </span><span class="default">EmailService();</span>
+<a name="80"><font size=-1>80     </font></a><span class="default">            <a href="dictionary_P.html#589">manager</a>.<a href="dictionary_S.html#159">SmsService</a> = </span><span class="keyword">new </span><span class="default">SmsService();</span>
+<a name="81"><font size=-1>81     </font></a><span class="default">            var <a href="dictionary_P.html#588">dataProtectionProvider</a> = <a href="dictionary_P.html#590">options</a>.<a href="dictionary_D.html#563">DataProtectionProvider</a>;</span>
+<a name="82"><font size=-1>82     </font></a><span class="default">            </span><span class="keyword">if </span><span class="default">(<a href="dictionary_P.html#588">dataProtectionProvider</a> != </span><span class="keyword">null</span><span class="default">)</span>
+<a name="83"><font size=-1>83     </font></a><span class="default">            {</span>
+<a name="84"><font size=-1>84     </font></a><span class="default">                <a href="dictionary_P.html#589">manager</a>.<a href="dictionary_U.html#609">UserTokenProvider</a> = </span>
+<a name="85"><font size=-1>85     </font></a><span class="default">                    </span><span class="keyword">new </span><span class="default">DataProtectorTokenProvider&lt;<a href="dictionary_P.html#613">ApplicationUser</a>&gt;(<a href="dictionary_P.html#588">dataProtectionProvider</a>.<a href="dictionary_C.html#562">Create</a>(</span><span class="string">&quot;ASP.NET Identity&quot;</span><span class="default">));</span>
+<a name="86"><font size=-1>86     </font></a><span class="default">            }</span>
+<a name="87"><font size=-1>87     </font></a><span class="default">            </span><span class="keyword">return <a href="dictionary_P.html#589">manager</a></span><span class="default">;</span>
+<a name="88"><font size=-1>88     </font></a><span class="default">        }</span>
+<a name="89"><font size=-1>89     </font></a><span class="default">    }</span>
+<a name="90"><font size=-1>90     </font></a><span class="default"></span>
+<a name="91"><font size=-1>91     </font></a><span class="default">    </span><span class="comment">// Configure el administrador de inicios de sesión que se usa en esta aplicación.</span>
+<a name="92"><font size=-1>92     </font></a><span class="comment">    </span><span class="keyword">public class <a href="dictionary_P.html#184">ApplicationSignInManager</a> </span><span class="default">: <a href="dictionary_S.html#604">SignInManager</a>&lt;<a href="dictionary_P.html#613">ApplicationUser</a>, </span><span class="keyword">string</span><span class="default">&gt;</span>
+<a name="93"><font size=-1>93     </font></a><span class="default">    {</span>
+<a name="94"><font size=-1>94     </font></a><span class="default">        </span><span class="keyword">public <a href="dictionary_P.html#578">ApplicationSignInManager</a></span><span class="default">(<a href="dictionary_P.html#185">ApplicationUserManager</a> <a href="dictionary_P.html#580">userManager</a>, <a href="dictionary_I.html#34">IAuthenticationManager</a> <a href="dictionary_P.html#579">authenticationManager</a>)</span>
+<a name="95"><font size=-1>95     </font></a><span class="default">            : </span><span class="keyword">base</span><span class="default">(<a href="dictionary_P.html#580">userManager</a>, <a href="dictionary_P.html#579">authenticationManager</a>)</span>
+<a name="96"><font size=-1>96     </font></a><span class="default">        {</span>
+<a name="97"><font size=-1>97     </font></a><span class="default">        }</span>
+<a name="98"><font size=-1>98     </font></a><span class="default"></span>
+<a name="99"><font size=-1>99     </font></a><span class="default">        </span><span class="keyword">public override </span><span class="default">Task&lt;ClaimsIdentity&gt; <a href="dictionary_P.html#583">CreateUserIdentityAsync</a>(<a href="dictionary_P.html#613">ApplicationUser</a> <a href="dictionary_P.html#584">user</a>)</span>
+<a name="100"><font size=-1>100     </font></a><span class="default">        {</span>
+<a name="101"><font size=-1>101     </font></a><span class="default">            </span><span class="keyword">return <a href="dictionary_P.html#584">user</a></span><span class="default">.<a href="dictionary_P.html#615">GenerateUserIdentityAsync</a>((<a href="dictionary_P.html#185">ApplicationUserManager</a>)<a href="dictionary_U.html#607">UserManager</a>);</span>
+<a name="102"><font size=-1>102     </font></a><span class="default">        }</span>
+<a name="103"><font size=-1>103     </font></a><span class="default"></span>
+<a name="104"><font size=-1>104     </font></a><span class="default">        </span><span class="keyword">public static <a href="dictionary_P.html#184">ApplicationSignInManager</a> <a href="dictionary_P.html#395">Create</a></span><span class="default">(<a href="dictionary_I.html#573">IdentityFactoryOptions</a>&lt;<a href="dictionary_P.html#184">ApplicationSignInManager</a>&gt; <a href="dictionary_P.html#582">options</a>, <a href="dictionary_I.html#571">IOwinContext</a> <a href="dictionary_P.html#581">context</a>)</span>
+<a name="105"><font size=-1>105     </font></a><span class="default">        {</span>
+<a name="106"><font size=-1>106     </font></a><span class="default">            </span><span class="keyword">return new <a href="dictionary_P.html#578">ApplicationSignInManager</a></span><span class="default">(<a href="dictionary_P.html#581">context</a>.<a href="dictionary_G.html#31">GetUserManager</a>&lt;ApplicationUserManager&gt;(), <a href="dictionary_P.html#581">context</a>.<a href="dictionary_A.html#9">Authentication</a>);</span>
+<a name="107"><font size=-1>107     </font></a><span class="default">        }</span>
+<a name="108"><font size=-1>108     </font></a><span class="default">    }</span>
+<a name="109"><font size=-1>109     </font></a><span class="default">}</span>
+<a name="110"><font size=-1>110     </font></a><span class="default"></span>
+</pre></body></html>

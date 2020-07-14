@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Proyecto.Models.sp_C_ProductoxNombre_Result>
+
+@{
+    ViewBag.Title = "buscarxNombre";
+}
+
+<h2>buscarxNombre</h2>
+
+<div style="margin-bottom:15px">
+    @Html.ActionLink("Crear nuevo", "Create", routeValues: null, htmlAttributes: new { @class = "btn btn-success" })
+</div>
+
+@if (Model.Count() == 0)
+{
+    <div class="alert alert-danger" role="alert">No encontramos ningún producto con este nombre.</div>
+}
+else
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.proNombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.proCantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.proPrecioVenta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.catNombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.provNombres)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.proNombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.proCantidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.proPrecioVenta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.catNombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.provNombres)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.IDProducto }, htmlAttributes: new { @class = "btn btn-info" }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.IDProducto }, htmlAttributes: new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+
+<div>
+    @Html.ActionLink("Volver a la lista", "Index", null, new { @class = "btn btn-danger" })
+</div>

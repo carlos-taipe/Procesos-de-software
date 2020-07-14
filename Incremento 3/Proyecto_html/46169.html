@@ -1,0 +1,208 @@
+<html><head><title>Microsoft.AspNet.Identity.Owin.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body>
+<h3>File: D:\Proyecto\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\es\Microsoft.AspNet.Identity.Owin.xml</h3>
+<SCRIPT>
+ defaultStatus = "File: D:\\Proyecto\\packages\\Microsoft.AspNet.Identity.Owin.2.2.2\\lib\\net45\\es\\Microsoft.AspNet.Identity.Owin.xml";
+top.document.title  = "Microsoft.AspNet.Identity.Owin.xml";
+</SCRIPT>
+<pre><a name="1"><font size=-1>1     </font></a><?xml version="1.0" encoding="utf-8"?>
+<a name="2"><font size=-1>2     </font></a><doc>
+<a name="3"><font size=-1>3     </font></a>  <assembly>
+<a name="4"><font size=-1>4     </font></a>    <name>Microsoft.AspNet.Identity.Owin</name>
+<a name="5"><font size=-1>5     </font></a>  </assembly>
+<a name="6"><font size=-1>6     </font></a>  <members>
+<a name="7"><font size=-1>7     </font></a>    <member name="T:Microsoft.AspNet.Identity.IdentityExtensions">
+<a name="8"><font size=-1>8     </font></a>      <summary>Extensiones que facilitan la obtención de notificaciones de nombre o identificador de usuario a partir de una identidad.</summary>
+<a name="9"><font size=-1>9     </font></a>    </member>
+<a name="10"><font size=-1>10     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityExtensions.FindFirstValue(System.Security.Claims.ClaimsIdentity,System.String)">
+<a name="11"><font size=-1>11     </font></a>      <summary>Devuelve el valor de la primera notificación con el tipo especificado si existe; en caso contrario, devuelve null.</summary>
+<a name="12"><font size=-1>12     </font></a>      <returns>Devuelve <see cref="T:System.String" />.</returns>
+<a name="13"><font size=-1>13     </font></a>    </member>
+<a name="14"><font size=-1>14     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityExtensions.GetUserId(System.Security.Principal.IIdentity)">
+<a name="15"><font size=-1>15     </font></a>      <summary>Devuelve el identificador de usuario mediante UserIdClaimType.</summary>
+<a name="16"><font size=-1>16     </font></a>      <returns>Devuelve <see cref="T:System.String" />.</returns>
+<a name="17"><font size=-1>17     </font></a>    </member>
+<a name="18"><font size=-1>18     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityExtensions.GetUserName(System.Security.Principal.IIdentity)">
+<a name="19"><font size=-1>19     </font></a>      <summary>Devuelve el nombre de usuario mediante UserNameClaimType.</summary>
+<a name="20"><font size=-1>20     </font></a>      <returns>Devuelve <see cref="T:System.String" />.</returns>
+<a name="21"><font size=-1>21     </font></a>    </member>
+<a name="22"><font size=-1>22     </font></a>    <member name="T:Microsoft.AspNet.Identity.Owin.AuthenticationIdentityManager">
+<a name="23"><font size=-1>23     </font></a>      <summary>Owin aware identity manager that adds sign in/sign out and claims functionality</summary>
+<a name="24"><font size=-1>24     </font></a>    </member>
+<a name="25"><font size=-1>25     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.AuthenticationIdentityManager.#ctor(Microsoft.AspNet.Identity.IdentitySettings,Microsoft.AspNet.Identity.IIdentityStore)">
+<a name="26"><font size=-1>26     </font></a>      <summary>Constructor</summary>
+<a name="27"><font size=-1>27     </font></a>    </member>
+<a name="28"><font size=-1>28     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.AuthenticationIdentityManager.#ctor(Microsoft.AspNet.Identity.IIdentityStore)">
+<a name="29"><font size=-1>29     </font></a>      <summary>Constructor that uses the default settings</summary>
+<a name="30"><font size=-1>30     </font></a>    </member>
+<a name="31"><font size=-1>31     </font></a>    <member name="P:Microsoft.AspNet.Identity.Owin.AuthenticationIdentityManager.Authentication">
+<a name="32"><font size=-1>32     </font></a>      <summary>Authentication APIs (SignIn, SignOut)</summary>
+<a name="33"><font size=-1>33     </font></a>    </member>
+<a name="34"><font size=-1>34     </font></a>    <member name="T:Microsoft.AspNet.Identity.Owin.AuthenticationManager">
+<a name="35"><font size=-1>35     </font></a>      <summary>Authentication APIs (SignIn/SignOut)</summary>
+<a name="36"><font size=-1>36     </font></a>    </member>
+<a name="37"><font size=-1>37     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.AuthenticationManager.#ctor(Microsoft.AspNet.Identity.Owin.IdentityAuthenticationOptions,Microsoft.AspNet.Identity.IdentityManager)">
+<a name="38"><font size=-1>38     </font></a>      <summary>Constructor</summary>
+<a name="39"><font size=-1>39     </font></a>    </member>
+<a name="40"><font size=-1>40     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.AuthenticationManager.CheckPasswordAndSignInAsync(Microsoft.Owin.Security.IAuthenticationManager,System.String,System.String,System.Boolean,System.Threading.CancellationToken)">
+<a name="41"><font size=-1>41     </font></a>      <summary>Validates that the password matches and then signs the token in</summary>
+<a name="42"><font size=-1>42     </font></a>    </member>
+<a name="43"><font size=-1>43     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.AuthenticationManager.ConfirmSignInTokenAsync(System.String,System.Threading.CancellationToken)">
+<a name="44"><font size=-1>44     </font></a>      <summary>If the token is found, allows the user to sign in</summary>
+<a name="45"><font size=-1>45     </font></a>    </member>
+<a name="46"><font size=-1>46     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.AuthenticationManager.CreateAndSignInExternalUserAsync(Microsoft.Owin.Security.IAuthenticationManager,Microsoft.AspNet.Identity.IUser,System.Threading.CancellationToken)">
+<a name="47"><font size=-1>47     </font></a>      <summary>Create an external user and sign them in</summary>
+<a name="48"><font size=-1>48     </font></a>    </member>
+<a name="49"><font size=-1>49     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.AuthenticationManager.CreateApplicationClaimsIdentity(System.Collections.Generic.IEnumerable{System.Security.Claims.Claim})">
+<a name="50"><font size=-1>50     </font></a>      <summary>Creates a claims identity with the ApplicationAuthenticaitonType, UserNameClaimType and ConfigRole type</summary>
+<a name="51"><font size=-1>51     </font></a>    </member>
+<a name="52"><font size=-1>52     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.AuthenticationManager.GetExternalIdentityAsync(Microsoft.Owin.Security.IAuthenticationManager)">
+<a name="53"><font size=-1>53     </font></a>      <summary>Return the identity associated with the default external authentication type</summary>
+<a name="54"><font size=-1>54     </font></a>    </member>
+<a name="55"><font size=-1>55     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.AuthenticationManager.GetUserIdentityClaimsAsync(System.String,System.Collections.Generic.IEnumerable{System.Security.Claims.Claim},System.Threading.CancellationToken)">
+<a name="56"><font size=-1>56     </font></a>      <summary>Return the claims for a token, which will contain the UserIdClaimType, UserNameClaimType, a claim representing each Role and any claims specified in the UserClaims</summary>
+<a name="57"><font size=-1>57     </font></a>    </member>
+<a name="58"><font size=-1>58     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.AuthenticationManager.LinkExternalIdentityAsync(System.Security.Claims.ClaimsIdentity,System.String,System.Threading.CancellationToken)">
+<a name="59"><font size=-1>59     </font></a>      <summary>Try to link the given identity to the specified token</summary>
+<a name="60"><font size=-1>60     </font></a>    </member>
+<a name="61"><font size=-1>61     </font></a>    <member name="P:Microsoft.AspNet.Identity.Owin.AuthenticationManager.Manager">
+<a name="62"><font size=-1>62     </font></a>      <summary>IdentityManager for operations</summary>
+<a name="63"><font size=-1>63     </font></a>    </member>
+<a name="64"><font size=-1>64     </font></a>    <member name="P:Microsoft.AspNet.Identity.Owin.AuthenticationManager.Options">
+<a name="65"><font size=-1>65     </font></a>      <summary>Config</summary>
+<a name="66"><font size=-1>66     </font></a>    </member>
+<a name="67"><font size=-1>67     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.AuthenticationManager.RequireTokenConfirmationForSignInAsync(System.String,System.String,System.DateTime,System.Threading.CancellationToken)">
+<a name="68"><font size=-1>68     </font></a>      <summary>Create a token for the specified user and disables sign in. ConfirmSignInTokenAsync will confirm this token and reenable sign in.</summary>
+<a name="69"><font size=-1>69     </font></a>    </member>
+<a name="70"><font size=-1>70     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.AuthenticationManager.SignInAsync(Microsoft.Owin.Security.IAuthenticationManager,System.String,System.Collections.Generic.IEnumerable{System.Security.Claims.Claim},System.Boolean,System.Threading.CancellationToken)">
+<a name="71"><font size=-1>71     </font></a>      <summary>Signs in the active principal with a identity that contains claims set to the result of GetUserIdentityClaims and the specified claims</summary>
+<a name="72"><font size=-1>72     </font></a>    </member>
+<a name="73"><font size=-1>73     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.AuthenticationManager.SignInExternalIdentityAsync(Microsoft.Owin.Security.IAuthenticationManager,System.Security.Claims.ClaimsIdentity,System.Threading.CancellationToken)">
+<a name="74"><font size=-1>74     </font></a>      <summary>Signs the identity in if the external identity is already linked</summary>
+<a name="75"><font size=-1>75     </font></a>    </member>
+<a name="76"><font size=-1>76     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.AuthenticationManager.UpdateUserDisableSignIn(System.String,System.Boolean,System.Threading.CancellationToken)">
+<a name="77"><font size=-1>77     </font></a>      <summary>Set the AllowSignIn flag for a user</summary>
+<a name="78"><font size=-1>78     </font></a>    </member>
+<a name="79"><font size=-1>79     </font></a>    <member name="T:Microsoft.AspNet.Identity.Owin.IAuthenticationManager">
+<a name="80"><font size=-1>80     </font></a>      <summary>Authentication APIs (SignIn/SignOut)</summary>
+<a name="81"><font size=-1>81     </font></a>    </member>
+<a name="82"><font size=-1>82     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManager.CheckPasswordAndSignInAsync(Microsoft.Owin.Security.IAuthenticationManager,System.String,System.String,System.Boolean,System.Threading.CancellationToken)">
+<a name="83"><font size=-1>83     </font></a>      <summary>Validates that the password matches and then signs the token in</summary>
+<a name="84"><font size=-1>84     </font></a>    </member>
+<a name="85"><font size=-1>85     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManager.ConfirmSignInTokenAsync(System.String,System.Threading.CancellationToken)">
+<a name="86"><font size=-1>86     </font></a>      <summary>If the token is found, allows the user to sign in</summary>
+<a name="87"><font size=-1>87     </font></a>    </member>
+<a name="88"><font size=-1>88     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManager.CreateAndSignInExternalUserAsync(Microsoft.Owin.Security.IAuthenticationManager,Microsoft.AspNet.Identity.IUser,System.Threading.CancellationToken)">
+<a name="89"><font size=-1>89     </font></a>      <summary>Create an external user and sign them in</summary>
+<a name="90"><font size=-1>90     </font></a>    </member>
+<a name="91"><font size=-1>91     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManager.CreateApplicationClaimsIdentity(System.Collections.Generic.IEnumerable{System.Security.Claims.Claim})">
+<a name="92"><font size=-1>92     </font></a>      <summary>Creates a claims identity with the ApplicationAuthenticaitonType, UserNameClaimType and ConfigRole type</summary>
+<a name="93"><font size=-1>93     </font></a>    </member>
+<a name="94"><font size=-1>94     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManager.GetExternalIdentityAsync(Microsoft.Owin.Security.IAuthenticationManager)">
+<a name="95"><font size=-1>95     </font></a>      <summary>Return the identity associated with the default external authentication type</summary>
+<a name="96"><font size=-1>96     </font></a>    </member>
+<a name="97"><font size=-1>97     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManager.GetUserIdentityClaimsAsync(System.String,System.Collections.Generic.IEnumerable{System.Security.Claims.Claim},System.Threading.CancellationToken)">
+<a name="98"><font size=-1>98     </font></a>      <summary>Return the claims for a token, which will contain the UserIdClaimType, UserNameClaimType, a claim representing each Role and any claims specified in the UserClaims</summary>
+<a name="99"><font size=-1>99     </font></a>    </member>
+<a name="100"><font size=-1>100     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManager.LinkExternalIdentityAsync(System.Security.Claims.ClaimsIdentity,System.String,System.Threading.CancellationToken)">
+<a name="101"><font size=-1>101     </font></a>      <summary>Try to link the given identity to the specified token</summary>
+<a name="102"><font size=-1>102     </font></a>    </member>
+<a name="103"><font size=-1>103     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManager.RequireTokenConfirmationForSignInAsync(System.String,System.String,System.DateTime,System.Threading.CancellationToken)">
+<a name="104"><font size=-1>104     </font></a>      <summary>Require a call to ConfirmSignInToken with the given token before this user can be signed in</summary>
+<a name="105"><font size=-1>105     </font></a>    </member>
+<a name="106"><font size=-1>106     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManager.SignInAsync(Microsoft.Owin.Security.IAuthenticationManager,System.String,System.Collections.Generic.IEnumerable{System.Security.Claims.Claim},System.Boolean,System.Threading.CancellationToken)">
+<a name="107"><font size=-1>107     </font></a>      <summary>Signs in the active principal with a identity that contains claims set to the result of GetUserIdentityClaims and the specified claims</summary>
+<a name="108"><font size=-1>108     </font></a>    </member>
+<a name="109"><font size=-1>109     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManager.SignInExternalIdentityAsync(Microsoft.Owin.Security.IAuthenticationManager,System.Security.Claims.ClaimsIdentity,System.Threading.CancellationToken)">
+<a name="110"><font size=-1>110     </font></a>      <summary>Signs the identity in if the external identity is already linked</summary>
+<a name="111"><font size=-1>111     </font></a>    </member>
+<a name="112"><font size=-1>112     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManager.UpdateUserDisableSignIn(System.String,System.Boolean,System.Threading.CancellationToken)">
+<a name="113"><font size=-1>113     </font></a>      <summary>Set the AllowSignIn flag for a user</summary>
+<a name="114"><font size=-1>114     </font></a>    </member>
+<a name="115"><font size=-1>115     </font></a>    <member name="T:Microsoft.AspNet.Identity.Owin.IAuthenticationManagerExtensions">
+<a name="116"><font size=-1>116     </font></a>      <summary>Adds extensions methods related to SignIn using OWIN middleware and the IdentityManager to generate the appropriate user claims</summary>
+<a name="117"><font size=-1>117     </font></a>    </member>
+<a name="118"><font size=-1>118     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManagerExtensions.CheckPasswordAndSignIn(Microsoft.AspNet.Identity.Owin.IAuthenticationManager,Microsoft.Owin.Security.IAuthenticationManager,System.String,System.String,System.Boolean)"></member>
+<a name="119"><font size=-1>119     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManagerExtensions.CheckPasswordAndSignInAsync(Microsoft.AspNet.Identity.Owin.IAuthenticationManager,Microsoft.Owin.Security.IAuthenticationManager,System.String,System.String,System.Boolean)"></member>
+<a name="120"><font size=-1>120     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManagerExtensions.ConfirmSignInToken(Microsoft.AspNet.Identity.Owin.IAuthenticationManager,System.String)"></member>
+<a name="121"><font size=-1>121     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManagerExtensions.ConfirmSignInTokenAsync(Microsoft.AspNet.Identity.Owin.IAuthenticationManager,System.String)"></member>
+<a name="122"><font size=-1>122     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManagerExtensions.CreateAndSignInExternalUser(Microsoft.AspNet.Identity.Owin.IAuthenticationManager,Microsoft.Owin.Security.IAuthenticationManager,Microsoft.AspNet.Identity.IUser)"></member>
+<a name="123"><font size=-1>123     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManagerExtensions.CreateAndSignInExternalUserAsync(Microsoft.AspNet.Identity.Owin.IAuthenticationManager,Microsoft.Owin.Security.IAuthenticationManager,Microsoft.AspNet.Identity.IUser)"></member>
+<a name="124"><font size=-1>124     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManagerExtensions.GetExternalIdentity(Microsoft.AspNet.Identity.Owin.IAuthenticationManager,Microsoft.Owin.Security.IAuthenticationManager)"></member>
+<a name="125"><font size=-1>125     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManagerExtensions.LinkExternalIdentity(Microsoft.AspNet.Identity.Owin.IAuthenticationManager,System.Security.Claims.ClaimsIdentity,System.String)"></member>
+<a name="126"><font size=-1>126     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManagerExtensions.LinkExternalIdentityAsync(Microsoft.AspNet.Identity.Owin.IAuthenticationManager,System.Security.Claims.ClaimsIdentity,System.String)"></member>
+<a name="127"><font size=-1>127     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManagerExtensions.RequireTokenConfirmationForSignIn(Microsoft.AspNet.Identity.Owin.IAuthenticationManager,System.String,System.String,System.DateTime)"></member>
+<a name="128"><font size=-1>128     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManagerExtensions.RequireTokenConfirmationForSignInAsync(Microsoft.AspNet.Identity.Owin.IAuthenticationManager,System.String,System.String,System.DateTime)"></member>
+<a name="129"><font size=-1>129     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManagerExtensions.SignIn(Microsoft.AspNet.Identity.Owin.IAuthenticationManager,Microsoft.Owin.Security.IAuthenticationManager,System.String,System.Boolean)"></member>
+<a name="130"><font size=-1>130     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManagerExtensions.SignIn(Microsoft.AspNet.Identity.Owin.IAuthenticationManager,Microsoft.Owin.Security.IAuthenticationManager,System.String,System.Collections.Generic.IEnumerable{System.Security.Claims.Claim},System.Boolean)"></member>
+<a name="131"><font size=-1>131     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManagerExtensions.SignInAsync(Microsoft.AspNet.Identity.Owin.IAuthenticationManager,Microsoft.Owin.Security.IAuthenticationManager,System.String,System.Boolean)"></member>
+<a name="132"><font size=-1>132     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManagerExtensions.SignInAsync(Microsoft.AspNet.Identity.Owin.IAuthenticationManager,Microsoft.Owin.Security.IAuthenticationManager,System.String,System.Boolean,System.Threading.CancellationToken)"></member>
+<a name="133"><font size=-1>133     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManagerExtensions.SignInExternalIdentity(Microsoft.AspNet.Identity.Owin.IAuthenticationManager,Microsoft.Owin.Security.IAuthenticationManager,System.Security.Claims.ClaimsIdentity)"></member>
+<a name="134"><font size=-1>134     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IAuthenticationManagerExtensions.SignInExternalIdentityAsync(Microsoft.AspNet.Identity.Owin.IAuthenticationManager,Microsoft.Owin.Security.IAuthenticationManager,System.Security.Claims.ClaimsIdentity)"></member>
+<a name="135"><font size=-1>135     </font></a>    <member name="T:Microsoft.AspNet.Identity.Owin.IdentityAuthenticationOptions">
+<a name="136"><font size=-1>136     </font></a>      <summary>Configuration for the Identity system</summary>
+<a name="137"><font size=-1>137     </font></a>    </member>
+<a name="138"><font size=-1>138     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IdentityAuthenticationOptions.#ctor">
+<a name="139"><font size=-1>139     </font></a>      <summary>Default constructor which uses the built in default options</summary>
+<a name="140"><font size=-1>140     </font></a>    </member>
+<a name="141"><font size=-1>141     </font></a>    <member name="P:Microsoft.AspNet.Identity.Owin.IdentityAuthenticationOptions.ApplicationAuthenticationType">
+<a name="142"><font size=-1>142     </font></a>      <summary>The AuthenticationType used in the UseSignInCookies extension method for the active signed in identity.</summary>
+<a name="143"><font size=-1>143     </font></a>    </member>
+<a name="144"><font size=-1>144     </font></a>    <member name="P:Microsoft.AspNet.Identity.Owin.IdentityAuthenticationOptions.ClaimsIssuer">
+<a name="145"><font size=-1>145     </font></a>      <summary>Issuer used for the claims generated</summary>
+<a name="146"><font size=-1>146     </font></a>    </member>
+<a name="147"><font size=-1>147     </font></a>    <member name="P:Microsoft.AspNet.Identity.Owin.IdentityAuthenticationOptions.ExternalAuthenticationType">
+<a name="148"><font size=-1>148     </font></a>      <summary>The AuthenticationType used by the UseSignInCookies extension method for the external signed in identity.</summary>
+<a name="149"><font size=-1>149     </font></a>    </member>
+<a name="150"><font size=-1>150     </font></a>    <member name="P:Microsoft.AspNet.Identity.Owin.IdentityAuthenticationOptions.LoginPath">
+<a name="151"><font size=-1>151     </font></a>      <summary>Path to the login page in the app</summary>
+<a name="152"><font size=-1>152     </font></a>    </member>
+<a name="153"><font size=-1>153     </font></a>    <member name="P:Microsoft.AspNet.Identity.Owin.IdentityAuthenticationOptions.LogoutPath">
+<a name="154"><font size=-1>154     </font></a>      <summary>Path to the logout page in the app</summary>
+<a name="155"><font size=-1>155     </font></a>    </member>
+<a name="156"><font size=-1>156     </font></a>    <member name="P:Microsoft.AspNet.Identity.Owin.IdentityAuthenticationOptions.RoleClaimType">
+<a name="157"><font size=-1>157     </font></a>      <summary>Claim type used for role claims</summary>
+<a name="158"><font size=-1>158     </font></a>    </member>
+<a name="159"><font size=-1>159     </font></a>    <member name="P:Microsoft.AspNet.Identity.Owin.IdentityAuthenticationOptions.UserIdClaimType">
+<a name="160"><font size=-1>160     </font></a>      <summary>Claim type used for the user id</summary>
+<a name="161"><font size=-1>161     </font></a>    </member>
+<a name="162"><font size=-1>162     </font></a>    <member name="P:Microsoft.AspNet.Identity.Owin.IdentityAuthenticationOptions.UserNameClaimType">
+<a name="163"><font size=-1>163     </font></a>      <summary>Claim type used for the user name</summary>
+<a name="164"><font size=-1>164     </font></a>    </member>
+<a name="165"><font size=-1>165     </font></a>    <member name="T:Microsoft.AspNet.Identity.Owin.IdentitySettingsExtensions">
+<a name="166"><font size=-1>166     </font></a>      <summary>Represents the extensions used in identity settings.</summary>
+<a name="167"><font size=-1>167     </font></a>    </member>
+<a name="168"><font size=-1>168     </font></a>    <member name="M:Microsoft.AspNet.Identity.Owin.IdentitySettingsExtensions.GetAuthenticationOptions(Microsoft.AspNet.Identity.IdentitySettings)">
+<a name="169"><font size=-1>169     </font></a>      <summary>Returns the authentication options for the identity.</summary>
+<a name="170"><font size=-1>170     </font></a>      <returns>The authentication options for the identity.</returns>
+<a name="171"><font size=-1>171     </font></a>      <param name="settings">The identity settings.</param>
+<a name="172"><font size=-1>172     </font></a>    </member>
+<a name="173"><font size=-1>173     </font></a>    <member name="T:Microsoft.Owin.Security.AuthenticationManagerExtensions">
+<a name="174"><font size=-1>174     </font></a>      <summary>Extensions methods on IAuthenticationManager that add methods for using the default Application and External authentication type constants</summary>
+<a name="175"><font size=-1>175     </font></a>    </member>
+<a name="176"><font size=-1>176     </font></a>    <member name="M:Microsoft.Owin.Security.AuthenticationManagerExtensions.GetExternalAuthenticationTypes(Microsoft.Owin.Security.IAuthenticationManager)">
+<a name="177"><font size=-1>177     </font></a>      <summary>Return the authentication types which are considered external because they have captions</summary>
+<a name="178"><font size=-1>178     </font></a>    </member>
+<a name="179"><font size=-1>179     </font></a>    <member name="T:Owin.AppBuilderExtensions">
+<a name="180"><font size=-1>180     </font></a>      <summary>Extensions off of IAppBuilder to make it easier to configure the SignInCookies</summary>
+<a name="181"><font size=-1>181     </font></a>    </member>
+<a name="182"><font size=-1>182     </font></a>    <member name="M:Owin.AppBuilderExtensions.UseExternalSignInCookie(Owin.IAppBuilder)">
+<a name="183"><font size=-1>183     </font></a>      <summary>Configure the app to use owin middleware based cookie authentication for external identities</summary>
+<a name="184"><font size=-1>184     </font></a>    </member>
+<a name="185"><font size=-1>185     </font></a>    <member name="M:Owin.AppBuilderExtensions.UseExternalSignInCookie(Owin.IAppBuilder,System.String)">
+<a name="186"><font size=-1>186     </font></a>      <summary>Configure the app to use owin middleware based cookie authentication for external identities</summary>
+<a name="187"><font size=-1>187     </font></a>    </member>
+<a name="188"><font size=-1>188     </font></a>    <member name="M:Owin.AppBuilderExtensions.UseOAuthBearerTokens(Owin.IAppBuilder,Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerOptions,System.String)">
+<a name="189"><font size=-1>189     </font></a>      <summary>Configure the app to use owin middleware based oauth bearer tokens</summary>
+<a name="190"><font size=-1>190     </font></a>    </member>
+<a name="191"><font size=-1>191     </font></a>    <member name="M:Owin.AppBuilderExtensions.UseSignInCookies(Owin.IAppBuilder)">
+<a name="192"><font size=-1>192     </font></a>      <summary>Use application and external sign in cookies for the app</summary>
+<a name="193"><font size=-1>193     </font></a>    </member>
+<a name="194"><font size=-1>194     </font></a>    <member name="M:Owin.AppBuilderExtensions.UseSignInCookies(Owin.IAppBuilder,Microsoft.AspNet.Identity.Owin.IdentityAuthenticationOptions)">
+<a name="195"><font size=-1>195     </font></a>      <summary>Configure the app to use owin middleware based cookie authentication for the active identity and external identities</summary>
+<a name="196"><font size=-1>196     </font></a>    </member>
+<a name="197"><font size=-1>197     </font></a>  </members>
+<a name="198"><font size=-1>198     </font></a></doc>
+</pre></body></html>

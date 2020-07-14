@@ -1,0 +1,97 @@
+﻿@model IEnumerable<Proyecto.Models.sp_C_Productos_Result>
+
+@{
+                Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Inicio - Edicas</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="~/Content/album.css" rel="stylesheet">
+</head>
+<body>
+    <style>
+        .linkincio{
+            color:white;
+        }
+        .linkincio:hover{
+            color:gray;
+        }
+    </style>
+    <header>
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container d-flex justify-content-between">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <img src="~/Imagenes/rebaja.png" alt="Alternate Text" width="50" height="50"/>
+                    <h3><strong>Edicas</strong></h3>
+                </a>
+                <ul class="nav" style="color:gray">
+                    @Html.ActionLink("Inicio", "Index", "Home", routeValues: null, htmlAttributes: new { @class = "nav-link linkincio disabled" })
+                    @Html.ActionLink("Acerca de", "Acerca", "Home", routeValues: null, htmlAttributes: new { @class = "nav-link linkincio" })
+                    @Html.ActionLink("Contacto", "Contacto", "Home", routeValues: null, htmlAttributes: new { @class = "nav-link linkincio" })
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main role="main">
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1>Catálogo de productos</h1>
+                <p class="lead text-muted">Delivery a cualquier parte de Huancayo.</p>
+            </div>
+        </section>
+
+       
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row row-cols-2 row-cols-md-4">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col mb-4">
+                            <div class="card h-100">
+                                <img width="150" height="150" src="@Url.Action("obtenerImagen", "Home", new { id = item.IDProducto })" class="justify-content-center" style="text-align:center"/>
+                                <div class="card-body">
+                                    <h5 class="card-title">@item.proNombre</h5>
+                                    <p class="card-text">S/. @item.proPrecioVenta</p>
+                                    <p class="card-text">Stock: @item.proCantidad unidades.</p>
+                                    @using (Html.BeginForm("CarritoCompras", "Home", FormMethod.Get))
+                                    {
+                                        <div class="container">
+                                            <div class="row">
+                                                <input type="hidden" name="IDProducto" value="@item.IDProducto" />
+                                                <input type="hidden" name="Precio" value="@item.proPrecioVenta" />
+                                                <input type="hidden" name="Nombre" value="@item.proNombre" />
+                                                <input type="number" required min="1" max="@item.proCantidad" name="cantidad" class="form-control col-12 col-sm-12 col-md-12 col-lg-5" style="margin-right:5px" />
+                                                <input type="submit" value="Agregar" class="btn btn-primary col col-sm col-md col-lg-5" />
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                 </div>
+            </div>  
+        </div>
+     </main>
+    <footer class="text-muted">
+        <div class="container">
+            <p>Copyright ©@DateTime.Now.Year</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+    <script src="../assets/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
+

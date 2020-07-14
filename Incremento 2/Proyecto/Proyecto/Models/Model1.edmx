@@ -1,0 +1,936 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EdicasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Categorias">
+          <Key>
+            <PropertyRef Name="IDCategoria" />
+          </Key>
+          <Property Name="IDCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="catNombre" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DetalleVenta">
+          <Key>
+            <PropertyRef Name="IDDetalleVenta" />
+          </Key>
+          <Property Name="IDDetalleVenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IDVenta" Type="int" />
+          <Property Name="IDProducto" Type="int" />
+          <Property Name="Cantidad" Type="int" Nullable="false" />
+          <Property Name="SubTotal" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="Precio" Type="decimal" Precision="7" Scale="2" />
+        </EntityType>
+        <EntityType Name="Productos">
+          <Key>
+            <PropertyRef Name="IDProducto" />
+          </Key>
+          <Property Name="IDProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="proNombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="proCantidad" Type="int" Nullable="false" />
+          <Property Name="proPrecioVenta" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="IDCategoria" Type="int" Nullable="false" />
+          <Property Name="RUC" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="proImagen" Type="varbinary(max)" />
+          <Property Name="proEstado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Proveedores">
+          <Key>
+            <PropertyRef Name="RUC" />
+          </Key>
+          <Property Name="RUC" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="provNombres" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="provDireccion" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="provTelefono" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="provEstado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ventas">
+          <Key>
+            <PropertyRef Name="IDVenta" />
+          </Key>
+          <Property Name="IDVenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="date" Nullable="false" />
+          <Property Name="Subtotal" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="Total" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__DetalleVe__IDPro__6383C8BA">
+          <End Role="Productos" Type="Self.Productos" Multiplicity="0..1" />
+          <End Role="DetalleVenta" Type="Self.DetalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Productos">
+              <PropertyRef Name="IDProducto" />
+            </Principal>
+            <Dependent Role="DetalleVenta">
+              <PropertyRef Name="IDProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DetalleVe__IDVen__628FA481">
+          <End Role="Ventas" Type="Self.Ventas" Multiplicity="0..1" />
+          <End Role="DetalleVenta" Type="Self.DetalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ventas">
+              <PropertyRef Name="IDVenta" />
+            </Principal>
+            <Dependent Role="DetalleVenta">
+              <PropertyRef Name="IDVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Productos__IDCat__239E4DCF">
+          <End Role="Categorias" Type="Self.Categorias" Multiplicity="1" />
+          <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categorias">
+              <PropertyRef Name="IDCategoria" />
+            </Principal>
+            <Dependent Role="Productos">
+              <PropertyRef Name="IDCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Productos__RUC__24927208">
+          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="1" />
+          <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="RUC" />
+            </Principal>
+            <Dependent Role="Productos">
+              <PropertyRef Name="RUC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="sp_A_Categoria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="catNombre" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_A_DetalleVenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDVenta" Type="int" Mode="In" />
+          <Parameter Name="IDProducto" Type="int" Mode="In" />
+          <Parameter Name="Cantidad" Type="int" Mode="In" />
+          <Parameter Name="SubTotal" Type="decimal" Mode="In" />
+          <Parameter Name="Precio" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="sp_A_Producto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="proNombre" Type="varchar" Mode="In" />
+          <Parameter Name="proCantidad" Type="int" Mode="In" />
+          <Parameter Name="proPrecioVenta" Type="decimal" Mode="In" />
+          <Parameter Name="IDCategoria" Type="int" Mode="In" />
+          <Parameter Name="RUC" Type="varchar" Mode="In" />
+          <Parameter Name="proImagen" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_A_Proveedor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RUC" Type="varchar" Mode="In" />
+          <Parameter Name="provNombres" Type="varchar" Mode="In" />
+          <Parameter Name="provDireccion" Type="varchar" Mode="In" />
+          <Parameter Name="provTelefono" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_A_Venta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SubTotal" Type="decimal" Mode="In" />
+          <Parameter Name="Total" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="sp_C_Productos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_C_Productos_Agotados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_C_ProductoxCategoria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDCategoria" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_C_ProductoxID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDProducto" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_C_ProductoxNombre" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="proNombre" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_C_Proveedores" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_C_ProveedorxRUC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RUC" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_C_Usuarios_Roles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_E_Producto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDProducto" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_E_Proveedor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RUC" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_M_Producto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDProducto" Type="int" Mode="In" />
+          <Parameter Name="proNombre" Type="varchar" Mode="In" />
+          <Parameter Name="proPrecioVenta" Type="decimal" Mode="In" />
+          <Parameter Name="IDCategoria" Type="int" Mode="In" />
+          <Parameter Name="RUC" Type="varchar" Mode="In" />
+          <Parameter Name="proImagen" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_M_Producto_Cantidad" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDProducto" Type="int" Mode="In" />
+          <Parameter Name="proCantidad" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_M_Proveedor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RUC" Type="varchar" Mode="In" />
+          <Parameter Name="provNombres" Type="varchar" Mode="In" />
+          <Parameter Name="provDireccion" Type="varchar" Mode="In" />
+          <Parameter Name="provTelefono" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_M_Venta_Stock" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDProducto" Type="int" Mode="In" />
+          <Parameter Name="Cantidad" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="EdicasModelStoreContainer">
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categorias" EntityType="Self.Categorias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DetalleVenta" EntityType="Self.DetalleVenta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Productos" EntityType="Self.Productos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proveedores" EntityType="Self.Proveedores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ventas" EntityType="Self.Ventas" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__DetalleVe__IDPro__6383C8BA" Association="Self.FK__DetalleVe__IDPro__6383C8BA">
+            <End Role="Productos" EntitySet="Productos" />
+            <End Role="DetalleVenta" EntitySet="DetalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DetalleVe__IDVen__628FA481" Association="Self.FK__DetalleVe__IDVen__628FA481">
+            <End Role="Ventas" EntitySet="Ventas" />
+            <End Role="DetalleVenta" EntitySet="DetalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Productos__IDCat__239E4DCF" Association="Self.FK__Productos__IDCat__239E4DCF">
+            <End Role="Categorias" EntitySet="Categorias" />
+            <End Role="Productos" EntitySet="Productos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Productos__RUC__24927208" Association="Self.FK__Productos__RUC__24927208">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="Productos" EntitySet="Productos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EdicasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUsers" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="Categorias">
+          <Key>
+            <PropertyRef Name="IDCategoria" />
+          </Key>
+          <Property Name="IDCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="catNombre" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Productos" Relationship="Self.FK__Productos__IDCat__239E4DCF" FromRole="Categorias" ToRole="Productos" />
+        </EntityType>
+        <EntityType Name="Productos">
+          <Key>
+            <PropertyRef Name="IDProducto" />
+          </Key>
+          <Property Name="IDProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="proNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="proCantidad" Type="Int32" Nullable="false" />
+          <Property Name="proPrecioVenta" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+          <Property Name="IDCategoria" Type="Int32" Nullable="false" />
+          <Property Name="RUC" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="proImagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="proEstado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Categorias" Relationship="Self.FK__Productos__IDCat__239E4DCF" FromRole="Productos" ToRole="Categorias" />
+          <NavigationProperty Name="Proveedores" Relationship="Self.FK__Productos__RUC__24927208" FromRole="Productos" ToRole="Proveedores" />
+          <NavigationProperty Name="DetalleVenta" Relationship="EdicasModel.FK__DetalleVe__IDPro__6383C8BA" FromRole="Productos" ToRole="DetalleVenta" />
+        </EntityType>
+        <EntityType Name="Proveedores">
+          <Key>
+            <PropertyRef Name="RUC" />
+          </Key>
+          <Property Name="RUC" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="provNombres" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="provDireccion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="provTelefono" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="provEstado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Productos" Relationship="Self.FK__Productos__RUC__24927208" FromRole="Proveedores" ToRole="Productos" />
+        </EntityType>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Productos__IDCat__239E4DCF">
+          <End Role="Categorias" Type="Self.Categorias" Multiplicity="1" />
+          <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categorias">
+              <PropertyRef Name="IDCategoria" />
+            </Principal>
+            <Dependent Role="Productos">
+              <PropertyRef Name="IDCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Productos__RUC__24927208">
+          <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="1" />
+          <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedores">
+              <PropertyRef Name="RUC" />
+            </Principal>
+            <Dependent Role="Productos">
+              <PropertyRef Name="RUC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="*" />
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="EdicasEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" />
+          <EntitySet Name="Categorias" EntityType="Self.Categorias" />
+          <EntitySet Name="Productos" EntityType="Self.Productos" />
+          <EntitySet Name="Proveedores" EntityType="Self.Proveedores" />
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Productos__IDCat__239E4DCF" Association="Self.FK__Productos__IDCat__239E4DCF">
+            <End Role="Categorias" EntitySet="Categorias" />
+            <End Role="Productos" EntitySet="Productos" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Productos__RUC__24927208" Association="Self.FK__Productos__RUC__24927208">
+            <End Role="Proveedores" EntitySet="Proveedores" />
+            <End Role="Productos" EntitySet="Productos" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+          <FunctionImport Name="sp_A_Producto">
+            <Parameter Name="proNombre" Mode="In" Type="String" />
+            <Parameter Name="proCantidad" Mode="In" Type="Int32" />
+            <Parameter Name="proPrecioVenta" Mode="In" Type="Decimal" />
+            <Parameter Name="IDCategoria" Mode="In" Type="Int32" />
+            <Parameter Name="RUC" Mode="In" Type="String" />
+            <Parameter Name="proImagen" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_C_Productos" ReturnType="Collection(EdicasModel.sp_C_Productos_Result)" />
+          <FunctionImport Name="sp_E_Producto">
+          <Parameter Name="IDProducto" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_M_Producto">
+            <Parameter Name="IDProducto" Mode="In" Type="Int32" />
+            <Parameter Name="proNombre" Mode="In" Type="String" />
+            <Parameter Name="proPrecioVenta" Mode="In" Type="Decimal" />
+            <Parameter Name="IDCategoria" Mode="In" Type="Int32" />
+            <Parameter Name="RUC" Mode="In" Type="String" />
+            <Parameter Name="proImagen" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_C_ProductoxID" ReturnType="Collection(EdicasModel.sp_C_ProductoxID_Result)">
+          <Parameter Name="IDProducto" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_A_Proveedor">
+            <Parameter Name="RUC" Mode="In" Type="String" />
+            <Parameter Name="provNombres" Mode="In" Type="String" />
+            <Parameter Name="provDireccion" Mode="In" Type="String" />
+            <Parameter Name="provTelefono" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_C_Proveedores" ReturnType="Collection(EdicasModel.sp_C_Proveedores_Result)" />
+          <FunctionImport Name="sp_C_ProveedorxRUC" ReturnType="Collection(EdicasModel.sp_C_ProveedorxRUC_Result)">
+          <Parameter Name="RUC" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_E_Proveedor">
+          <Parameter Name="RUC" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_M_Proveedor">
+            <Parameter Name="RUC" Mode="In" Type="String" />
+            <Parameter Name="provNombres" Mode="In" Type="String" />
+            <Parameter Name="provDireccion" Mode="In" Type="String" />
+            <Parameter Name="provTelefono" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_A_Categoria">
+          <Parameter Name="catNombre" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_C_Productos_Agotados" ReturnType="Collection(EdicasModel.sp_C_Productos_Agotados_Result)" />
+          <FunctionImport Name="sp_C_ProductoxCategoria" ReturnType="Collection(EdicasModel.sp_C_ProductoxCategoria_Result)">
+          <Parameter Name="IDCategoria" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_C_ProductoxNombre" ReturnType="Collection(EdicasModel.sp_C_ProductoxNombre_Result)">
+          <Parameter Name="proNombre" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_M_Producto_Cantidad">
+            <Parameter Name="IDProducto" Mode="In" Type="Int32" />
+            <Parameter Name="proCantidad" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_C_Usuarios_Roles" ReturnType="Collection(EdicasModel.sp_C_Usuarios_Roles_Result)" />
+          <EntitySet Name="DetalleVenta" EntityType="EdicasModel.DetalleVenta" />
+          <EntitySet Name="Ventas" EntityType="EdicasModel.Ventas" />
+          <AssociationSet Name="FK__DetalleVe__IDPro__6383C8BA" Association="EdicasModel.FK__DetalleVe__IDPro__6383C8BA">
+            <End Role="Productos" EntitySet="Productos" />
+            <End Role="DetalleVenta" EntitySet="DetalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DetalleVe__IDVen__628FA481" Association="EdicasModel.FK__DetalleVe__IDVen__628FA481">
+            <End Role="Ventas" EntitySet="Ventas" />
+            <End Role="DetalleVenta" EntitySet="DetalleVenta" />
+          </AssociationSet>
+          <FunctionImport Name="sp_A_Venta" ReturnType="Collection(EdicasModel.sp_C_IDVenta_Result)">
+            <Parameter Name="SubTotal" Mode="In" Type="Decimal" />
+            <Parameter Name="Total" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="sp_A_DetalleVenta">
+            <Parameter Name="IDVenta" Mode="In" Type="Int32" />
+            <Parameter Name="IDProducto" Mode="In" Type="Int32" />
+            <Parameter Name="Cantidad" Mode="In" Type="Int32" />
+            <Parameter Name="SubTotal" Mode="In" Type="Decimal" />
+            <Parameter Name="Precio" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="sp_M_Venta_Stock">
+            <Parameter Name="IDProducto" Mode="In" Type="Int32" />
+            <Parameter Name="Cantidad" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="sp_C_Productos_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="proNombre" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="proCantidad" Nullable="false" />
+          <Property Type="Decimal" Name="proPrecioVenta" Nullable="false" Precision="7" Scale="2" />
+          <Property Type="String" Name="catNombre" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="provNombres" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_C_ProductoxID_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="proNombre" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="proCantidad" Nullable="false" />
+          <Property Type="Decimal" Name="proPrecioVenta" Nullable="false" Precision="7" Scale="2" />
+          <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+          <Property Type="String" Name="RUC" Nullable="false" MaxLength="11" />
+          <Property Type="String" Name="provNombres" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="catNombre" Nullable="false" MaxLength="15" />
+        </ComplexType>
+        <ComplexType Name="sp_C_Proveedores_Result">
+          <Property Type="String" Name="provNombres" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="provDireccion" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="provTelefono" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="RUC" Nullable="false" MaxLength="11" />
+        </ComplexType>
+        <ComplexType Name="sp_C_ProveedorxRUC_Result">
+          <Property Type="String" Name="RUC" Nullable="false" MaxLength="11" />
+          <Property Type="String" Name="provNombres" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="provDireccion" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="provTelefono" Nullable="false" MaxLength="15" />
+        </ComplexType>
+        <ComplexType Name="sp_C_Productos_Agotados_Result">
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+          <Property Type="String" Name="proNombre" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="proCantidad" Nullable="false" />
+          <Property Type="Decimal" Name="proPrecioVenta" Nullable="false" Precision="7" Scale="2" />
+          <Property Type="String" Name="catNombre" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="provNombres" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_C_ProductoxCategoria_Result">
+          <Property Type="String" Name="proNombre" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="proCantidad" Nullable="false" />
+          <Property Type="Decimal" Name="proPrecioVenta" Nullable="false" Precision="7" Scale="2" />
+          <Property Type="String" Name="catNombre" Nullable="false" MaxLength="15" />
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_C_ProductoxNombre_Result">
+          <Property Type="String" Name="proNombre" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="proCantidad" Nullable="false" />
+          <Property Type="Decimal" Name="proPrecioVenta" Nullable="false" Precision="7" Scale="2" />
+          <Property Type="String" Name="catNombre" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="provNombres" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="IDProducto" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_C_Usuarios_Roles_Result">
+          <Property Type="String" Name="Id" Nullable="false" MaxLength="128" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="256" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="256" />
+        </ComplexType>
+        <EntityType Name="DetalleVenta">
+          <Key>
+            <PropertyRef Name="IDDetalleVenta" />
+          </Key>
+          <Property Name="IDDetalleVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IDVenta" Type="Int32" />
+          <Property Name="IDProducto" Type="Int32" />
+          <Property Name="Cantidad" Type="Int32" Nullable="false" />
+          <Property Name="SubTotal" Type="Decimal" Nullable="false" Precision="7" Scale="2" />
+          <Property Name="Precio" Type="Decimal" Precision="7" Scale="2" />
+          <NavigationProperty Name="Productos" Relationship="EdicasModel.FK__DetalleVe__IDPro__6383C8BA" FromRole="DetalleVenta" ToRole="Productos" />
+          <NavigationProperty Name="Ventas" Relationship="EdicasModel.FK__DetalleVe__IDVen__628FA481" FromRole="DetalleVenta" ToRole="Ventas" />
+        </EntityType>
+        <EntityType Name="Ventas">
+          <Key>
+            <PropertyRef Name="IDVenta" />
+          </Key>
+          <Property Name="IDVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Subtotal" Type="Decimal" Nullable="false" Precision="7" Scale="2" />
+          <Property Name="Total" Type="Decimal" Nullable="false" Precision="7" Scale="2" />
+          <NavigationProperty Name="DetalleVenta" Relationship="EdicasModel.FK__DetalleVe__IDVen__628FA481" FromRole="Ventas" ToRole="DetalleVenta" />
+        </EntityType>
+        <Association Name="FK__DetalleVe__IDPro__6383C8BA">
+          <End Type="EdicasModel.Productos" Role="Productos" Multiplicity="0..1" />
+          <End Type="EdicasModel.DetalleVenta" Role="DetalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Productos">
+              <PropertyRef Name="IDProducto" />
+            </Principal>
+            <Dependent Role="DetalleVenta">
+              <PropertyRef Name="IDProducto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DetalleVe__IDVen__628FA481">
+          <End Type="EdicasModel.Ventas" Role="Ventas" Multiplicity="0..1" />
+          <End Type="EdicasModel.DetalleVenta" Role="DetalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ventas">
+              <PropertyRef Name="IDVenta" />
+            </Principal>
+            <Dependent Role="DetalleVenta">
+              <PropertyRef Name="IDVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="sp_C_IDVenta_Result" >
+          <Property Type="Int32" Name="IDVenta" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EdicasModelStoreContainer" CdmEntityContainer="EdicasEntities1">
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="EdicasModel.AspNetRoles">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="EdicasModel.AspNetUserClaims">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="EdicasModel.AspNetUserLogins">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="EdicasModel.AspNetUsers">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categorias">
+            <EntityTypeMapping TypeName="EdicasModel.Categorias">
+              <MappingFragment StoreEntitySet="Categorias">
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="catNombre" ColumnName="catNombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Productos">
+            <EntityTypeMapping TypeName="EdicasModel.Productos">
+              <MappingFragment StoreEntitySet="Productos">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="proNombre" ColumnName="proNombre" />
+                <ScalarProperty Name="proCantidad" ColumnName="proCantidad" />
+                <ScalarProperty Name="proPrecioVenta" ColumnName="proPrecioVenta" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="RUC" ColumnName="RUC" />
+                <ScalarProperty Name="proImagen" ColumnName="proImagen" />
+                <ScalarProperty Name="proEstado" ColumnName="proEstado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proveedores">
+            <EntityTypeMapping TypeName="EdicasModel.Proveedores">
+              <MappingFragment StoreEntitySet="Proveedores">
+                <ScalarProperty Name="RUC" ColumnName="RUC" />
+                <ScalarProperty Name="provNombres" ColumnName="provNombres" />
+                <ScalarProperty Name="provDireccion" ColumnName="provDireccion" />
+                <ScalarProperty Name="provTelefono" ColumnName="provTelefono" />
+                <ScalarProperty Name="provEstado" ColumnName="provEstado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="EdicasModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="sp_A_Producto" FunctionName="EdicasModel.Store.sp_A_Producto" />
+          <FunctionImportMapping FunctionImportName="sp_C_Productos" FunctionName="EdicasModel.Store.sp_C_Productos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EdicasModel.sp_C_Productos_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="proNombre" ColumnName="proNombre" />
+                <ScalarProperty Name="proCantidad" ColumnName="proCantidad" />
+                <ScalarProperty Name="proPrecioVenta" ColumnName="proPrecioVenta" />
+                <ScalarProperty Name="catNombre" ColumnName="catNombre" />
+                <ScalarProperty Name="provNombres" ColumnName="provNombres" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_E_Producto" FunctionName="EdicasModel.Store.sp_E_Producto" />
+          <FunctionImportMapping FunctionImportName="sp_M_Producto" FunctionName="EdicasModel.Store.sp_M_Producto" />
+          <FunctionImportMapping FunctionImportName="sp_C_ProductoxID" FunctionName="EdicasModel.Store.sp_C_ProductoxID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EdicasModel.sp_C_ProductoxID_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="proNombre" ColumnName="proNombre" />
+                <ScalarProperty Name="proCantidad" ColumnName="proCantidad" />
+                <ScalarProperty Name="proPrecioVenta" ColumnName="proPrecioVenta" />
+                <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+                <ScalarProperty Name="RUC" ColumnName="RUC" />
+                <ScalarProperty Name="provNombres" ColumnName="provNombres" />
+                <ScalarProperty Name="catNombre" ColumnName="catNombre" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_A_Proveedor" FunctionName="EdicasModel.Store.sp_A_Proveedor" />
+          <FunctionImportMapping FunctionImportName="sp_C_Proveedores" FunctionName="EdicasModel.Store.sp_C_Proveedores">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EdicasModel.sp_C_Proveedores_Result">
+                <ScalarProperty Name="provNombres" ColumnName="provNombres" />
+                <ScalarProperty Name="provDireccion" ColumnName="provDireccion" />
+                <ScalarProperty Name="provTelefono" ColumnName="provTelefono" />
+                <ScalarProperty Name="RUC" ColumnName="RUC" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_C_ProveedorxRUC" FunctionName="EdicasModel.Store.sp_C_ProveedorxRUC">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EdicasModel.sp_C_ProveedorxRUC_Result">
+                <ScalarProperty Name="RUC" ColumnName="RUC" />
+                <ScalarProperty Name="provNombres" ColumnName="provNombres" />
+                <ScalarProperty Name="provDireccion" ColumnName="provDireccion" />
+                <ScalarProperty Name="provTelefono" ColumnName="provTelefono" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_E_Proveedor" FunctionName="EdicasModel.Store.sp_E_Proveedor" />
+          <FunctionImportMapping FunctionImportName="sp_M_Proveedor" FunctionName="EdicasModel.Store.sp_M_Proveedor" />
+          <FunctionImportMapping FunctionImportName="sp_A_Categoria" FunctionName="EdicasModel.Store.sp_A_Categoria" />
+          <FunctionImportMapping FunctionImportName="sp_C_Productos_Agotados" FunctionName="EdicasModel.Store.sp_C_Productos_Agotados">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EdicasModel.sp_C_Productos_Agotados_Result">
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="proNombre" ColumnName="proNombre" />
+                <ScalarProperty Name="proCantidad" ColumnName="proCantidad" />
+                <ScalarProperty Name="proPrecioVenta" ColumnName="proPrecioVenta" />
+                <ScalarProperty Name="catNombre" ColumnName="catNombre" />
+                <ScalarProperty Name="provNombres" ColumnName="provNombres" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_C_ProductoxCategoria" FunctionName="EdicasModel.Store.sp_C_ProductoxCategoria">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EdicasModel.sp_C_ProductoxCategoria_Result">
+                <ScalarProperty Name="proNombre" ColumnName="proNombre" />
+                <ScalarProperty Name="proCantidad" ColumnName="proCantidad" />
+                <ScalarProperty Name="proPrecioVenta" ColumnName="proPrecioVenta" />
+                <ScalarProperty Name="catNombre" ColumnName="catNombre" />
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_C_ProductoxNombre" FunctionName="EdicasModel.Store.sp_C_ProductoxNombre">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EdicasModel.sp_C_ProductoxNombre_Result">
+                <ScalarProperty Name="proNombre" ColumnName="proNombre" />
+                <ScalarProperty Name="proCantidad" ColumnName="proCantidad" />
+                <ScalarProperty Name="proPrecioVenta" ColumnName="proPrecioVenta" />
+                <ScalarProperty Name="catNombre" ColumnName="catNombre" />
+                <ScalarProperty Name="provNombres" ColumnName="provNombres" />
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_M_Producto_Cantidad" FunctionName="EdicasModel.Store.sp_M_Producto_Cantidad" />
+          <FunctionImportMapping FunctionImportName="sp_C_Usuarios_Roles" FunctionName="EdicasModel.Store.sp_C_Usuarios_Roles">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EdicasModel.sp_C_Usuarios_Roles_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="DetalleVenta">
+            <EntityTypeMapping TypeName="EdicasModel.DetalleVenta">
+              <MappingFragment StoreEntitySet="DetalleVenta">
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+                <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+                <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+                <ScalarProperty Name="IDVenta" ColumnName="IDVenta" />
+                <ScalarProperty Name="IDDetalleVenta" ColumnName="IDDetalleVenta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ventas">
+            <EntityTypeMapping TypeName="EdicasModel.Ventas">
+              <MappingFragment StoreEntitySet="Ventas">
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="IDVenta" ColumnName="IDVenta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_A_Venta" FunctionName="EdicasModel.Store.sp_A_Venta" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EdicasModel.sp_C_IDVenta_Result">
+                <ScalarProperty Name="IDVenta" ColumnName="IDVenta" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_A_DetalleVenta" FunctionName="EdicasModel.Store.sp_A_DetalleVenta" />
+          <FunctionImportMapping FunctionImportName="sp_M_Venta_Stock" FunctionName="EdicasModel.Store.sp_M_Venta_Stock" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

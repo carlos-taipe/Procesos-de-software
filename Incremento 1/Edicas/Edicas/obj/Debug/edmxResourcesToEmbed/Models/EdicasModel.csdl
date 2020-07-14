@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TienditaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Categoria">
+    <Key>
+      <PropertyRef Name="IDCategoria" />
+    </Key>
+    <Property Name="IDCategoria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="catNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Productos" Relationship="Self.FK__Productos__IDCat__15502E78" FromRole="Categorias" ToRole="Productos" />
+  </EntityType>
+  <EntityType Name="Producto">
+    <Key>
+      <PropertyRef Name="IDProducto" />
+    </Key>
+    <Property Name="IDProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="proNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="proPrecio" Type="Decimal" Precision="7" Scale="2" Nullable="false" />
+    <Property Name="IDCategoria" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Categoria" Relationship="Self.FK__Productos__IDCat__15502E78" FromRole="Productos" ToRole="Categorias" />
+    <Property Name="proEstado" Type="Boolean" Nullable="false" />
+    <Property Name="proCantidad" Type="Int32" />
+    <Property Name="proImagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="RUC" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Proveedore" Relationship="TienditaModel.FK__Productos__RUC__3B75D760" FromRole="Producto" ToRole="Proveedore" />
+  </EntityType>
+  <Association Name="FK__Productos__IDCat__15502E78">
+    <End Role="Categorias" Type="Self.Categoria" Multiplicity="1" />
+    <End Role="Productos" Type="Self.Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorias">
+        <PropertyRef Name="IDCategoria" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="IDCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TienditaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categorias" EntityType="Self.Categoria" />
+    <EntitySet Name="Productos" EntityType="Self.Producto" />
+    <AssociationSet Name="FK__Productos__IDCat__15502E78" Association="Self.FK__Productos__IDCat__15502E78">
+      <End Role="Categorias" EntitySet="Categorias" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <FunctionImport Name="sp_A_Producto">
+      <Parameter Name="proNombre" Mode="In" Type="String" />
+      <Parameter Name="proCantidad" Mode="In" Type="Int32" />
+      <Parameter Name="proPrecio" Mode="In" Type="Decimal" />
+      <Parameter Name="proImagen" Mode="In" Type="Binary" />
+      <Parameter Name="IDCategoria" Mode="In" Type="Int32" />
+      <Parameter Name="RUC" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_E_Producto">
+      <Parameter Name="IDProducto" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_C_Productos" ReturnType="Collection(TienditaModel.sp_C_Productos_Result)" />
+    <FunctionImport Name="sp_C_ProductoxID" ReturnType="Collection(TienditaModel.sp_C_ProductoxID_Result)">
+      <Parameter Name="IDProducto" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_M_Producto">
+      <Parameter Name="IDProducto" Mode="In" Type="Int32" />
+      <Parameter Name="proNombre" Mode="In" Type="String" />
+      <Parameter Name="proCantidad" Mode="In" Type="Int32" />
+      <Parameter Name="proPrecio" Mode="In" Type="Decimal" />
+      <Parameter Name="proImagen" Mode="In" Type="Binary" />
+      <Parameter Name="IDCategoria" Mode="In" Type="Int32" />
+      <Parameter Name="RUC" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Proveedores" EntityType="TienditaModel.Proveedore" />
+    <AssociationSet Name="FK__Productos__RUC__3B75D760" Association="TienditaModel.FK__Productos__RUC__3B75D760">
+      <End Role="Proveedore" EntitySet="Proveedores" />
+      <End Role="Producto" EntitySet="Productos" />
+    </AssociationSet>
+    <FunctionImport Name="sp_A_Proveedor">
+      <Parameter Name="RUC" Mode="In" Type="String" />
+      <Parameter Name="provNombre" Mode="In" Type="String" />
+      <Parameter Name="provDireccion" Mode="In" Type="String" />
+      <Parameter Name="provTelefono" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_C_Proveedores" ReturnType="Collection(TienditaModel.sp_C_Proveedores_Result)" />
+    <FunctionImport Name="sp_C_ProveedorxRUC" ReturnType="Collection(TienditaModel.sp_C_ProveedorxRUC_Result)">
+      <Parameter Name="RUC" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_E_Proveedor">
+      <Parameter Name="RUC" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_M_Proveedor">
+      <Parameter Name="RUC" Mode="In" Type="String" />
+      <Parameter Name="provNombre" Mode="In" Type="String" />
+      <Parameter Name="provDireccion" Mode="In" Type="String" />
+      <Parameter Name="provTelefono" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Roles" EntityType="TienditaModel.Role" />
+    <EntitySet Name="Usuarios" EntityType="TienditaModel.Usuario" />
+    <AssociationSet Name="FK_Usuarios_Roles" Association="TienditaModel.FK_Usuarios_Roles">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="Usuario" EntitySet="Usuarios" />
+    </AssociationSet>
+    <FunctionImport Name="sp_A_Usuario">
+      <Parameter Name="usuEmail" Mode="In" Type="String" />
+      <Parameter Name="usuContraseña" Mode="In" Type="String" />
+      <Parameter Name="usuNombre" Mode="In" Type="String" />
+      <Parameter Name="IDRol" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_C_Usuario" ReturnType="Collection(TienditaModel.sp_C_Usuario_Result)">
+      <Parameter Name="usuEmail" Mode="In" Type="String" />
+      <Parameter Name="usuContraseña" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_C_Productos_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="proNombre" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="proCantidad" Nullable="true" />
+    <Property Type="Decimal" Name="proPrecio" Nullable="false" Precision="7" Scale="2" />
+    <Property Type="String" Name="catNombre" Nullable="false" MaxLength="50" />
+    <Property Type="Binary" Name="proImagen" Nullable="true" />
+    <Property Type="String" Name="provNombre" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sp_C_ProductoxID_Result">
+    <Property Type="Int32" Name="IDProducto" Nullable="false" />
+    <Property Type="String" Name="proNombre" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="proCantidad" Nullable="true" />
+    <Property Type="Decimal" Name="proPrecio" Nullable="false" Precision="7" Scale="2" />
+    <Property Type="Binary" Name="proImagen" Nullable="true" />
+    <Property Type="Int32" Name="IDCategoria" Nullable="false" />
+    <Property Type="String" Name="catNombre" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="RUC" Nullable="false" MaxLength="11" />
+    <Property Type="String" Name="provNombre" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <EntityType Name="Proveedore">
+    <Key>
+      <PropertyRef Name="RUC" />
+    </Key>
+    <Property Name="RUC" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+    <Property Name="provNombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="provDireccion" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="provTelefono" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Productos" Relationship="TienditaModel.FK__Productos__RUC__3B75D760" FromRole="Proveedore" ToRole="Producto" />
+    <Property Name="provEstado" Type="Boolean" />
+  </EntityType>
+  <Association Name="FK__Productos__RUC__3B75D760">
+    <End Type="TienditaModel.Proveedore" Role="Proveedore" Multiplicity="0..1" />
+    <End Type="TienditaModel.Producto" Role="Producto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedore">
+        <PropertyRef Name="RUC" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="RUC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_C_Proveedores_Result">
+    <Property Type="String" Name="RUC" Nullable="false" MaxLength="11" />
+    <Property Type="String" Name="provNombre" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="provDireccion" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="provTelefono" Nullable="false" MaxLength="12" />
+  </ComplexType>
+  <ComplexType Name="sp_C_ProveedorxRUC_Result">
+    <Property Type="String" Name="RUC" Nullable="false" MaxLength="11" />
+    <Property Type="String" Name="provNombre" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="provDireccion" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="provTelefono" Nullable="false" MaxLength="12" />
+  </ComplexType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="IDRol" />
+    </Key>
+    <Property Name="IDRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rolNombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Usuarios" Relationship="TienditaModel.FK_Usuarios_Roles" FromRole="Role" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="IDUsuario" />
+    </Key>
+    <Property Name="IDUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usuEmail" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="usuContraseña" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="usuNombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IDRol" Type="Int32" />
+    <NavigationProperty Name="Role" Relationship="TienditaModel.FK_Usuarios_Roles" FromRole="Usuario" ToRole="Role" />
+  </EntityType>
+  <Association Name="FK_Usuarios_Roles">
+    <End Type="TienditaModel.Role" Role="Role" Multiplicity="0..1" />
+    <End Type="TienditaModel.Usuario" Role="Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="IDRol" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="IDRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_C_Usuario_Result">
+    <Property Type="Int32" Name="IDUsuario" Nullable="false" />
+    <Property Type="String" Name="usuNombre" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="IDRol" Nullable="true" />
+  </ComplexType>
+</Schema>

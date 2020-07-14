@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Login","Usuarios",new { returnUrl = Request.QueryString["returnUrl"]},FormMethod.Post))
+{
+<div>
+    <input type="email" name="Email" />
+    <input type="password" name="Contraseña" />
+    <input type="submit" value="Entrar" />
+</div>
+
+}

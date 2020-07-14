@@ -1,0 +1,1074 @@
+<html><head><title>Microsoft.AspNet.Identity.EntityFramework.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body>
+<h3>File: D:\Proyecto\Proyecto\bin\Microsoft.AspNet.Identity.EntityFramework.xml</h3>
+<SCRIPT>
+ defaultStatus = "File: D:\\Proyecto\\Proyecto\\bin\\Microsoft.AspNet.Identity.EntityFramework.xml";
+top.document.title  = "Microsoft.AspNet.Identity.EntityFramework.xml";
+</SCRIPT>
+<pre><a name="1"><font size=-1>1     </font></a><?xml version="1.0"?>
+<a name="2"><font size=-1>2     </font></a><doc>
+<a name="3"><font size=-1>3     </font></a>    <assembly>
+<a name="4"><font size=-1>4     </font></a>        <name>Microsoft.AspNet.Identity.EntityFramework</name>
+<a name="5"><font size=-1>5     </font></a>    </assembly>
+<a name="6"><font size=-1>6     </font></a>    <members>
+<a name="7"><font size=-1>7     </font></a>        <member name="T:Microsoft.AspNet.Identity.EntityFramework.RoleStore`1">
+<a name="8"><font size=-1>8     </font></a>            <summary>
+<a name="9"><font size=-1>9     </font></a>                EntityFramework based implementation
+<a name="10"><font size=-1>10     </font></a>            </summary>
+<a name="11"><font size=-1>11     </font></a>            <typeparam name="TRole"></typeparam>
+<a name="12"><font size=-1>12     </font></a>        </member>
+<a name="13"><font size=-1>13     </font></a>        <member name="T:Microsoft.AspNet.Identity.EntityFramework.RoleStore`3">
+<a name="14"><font size=-1>14     </font></a>            <summary>
+<a name="15"><font size=-1>15     </font></a>                EntityFramework based implementation
+<a name="16"><font size=-1>16     </font></a>            </summary>
+<a name="17"><font size=-1>17     </font></a>            <typeparam name="TRole"></typeparam>
+<a name="18"><font size=-1>18     </font></a>            <typeparam name="TKey"></typeparam>
+<a name="19"><font size=-1>19     </font></a>            <typeparam name="TUserRole"></typeparam>
+<a name="20"><font size=-1>20     </font></a>        </member>
+<a name="21"><font size=-1>21     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.RoleStore`3.#ctor(System.Data.Entity.DbContext)">
+<a name="22"><font size=-1>22     </font></a>            <summary>
+<a name="23"><font size=-1>23     </font></a>                Constructor which takes a db context and wires up the stores with default instances using the context
+<a name="24"><font size=-1>24     </font></a>            </summary>
+<a name="25"><font size=-1>25     </font></a>            <param name="context"></param>
+<a name="26"><font size=-1>26     </font></a>        </member>
+<a name="27"><font size=-1>27     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.RoleStore`3.FindByIdAsync(`1)">
+<a name="28"><font size=-1>28     </font></a>            <summary>
+<a name="29"><font size=-1>29     </font></a>                Find a role by id
+<a name="30"><font size=-1>30     </font></a>            </summary>
+<a name="31"><font size=-1>31     </font></a>            <param name="roleId"></param>
+<a name="32"><font size=-1>32     </font></a>            <returns></returns>
+<a name="33"><font size=-1>33     </font></a>        </member>
+<a name="34"><font size=-1>34     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.RoleStore`3.FindByNameAsync(System.String)">
+<a name="35"><font size=-1>35     </font></a>            <summary>
+<a name="36"><font size=-1>36     </font></a>                Find a role by name
+<a name="37"><font size=-1>37     </font></a>            </summary>
+<a name="38"><font size=-1>38     </font></a>            <param name="roleName"></param>
+<a name="39"><font size=-1>39     </font></a>            <returns></returns>
+<a name="40"><font size=-1>40     </font></a>        </member>
+<a name="41"><font size=-1>41     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.RoleStore`3.CreateAsync(`0)">
+<a name="42"><font size=-1>42     </font></a>            <summary>
+<a name="43"><font size=-1>43     </font></a>                Insert an entity
+<a name="44"><font size=-1>44     </font></a>            </summary>
+<a name="45"><font size=-1>45     </font></a>            <param name="role"></param>
+<a name="46"><font size=-1>46     </font></a>        </member>
+<a name="47"><font size=-1>47     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.RoleStore`3.DeleteAsync(`0)">
+<a name="48"><font size=-1>48     </font></a>            <summary>
+<a name="49"><font size=-1>49     </font></a>                Mark an entity for deletion
+<a name="50"><font size=-1>50     </font></a>            </summary>
+<a name="51"><font size=-1>51     </font></a>            <param name="role"></param>
+<a name="52"><font size=-1>52     </font></a>        </member>
+<a name="53"><font size=-1>53     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.RoleStore`3.UpdateAsync(`0)">
+<a name="54"><font size=-1>54     </font></a>            <summary>
+<a name="55"><font size=-1>55     </font></a>                Update an entity
+<a name="56"><font size=-1>56     </font></a>            </summary>
+<a name="57"><font size=-1>57     </font></a>            <param name="role"></param>
+<a name="58"><font size=-1>58     </font></a>        </member>
+<a name="59"><font size=-1>59     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.RoleStore`3.Dispose">
+<a name="60"><font size=-1>60     </font></a>            <summary>
+<a name="61"><font size=-1>61     </font></a>                Dispose the store
+<a name="62"><font size=-1>62     </font></a>            </summary>
+<a name="63"><font size=-1>63     </font></a>        </member>
+<a name="64"><font size=-1>64     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.RoleStore`3.Dispose(System.Boolean)">
+<a name="65"><font size=-1>65     </font></a>            <summary>
+<a name="66"><font size=-1>66     </font></a>                If disposing, calls dispose on the Context.  Always nulls out the Context
+<a name="67"><font size=-1>67     </font></a>            </summary>
+<a name="68"><font size=-1>68     </font></a>            <param name="disposing"></param>
+<a name="69"><font size=-1>69     </font></a>        </member>
+<a name="70"><font size=-1>70     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.RoleStore`3.Context">
+<a name="71"><font size=-1>71     </font></a>            <summary>
+<a name="72"><font size=-1>72     </font></a>                Context for the store
+<a name="73"><font size=-1>73     </font></a>            </summary>
+<a name="74"><font size=-1>74     </font></a>        </member>
+<a name="75"><font size=-1>75     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.RoleStore`3.DisposeContext">
+<a name="76"><font size=-1>76     </font></a>            <summary>
+<a name="77"><font size=-1>77     </font></a>                If true will call dispose on the DbContext during Dipose
+<a name="78"><font size=-1>78     </font></a>            </summary>
+<a name="79"><font size=-1>79     </font></a>        </member>
+<a name="80"><font size=-1>80     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.RoleStore`3.Roles">
+<a name="81"><font size=-1>81     </font></a>            <summary>
+<a name="82"><font size=-1>82     </font></a>                Returns an IQueryable of users
+<a name="83"><font size=-1>83     </font></a>            </summary>
+<a name="84"><font size=-1>84     </font></a>        </member>
+<a name="85"><font size=-1>85     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.RoleStore`1.#ctor">
+<a name="86"><font size=-1>86     </font></a>            <summary>
+<a name="87"><font size=-1>87     </font></a>                Constructor
+<a name="88"><font size=-1>88     </font></a>            </summary>
+<a name="89"><font size=-1>89     </font></a>        </member>
+<a name="90"><font size=-1>90     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.RoleStore`1.#ctor(System.Data.Entity.DbContext)">
+<a name="91"><font size=-1>91     </font></a>            <summary>
+<a name="92"><font size=-1>92     </font></a>                Constructor
+<a name="93"><font size=-1>93     </font></a>            </summary>
+<a name="94"><font size=-1>94     </font></a>            <param name="context"></param>
+<a name="95"><font size=-1>95     </font></a>        </member>
+<a name="96"><font size=-1>96     </font></a>        <member name="T:Microsoft.AspNet.Identity.EntityFramework.UserStore`1">
+<a name="97"><font size=-1>97     </font></a>            <summary>
+<a name="98"><font size=-1>98     </font></a>                EntityFramework based user store implementation that supports IUserStore, IUserLoginStore, IUserClaimStore and
+<a name="99"><font size=-1>99     </font></a>                IUserRoleStore
+<a name="100"><font size=-1>100     </font></a>            </summary>
+<a name="101"><font size=-1>101     </font></a>            <typeparam name="TUser"></typeparam>
+<a name="102"><font size=-1>102     </font></a>        </member>
+<a name="103"><font size=-1>103     </font></a>        <member name="T:Microsoft.AspNet.Identity.EntityFramework.UserStore`6">
+<a name="104"><font size=-1>104     </font></a>            <summary>
+<a name="105"><font size=-1>105     </font></a>                EntityFramework based user store implementation that supports IUserStore, IUserLoginStore, IUserClaimStore and
+<a name="106"><font size=-1>106     </font></a>                IUserRoleStore
+<a name="107"><font size=-1>107     </font></a>            </summary>
+<a name="108"><font size=-1>108     </font></a>            <typeparam name="TUser"></typeparam>
+<a name="109"><font size=-1>109     </font></a>            <typeparam name="TRole"></typeparam>
+<a name="110"><font size=-1>110     </font></a>            <typeparam name="TKey"></typeparam>
+<a name="111"><font size=-1>111     </font></a>            <typeparam name="TUserLogin"></typeparam>
+<a name="112"><font size=-1>112     </font></a>            <typeparam name="TUserRole"></typeparam>
+<a name="113"><font size=-1>113     </font></a>            <typeparam name="TUserClaim"></typeparam>
+<a name="114"><font size=-1>114     </font></a>        </member>
+<a name="115"><font size=-1>115     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.#ctor(System.Data.Entity.DbContext)">
+<a name="116"><font size=-1>116     </font></a>            <summary>
+<a name="117"><font size=-1>117     </font></a>                Constructor which takes a db context and wires up the stores with default instances using the context
+<a name="118"><font size=-1>118     </font></a>            </summary>
+<a name="119"><font size=-1>119     </font></a>            <param name="context"></param>
+<a name="120"><font size=-1>120     </font></a>        </member>
+<a name="121"><font size=-1>121     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.GetClaimsAsync(`0)">
+<a name="122"><font size=-1>122     </font></a>            <summary>
+<a name="123"><font size=-1>123     </font></a>                Return the claims for a user
+<a name="124"><font size=-1>124     </font></a>            </summary>
+<a name="125"><font size=-1>125     </font></a>            <param name="user"></param>
+<a name="126"><font size=-1>126     </font></a>            <returns></returns>
+<a name="127"><font size=-1>127     </font></a>        </member>
+<a name="128"><font size=-1>128     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.AddClaimAsync(`0,System.Security.Claims.Claim)">
+<a name="129"><font size=-1>129     </font></a>            <summary>
+<a name="130"><font size=-1>130     </font></a>                Add a claim to a user
+<a name="131"><font size=-1>131     </font></a>            </summary>
+<a name="132"><font size=-1>132     </font></a>            <param name="user"></param>
+<a name="133"><font size=-1>133     </font></a>            <param name="claim"></param>
+<a name="134"><font size=-1>134     </font></a>            <returns></returns>
+<a name="135"><font size=-1>135     </font></a>        </member>
+<a name="136"><font size=-1>136     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.RemoveClaimAsync(`0,System.Security.Claims.Claim)">
+<a name="137"><font size=-1>137     </font></a>            <summary>
+<a name="138"><font size=-1>138     </font></a>                Remove a claim from a user
+<a name="139"><font size=-1>139     </font></a>            </summary>
+<a name="140"><font size=-1>140     </font></a>            <param name="user"></param>
+<a name="141"><font size=-1>141     </font></a>            <param name="claim"></param>
+<a name="142"><font size=-1>142     </font></a>            <returns></returns>
+<a name="143"><font size=-1>143     </font></a>        </member>
+<a name="144"><font size=-1>144     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.GetEmailConfirmedAsync(`0)">
+<a name="145"><font size=-1>145     </font></a>            <summary>
+<a name="146"><font size=-1>146     </font></a>                Returns whether the user email is confirmed
+<a name="147"><font size=-1>147     </font></a>            </summary>
+<a name="148"><font size=-1>148     </font></a>            <param name="user"></param>
+<a name="149"><font size=-1>149     </font></a>            <returns></returns>
+<a name="150"><font size=-1>150     </font></a>        </member>
+<a name="151"><font size=-1>151     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.SetEmailConfirmedAsync(`0,System.Boolean)">
+<a name="152"><font size=-1>152     </font></a>            <summary>
+<a name="153"><font size=-1>153     </font></a>                Set IsConfirmed on the user
+<a name="154"><font size=-1>154     </font></a>            </summary>
+<a name="155"><font size=-1>155     </font></a>            <param name="user"></param>
+<a name="156"><font size=-1>156     </font></a>            <param name="confirmed"></param>
+<a name="157"><font size=-1>157     </font></a>            <returns></returns>
+<a name="158"><font size=-1>158     </font></a>        </member>
+<a name="159"><font size=-1>159     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.SetEmailAsync(`0,System.String)">
+<a name="160"><font size=-1>160     </font></a>            <summary>
+<a name="161"><font size=-1>161     </font></a>                Set the user email
+<a name="162"><font size=-1>162     </font></a>            </summary>
+<a name="163"><font size=-1>163     </font></a>            <param name="user"></param>
+<a name="164"><font size=-1>164     </font></a>            <param name="email"></param>
+<a name="165"><font size=-1>165     </font></a>            <returns></returns>
+<a name="166"><font size=-1>166     </font></a>        </member>
+<a name="167"><font size=-1>167     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.GetEmailAsync(`0)">
+<a name="168"><font size=-1>168     </font></a>            <summary>
+<a name="169"><font size=-1>169     </font></a>                Get the user's email
+<a name="170"><font size=-1>170     </font></a>            </summary>
+<a name="171"><font size=-1>171     </font></a>            <param name="user"></param>
+<a name="172"><font size=-1>172     </font></a>            <returns></returns>
+<a name="173"><font size=-1>173     </font></a>        </member>
+<a name="174"><font size=-1>174     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.FindByEmailAsync(System.String)">
+<a name="175"><font size=-1>175     </font></a>            <summary>
+<a name="176"><font size=-1>176     </font></a>                Find a user by email
+<a name="177"><font size=-1>177     </font></a>            </summary>
+<a name="178"><font size=-1>178     </font></a>            <param name="email"></param>
+<a name="179"><font size=-1>179     </font></a>            <returns></returns>
+<a name="180"><font size=-1>180     </font></a>        </member>
+<a name="181"><font size=-1>181     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.GetLockoutEndDateAsync(`0)">
+<a name="182"><font size=-1>182     </font></a>            <summary>
+<a name="183"><font size=-1>183     </font></a>                Returns the DateTimeOffset that represents the end of a user's lockout, any time in the past should be considered
+<a name="184"><font size=-1>184     </font></a>                not locked out.
+<a name="185"><font size=-1>185     </font></a>            </summary>
+<a name="186"><font size=-1>186     </font></a>            <param name="user"></param>
+<a name="187"><font size=-1>187     </font></a>            <returns></returns>
+<a name="188"><font size=-1>188     </font></a>        </member>
+<a name="189"><font size=-1>189     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.SetLockoutEndDateAsync(`0,System.DateTimeOffset)">
+<a name="190"><font size=-1>190     </font></a>            <summary>
+<a name="191"><font size=-1>191     </font></a>                Locks a user out until the specified end date (set to a past date, to unlock a user)
+<a name="192"><font size=-1>192     </font></a>            </summary>
+<a name="193"><font size=-1>193     </font></a>            <param name="user"></param>
+<a name="194"><font size=-1>194     </font></a>            <param name="lockoutEnd"></param>
+<a name="195"><font size=-1>195     </font></a>            <returns></returns>
+<a name="196"><font size=-1>196     </font></a>        </member>
+<a name="197"><font size=-1>197     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.IncrementAccessFailedCountAsync(`0)">
+<a name="198"><font size=-1>198     </font></a>            <summary>
+<a name="199"><font size=-1>199     </font></a>                Used to record when an attempt to access the user has failed
+<a name="200"><font size=-1>200     </font></a>            </summary>
+<a name="201"><font size=-1>201     </font></a>            <param name="user"></param>
+<a name="202"><font size=-1>202     </font></a>            <returns></returns>
+<a name="203"><font size=-1>203     </font></a>        </member>
+<a name="204"><font size=-1>204     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.ResetAccessFailedCountAsync(`0)">
+<a name="205"><font size=-1>205     </font></a>            <summary>
+<a name="206"><font size=-1>206     </font></a>                Used to reset the account access count, typically after the account is successfully accessed
+<a name="207"><font size=-1>207     </font></a>            </summary>
+<a name="208"><font size=-1>208     </font></a>            <param name="user"></param>
+<a name="209"><font size=-1>209     </font></a>            <returns></returns>
+<a name="210"><font size=-1>210     </font></a>        </member>
+<a name="211"><font size=-1>211     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.GetAccessFailedCountAsync(`0)">
+<a name="212"><font size=-1>212     </font></a>            <summary>
+<a name="213"><font size=-1>213     </font></a>                Returns the current number of failed access attempts.  This number usually will be reset whenever the password is
+<a name="214"><font size=-1>214     </font></a>                verified or the account is locked out.
+<a name="215"><font size=-1>215     </font></a>            </summary>
+<a name="216"><font size=-1>216     </font></a>            <param name="user"></param>
+<a name="217"><font size=-1>217     </font></a>            <returns></returns>
+<a name="218"><font size=-1>218     </font></a>        </member>
+<a name="219"><font size=-1>219     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.GetLockoutEnabledAsync(`0)">
+<a name="220"><font size=-1>220     </font></a>            <summary>
+<a name="221"><font size=-1>221     </font></a>                Returns whether the user can be locked out.
+<a name="222"><font size=-1>222     </font></a>            </summary>
+<a name="223"><font size=-1>223     </font></a>            <param name="user"></param>
+<a name="224"><font size=-1>224     </font></a>            <returns></returns>
+<a name="225"><font size=-1>225     </font></a>        </member>
+<a name="226"><font size=-1>226     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.SetLockoutEnabledAsync(`0,System.Boolean)">
+<a name="227"><font size=-1>227     </font></a>            <summary>
+<a name="228"><font size=-1>228     </font></a>                Sets whether the user can be locked out.
+<a name="229"><font size=-1>229     </font></a>            </summary>
+<a name="230"><font size=-1>230     </font></a>            <param name="user"></param>
+<a name="231"><font size=-1>231     </font></a>            <param name="enabled"></param>
+<a name="232"><font size=-1>232     </font></a>            <returns></returns>
+<a name="233"><font size=-1>233     </font></a>        </member>
+<a name="234"><font size=-1>234     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.FindByIdAsync(`2)">
+<a name="235"><font size=-1>235     </font></a>            <summary>
+<a name="236"><font size=-1>236     </font></a>                Find a user by id
+<a name="237"><font size=-1>237     </font></a>            </summary>
+<a name="238"><font size=-1>238     </font></a>            <param name="userId"></param>
+<a name="239"><font size=-1>239     </font></a>            <returns></returns>
+<a name="240"><font size=-1>240     </font></a>        </member>
+<a name="241"><font size=-1>241     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.FindByNameAsync(System.String)">
+<a name="242"><font size=-1>242     </font></a>            <summary>
+<a name="243"><font size=-1>243     </font></a>                Find a user by name
+<a name="244"><font size=-1>244     </font></a>            </summary>
+<a name="245"><font size=-1>245     </font></a>            <param name="userName"></param>
+<a name="246"><font size=-1>246     </font></a>            <returns></returns>
+<a name="247"><font size=-1>247     </font></a>        </member>
+<a name="248"><font size=-1>248     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.CreateAsync(`0)">
+<a name="249"><font size=-1>249     </font></a>            <summary>
+<a name="250"><font size=-1>250     </font></a>                Insert an entity
+<a name="251"><font size=-1>251     </font></a>            </summary>
+<a name="252"><font size=-1>252     </font></a>            <param name="user"></param>
+<a name="253"><font size=-1>253     </font></a>        </member>
+<a name="254"><font size=-1>254     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.DeleteAsync(`0)">
+<a name="255"><font size=-1>255     </font></a>            <summary>
+<a name="256"><font size=-1>256     </font></a>                Mark an entity for deletion
+<a name="257"><font size=-1>257     </font></a>            </summary>
+<a name="258"><font size=-1>258     </font></a>            <param name="user"></param>
+<a name="259"><font size=-1>259     </font></a>        </member>
+<a name="260"><font size=-1>260     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.UpdateAsync(`0)">
+<a name="261"><font size=-1>261     </font></a>            <summary>
+<a name="262"><font size=-1>262     </font></a>                Update an entity
+<a name="263"><font size=-1>263     </font></a>            </summary>
+<a name="264"><font size=-1>264     </font></a>            <param name="user"></param>
+<a name="265"><font size=-1>265     </font></a>        </member>
+<a name="266"><font size=-1>266     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.Dispose">
+<a name="267"><font size=-1>267     </font></a>            <summary>
+<a name="268"><font size=-1>268     </font></a>                Dispose the store
+<a name="269"><font size=-1>269     </font></a>            </summary>
+<a name="270"><font size=-1>270     </font></a>        </member>
+<a name="271"><font size=-1>271     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.FindAsync(Microsoft.AspNet.Identity.UserLoginInfo)">
+<a name="272"><font size=-1>272     </font></a>            <summary>
+<a name="273"><font size=-1>273     </font></a>                Returns the user associated with this login
+<a name="274"><font size=-1>274     </font></a>            </summary>
+<a name="275"><font size=-1>275     </font></a>            <returns></returns>
+<a name="276"><font size=-1>276     </font></a>        </member>
+<a name="277"><font size=-1>277     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.AddLoginAsync(`0,Microsoft.AspNet.Identity.UserLoginInfo)">
+<a name="278"><font size=-1>278     </font></a>            <summary>
+<a name="279"><font size=-1>279     </font></a>                Add a login to the user
+<a name="280"><font size=-1>280     </font></a>            </summary>
+<a name="281"><font size=-1>281     </font></a>            <param name="user"></param>
+<a name="282"><font size=-1>282     </font></a>            <param name="login"></param>
+<a name="283"><font size=-1>283     </font></a>            <returns></returns>
+<a name="284"><font size=-1>284     </font></a>        </member>
+<a name="285"><font size=-1>285     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.RemoveLoginAsync(`0,Microsoft.AspNet.Identity.UserLoginInfo)">
+<a name="286"><font size=-1>286     </font></a>            <summary>
+<a name="287"><font size=-1>287     </font></a>                Remove a login from a user
+<a name="288"><font size=-1>288     </font></a>            </summary>
+<a name="289"><font size=-1>289     </font></a>            <param name="user"></param>
+<a name="290"><font size=-1>290     </font></a>            <param name="login"></param>
+<a name="291"><font size=-1>291     </font></a>            <returns></returns>
+<a name="292"><font size=-1>292     </font></a>        </member>
+<a name="293"><font size=-1>293     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.GetLoginsAsync(`0)">
+<a name="294"><font size=-1>294     </font></a>            <summary>
+<a name="295"><font size=-1>295     </font></a>                Get the logins for a user
+<a name="296"><font size=-1>296     </font></a>            </summary>
+<a name="297"><font size=-1>297     </font></a>            <param name="user"></param>
+<a name="298"><font size=-1>298     </font></a>            <returns></returns>
+<a name="299"><font size=-1>299     </font></a>        </member>
+<a name="300"><font size=-1>300     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.SetPasswordHashAsync(`0,System.String)">
+<a name="301"><font size=-1>301     </font></a>            <summary>
+<a name="302"><font size=-1>302     </font></a>                Set the password hash for a user
+<a name="303"><font size=-1>303     </font></a>            </summary>
+<a name="304"><font size=-1>304     </font></a>            <param name="user"></param>
+<a name="305"><font size=-1>305     </font></a>            <param name="passwordHash"></param>
+<a name="306"><font size=-1>306     </font></a>            <returns></returns>
+<a name="307"><font size=-1>307     </font></a>        </member>
+<a name="308"><font size=-1>308     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.GetPasswordHashAsync(`0)">
+<a name="309"><font size=-1>309     </font></a>            <summary>
+<a name="310"><font size=-1>310     </font></a>                Get the password hash for a user
+<a name="311"><font size=-1>311     </font></a>            </summary>
+<a name="312"><font size=-1>312     </font></a>            <param name="user"></param>
+<a name="313"><font size=-1>313     </font></a>            <returns></returns>
+<a name="314"><font size=-1>314     </font></a>        </member>
+<a name="315"><font size=-1>315     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.HasPasswordAsync(`0)">
+<a name="316"><font size=-1>316     </font></a>            <summary>
+<a name="317"><font size=-1>317     </font></a>                Returns true if the user has a password set
+<a name="318"><font size=-1>318     </font></a>            </summary>
+<a name="319"><font size=-1>319     </font></a>            <param name="user"></param>
+<a name="320"><font size=-1>320     </font></a>            <returns></returns>
+<a name="321"><font size=-1>321     </font></a>        </member>
+<a name="322"><font size=-1>322     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.SetPhoneNumberAsync(`0,System.String)">
+<a name="323"><font size=-1>323     </font></a>            <summary>
+<a name="324"><font size=-1>324     </font></a>                Set the user's phone number
+<a name="325"><font size=-1>325     </font></a>            </summary>
+<a name="326"><font size=-1>326     </font></a>            <param name="user"></param>
+<a name="327"><font size=-1>327     </font></a>            <param name="phoneNumber"></param>
+<a name="328"><font size=-1>328     </font></a>            <returns></returns>
+<a name="329"><font size=-1>329     </font></a>        </member>
+<a name="330"><font size=-1>330     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.GetPhoneNumberAsync(`0)">
+<a name="331"><font size=-1>331     </font></a>            <summary>
+<a name="332"><font size=-1>332     </font></a>                Get a user's phone number
+<a name="333"><font size=-1>333     </font></a>            </summary>
+<a name="334"><font size=-1>334     </font></a>            <param name="user"></param>
+<a name="335"><font size=-1>335     </font></a>            <returns></returns>
+<a name="336"><font size=-1>336     </font></a>        </member>
+<a name="337"><font size=-1>337     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.GetPhoneNumberConfirmedAsync(`0)">
+<a name="338"><font size=-1>338     </font></a>            <summary>
+<a name="339"><font size=-1>339     </font></a>                Returns whether the user phoneNumber is confirmed
+<a name="340"><font size=-1>340     </font></a>            </summary>
+<a name="341"><font size=-1>341     </font></a>            <param name="user"></param>
+<a name="342"><font size=-1>342     </font></a>            <returns></returns>
+<a name="343"><font size=-1>343     </font></a>        </member>
+<a name="344"><font size=-1>344     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.SetPhoneNumberConfirmedAsync(`0,System.Boolean)">
+<a name="345"><font size=-1>345     </font></a>            <summary>
+<a name="346"><font size=-1>346     </font></a>                Set PhoneNumberConfirmed on the user
+<a name="347"><font size=-1>347     </font></a>            </summary>
+<a name="348"><font size=-1>348     </font></a>            <param name="user"></param>
+<a name="349"><font size=-1>349     </font></a>            <param name="confirmed"></param>
+<a name="350"><font size=-1>350     </font></a>            <returns></returns>
+<a name="351"><font size=-1>351     </font></a>        </member>
+<a name="352"><font size=-1>352     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.AddToRoleAsync(`0,System.String)">
+<a name="353"><font size=-1>353     </font></a>            <summary>
+<a name="354"><font size=-1>354     </font></a>                Add a user to a role
+<a name="355"><font size=-1>355     </font></a>            </summary>
+<a name="356"><font size=-1>356     </font></a>            <param name="user"></param>
+<a name="357"><font size=-1>357     </font></a>            <param name="roleName"></param>
+<a name="358"><font size=-1>358     </font></a>            <returns></returns>
+<a name="359"><font size=-1>359     </font></a>        </member>
+<a name="360"><font size=-1>360     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.RemoveFromRoleAsync(`0,System.String)">
+<a name="361"><font size=-1>361     </font></a>            <summary>
+<a name="362"><font size=-1>362     </font></a>                Remove a user from a role
+<a name="363"><font size=-1>363     </font></a>            </summary>
+<a name="364"><font size=-1>364     </font></a>            <param name="user"></param>
+<a name="365"><font size=-1>365     </font></a>            <param name="roleName"></param>
+<a name="366"><font size=-1>366     </font></a>            <returns></returns>
+<a name="367"><font size=-1>367     </font></a>        </member>
+<a name="368"><font size=-1>368     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.GetRolesAsync(`0)">
+<a name="369"><font size=-1>369     </font></a>            <summary>
+<a name="370"><font size=-1>370     </font></a>                Get the names of the roles a user is a member of
+<a name="371"><font size=-1>371     </font></a>            </summary>
+<a name="372"><font size=-1>372     </font></a>            <param name="user"></param>
+<a name="373"><font size=-1>373     </font></a>            <returns></returns>
+<a name="374"><font size=-1>374     </font></a>        </member>
+<a name="375"><font size=-1>375     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.IsInRoleAsync(`0,System.String)">
+<a name="376"><font size=-1>376     </font></a>            <summary>
+<a name="377"><font size=-1>377     </font></a>                Returns true if the user is in the named role
+<a name="378"><font size=-1>378     </font></a>            </summary>
+<a name="379"><font size=-1>379     </font></a>            <param name="user"></param>
+<a name="380"><font size=-1>380     </font></a>            <param name="roleName"></param>
+<a name="381"><font size=-1>381     </font></a>            <returns></returns>
+<a name="382"><font size=-1>382     </font></a>        </member>
+<a name="383"><font size=-1>383     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.SetSecurityStampAsync(`0,System.String)">
+<a name="384"><font size=-1>384     </font></a>            <summary>
+<a name="385"><font size=-1>385     </font></a>                Set the security stamp for the user
+<a name="386"><font size=-1>386     </font></a>            </summary>
+<a name="387"><font size=-1>387     </font></a>            <param name="user"></param>
+<a name="388"><font size=-1>388     </font></a>            <param name="stamp"></param>
+<a name="389"><font size=-1>389     </font></a>            <returns></returns>
+<a name="390"><font size=-1>390     </font></a>        </member>
+<a name="391"><font size=-1>391     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.GetSecurityStampAsync(`0)">
+<a name="392"><font size=-1>392     </font></a>            <summary>
+<a name="393"><font size=-1>393     </font></a>                Get the security stamp for a user
+<a name="394"><font size=-1>394     </font></a>            </summary>
+<a name="395"><font size=-1>395     </font></a>            <param name="user"></param>
+<a name="396"><font size=-1>396     </font></a>            <returns></returns>
+<a name="397"><font size=-1>397     </font></a>        </member>
+<a name="398"><font size=-1>398     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.SetTwoFactorEnabledAsync(`0,System.Boolean)">
+<a name="399"><font size=-1>399     </font></a>            <summary>
+<a name="400"><font size=-1>400     </font></a>                Set whether two factor authentication is enabled for the user
+<a name="401"><font size=-1>401     </font></a>            </summary>
+<a name="402"><font size=-1>402     </font></a>            <param name="user"></param>
+<a name="403"><font size=-1>403     </font></a>            <param name="enabled"></param>
+<a name="404"><font size=-1>404     </font></a>            <returns></returns>
+<a name="405"><font size=-1>405     </font></a>        </member>
+<a name="406"><font size=-1>406     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.GetTwoFactorEnabledAsync(`0)">
+<a name="407"><font size=-1>407     </font></a>            <summary>
+<a name="408"><font size=-1>408     </font></a>                Gets whether two factor authentication is enabled for the user
+<a name="409"><font size=-1>409     </font></a>            </summary>
+<a name="410"><font size=-1>410     </font></a>            <param name="user"></param>
+<a name="411"><font size=-1>411     </font></a>            <returns></returns>
+<a name="412"><font size=-1>412     </font></a>        </member>
+<a name="413"><font size=-1>413     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.GetUserAggregateAsync(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+<a name="414"><font size=-1>414     </font></a>            <summary>
+<a name="415"><font size=-1>415     </font></a>            Used to attach child entities to the User aggregate, i.e. Roles, Logins, and Claims
+<a name="416"><font size=-1>416     </font></a>            </summary>
+<a name="417"><font size=-1>417     </font></a>            <param name="filter"></param>
+<a name="418"><font size=-1>418     </font></a>            <returns></returns>
+<a name="419"><font size=-1>419     </font></a>        </member>
+<a name="420"><font size=-1>420     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.Dispose(System.Boolean)">
+<a name="421"><font size=-1>421     </font></a>            <summary>
+<a name="422"><font size=-1>422     </font></a>                If disposing, calls dispose on the Context.  Always nulls out the Context
+<a name="423"><font size=-1>423     </font></a>            </summary>
+<a name="424"><font size=-1>424     </font></a>            <param name="disposing"></param>
+<a name="425"><font size=-1>425     </font></a>        </member>
+<a name="426"><font size=-1>426     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.Context">
+<a name="427"><font size=-1>427     </font></a>            <summary>
+<a name="428"><font size=-1>428     </font></a>                Context for the store
+<a name="429"><font size=-1>429     </font></a>            </summary>
+<a name="430"><font size=-1>430     </font></a>        </member>
+<a name="431"><font size=-1>431     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.DisposeContext">
+<a name="432"><font size=-1>432     </font></a>            <summary>
+<a name="433"><font size=-1>433     </font></a>                If true will call dispose on the DbContext during Dispose
+<a name="434"><font size=-1>434     </font></a>            </summary>
+<a name="435"><font size=-1>435     </font></a>        </member>
+<a name="436"><font size=-1>436     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.AutoSaveChanges">
+<a name="437"><font size=-1>437     </font></a>            <summary>
+<a name="438"><font size=-1>438     </font></a>                If true will call SaveChanges after Create/Update/Delete
+<a name="439"><font size=-1>439     </font></a>            </summary>
+<a name="440"><font size=-1>440     </font></a>        </member>
+<a name="441"><font size=-1>441     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserStore`6.Users">
+<a name="442"><font size=-1>442     </font></a>            <summary>
+<a name="443"><font size=-1>443     </font></a>                Returns an IQueryable of users
+<a name="444"><font size=-1>444     </font></a>            </summary>
+<a name="445"><font size=-1>445     </font></a>        </member>
+<a name="446"><font size=-1>446     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`1.#ctor">
+<a name="447"><font size=-1>447     </font></a>            <summary>
+<a name="448"><font size=-1>448     </font></a>                Default constuctor which uses a new instance of a default EntityyDbContext
+<a name="449"><font size=-1>449     </font></a>            </summary>
+<a name="450"><font size=-1>450     </font></a>        </member>
+<a name="451"><font size=-1>451     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`1.#ctor(System.Data.Entity.DbContext)">
+<a name="452"><font size=-1>452     </font></a>            <summary>
+<a name="453"><font size=-1>453     </font></a>                Constructor
+<a name="454"><font size=-1>454     </font></a>            </summary>
+<a name="455"><font size=-1>455     </font></a>            <param name="context"></param>
+<a name="456"><font size=-1>456     </font></a>        </member>
+<a name="457"><font size=-1>457     </font></a>        <member name="T:Microsoft.AspNet.Identity.EntityFramework.IdentityUserRole">
+<a name="458"><font size=-1>458     </font></a>            <summary>
+<a name="459"><font size=-1>459     </font></a>                EntityType that represents a user belonging to a role
+<a name="460"><font size=-1>460     </font></a>            </summary>
+<a name="461"><font size=-1>461     </font></a>        </member>
+<a name="462"><font size=-1>462     </font></a>        <member name="T:Microsoft.AspNet.Identity.EntityFramework.IdentityUserRole`1">
+<a name="463"><font size=-1>463     </font></a>            <summary>
+<a name="464"><font size=-1>464     </font></a>                EntityType that represents a user belonging to a role
+<a name="465"><font size=-1>465     </font></a>            </summary>
+<a name="466"><font size=-1>466     </font></a>            <typeparam name="TKey"></typeparam>
+<a name="467"><font size=-1>467     </font></a>        </member>
+<a name="468"><font size=-1>468     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUserRole`1.UserId">
+<a name="469"><font size=-1>469     </font></a>            <summary>
+<a name="470"><font size=-1>470     </font></a>                UserId for the user that is in the role
+<a name="471"><font size=-1>471     </font></a>            </summary>
+<a name="472"><font size=-1>472     </font></a>        </member>
+<a name="473"><font size=-1>473     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUserRole`1.RoleId">
+<a name="474"><font size=-1>474     </font></a>            <summary>
+<a name="475"><font size=-1>475     </font></a>                RoleId for the role
+<a name="476"><font size=-1>476     </font></a>            </summary>
+<a name="477"><font size=-1>477     </font></a>        </member>
+<a name="478"><font size=-1>478     </font></a>        <member name="T:Microsoft.AspNet.Identity.EntityFramework.EntityStore`1">
+<a name="479"><font size=-1>479     </font></a>            <summary>
+<a name="480"><font size=-1>480     </font></a>                EntityFramework based IIdentityEntityStore that allows query/manipulation of a TEntity set
+<a name="481"><font size=-1>481     </font></a>            </summary>
+<a name="482"><font size=-1>482     </font></a>            <typeparam name="TEntity">Concrete entity type, i.e .User</typeparam>
+<a name="483"><font size=-1>483     </font></a>        </member>
+<a name="484"><font size=-1>484     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.EntityStore`1.#ctor(System.Data.Entity.DbContext)">
+<a name="485"><font size=-1>485     </font></a>            <summary>
+<a name="486"><font size=-1>486     </font></a>                Constructor that takes a Context
+<a name="487"><font size=-1>487     </font></a>            </summary>
+<a name="488"><font size=-1>488     </font></a>            <param name="context"></param>
+<a name="489"><font size=-1>489     </font></a>        </member>
+<a name="490"><font size=-1>490     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.EntityStore`1.GetByIdAsync(System.Object)">
+<a name="491"><font size=-1>491     </font></a>            <summary>
+<a name="492"><font size=-1>492     </font></a>                FindAsync an entity by ID
+<a name="493"><font size=-1>493     </font></a>            </summary>
+<a name="494"><font size=-1>494     </font></a>            <param name="id"></param>
+<a name="495"><font size=-1>495     </font></a>            <returns></returns>
+<a name="496"><font size=-1>496     </font></a>        </member>
+<a name="497"><font size=-1>497     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.EntityStore`1.Create(`0)">
+<a name="498"><font size=-1>498     </font></a>            <summary>
+<a name="499"><font size=-1>499     </font></a>                Insert an entity
+<a name="500"><font size=-1>500     </font></a>            </summary>
+<a name="501"><font size=-1>501     </font></a>            <param name="entity"></param>
+<a name="502"><font size=-1>502     </font></a>        </member>
+<a name="503"><font size=-1>503     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.EntityStore`1.Delete(`0)">
+<a name="504"><font size=-1>504     </font></a>            <summary>
+<a name="505"><font size=-1>505     </font></a>                Mark an entity for deletion
+<a name="506"><font size=-1>506     </font></a>            </summary>
+<a name="507"><font size=-1>507     </font></a>            <param name="entity"></param>
+<a name="508"><font size=-1>508     </font></a>        </member>
+<a name="509"><font size=-1>509     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.EntityStore`1.Update(`0)">
+<a name="510"><font size=-1>510     </font></a>            <summary>
+<a name="511"><font size=-1>511     </font></a>                Update an entity
+<a name="512"><font size=-1>512     </font></a>            </summary>
+<a name="513"><font size=-1>513     </font></a>            <param name="entity"></param>
+<a name="514"><font size=-1>514     </font></a>        </member>
+<a name="515"><font size=-1>515     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.EntityStore`1.Context">
+<a name="516"><font size=-1>516     </font></a>            <summary>
+<a name="517"><font size=-1>517     </font></a>                Context for the store
+<a name="518"><font size=-1>518     </font></a>            </summary>
+<a name="519"><font size=-1>519     </font></a>        </member>
+<a name="520"><font size=-1>520     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.EntityStore`1.EntitySet">
+<a name="521"><font size=-1>521     </font></a>            <summary>
+<a name="522"><font size=-1>522     </font></a>                Used to query the entities
+<a name="523"><font size=-1>523     </font></a>            </summary>
+<a name="524"><font size=-1>524     </font></a>        </member>
+<a name="525"><font size=-1>525     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.EntityStore`1.DbEntitySet">
+<a name="526"><font size=-1>526     </font></a>            <summary>
+<a name="527"><font size=-1>527     </font></a>                EntitySet for this store
+<a name="528"><font size=-1>528     </font></a>            </summary>
+<a name="529"><font size=-1>529     </font></a>        </member>
+<a name="530"><font size=-1>530     </font></a>        <member name="T:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext">
+<a name="531"><font size=-1>531     </font></a>            <summary>
+<a name="532"><font size=-1>532     </font></a>            Default IdentityDbContext that uses the default entity types for ASP.NET Identity Users, Roles, Claims, Logins. 
+<a name="533"><font size=-1>533     </font></a>            Use this overload to add your own entity types.
+<a name="534"><font size=-1>534     </font></a>            </summary>
+<a name="535"><font size=-1>535     </font></a>        </member>
+<a name="536"><font size=-1>536     </font></a>        <member name="T:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`6">
+<a name="537"><font size=-1>537     </font></a>            <summary>
+<a name="538"><font size=-1>538     </font></a>            Generic IdentityDbContext base that can be customized with entity types that extend from the base IdentityUserXXX types.
+<a name="539"><font size=-1>539     </font></a>            </summary>
+<a name="540"><font size=-1>540     </font></a>            <typeparam name="TUser"></typeparam>
+<a name="541"><font size=-1>541     </font></a>            <typeparam name="TRole"></typeparam>
+<a name="542"><font size=-1>542     </font></a>            <typeparam name="TKey"></typeparam>
+<a name="543"><font size=-1>543     </font></a>            <typeparam name="TUserLogin"></typeparam>
+<a name="544"><font size=-1>544     </font></a>            <typeparam name="TUserRole"></typeparam>
+<a name="545"><font size=-1>545     </font></a>            <typeparam name="TUserClaim"></typeparam>
+<a name="546"><font size=-1>546     </font></a>        </member>
+<a name="547"><font size=-1>547     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`6.#ctor">
+<a name="548"><font size=-1>548     </font></a>            <summary>
+<a name="549"><font size=-1>549     </font></a>                Default constructor which uses the "DefaultConnection" connectionString
+<a name="550"><font size=-1>550     </font></a>            </summary>
+<a name="551"><font size=-1>551     </font></a>        </member>
+<a name="552"><font size=-1>552     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`6.#ctor(System.String)">
+<a name="553"><font size=-1>553     </font></a>            <summary>
+<a name="554"><font size=-1>554     </font></a>                Constructor which takes the connection string to use
+<a name="555"><font size=-1>555     </font></a>            </summary>
+<a name="556"><font size=-1>556     </font></a>            <param name="nameOrConnectionString"></param>
+<a name="557"><font size=-1>557     </font></a>        </member>
+<a name="558"><font size=-1>558     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`6.#ctor(System.Data.Common.DbConnection,System.Data.Entity.Infrastructure.DbCompiledModel,System.Boolean)">
+<a name="559"><font size=-1>559     </font></a>            <summary>
+<a name="560"><font size=-1>560     </font></a>                Constructs a new context instance using the existing connection to connect to a database, and initializes it from
+<a name="561"><font size=-1>561     </font></a>                the given model.  The connection will not be disposed when the context is disposed if contextOwnsConnection is
+<a name="562"><font size=-1>562     </font></a>                false.
+<a name="563"><font size=-1>563     </font></a>            </summary>
+<a name="564"><font size=-1>564     </font></a>            <param name="existingConnection">An existing connection to use for the new context.</param>
+<a name="565"><font size=-1>565     </font></a>            <param name="model">The model that will back this context.</param>
+<a name="566"><font size=-1>566     </font></a>            <param name="contextOwnsConnection">
+<a name="567"><font size=-1>567     </font></a>                Constructs a new context instance using the existing connection to connect to a
+<a name="568"><font size=-1>568     </font></a>                database, and initializes it from the given model.  The connection will not be disposed when the context is
+<a name="569"><font size=-1>569     </font></a>                disposed if contextOwnsConnection is false.
+<a name="570"><font size=-1>570     </font></a>            </param>
+<a name="571"><font size=-1>571     </font></a>        </member>
+<a name="572"><font size=-1>572     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`6.#ctor(System.Data.Entity.Infrastructure.DbCompiledModel)">
+<a name="573"><font size=-1>573     </font></a>            <summary>
+<a name="574"><font size=-1>574     </font></a>                Constructs a new context instance using conventions to create the name of
+<a name="575"><font size=-1>575     </font></a>                the database to which a connection will be made, and initializes it from
+<a name="576"><font size=-1>576     </font></a>                the given model.  The by-convention name is the full name (namespace + class
+<a name="577"><font size=-1>577     </font></a>                name) of the derived context class.  See the class remarks for how this is
+<a name="578"><font size=-1>578     </font></a>                used to create a connection.
+<a name="579"><font size=-1>579     </font></a>            </summary>
+<a name="580"><font size=-1>580     </font></a>            <param name="model">The model that will back this context.</param>
+<a name="581"><font size=-1>581     </font></a>        </member>
+<a name="582"><font size=-1>582     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`6.#ctor(System.Data.Common.DbConnection,System.Boolean)">
+<a name="583"><font size=-1>583     </font></a>            <summary>
+<a name="584"><font size=-1>584     </font></a>                Constructs a new context instance using the existing connection to connect
+<a name="585"><font size=-1>585     </font></a>                to a database.  The connection will not be disposed when the context is disposed
+<a name="586"><font size=-1>586     </font></a>                if contextOwnsConnection is false.
+<a name="587"><font size=-1>587     </font></a>            </summary>
+<a name="588"><font size=-1>588     </font></a>            <param name="existingConnection">An existing connection to use for the new context.</param>
+<a name="589"><font size=-1>589     </font></a>            <param name="contextOwnsConnection">If set to true the connection is disposed when the context is disposed, otherwise
+<a name="590"><font size=-1>590     </font></a>                the caller must dispose the connection.
+<a name="591"><font size=-1>591     </font></a>            </param>
+<a name="592"><font size=-1>592     </font></a>        </member>
+<a name="593"><font size=-1>593     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`6.#ctor(System.String,System.Data.Entity.Infrastructure.DbCompiledModel)">
+<a name="594"><font size=-1>594     </font></a>            <summary>
+<a name="595"><font size=-1>595     </font></a>                Constructs a new context instance using the given string as the name or connection
+<a name="596"><font size=-1>596     </font></a>                string for the database to which a connection will be made, and initializes
+<a name="597"><font size=-1>597     </font></a>                it from the given model.  See the class remarks for how this is used to create
+<a name="598"><font size=-1>598     </font></a>                a connection.
+<a name="599"><font size=-1>599     </font></a>            </summary>
+<a name="600"><font size=-1>600     </font></a>            <param name="nameOrConnectionString">Either the database name or a connection string.</param>
+<a name="601"><font size=-1>601     </font></a>            <param name="model">The model that will back this context.</param>
+<a name="602"><font size=-1>602     </font></a>        </member>
+<a name="603"><font size=-1>603     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`6.OnModelCreating(System.Data.Entity.DbModelBuilder)">
+<a name="604"><font size=-1>604     </font></a>            <summary>
+<a name="605"><font size=-1>605     </font></a>                Maps table names, and sets up relationships between the various user entities
+<a name="606"><font size=-1>606     </font></a>            </summary>
+<a name="607"><font size=-1>607     </font></a>            <param name="modelBuilder"></param>
+<a name="608"><font size=-1>608     </font></a>        </member>
+<a name="609"><font size=-1>609     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`6.ValidateEntity(System.Data.Entity.Infrastructure.DbEntityEntry,System.Collections.Generic.IDictionary{System.Object,System.Object})">
+<a name="610"><font size=-1>610     </font></a>            <summary>
+<a name="611"><font size=-1>611     </font></a>                Validates that UserNames are unique and case insenstive
+<a name="612"><font size=-1>612     </font></a>            </summary>
+<a name="613"><font size=-1>613     </font></a>            <param name="entityEntry"></param>
+<a name="614"><font size=-1>614     </font></a>            <param name="items"></param>
+<a name="615"><font size=-1>615     </font></a>            <returns></returns>
+<a name="616"><font size=-1>616     </font></a>        </member>
+<a name="617"><font size=-1>617     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`6.Users">
+<a name="618"><font size=-1>618     </font></a>            <summary>
+<a name="619"><font size=-1>619     </font></a>                IDbSet of Users
+<a name="620"><font size=-1>620     </font></a>            </summary>
+<a name="621"><font size=-1>621     </font></a>        </member>
+<a name="622"><font size=-1>622     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`6.Roles">
+<a name="623"><font size=-1>623     </font></a>            <summary>
+<a name="624"><font size=-1>624     </font></a>                IDbSet of Roles
+<a name="625"><font size=-1>625     </font></a>            </summary>
+<a name="626"><font size=-1>626     </font></a>        </member>
+<a name="627"><font size=-1>627     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`6.RequireUniqueEmail">
+<a name="628"><font size=-1>628     </font></a>            <summary>
+<a name="629"><font size=-1>629     </font></a>                If true validates that emails are unique
+<a name="630"><font size=-1>630     </font></a>            </summary>
+<a name="631"><font size=-1>631     </font></a>        </member>
+<a name="632"><font size=-1>632     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext.#ctor">
+<a name="633"><font size=-1>633     </font></a>            <summary>
+<a name="634"><font size=-1>634     </font></a>                Default constructor which uses the DefaultConnection
+<a name="635"><font size=-1>635     </font></a>            </summary>
+<a name="636"><font size=-1>636     </font></a>        </member>
+<a name="637"><font size=-1>637     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext.#ctor(System.String)">
+<a name="638"><font size=-1>638     </font></a>            <summary>
+<a name="639"><font size=-1>639     </font></a>                Constructor which takes the connection string to use
+<a name="640"><font size=-1>640     </font></a>            </summary>
+<a name="641"><font size=-1>641     </font></a>            <param name="nameOrConnectionString"></param>
+<a name="642"><font size=-1>642     </font></a>        </member>
+<a name="643"><font size=-1>643     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext.#ctor(System.Data.Common.DbConnection,System.Data.Entity.Infrastructure.DbCompiledModel,System.Boolean)">
+<a name="644"><font size=-1>644     </font></a>            <summary>
+<a name="645"><font size=-1>645     </font></a>                Constructs a new context instance using the existing connection to connect to a database, and initializes it from
+<a name="646"><font size=-1>646     </font></a>                the given model.  The connection will not be disposed when the context is disposed if contextOwnsConnection is
+<a name="647"><font size=-1>647     </font></a>                false.
+<a name="648"><font size=-1>648     </font></a>            </summary>
+<a name="649"><font size=-1>649     </font></a>            <param name="existingConnection">An existing connection to use for the new context.</param>
+<a name="650"><font size=-1>650     </font></a>            <param name="model">The model that will back this context.</param>
+<a name="651"><font size=-1>651     </font></a>            <param name="contextOwnsConnection">
+<a name="652"><font size=-1>652     </font></a>                Constructs a new context instance using the existing connection to connect to a
+<a name="653"><font size=-1>653     </font></a>                database, and initializes it from the given model.  The connection will not be disposed when the context is
+<a name="654"><font size=-1>654     </font></a>                disposed if contextOwnsConnection is false.
+<a name="655"><font size=-1>655     </font></a>            </param>
+<a name="656"><font size=-1>656     </font></a>        </member>
+<a name="657"><font size=-1>657     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext.#ctor(System.Data.Entity.Infrastructure.DbCompiledModel)">
+<a name="658"><font size=-1>658     </font></a>            <summary>
+<a name="659"><font size=-1>659     </font></a>                Constructs a new context instance using conventions to create the name of
+<a name="660"><font size=-1>660     </font></a>                the database to which a connection will be made, and initializes it from
+<a name="661"><font size=-1>661     </font></a>                the given model.  The by-convention name is the full name (namespace + class
+<a name="662"><font size=-1>662     </font></a>                name) of the derived context class.  See the class remarks for how this is
+<a name="663"><font size=-1>663     </font></a>                used to create a connection.
+<a name="664"><font size=-1>664     </font></a>            </summary>
+<a name="665"><font size=-1>665     </font></a>            <param name="model">The model that will back this context.</param>
+<a name="666"><font size=-1>666     </font></a>        </member>
+<a name="667"><font size=-1>667     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext.#ctor(System.Data.Common.DbConnection,System.Boolean)">
+<a name="668"><font size=-1>668     </font></a>            <summary>
+<a name="669"><font size=-1>669     </font></a>                Constructs a new context instance using the existing connection to connect
+<a name="670"><font size=-1>670     </font></a>                to a database.  The connection will not be disposed when the context is disposed
+<a name="671"><font size=-1>671     </font></a>                if contextOwnsConnection is false.
+<a name="672"><font size=-1>672     </font></a>            </summary>
+<a name="673"><font size=-1>673     </font></a>            <param name="existingConnection">An existing connection to use for the new context.</param>
+<a name="674"><font size=-1>674     </font></a>            <param name="contextOwnsConnection">If set to true the connection is disposed when the context is disposed, otherwise
+<a name="675"><font size=-1>675     </font></a>                the caller must dispose the connection.
+<a name="676"><font size=-1>676     </font></a>            </param>
+<a name="677"><font size=-1>677     </font></a>        </member>
+<a name="678"><font size=-1>678     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext.#ctor(System.String,System.Data.Entity.Infrastructure.DbCompiledModel)">
+<a name="679"><font size=-1>679     </font></a>            <summary>
+<a name="680"><font size=-1>680     </font></a>                Constructs a new context instance using the given string as the name or connection
+<a name="681"><font size=-1>681     </font></a>                string for the database to which a connection will be made, and initializes
+<a name="682"><font size=-1>682     </font></a>                it from the given model.  See the class remarks for how this is used to create
+<a name="683"><font size=-1>683     </font></a>                a connection.
+<a name="684"><font size=-1>684     </font></a>            </summary>
+<a name="685"><font size=-1>685     </font></a>            <param name="nameOrConnectionString">Either the database name or a connection string.</param>
+<a name="686"><font size=-1>686     </font></a>            <param name="model">The model that will back this context.</param>
+<a name="687"><font size=-1>687     </font></a>        </member>
+<a name="688"><font size=-1>688     </font></a>        <member name="T:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`1">
+<a name="689"><font size=-1>689     </font></a>            <summary>
+<a name="690"><font size=-1>690     </font></a>                DbContext which uses a custom user entity with a string primary key
+<a name="691"><font size=-1>691     </font></a>            </summary>
+<a name="692"><font size=-1>692     </font></a>            <typeparam name="TUser"></typeparam>
+<a name="693"><font size=-1>693     </font></a>        </member>
+<a name="694"><font size=-1>694     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`1.#ctor">
+<a name="695"><font size=-1>695     </font></a>            <summary>
+<a name="696"><font size=-1>696     </font></a>                Default constructor which uses the DefaultConnection
+<a name="697"><font size=-1>697     </font></a>            </summary>
+<a name="698"><font size=-1>698     </font></a>        </member>
+<a name="699"><font size=-1>699     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`1.#ctor(System.String)">
+<a name="700"><font size=-1>700     </font></a>            <summary>
+<a name="701"><font size=-1>701     </font></a>                Constructor which takes the connection string to use
+<a name="702"><font size=-1>702     </font></a>            </summary>
+<a name="703"><font size=-1>703     </font></a>            <param name="nameOrConnectionString"></param>
+<a name="704"><font size=-1>704     </font></a>        </member>
+<a name="705"><font size=-1>705     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`1.#ctor(System.String,System.Boolean)">
+<a name="706"><font size=-1>706     </font></a>            <summary>
+<a name="707"><font size=-1>707     </font></a>                Constructor which takes the connection string to use
+<a name="708"><font size=-1>708     </font></a>            </summary>
+<a name="709"><font size=-1>709     </font></a>            <param name="nameOrConnectionString"></param>
+<a name="710"><font size=-1>710     </font></a>            <param name="throwIfV1Schema">Will throw an exception if the schema matches that of Identity 1.0.0</param>
+<a name="711"><font size=-1>711     </font></a>        </member>
+<a name="712"><font size=-1>712     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`1.#ctor(System.Data.Common.DbConnection,System.Data.Entity.Infrastructure.DbCompiledModel,System.Boolean)">
+<a name="713"><font size=-1>713     </font></a>            <summary>
+<a name="714"><font size=-1>714     </font></a>                Constructs a new context instance using the existing connection to connect to a database, and initializes it from
+<a name="715"><font size=-1>715     </font></a>                the given model.  The connection will not be disposed when the context is disposed if contextOwnsConnection is
+<a name="716"><font size=-1>716     </font></a>                false.
+<a name="717"><font size=-1>717     </font></a>            </summary>
+<a name="718"><font size=-1>718     </font></a>            <param name="existingConnection">An existing connection to use for the new context.</param>
+<a name="719"><font size=-1>719     </font></a>            <param name="model">The model that will back this context.</param>
+<a name="720"><font size=-1>720     </font></a>            <param name="contextOwnsConnection">
+<a name="721"><font size=-1>721     </font></a>                Constructs a new context instance using the existing connection to connect to a
+<a name="722"><font size=-1>722     </font></a>                database, and initializes it from the given model.  The connection will not be disposed when the context is
+<a name="723"><font size=-1>723     </font></a>                disposed if contextOwnsConnection is false.
+<a name="724"><font size=-1>724     </font></a>            </param>
+<a name="725"><font size=-1>725     </font></a>        </member>
+<a name="726"><font size=-1>726     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`1.#ctor(System.Data.Entity.Infrastructure.DbCompiledModel)">
+<a name="727"><font size=-1>727     </font></a>            <summary>
+<a name="728"><font size=-1>728     </font></a>                Constructs a new context instance using conventions to create the name of
+<a name="729"><font size=-1>729     </font></a>                the database to which a connection will be made, and initializes it from
+<a name="730"><font size=-1>730     </font></a>                the given model.  The by-convention name is the full name (namespace + class
+<a name="731"><font size=-1>731     </font></a>                name) of the derived context class.  See the class remarks for how this is
+<a name="732"><font size=-1>732     </font></a>                used to create a connection.
+<a name="733"><font size=-1>733     </font></a>            </summary>
+<a name="734"><font size=-1>734     </font></a>            <param name="model">The model that will back this context.</param>
+<a name="735"><font size=-1>735     </font></a>        </member>
+<a name="736"><font size=-1>736     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`1.#ctor(System.Data.Common.DbConnection,System.Boolean)">
+<a name="737"><font size=-1>737     </font></a>            <summary>
+<a name="738"><font size=-1>738     </font></a>                Constructs a new context instance using the existing connection to connect
+<a name="739"><font size=-1>739     </font></a>                to a database.  The connection will not be disposed when the context is disposed
+<a name="740"><font size=-1>740     </font></a>                if contextOwnsConnection is false.
+<a name="741"><font size=-1>741     </font></a>            </summary>
+<a name="742"><font size=-1>742     </font></a>            <param name="existingConnection">An existing connection to use for the new context.</param>
+<a name="743"><font size=-1>743     </font></a>            <param name="contextOwnsConnection">If set to true the connection is disposed when the context is disposed, otherwise
+<a name="744"><font size=-1>744     </font></a>                the caller must dispose the connection.
+<a name="745"><font size=-1>745     </font></a>            </param>
+<a name="746"><font size=-1>746     </font></a>        </member>
+<a name="747"><font size=-1>747     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`1.#ctor(System.String,System.Data.Entity.Infrastructure.DbCompiledModel)">
+<a name="748"><font size=-1>748     </font></a>            <summary>
+<a name="749"><font size=-1>749     </font></a>                Constructs a new context instance using the given string as the name or connection
+<a name="750"><font size=-1>750     </font></a>                string for the database to which a connection will be made, and initializes
+<a name="751"><font size=-1>751     </font></a>                it from the given model.  See the class remarks for how this is used to create
+<a name="752"><font size=-1>752     </font></a>                a connection.
+<a name="753"><font size=-1>753     </font></a>            </summary>
+<a name="754"><font size=-1>754     </font></a>            <param name="nameOrConnectionString">Either the database name or a connection string.</param>
+<a name="755"><font size=-1>755     </font></a>            <param name="model">The model that will back this context.</param>
+<a name="756"><font size=-1>756     </font></a>        </member>
+<a name="757"><font size=-1>757     </font></a>        <member name="T:Microsoft.AspNet.Identity.EntityFramework.IdentityResources">
+<a name="758"><font size=-1>758     </font></a>            <summary>
+<a name="759"><font size=-1>759     </font></a>              A strongly-typed resource class, for looking up localized strings, etc.
+<a name="760"><font size=-1>760     </font></a>            </summary>
+<a name="761"><font size=-1>761     </font></a>        </member>
+<a name="762"><font size=-1>762     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.ResourceManager">
+<a name="763"><font size=-1>763     </font></a>            <summary>
+<a name="764"><font size=-1>764     </font></a>              Returns the cached ResourceManager instance used by this class.
+<a name="765"><font size=-1>765     </font></a>            </summary>
+<a name="766"><font size=-1>766     </font></a>        </member>
+<a name="767"><font size=-1>767     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.Culture">
+<a name="768"><font size=-1>768     </font></a>            <summary>
+<a name="769"><font size=-1>769     </font></a>              Overrides the current thread's CurrentUICulture property for all
+<a name="770"><font size=-1>770     </font></a>              resource lookups using this strongly typed resource class.
+<a name="771"><font size=-1>771     </font></a>            </summary>
+<a name="772"><font size=-1>772     </font></a>        </member>
+<a name="773"><font size=-1>773     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.DbValidationFailed">
+<a name="774"><font size=-1>774     </font></a>            <summary>
+<a name="775"><font size=-1>775     </font></a>              Looks up a localized string similar to Database Validation failed..
+<a name="776"><font size=-1>776     </font></a>            </summary>
+<a name="777"><font size=-1>777     </font></a>        </member>
+<a name="778"><font size=-1>778     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.DuplicateEmail">
+<a name="779"><font size=-1>779     </font></a>            <summary>
+<a name="780"><font size=-1>780     </font></a>              Looks up a localized string similar to Email {0} is already taken..
+<a name="781"><font size=-1>781     </font></a>            </summary>
+<a name="782"><font size=-1>782     </font></a>        </member>
+<a name="783"><font size=-1>783     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.DuplicateUserName">
+<a name="784"><font size=-1>784     </font></a>            <summary>
+<a name="785"><font size=-1>785     </font></a>              Looks up a localized string similar to User name {0} is already taken..
+<a name="786"><font size=-1>786     </font></a>            </summary>
+<a name="787"><font size=-1>787     </font></a>        </member>
+<a name="788"><font size=-1>788     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.EntityFailedValidation">
+<a name="789"><font size=-1>789     </font></a>            <summary>
+<a name="790"><font size=-1>790     </font></a>              Looks up a localized string similar to Entity Type {0} failed validation..
+<a name="791"><font size=-1>791     </font></a>            </summary>
+<a name="792"><font size=-1>792     </font></a>        </member>
+<a name="793"><font size=-1>793     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.ExternalLoginExists">
+<a name="794"><font size=-1>794     </font></a>            <summary>
+<a name="795"><font size=-1>795     </font></a>              Looks up a localized string similar to A user with that external login already exists..
+<a name="796"><font size=-1>796     </font></a>            </summary>
+<a name="797"><font size=-1>797     </font></a>        </member>
+<a name="798"><font size=-1>798     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.IdentityV1SchemaError">
+<a name="799"><font size=-1>799     </font></a>            <summary>
+<a name="800"><font size=-1>800     </font></a>              Looks up a localized string similar to The model backing the &apos;ApplicationDbContext&apos; context has changed since the database was created. This could have happened because the model used by ASP.NET Identity Framework has changed or the model being used in your application has changed. To resolve this issue, you need to update your database. Consider using Code First Migrations to update the database (http://go.microsoft.com/fwlink/?LinkId=301867).  Before you update your database using Code First Migrations, please disable the schema consistency ch [rest of string was truncated]&quot;;.
+<a name="801"><font size=-1>801     </font></a>            </summary>
+<a name="802"><font size=-1>802     </font></a>        </member>
+<a name="803"><font size=-1>803     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.IncorrectType">
+<a name="804"><font size=-1>804     </font></a>            <summary>
+<a name="805"><font size=-1>805     </font></a>              Looks up a localized string similar to Incorrect type, expected type of {0}..
+<a name="806"><font size=-1>806     </font></a>            </summary>
+<a name="807"><font size=-1>807     </font></a>        </member>
+<a name="808"><font size=-1>808     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.PropertyCannotBeEmpty">
+<a name="809"><font size=-1>809     </font></a>            <summary>
+<a name="810"><font size=-1>810     </font></a>              Looks up a localized string similar to {0} cannot be null or empty..
+<a name="811"><font size=-1>811     </font></a>            </summary>
+<a name="812"><font size=-1>812     </font></a>        </member>
+<a name="813"><font size=-1>813     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.RoleAlreadyExists">
+<a name="814"><font size=-1>814     </font></a>            <summary>
+<a name="815"><font size=-1>815     </font></a>              Looks up a localized string similar to Role {0} already exists..
+<a name="816"><font size=-1>816     </font></a>            </summary>
+<a name="817"><font size=-1>817     </font></a>        </member>
+<a name="818"><font size=-1>818     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.RoleIsNotEmpty">
+<a name="819"><font size=-1>819     </font></a>            <summary>
+<a name="820"><font size=-1>820     </font></a>              Looks up a localized string similar to Role is not empty..
+<a name="821"><font size=-1>821     </font></a>            </summary>
+<a name="822"><font size=-1>822     </font></a>        </member>
+<a name="823"><font size=-1>823     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.RoleNotFound">
+<a name="824"><font size=-1>824     </font></a>            <summary>
+<a name="825"><font size=-1>825     </font></a>              Looks up a localized string similar to Role {0} does not exist..
+<a name="826"><font size=-1>826     </font></a>            </summary>
+<a name="827"><font size=-1>827     </font></a>        </member>
+<a name="828"><font size=-1>828     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.UserAlreadyInRole">
+<a name="829"><font size=-1>829     </font></a>            <summary>
+<a name="830"><font size=-1>830     </font></a>              Looks up a localized string similar to User already in role..
+<a name="831"><font size=-1>831     </font></a>            </summary>
+<a name="832"><font size=-1>832     </font></a>        </member>
+<a name="833"><font size=-1>833     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.UserIdNotFound">
+<a name="834"><font size=-1>834     </font></a>            <summary>
+<a name="835"><font size=-1>835     </font></a>              Looks up a localized string similar to The UserId cannot be found..
+<a name="836"><font size=-1>836     </font></a>            </summary>
+<a name="837"><font size=-1>837     </font></a>        </member>
+<a name="838"><font size=-1>838     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.UserLoginAlreadyExists">
+<a name="839"><font size=-1>839     </font></a>            <summary>
+<a name="840"><font size=-1>840     </font></a>              Looks up a localized string similar to UserLogin already exists for loginProvider: {0} with providerKey: {1}.
+<a name="841"><font size=-1>841     </font></a>            </summary>
+<a name="842"><font size=-1>842     </font></a>        </member>
+<a name="843"><font size=-1>843     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.UserNameNotFound">
+<a name="844"><font size=-1>844     </font></a>            <summary>
+<a name="845"><font size=-1>845     </font></a>              Looks up a localized string similar to User {0} does not exist..
+<a name="846"><font size=-1>846     </font></a>            </summary>
+<a name="847"><font size=-1>847     </font></a>        </member>
+<a name="848"><font size=-1>848     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.UserNotInRole">
+<a name="849"><font size=-1>849     </font></a>            <summary>
+<a name="850"><font size=-1>850     </font></a>              Looks up a localized string similar to User is not in role..
+<a name="851"><font size=-1>851     </font></a>            </summary>
+<a name="852"><font size=-1>852     </font></a>        </member>
+<a name="853"><font size=-1>853     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityResources.ValueCannotBeNullOrEmpty">
+<a name="854"><font size=-1>854     </font></a>            <summary>
+<a name="855"><font size=-1>855     </font></a>              Looks up a localized string similar to Value cannot be null or empty..
+<a name="856"><font size=-1>856     </font></a>            </summary>
+<a name="857"><font size=-1>857     </font></a>        </member>
+<a name="858"><font size=-1>858     </font></a>        <member name="T:Microsoft.AspNet.Identity.EntityFramework.IdentityRole">
+<a name="859"><font size=-1>859     </font></a>            <summary>
+<a name="860"><font size=-1>860     </font></a>                Represents a Role entity
+<a name="861"><font size=-1>861     </font></a>            </summary>
+<a name="862"><font size=-1>862     </font></a>        </member>
+<a name="863"><font size=-1>863     </font></a>        <member name="T:Microsoft.AspNet.Identity.EntityFramework.IdentityRole`2">
+<a name="864"><font size=-1>864     </font></a>            <summary>
+<a name="865"><font size=-1>865     </font></a>                Represents a Role entity
+<a name="866"><font size=-1>866     </font></a>            </summary>
+<a name="867"><font size=-1>867     </font></a>            <typeparam name="TKey"></typeparam>
+<a name="868"><font size=-1>868     </font></a>            <typeparam name="TUserRole"></typeparam>
+<a name="869"><font size=-1>869     </font></a>        </member>
+<a name="870"><font size=-1>870     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityRole`2.#ctor">
+<a name="871"><font size=-1>871     </font></a>            <summary>
+<a name="872"><font size=-1>872     </font></a>                Constructor
+<a name="873"><font size=-1>873     </font></a>            </summary>
+<a name="874"><font size=-1>874     </font></a>        </member>
+<a name="875"><font size=-1>875     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityRole`2.Users">
+<a name="876"><font size=-1>876     </font></a>            <summary>
+<a name="877"><font size=-1>877     </font></a>                Navigation property for users in the role
+<a name="878"><font size=-1>878     </font></a>            </summary>
+<a name="879"><font size=-1>879     </font></a>        </member>
+<a name="880"><font size=-1>880     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityRole`2.Id">
+<a name="881"><font size=-1>881     </font></a>            <summary>
+<a name="882"><font size=-1>882     </font></a>                Role id
+<a name="883"><font size=-1>883     </font></a>            </summary>
+<a name="884"><font size=-1>884     </font></a>        </member>
+<a name="885"><font size=-1>885     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityRole`2.Name">
+<a name="886"><font size=-1>886     </font></a>            <summary>
+<a name="887"><font size=-1>887     </font></a>                Role name
+<a name="888"><font size=-1>888     </font></a>            </summary>
+<a name="889"><font size=-1>889     </font></a>        </member>
+<a name="890"><font size=-1>890     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityRole.#ctor">
+<a name="891"><font size=-1>891     </font></a>            <summary>
+<a name="892"><font size=-1>892     </font></a>                Constructor
+<a name="893"><font size=-1>893     </font></a>            </summary>
+<a name="894"><font size=-1>894     </font></a>        </member>
+<a name="895"><font size=-1>895     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityRole.#ctor(System.String)">
+<a name="896"><font size=-1>896     </font></a>            <summary>
+<a name="897"><font size=-1>897     </font></a>                Constructor
+<a name="898"><font size=-1>898     </font></a>            </summary>
+<a name="899"><font size=-1>899     </font></a>            <param name="roleName"></param>
+<a name="900"><font size=-1>900     </font></a>        </member>
+<a name="901"><font size=-1>901     </font></a>        <member name="T:Microsoft.AspNet.Identity.EntityFramework.IdentityUser">
+<a name="902"><font size=-1>902     </font></a>            <summary>
+<a name="903"><font size=-1>903     </font></a>                Default EntityFramework IUser implementation
+<a name="904"><font size=-1>904     </font></a>            </summary>
+<a name="905"><font size=-1>905     </font></a>        </member>
+<a name="906"><font size=-1>906     </font></a>        <member name="T:Microsoft.AspNet.Identity.EntityFramework.IdentityUser`4">
+<a name="907"><font size=-1>907     </font></a>            <summary>
+<a name="908"><font size=-1>908     </font></a>                Default EntityFramework IUser implementation
+<a name="909"><font size=-1>909     </font></a>            </summary>
+<a name="910"><font size=-1>910     </font></a>            <typeparam name="TKey"></typeparam>
+<a name="911"><font size=-1>911     </font></a>            <typeparam name="TLogin"></typeparam>
+<a name="912"><font size=-1>912     </font></a>            <typeparam name="TRole"></typeparam>
+<a name="913"><font size=-1>913     </font></a>            <typeparam name="TClaim"></typeparam>
+<a name="914"><font size=-1>914     </font></a>        </member>
+<a name="915"><font size=-1>915     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityUser`4.#ctor">
+<a name="916"><font size=-1>916     </font></a>            <summary>
+<a name="917"><font size=-1>917     </font></a>                Constructor
+<a name="918"><font size=-1>918     </font></a>            </summary>
+<a name="919"><font size=-1>919     </font></a>        </member>
+<a name="920"><font size=-1>920     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUser`4.Email">
+<a name="921"><font size=-1>921     </font></a>            <summary>
+<a name="922"><font size=-1>922     </font></a>                Email
+<a name="923"><font size=-1>923     </font></a>            </summary>
+<a name="924"><font size=-1>924     </font></a>        </member>
+<a name="925"><font size=-1>925     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUser`4.EmailConfirmed">
+<a name="926"><font size=-1>926     </font></a>            <summary>
+<a name="927"><font size=-1>927     </font></a>                True if the email is confirmed, default is false
+<a name="928"><font size=-1>928     </font></a>            </summary>
+<a name="929"><font size=-1>929     </font></a>        </member>
+<a name="930"><font size=-1>930     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUser`4.PasswordHash">
+<a name="931"><font size=-1>931     </font></a>            <summary>
+<a name="932"><font size=-1>932     </font></a>                The salted/hashed form of the user password
+<a name="933"><font size=-1>933     </font></a>            </summary>
+<a name="934"><font size=-1>934     </font></a>        </member>
+<a name="935"><font size=-1>935     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUser`4.SecurityStamp">
+<a name="936"><font size=-1>936     </font></a>            <summary>
+<a name="937"><font size=-1>937     </font></a>                A random value that should change whenever a users credentials have changed (password changed, login removed)
+<a name="938"><font size=-1>938     </font></a>            </summary>
+<a name="939"><font size=-1>939     </font></a>        </member>
+<a name="940"><font size=-1>940     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUser`4.PhoneNumber">
+<a name="941"><font size=-1>941     </font></a>            <summary>
+<a name="942"><font size=-1>942     </font></a>                PhoneNumber for the user
+<a name="943"><font size=-1>943     </font></a>            </summary>
+<a name="944"><font size=-1>944     </font></a>        </member>
+<a name="945"><font size=-1>945     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUser`4.PhoneNumberConfirmed">
+<a name="946"><font size=-1>946     </font></a>            <summary>
+<a name="947"><font size=-1>947     </font></a>                True if the phone number is confirmed, default is false
+<a name="948"><font size=-1>948     </font></a>            </summary>
+<a name="949"><font size=-1>949     </font></a>        </member>
+<a name="950"><font size=-1>950     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUser`4.TwoFactorEnabled">
+<a name="951"><font size=-1>951     </font></a>            <summary>
+<a name="952"><font size=-1>952     </font></a>                Is two factor enabled for the user
+<a name="953"><font size=-1>953     </font></a>            </summary>
+<a name="954"><font size=-1>954     </font></a>        </member>
+<a name="955"><font size=-1>955     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUser`4.LockoutEndDateUtc">
+<a name="956"><font size=-1>956     </font></a>            <summary>
+<a name="957"><font size=-1>957     </font></a>                DateTime in UTC when lockout ends, any time in the past is considered not locked out.
+<a name="958"><font size=-1>958     </font></a>            </summary>
+<a name="959"><font size=-1>959     </font></a>        </member>
+<a name="960"><font size=-1>960     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUser`4.LockoutEnabled">
+<a name="961"><font size=-1>961     </font></a>            <summary>
+<a name="962"><font size=-1>962     </font></a>                Is lockout enabled for this user
+<a name="963"><font size=-1>963     </font></a>            </summary>
+<a name="964"><font size=-1>964     </font></a>        </member>
+<a name="965"><font size=-1>965     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUser`4.AccessFailedCount">
+<a name="966"><font size=-1>966     </font></a>            <summary>
+<a name="967"><font size=-1>967     </font></a>                Used to record failures for the purposes of lockout
+<a name="968"><font size=-1>968     </font></a>            </summary>
+<a name="969"><font size=-1>969     </font></a>        </member>
+<a name="970"><font size=-1>970     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUser`4.Roles">
+<a name="971"><font size=-1>971     </font></a>            <summary>
+<a name="972"><font size=-1>972     </font></a>                Navigation property for user roles
+<a name="973"><font size=-1>973     </font></a>            </summary>
+<a name="974"><font size=-1>974     </font></a>        </member>
+<a name="975"><font size=-1>975     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUser`4.Claims">
+<a name="976"><font size=-1>976     </font></a>            <summary>
+<a name="977"><font size=-1>977     </font></a>                Navigation property for user claims
+<a name="978"><font size=-1>978     </font></a>            </summary>
+<a name="979"><font size=-1>979     </font></a>        </member>
+<a name="980"><font size=-1>980     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUser`4.Logins">
+<a name="981"><font size=-1>981     </font></a>            <summary>
+<a name="982"><font size=-1>982     </font></a>                Navigation property for user logins
+<a name="983"><font size=-1>983     </font></a>            </summary>
+<a name="984"><font size=-1>984     </font></a>        </member>
+<a name="985"><font size=-1>985     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUser`4.Id">
+<a name="986"><font size=-1>986     </font></a>            <summary>
+<a name="987"><font size=-1>987     </font></a>                User ID (Primary Key)
+<a name="988"><font size=-1>988     </font></a>            </summary>
+<a name="989"><font size=-1>989     </font></a>        </member>
+<a name="990"><font size=-1>990     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUser`4.UserName">
+<a name="991"><font size=-1>991     </font></a>            <summary>
+<a name="992"><font size=-1>992     </font></a>                User name
+<a name="993"><font size=-1>993     </font></a>            </summary>
+<a name="994"><font size=-1>994     </font></a>        </member>
+<a name="995"><font size=-1>995     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityUser.#ctor">
+<a name="996"><font size=-1>996     </font></a>            <summary>
+<a name="997"><font size=-1>997     </font></a>                Constructor which creates a new Guid for the Id
+<a name="998"><font size=-1>998     </font></a>            </summary>
+<a name="999"><font size=-1>999     </font></a>        </member>
+<a name="1000"><font size=-1>1000     </font></a>        <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityUser.#ctor(System.String)">
+<a name="1001"><font size=-1>1001     </font></a>            <summary>
+<a name="1002"><font size=-1>1002     </font></a>                Constructor that takes a userName
+<a name="1003"><font size=-1>1003     </font></a>            </summary>
+<a name="1004"><font size=-1>1004     </font></a>            <param name="userName"></param>
+<a name="1005"><font size=-1>1005     </font></a>        </member>
+<a name="1006"><font size=-1>1006     </font></a>        <member name="T:Microsoft.AspNet.Identity.EntityFramework.IdentityUserClaim">
+<a name="1007"><font size=-1>1007     </font></a>            <summary>
+<a name="1008"><font size=-1>1008     </font></a>                EntityType that represents one specific user claim
+<a name="1009"><font size=-1>1009     </font></a>            </summary>
+<a name="1010"><font size=-1>1010     </font></a>        </member>
+<a name="1011"><font size=-1>1011     </font></a>        <member name="T:Microsoft.AspNet.Identity.EntityFramework.IdentityUserClaim`1">
+<a name="1012"><font size=-1>1012     </font></a>            <summary>
+<a name="1013"><font size=-1>1013     </font></a>                EntityType that represents one specific user claim
+<a name="1014"><font size=-1>1014     </font></a>            </summary>
+<a name="1015"><font size=-1>1015     </font></a>            <typeparam name="TKey"></typeparam>
+<a name="1016"><font size=-1>1016     </font></a>        </member>
+<a name="1017"><font size=-1>1017     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUserClaim`1.Id">
+<a name="1018"><font size=-1>1018     </font></a>            <summary>
+<a name="1019"><font size=-1>1019     </font></a>                Primary key
+<a name="1020"><font size=-1>1020     </font></a>            </summary>
+<a name="1021"><font size=-1>1021     </font></a>        </member>
+<a name="1022"><font size=-1>1022     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUserClaim`1.UserId">
+<a name="1023"><font size=-1>1023     </font></a>            <summary>
+<a name="1024"><font size=-1>1024     </font></a>                User Id for the user who owns this login
+<a name="1025"><font size=-1>1025     </font></a>            </summary>
+<a name="1026"><font size=-1>1026     </font></a>        </member>
+<a name="1027"><font size=-1>1027     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUserClaim`1.ClaimType">
+<a name="1028"><font size=-1>1028     </font></a>            <summary>
+<a name="1029"><font size=-1>1029     </font></a>                Claim type
+<a name="1030"><font size=-1>1030     </font></a>            </summary>
+<a name="1031"><font size=-1>1031     </font></a>        </member>
+<a name="1032"><font size=-1>1032     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUserClaim`1.ClaimValue">
+<a name="1033"><font size=-1>1033     </font></a>            <summary>
+<a name="1034"><font size=-1>1034     </font></a>                Claim value
+<a name="1035"><font size=-1>1035     </font></a>            </summary>
+<a name="1036"><font size=-1>1036     </font></a>        </member>
+<a name="1037"><font size=-1>1037     </font></a>        <member name="T:Microsoft.AspNet.Identity.EntityFramework.IdentityUserLogin">
+<a name="1038"><font size=-1>1038     </font></a>            <summary>
+<a name="1039"><font size=-1>1039     </font></a>                Entity type for a user's login (i.e. facebook, google)
+<a name="1040"><font size=-1>1040     </font></a>            </summary>
+<a name="1041"><font size=-1>1041     </font></a>        </member>
+<a name="1042"><font size=-1>1042     </font></a>        <member name="T:Microsoft.AspNet.Identity.EntityFramework.IdentityUserLogin`1">
+<a name="1043"><font size=-1>1043     </font></a>            <summary>
+<a name="1044"><font size=-1>1044     </font></a>                Entity type for a user's login (i.e. facebook, google)
+<a name="1045"><font size=-1>1045     </font></a>            </summary>
+<a name="1046"><font size=-1>1046     </font></a>            <typeparam name="TKey"></typeparam>
+<a name="1047"><font size=-1>1047     </font></a>        </member>
+<a name="1048"><font size=-1>1048     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUserLogin`1.LoginProvider">
+<a name="1049"><font size=-1>1049     </font></a>            <summary>
+<a name="1050"><font size=-1>1050     </font></a>                The login provider for the login (i.e. facebook, google)
+<a name="1051"><font size=-1>1051     </font></a>            </summary>
+<a name="1052"><font size=-1>1052     </font></a>        </member>
+<a name="1053"><font size=-1>1053     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUserLogin`1.ProviderKey">
+<a name="1054"><font size=-1>1054     </font></a>            <summary>
+<a name="1055"><font size=-1>1055     </font></a>                Key representing the login for the provider
+<a name="1056"><font size=-1>1056     </font></a>            </summary>
+<a name="1057"><font size=-1>1057     </font></a>        </member>
+<a name="1058"><font size=-1>1058     </font></a>        <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityUserLogin`1.UserId">
+<a name="1059"><font size=-1>1059     </font></a>            <summary>
+<a name="1060"><font size=-1>1060     </font></a>                User Id for the user who owns this login
+<a name="1061"><font size=-1>1061     </font></a>            </summary>
+<a name="1062"><font size=-1>1062     </font></a>        </member>
+<a name="1063"><font size=-1>1063     </font></a>    </members>
+<a name="1064"><font size=-1>1064     </font></a></doc>
+</pre></body></html>

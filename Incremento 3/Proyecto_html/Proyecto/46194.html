@@ -1,0 +1,211 @@
+<html><head><title>Microsoft.Owin.Host.SystemWeb.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body>
+<h3>File: D:\Proyecto\packages\Microsoft.Owin.Host.SystemWeb.es.4.0.0\lib\net45\es\Microsoft.Owin.Host.SystemWeb.xml</h3>
+<SCRIPT>
+ defaultStatus = "File: D:\\Proyecto\\packages\\Microsoft.Owin.Host.SystemWeb.es.4.0.0\\lib\\net45\\es\\Microsoft.Owin.Host.SystemWeb.xml";
+top.document.title  = "Microsoft.Owin.Host.SystemWeb.xml";
+</SCRIPT>
+<pre><a name="1"><font size=-1>1     </font></a><?xml version="1.0" encoding="utf-8"?>
+<a name="2"><font size=-1>2     </font></a><doc>
+<a name="3"><font size=-1>3     </font></a>  <assembly>
+<a name="4"><font size=-1>4     </font></a>    <name>Microsoft.Owin.Host.SystemWeb</name>
+<a name="5"><font size=-1>5     </font></a>  </assembly>
+<a name="6"><font size=-1>6     </font></a>  <members>
+<a name="7"><font size=-1>7     </font></a>    <member name="T:Microsoft.Owin.Host.SystemWeb.OwinHttpHandler">
+<a name="8"><font size=-1>8     </font></a>      <summary>Procesa solicitudes de System.Web como solicitudes OWIN.</summary>
+<a name="9"><font size=-1>9     </font></a>    </member>
+<a name="10"><font size=-1>10     </font></a>    <member name="M:Microsoft.Owin.Host.SystemWeb.OwinHttpHandler.#ctor">
+<a name="11"><font size=-1>11     </font></a>      <summary>Procesa solicitudes mediante la aplicación OWIN predeterminada.</summary>
+<a name="12"><font size=-1>12     </font></a>    </member>
+<a name="13"><font size=-1>13     </font></a>    <member name="M:Microsoft.Owin.Host.SystemWeb.OwinHttpHandler.BeginProcessRequest(System.Web.HttpContextBase,System.AsyncCallback,System.Object)">
+<a name="14"><font size=-1>14     </font></a>      <summary>Inicializa una llamada asíncrona al controlador HTTP.</summary>
+<a name="15"><font size=-1>15     </font></a>      <returns>Un System.IAsyncResult que contiene información acerca del estado del proceso.</returns>
+<a name="16"><font size=-1>16     </font></a>      <param name="httpContext">Un objeto System.Web.HttpContextBase que proporciona referencias a los objetos de servidor intrínsecos (por ejemplo, Solicitud, Respuesta, Sesión y Servidor) utilizados para atender las solicitudes HTTP.</param>
+<a name="17"><font size=-1>17     </font></a>      <param name="callback">El objeto System.AsyncCallback que se debe llamar cuando se haya completado la llamada al método asincrónico.Si la devolución de llamada es nula, el delegado no se invoca.</param>
+<a name="18"><font size=-1>18     </font></a>      <param name="extraData">Datos adicionales que se necesitan para procesar la solicitud.</param>
+<a name="19"><font size=-1>19     </font></a>    </member>
+<a name="20"><font size=-1>20     </font></a>    <member name="M:Microsoft.Owin.Host.SystemWeb.OwinHttpHandler.EndProcessRequest(System.IAsyncResult)">
+<a name="21"><font size=-1>21     </font></a>      <summary>Proporciona un método de fin de proceso asincrónico cuando el proceso termina.</summary>
+<a name="22"><font size=-1>22     </font></a>      <param name="result">Un System.IAsyncResult que contiene información acerca del estado del proceso.</param>
+<a name="23"><font size=-1>23     </font></a>    </member>
+<a name="24"><font size=-1>24     </font></a>    <member name="P:Microsoft.Owin.Host.SystemWeb.OwinHttpHandler.IsReusable">
+<a name="25"><font size=-1>25     </font></a>      <summary>Obtiene un valor que indica si otra solicitud puede utilizar la instancia de System.Web.IHttpHandler.</summary>
+<a name="26"><font size=-1>26     </font></a>      <returns>true.</returns>
+<a name="27"><font size=-1>27     </font></a>    </member>
+<a name="28"><font size=-1>28     </font></a>    <member name="M:Microsoft.Owin.Host.SystemWeb.OwinHttpHandler.System#Web#IHttpAsyncHandler#BeginProcessRequest(System.Web.HttpContext,System.AsyncCallback,System.Object)">
+<a name="29"><font size=-1>29     </font></a>      <summary>Inicializa una llamada asíncrona al controlador HTTP.</summary>
+<a name="30"><font size=-1>30     </font></a>      <returns>Un <see cref="T:System.IAsyncResult" /> que contiene información acerca del estado del proceso.</returns>
+<a name="31"><font size=-1>31     </font></a>      <param name="context">Un objeto <see cref="T:System.Web.HttpContext" /> que proporciona referencias a los objetos de servidor intrínsecos (por ejemplo, Solicitud, Respuesta, Sesión y Servidor) utilizados para atender las solicitudes HTTP.</param>
+<a name="32"><font size=-1>32     </font></a>      <param name="cb">El objeto <see cref="T:System.AsyncCallback" /> que se debe llamar cuando se haya completado la llamada al método asíncrono.Si la devolución de llamada es nula, el delegado no se invoca.</param>
+<a name="33"><font size=-1>33     </font></a>      <param name="extraData">Datos adicionales que se necesitan para procesar la solicitud.</param>
+<a name="34"><font size=-1>34     </font></a>    </member>
+<a name="35"><font size=-1>35     </font></a>    <member name="M:Microsoft.Owin.Host.SystemWeb.OwinHttpHandler.System#Web#IHttpHandler#ProcessRequest(System.Web.HttpContext)">
+<a name="36"><font size=-1>36     </font></a>      <summary>Procesa la solicitud para el controlador HTTP.</summary>
+<a name="37"><font size=-1>37     </font></a>      <param name="context">Contexto.</param>
+<a name="38"><font size=-1>38     </font></a>    </member>
+<a name="39"><font size=-1>39     </font></a>    <member name="T:Microsoft.Owin.Host.SystemWeb.OwinRouteHandler">
+<a name="40"><font size=-1>40     </font></a>      <summary>Procesa una ruta a través de una canalización de OWIN.</summary>
+<a name="41"><font size=-1>41     </font></a>    </member>
+<a name="42"><font size=-1>42     </font></a>    <member name="M:Microsoft.Owin.Host.SystemWeb.OwinRouteHandler.#ctor(System.Action{Owin.IAppBuilder})">
+<a name="43"><font size=-1>43     </font></a>      <summary>Inicializa un objeto OwinRouteHandler</summary>
+<a name="44"><font size=-1>44     </font></a>      <param name="startup">El método para inicializar la canalización que procesa las solicitudes de la ruta.</param>
+<a name="45"><font size=-1>45     </font></a>    </member>
+<a name="46"><font size=-1>46     </font></a>    <member name="M:Microsoft.Owin.Host.SystemWeb.OwinRouteHandler.GetHttpHandler(System.Web.Routing.RequestContext)">
+<a name="47"><font size=-1>47     </font></a>      <summary>Proporciona el objeto que procesa la solicitud.</summary>
+<a name="48"><font size=-1>48     </font></a>      <returns>Objeto que procesa la solicitud.</returns>
+<a name="49"><font size=-1>49     </font></a>      <param name="requestContext">Objeto que encapsula la información sobre la solicitud.</param>
+<a name="50"><font size=-1>50     </font></a>    </member>
+<a name="51"><font size=-1>51     </font></a>    <member name="M:Microsoft.Owin.Host.SystemWeb.OwinRouteHandler.System#Web#Routing#IRouteHandler#GetHttpHandler(System.Web.Routing.RequestContext)">
+<a name="52"><font size=-1>52     </font></a>      <summary>Proporciona el objeto que procesa la solicitud.</summary>
+<a name="53"><font size=-1>53     </font></a>      <returns>Objeto que procesa la solicitud.</returns>
+<a name="54"><font size=-1>54     </font></a>      <param name="requestContext">Objeto que encapsula la información sobre la solicitud.</param>
+<a name="55"><font size=-1>55     </font></a>    </member>
+<a name="56"><font size=-1>56     </font></a>    <member name="T:Microsoft.Owin.Host.SystemWeb.PreApplicationStart">
+<a name="57"><font size=-1>57     </font></a>      <summary>Registra el módulo de procesamiento de solicitudes OWIN al iniciarse la aplicación.</summary>
+<a name="58"><font size=-1>58     </font></a>    </member>
+<a name="59"><font size=-1>59     </font></a>    <member name="M:Microsoft.Owin.Host.SystemWeb.PreApplicationStart.Initialize">
+<a name="60"><font size=-1>60     </font></a>      <summary>Registra el módulo de procesamiento de solicitudes OWIN.</summary>
+<a name="61"><font size=-1>61     </font></a>    </member>
+<a name="62"><font size=-1>62     </font></a>    <member name="T:System.Web.HttpContextBaseExtensions">
+<a name="63"><font size=-1>63     </font></a>      <summary>Proporciona métodos de extensión para <see cref="T:System.Web.HttpContextBase" />.</summary>
+<a name="64"><font size=-1>64     </font></a>    </member>
+<a name="65"><font size=-1>65     </font></a>    <member name="M:System.Web.HttpContextBaseExtensions.GetOwinContext(System.Web.HttpContextBase)">
+<a name="66"><font size=-1>66     </font></a>      <summary>Obtiene <see cref="T:Microsoft.Owin.IOwinContext" /> para la solicitud actual.</summary>
+<a name="67"><font size=-1>67     </font></a>    </member>
+<a name="68"><font size=-1>68     </font></a>    <member name="M:System.Web.HttpContextBaseExtensions.GetOwinContext(System.Web.HttpRequestBase)">
+<a name="69"><font size=-1>69     </font></a>      <summary>Obtiene <see cref="T:Microsoft.Owin.IOwinContext" /> para la solicitud actual.</summary>
+<a name="70"><font size=-1>70     </font></a>    </member>
+<a name="71"><font size=-1>71     </font></a>    <member name="T:System.Web.HttpContextExtensions">
+<a name="72"><font size=-1>72     </font></a>      <summary>Proporciona métodos de extensión para <see cref="T:System.Web.HttpContext" />.</summary>
+<a name="73"><font size=-1>73     </font></a>    </member>
+<a name="74"><font size=-1>74     </font></a>    <member name="M:System.Web.HttpContextExtensions.GetOwinContext(System.Web.HttpContext)">
+<a name="75"><font size=-1>75     </font></a>      <summary>Obtiene <see cref="T:Microsoft.Owin.IOwinContext" /> para la solicitud actual.</summary>
+<a name="76"><font size=-1>76     </font></a>    </member>
+<a name="77"><font size=-1>77     </font></a>    <member name="M:System.Web.HttpContextExtensions.GetOwinContext(System.Web.HttpRequest)">
+<a name="78"><font size=-1>78     </font></a>      <summary>Obtiene <see cref="T:Microsoft.Owin.IOwinContext" /> para la solicitud actual.</summary>
+<a name="79"><font size=-1>79     </font></a>    </member>
+<a name="80"><font size=-1>80     </font></a>    <member name="T:System.Web.Routing.RouteCollectionExtensions">
+<a name="81"><font size=-1>81     </font></a>      <summary>Proporciona métodos de extensión para registrar aplicaciones OWIN como rutas System.Web.</summary>
+<a name="82"><font size=-1>82     </font></a>    </member>
+<a name="83"><font size=-1>83     </font></a>    <member name="M:System.Web.Routing.RouteCollectionExtensions.MapOwinPath(System.Web.Routing.RouteCollection,System.String)">
+<a name="84"><font size=-1>84     </font></a>      <summary>Registra una ruta para la aplicación OWIN predeterminada.</summary>
+<a name="85"><font size=-1>85     </font></a>      <returns>La ruta creada.</returns>
+<a name="86"><font size=-1>86     </font></a>      <param name="routes">Colección de rutas.</param>
+<a name="87"><font size=-1>87     </font></a>      <param name="pathBase">La ruta de acceso de la ruta que se debe asignar a la aplicación OWIN predeterminada.</param>
+<a name="88"><font size=-1>88     </font></a>    </member>
+<a name="89"><font size=-1>89     </font></a>    <member name="M:System.Web.Routing.RouteCollectionExtensions.MapOwinPath(System.Web.Routing.RouteCollection,System.String,System.Action{Owin.IAppBuilder})">
+<a name="90"><font size=-1>90     </font></a>      <summary>Invoca el delegado de inicio System.Action para crear la aplicación OWIN y luego registra una ruta correspondiente en la ruta de acceso dada.</summary>
+<a name="91"><font size=-1>91     </font></a>      <returns>La ruta creada.</returns>
+<a name="92"><font size=-1>92     </font></a>      <param name="routes">Colección de rutas.</param>
+<a name="93"><font size=-1>93     </font></a>      <param name="pathBase">La ruta de acceso de la ruta que se debe asignar a la aplicación OWIN dada.</param>
+<a name="94"><font size=-1>94     </font></a>      <param name="startup">Un delegado System.Action que se invoca para crear la aplicación OWIN.</param>
+<a name="95"><font size=-1>95     </font></a>    </member>
+<a name="96"><font size=-1>96     </font></a>    <member name="M:System.Web.Routing.RouteCollectionExtensions.MapOwinPath(System.Web.Routing.RouteCollection,System.String,System.String)">
+<a name="97"><font size=-1>97     </font></a>      <summary> Registra una ruta para la aplicación OWIN predeterminada. </summary>
+<a name="98"><font size=-1>98     </font></a>      <returns>La ruta creada.</returns>
+<a name="99"><font size=-1>99     </font></a>      <param name="routes">Colección de rutas.</param>
+<a name="100"><font size=-1>100     </font></a>      <param name="name">El nombre de la ruta.</param>
+<a name="101"><font size=-1>101     </font></a>      <param name="pathBase">La ruta de acceso de la ruta que se debe asignar a la aplicación OWIN predeterminada.</param>
+<a name="102"><font size=-1>102     </font></a>    </member>
+<a name="103"><font size=-1>103     </font></a>    <member name="M:System.Web.Routing.RouteCollectionExtensions.MapOwinPath(System.Web.Routing.RouteCollection,System.String,System.String,System.Action{Owin.IAppBuilder})">
+<a name="104"><font size=-1>104     </font></a>      <summary> Invoca el delegado de inicio System.Action para crear la aplicación OWIN y luego registra una ruta correspondiente en la ruta de acceso dada. </summary>
+<a name="105"><font size=-1>105     </font></a>      <returns>La ruta creada.</returns>
+<a name="106"><font size=-1>106     </font></a>      <param name="routes">Colección de rutas.</param>
+<a name="107"><font size=-1>107     </font></a>      <param name="name">El nombre de la ruta.</param>
+<a name="108"><font size=-1>108     </font></a>      <param name="pathBase">La ruta de acceso de la ruta que se debe asignar a la aplicación OWIN dada.</param>
+<a name="109"><font size=-1>109     </font></a>      <param name="startup">Un delegado System.Action que se invoca para crear la aplicación OWIN.</param>
+<a name="110"><font size=-1>110     </font></a>    </member>
+<a name="111"><font size=-1>111     </font></a>    <member name="M:System.Web.Routing.RouteCollectionExtensions.MapOwinPath``1(System.Web.Routing.RouteCollection,System.String,System.String,``0)">
+<a name="112"><font size=-1>112     </font></a>      <summary> Registra una ruta para el punto de entrada de una aplicación OWIN específica. </summary>
+<a name="113"><font size=-1>113     </font></a>      <returns>La ruta creada.</returns>
+<a name="114"><font size=-1>114     </font></a>      <param name="routes">Colección de rutas.</param>
+<a name="115"><font size=-1>115     </font></a>      <param name="name">El nombre de la ruta.</param>
+<a name="116"><font size=-1>116     </font></a>      <param name="pathBase">La ruta de acceso de la ruta que se debe asignar a la aplicación OWIN dada.</param>
+<a name="117"><font size=-1>117     </font></a>      <param name="app">El punto de entrada de la aplicación OWIN.</param>
+<a name="118"><font size=-1>118     </font></a>      <typeparam name="TApp">El tipo de punto de entrada de la aplicación OWIN.</typeparam>
+<a name="119"><font size=-1>119     </font></a>    </member>
+<a name="120"><font size=-1>120     </font></a>    <member name="M:System.Web.Routing.RouteCollectionExtensions.MapOwinPath``1(System.Web.Routing.RouteCollection,System.String,``0)">
+<a name="121"><font size=-1>121     </font></a>      <summary> Registra una ruta para el punto de entrada de una aplicación OWIN específica. </summary>
+<a name="122"><font size=-1>122     </font></a>      <returns>La ruta creada.</returns>
+<a name="123"><font size=-1>123     </font></a>      <param name="routes">Colección de rutas.</param>
+<a name="124"><font size=-1>124     </font></a>      <param name="pathBase">La ruta de acceso de la ruta que se debe asignar a la aplicación OWIN dada.</param>
+<a name="125"><font size=-1>125     </font></a>      <param name="app">El punto de entrada de la aplicación OWIN.</param>
+<a name="126"><font size=-1>126     </font></a>      <typeparam name="TApp">El tipo de punto de entrada de la aplicación OWIN.</typeparam>
+<a name="127"><font size=-1>127     </font></a>    </member>
+<a name="128"><font size=-1>128     </font></a>    <member name="M:System.Web.Routing.RouteCollectionExtensions.MapOwinRoute(System.Web.Routing.RouteCollection,System.String,System.Action{Owin.IAppBuilder})">
+<a name="129"><font size=-1>129     </font></a>      <summary>Proporciona una manera de definir rutas para una canalización OWIN.</summary>
+<a name="130"><font size=-1>130     </font></a>      <returns>La ruta creada.</returns>
+<a name="131"><font size=-1>131     </font></a>      <param name="routes">Colección de rutas.</param>
+<a name="132"><font size=-1>132     </font></a>      <param name="routeUrl">Modelo de dirección URL de la ruta.</param>
+<a name="133"><font size=-1>133     </font></a>      <param name="startup">El método para inicializar la canalización que procesa las solicitudes de la ruta.</param>
+<a name="134"><font size=-1>134     </font></a>    </member>
+<a name="135"><font size=-1>135     </font></a>    <member name="M:System.Web.Routing.RouteCollectionExtensions.MapOwinRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.Action{Owin.IAppBuilder})">
+<a name="136"><font size=-1>136     </font></a>      <summary> Proporciona una manera de definir rutas para una canalización OWIN. </summary>
+<a name="137"><font size=-1>137     </font></a>      <returns>La ruta creada.</returns>
+<a name="138"><font size=-1>138     </font></a>      <param name="routes">Colección de rutas.</param>
+<a name="139"><font size=-1>139     </font></a>      <param name="routeName">Nombre de la ruta.</param>
+<a name="140"><font size=-1>140     </font></a>      <param name="routeUrl">Modelo de dirección URL de la ruta.</param>
+<a name="141"><font size=-1>141     </font></a>      <param name="startup">El método para inicializar la canalización que procesa las solicitudes de la ruta.</param>
+<a name="142"><font size=-1>142     </font></a>    </member>
+<a name="143"><font size=-1>143     </font></a>    <member name="M:System.Web.Routing.RouteCollectionExtensions.MapOwinRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Action{Owin.IAppBuilder})">
+<a name="144"><font size=-1>144     </font></a>      <summary> Proporciona una manera de definir rutas para una canalización OWIN. </summary>
+<a name="145"><font size=-1>145     </font></a>      <returns>La ruta creada.</returns>
+<a name="146"><font size=-1>146     </font></a>      <param name="routes">Colección de rutas.</param>
+<a name="147"><font size=-1>147     </font></a>      <param name="routeName">Nombre de la ruta.</param>
+<a name="148"><font size=-1>148     </font></a>      <param name="routeUrl">Modelo de dirección URL de la ruta.</param>
+<a name="149"><font size=-1>149     </font></a>      <param name="defaults">Los valores que se usan si la dirección URL no contiene todos los parámetros.</param>
+<a name="150"><font size=-1>150     </font></a>      <param name="startup">El método para inicializar la canalización que procesa las solicitudes de la ruta.</param>
+<a name="151"><font size=-1>151     </font></a>    </member>
+<a name="152"><font size=-1>152     </font></a>    <member name="M:System.Web.Routing.RouteCollectionExtensions.MapOwinRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteValueDictionary,System.Action{Owin.IAppBuilder})">
+<a name="153"><font size=-1>153     </font></a>      <summary> Proporciona una manera de definir rutas para una canalización OWIN. </summary>
+<a name="154"><font size=-1>154     </font></a>      <returns>La ruta creada.</returns>
+<a name="155"><font size=-1>155     </font></a>      <param name="routes">Colección de rutas.</param>
+<a name="156"><font size=-1>156     </font></a>      <param name="routeName">Nombre de la ruta.</param>
+<a name="157"><font size=-1>157     </font></a>      <param name="routeUrl">Modelo de dirección URL de la ruta.</param>
+<a name="158"><font size=-1>158     </font></a>      <param name="defaults">Los valores que se usan si la dirección URL no contiene todos los parámetros.</param>
+<a name="159"><font size=-1>159     </font></a>      <param name="constraints">Una expresión regular que especifica valores válidos para un parámetro de dirección URL.</param>
+<a name="160"><font size=-1>160     </font></a>      <param name="startup">El método para inicializar la canalización que procesa las solicitudes de la ruta.</param>
+<a name="161"><font size=-1>161     </font></a>    </member>
+<a name="162"><font size=-1>162     </font></a>    <member name="M:System.Web.Routing.RouteCollectionExtensions.MapOwinRoute(System.Web.Routing.RouteCollection,System.String,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteValueDictionary,System.Action{Owin.IAppBuilder})">
+<a name="163"><font size=-1>163     </font></a>      <summary> Proporciona una manera de definir rutas para una canalización OWIN. </summary>
+<a name="164"><font size=-1>164     </font></a>      <returns>La ruta creada.</returns>
+<a name="165"><font size=-1>165     </font></a>      <param name="routes">Colección de rutas.</param>
+<a name="166"><font size=-1>166     </font></a>      <param name="routeName">Nombre de la ruta.</param>
+<a name="167"><font size=-1>167     </font></a>      <param name="routeUrl">Modelo de dirección URL de la ruta.</param>
+<a name="168"><font size=-1>168     </font></a>      <param name="defaults">Los valores que se usan si la dirección URL no contiene todos los parámetros.</param>
+<a name="169"><font size=-1>169     </font></a>      <param name="constraints">Una expresión regular que especifica valores válidos para un parámetro de dirección URL.</param>
+<a name="170"><font size=-1>170     </font></a>      <param name="dataTokens">Valores predeterminados que se pasan al controlador de la ruta, pero que no se utilizan para determinar si la ruta coincide con un patrón de dirección URL concreto.Estos valores se pasan al controlador de la ruta donde se pueden usar para el procesamiento de la solicitud.</param>
+<a name="171"><font size=-1>171     </font></a>      <param name="startup">El método para inicializar la canalización que procesa las solicitudes de la ruta.</param>
+<a name="172"><font size=-1>172     </font></a>    </member>
+<a name="173"><font size=-1>173     </font></a>    <member name="M:System.Web.Routing.RouteCollectionExtensions.MapOwinRoute(System.Web.Routing.RouteCollection,System.String,System.Web.Routing.RouteValueDictionary,System.Action{Owin.IAppBuilder})">
+<a name="174"><font size=-1>174     </font></a>      <summary> Proporciona una manera de definir rutas para una canalización OWIN. </summary>
+<a name="175"><font size=-1>175     </font></a>      <returns>La ruta creada.</returns>
+<a name="176"><font size=-1>176     </font></a>      <param name="routes">Colección de rutas.</param>
+<a name="177"><font size=-1>177     </font></a>      <param name="routeUrl">Modelo de dirección URL de la ruta.</param>
+<a name="178"><font size=-1>178     </font></a>      <param name="defaults">Los valores que se usan si la dirección URL no contiene todos los parámetros.</param>
+<a name="179"><font size=-1>179     </font></a>      <param name="startup">El método para inicializar la canalización que procesa las solicitudes de la ruta.</param>
+<a name="180"><font size=-1>180     </font></a>    </member>
+<a name="181"><font size=-1>181     </font></a>    <member name="M:System.Web.Routing.RouteCollectionExtensions.MapOwinRoute(System.Web.Routing.RouteCollection,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteValueDictionary,System.Action{Owin.IAppBuilder})">
+<a name="182"><font size=-1>182     </font></a>      <summary> Proporciona una manera de definir rutas para una canalización OWIN. </summary>
+<a name="183"><font size=-1>183     </font></a>      <returns>La ruta creada.</returns>
+<a name="184"><font size=-1>184     </font></a>      <param name="routes">Colección de rutas.</param>
+<a name="185"><font size=-1>185     </font></a>      <param name="routeUrl">Modelo de dirección URL de la ruta.</param>
+<a name="186"><font size=-1>186     </font></a>      <param name="defaults">Los valores que se usan si la dirección URL no contiene todos los parámetros.</param>
+<a name="187"><font size=-1>187     </font></a>      <param name="constraints">Una expresión regular que especifica valores válidos para un parámetro de dirección URL.</param>
+<a name="188"><font size=-1>188     </font></a>      <param name="startup">El método para inicializar la canalización que procesa las solicitudes de la ruta.</param>
+<a name="189"><font size=-1>189     </font></a>    </member>
+<a name="190"><font size=-1>190     </font></a>    <member name="M:System.Web.Routing.RouteCollectionExtensions.MapOwinRoute(System.Web.Routing.RouteCollection,System.String,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteValueDictionary,System.Web.Routing.RouteValueDictionary,System.Action{Owin.IAppBuilder})">
+<a name="191"><font size=-1>191     </font></a>      <summary> Proporciona una manera de definir rutas para una canalización OWIN. </summary>
+<a name="192"><font size=-1>192     </font></a>      <returns>La ruta creada.</returns>
+<a name="193"><font size=-1>193     </font></a>      <param name="routes">Colección de rutas.</param>
+<a name="194"><font size=-1>194     </font></a>      <param name="routeUrl">Modelo de dirección URL de la ruta.</param>
+<a name="195"><font size=-1>195     </font></a>      <param name="defaults">Los valores que se usan si la dirección URL no contiene todos los parámetros.</param>
+<a name="196"><font size=-1>196     </font></a>      <param name="constraints">Una expresión regular que especifica valores válidos para un parámetro de dirección URL.</param>
+<a name="197"><font size=-1>197     </font></a>      <param name="dataTokens">Valores predeterminados que se pasan al controlador de la ruta, pero que no se utilizan para determinar si la ruta coincide con un patrón de dirección URL concreto.Estos valores se pasan al controlador de la ruta donde se pueden usar para el procesamiento de la solicitud.</param>
+<a name="198"><font size=-1>198     </font></a>      <param name="startup">El método para inicializar la canalización que procesa las solicitudes de la ruta.</param>
+<a name="199"><font size=-1>199     </font></a>    </member>
+<a name="200"><font size=-1>200     </font></a>  </members>
+<a name="201"><font size=-1>201     </font></a></doc>
+</pre></body></html>

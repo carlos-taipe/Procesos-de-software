@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TienditaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Categorias">
+    <Key>
+      <PropertyRef Name="IDCategoria" />
+    </Key>
+    <Property Name="IDCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="catNombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Productos">
+    <Key>
+      <PropertyRef Name="IDProducto" />
+    </Key>
+    <Property Name="IDProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="proNombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="proCantidad" Type="int" />
+    <Property Name="proPrecio" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+    <Property Name="proEstado" Type="bit" Nullable="false" />
+    <Property Name="proImagen" Type="varbinary(max)" />
+    <Property Name="IDCategoria" Type="int" Nullable="false" />
+    <Property Name="RUC" Type="varchar" MaxLength="11" />
+  </EntityType>
+  <EntityType Name="Proveedores">
+    <Key>
+      <PropertyRef Name="RUC" />
+    </Key>
+    <Property Name="RUC" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="provNombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="provDireccion" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="provTelefono" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="provEstado" Type="bit" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="IDRol" />
+    </Key>
+    <Property Name="IDRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rolNombre" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="IDUsuario" />
+    </Key>
+    <Property Name="IDUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="usuEmail" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="usuContraseña" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="usuNombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="IDRol" Type="int" />
+  </EntityType>
+  <Association Name="FK__Productos__RUC__3B75D760">
+    <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="0..1" />
+    <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedores">
+        <PropertyRef Name="RUC" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="RUC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuarios_Roles">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="IDRol" />
+      </Principal>
+      <Dependent Role="Usuarios">
+        <PropertyRef Name="IDRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="sp_A_Producto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="proNombre" Type="varchar" Mode="In" />
+    <Parameter Name="proCantidad" Type="int" Mode="In" />
+    <Parameter Name="proPrecio" Type="decimal" Mode="In" />
+    <Parameter Name="proImagen" Type="varbinary(max)" Mode="In" />
+    <Parameter Name="IDCategoria" Type="int" Mode="In" />
+    <Parameter Name="RUC" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_A_Proveedor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RUC" Type="varchar" Mode="In" />
+    <Parameter Name="provNombre" Type="varchar" Mode="In" />
+    <Parameter Name="provDireccion" Type="varchar" Mode="In" />
+    <Parameter Name="provTelefono" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_A_Usuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usuEmail" Type="varchar" Mode="In" />
+    <Parameter Name="usuContraseña" Type="nvarchar" Mode="In" />
+    <Parameter Name="usuNombre" Type="varchar" Mode="In" />
+    <Parameter Name="IDRol" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_C_Productos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_C_ProductoxID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IDProducto" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_C_Proveedores" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_C_ProveedorxRUC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RUC" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_C_Usuario" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="usuEmail" Type="varchar" Mode="In" />
+    <Parameter Name="usuContraseña" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_E_Producto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IDProducto" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_E_Proveedor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RUC" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_M_Producto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IDProducto" Type="int" Mode="In" />
+    <Parameter Name="proNombre" Type="varchar" Mode="In" />
+    <Parameter Name="proCantidad" Type="int" Mode="In" />
+    <Parameter Name="proPrecio" Type="decimal" Mode="In" />
+    <Parameter Name="proImagen" Type="varbinary(max)" Mode="In" />
+    <Parameter Name="IDCategoria" Type="int" Mode="In" />
+    <Parameter Name="RUC" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_M_Proveedor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RUC" Type="varchar" Mode="In" />
+    <Parameter Name="provNombre" Type="varchar" Mode="In" />
+    <Parameter Name="provDireccion" Type="varchar" Mode="In" />
+    <Parameter Name="provTelefono" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="TienditaModelStoreContainer">
+    <EntitySet Name="Categorias" EntityType="Self.Categorias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Productos" EntityType="Self.Productos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Proveedores" EntityType="Self.Proveedores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Productos__RUC__3B75D760" Association="Self.FK__Productos__RUC__3B75D760">
+      <End Role="Proveedores" EntitySet="Proveedores" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuarios_Roles" Association="Self.FK_Usuarios_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Usuarios" EntitySet="Usuarios" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,656 @@
+<html><head><title>Microsoft.AspNet.Identity.Core.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body>
+<h3>File: D:\Proyecto\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\es\Microsoft.AspNet.Identity.Core.xml</h3>
+<SCRIPT>
+ defaultStatus = "File: D:\\Proyecto\\packages\\Microsoft.AspNet.Identity.Core.2.2.2\\lib\\net45\\es\\Microsoft.AspNet.Identity.Core.xml";
+top.document.title  = "Microsoft.AspNet.Identity.Core.xml";
+</SCRIPT>
+<pre><a name="1"><font size=-1>1     </font></a><?xml version="1.0" encoding="utf-8"?>
+<a name="2"><font size=-1>2     </font></a><doc>
+<a name="3"><font size=-1>3     </font></a>  <assembly>
+<a name="4"><font size=-1>4     </font></a>    <name>Microsoft.AspNet.Identity.Core</name>
+<a name="5"><font size=-1>5     </font></a>  </assembly>
+<a name="6"><font size=-1>6     </font></a>  <members>
+<a name="7"><font size=-1>7     </font></a>    <member name="T:Microsoft.AspNet.Identity.IdentityConfig">
+<a name="8"><font size=-1>8     </font></a>      <summary>Static class to hold configuration settings for the Identity system</summary>
+<a name="9"><font size=-1>9     </font></a>    </member>
+<a name="10"><font size=-1>10     </font></a>    <member name="P:Microsoft.AspNet.Identity.IdentityConfig.Settings">
+<a name="11"><font size=-1>11     </font></a>      <summary>Settings class which holds the various options for the system</summary>
+<a name="12"><font size=-1>12     </font></a>    </member>
+<a name="13"><font size=-1>13     </font></a>    <member name="T:Microsoft.AspNet.Identity.IdentityManager">
+<a name="14"><font size=-1>14     </font></a>      <summary>Helper class which contains methods that encapsulate common unit of work functionality on an IdentityStoreContext, i.e. ChangePasswordAsync or CreateLocalUserAsync and takes care of calling SaveChangesAsync</summary>
+<a name="15"><font size=-1>15     </font></a>    </member>
+<a name="16"><font size=-1>16     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityManager.#ctor(Microsoft.AspNet.Identity.IdentitySettings,Microsoft.AspNet.Identity.IIdentityStore)">
+<a name="17"><font size=-1>17     </font></a>      <summary>Constructor</summary>
+<a name="18"><font size=-1>18     </font></a>    </member>
+<a name="19"><font size=-1>19     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityManager.#ctor(Microsoft.AspNet.Identity.IIdentityStore)">
+<a name="20"><font size=-1>20     </font></a>      <summary>Constructor that uses the default settings</summary>
+<a name="21"><font size=-1>21     </font></a>    </member>
+<a name="22"><font size=-1>22     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityManager.Dispose">
+<a name="23"><font size=-1>23     </font></a>      <summary>Dispose the store context</summary>
+<a name="24"><font size=-1>24     </font></a>    </member>
+<a name="25"><font size=-1>25     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityManager.Dispose(System.Boolean)">
+<a name="26"><font size=-1>26     </font></a>      <summary>When disposing, actually dipose the store context</summary>
+<a name="27"><font size=-1>27     </font></a>    </member>
+<a name="28"><font size=-1>28     </font></a>    <member name="P:Microsoft.AspNet.Identity.IdentityManager.Logins">
+<a name="29"><font size=-1>29     </font></a>      <summary>User Login related APIs</summary>
+<a name="30"><font size=-1>30     </font></a>    </member>
+<a name="31"><font size=-1>31     </font></a>    <member name="P:Microsoft.AspNet.Identity.IdentityManager.Passwords">
+<a name="32"><font size=-1>32     </font></a>      <summary>Password API</summary>
+<a name="33"><font size=-1>33     </font></a>    </member>
+<a name="34"><font size=-1>34     </font></a>    <member name="P:Microsoft.AspNet.Identity.IdentityManager.Roles">
+<a name="35"><font size=-1>35     </font></a>      <summary>Roles API</summary>
+<a name="36"><font size=-1>36     </font></a>    </member>
+<a name="37"><font size=-1>37     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityManager.SaveChangesAsync(System.Threading.CancellationToken)">
+<a name="38"><font size=-1>38     </font></a>      <summary>SaveChanges to the various identity stores</summary>
+<a name="39"><font size=-1>39     </font></a>    </member>
+<a name="40"><font size=-1>40     </font></a>    <member name="P:Microsoft.AspNet.Identity.IdentityManager.Settings">
+<a name="41"><font size=-1>41     </font></a>      <summary>Settings object used for configuration, if null, uses the global settings (IdentityConfig.Settings)</summary>
+<a name="42"><font size=-1>42     </font></a>    </member>
+<a name="43"><font size=-1>43     </font></a>    <member name="P:Microsoft.AspNet.Identity.IdentityManager.Store">
+<a name="44"><font size=-1>44     </font></a>      <summary>IdentityStoreContext which the helper methods work against</summary>
+<a name="45"><font size=-1>45     </font></a>    </member>
+<a name="46"><font size=-1>46     </font></a>    <member name="P:Microsoft.AspNet.Identity.IdentityManager.Tokens">
+<a name="47"><font size=-1>47     </font></a>      <summary>Token API</summary>
+<a name="48"><font size=-1>48     </font></a>    </member>
+<a name="49"><font size=-1>49     </font></a>    <member name="P:Microsoft.AspNet.Identity.IdentityManager.Users">
+<a name="50"><font size=-1>50     </font></a>      <summary>APIs around User management</summary>
+<a name="51"><font size=-1>51     </font></a>    </member>
+<a name="52"><font size=-1>52     </font></a>    <member name="T:Microsoft.AspNet.Identity.IdentityOptions">
+<a name="53"><font size=-1>53     </font></a>      <summary>Settings used to configure an IdentityManager</summary>
+<a name="54"><font size=-1>54     </font></a>    </member>
+<a name="55"><font size=-1>55     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityOptions.#ctor">
+<a name="56"><font size=-1>56     </font></a>      <summary>Constructor</summary>
+<a name="57"><font size=-1>57     </font></a>    </member>
+<a name="58"><font size=-1>58     </font></a>    <member name="P:Microsoft.AspNet.Identity.IdentityOptions.AllowOnlyAlphaNumericUserNames">
+<a name="59"><font size=-1>59     </font></a>      <summary>Only allow String.IsLetterOrDigits in UserNames</summary>
+<a name="60"><font size=-1>60     </font></a>    </member>
+<a name="61"><font size=-1>61     </font></a>    <member name="P:Microsoft.AspNet.Identity.IdentityOptions.LocalLoginProvider">
+<a name="62"><font size=-1>62     </font></a>      <summary>Identifier for user logins created by the local application, i.e. database</summary>
+<a name="63"><font size=-1>63     </font></a>    </member>
+<a name="64"><font size=-1>64     </font></a>    <member name="P:Microsoft.AspNet.Identity.IdentityOptions.MinRequiredPasswordLength">
+<a name="65"><font size=-1>65     </font></a>      <summary>Minimum required length for a text</summary>
+<a name="66"><font size=-1>66     </font></a>    </member>
+<a name="67"><font size=-1>67     </font></a>    <member name="P:Microsoft.AspNet.Identity.IdentityOptions.PasswordValidator">
+<a name="68"><font size=-1>68     </font></a>      <summary>Validators passwords are of sufficient strength</summary>
+<a name="69"><font size=-1>69     </font></a>    </member>
+<a name="70"><font size=-1>70     </font></a>    <member name="P:Microsoft.AspNet.Identity.IdentityOptions.UserNameValidator">
+<a name="71"><font size=-1>71     </font></a>      <summary>Validates usernames</summary>
+<a name="72"><font size=-1>72     </font></a>    </member>
+<a name="73"><font size=-1>73     </font></a>    <member name="T:Microsoft.AspNet.Identity.IdentityResult">
+<a name="74"><font size=-1>74     </font></a>      <summary>Represents the result of an identity operation</summary>
+<a name="75"><font size=-1>75     </font></a>    </member>
+<a name="76"><font size=-1>76     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityResult.#ctor(System.Boolean)">
+<a name="77"><font size=-1>77     </font></a>      <summary>Constructor taking a success flag</summary>
+<a name="78"><font size=-1>78     </font></a>    </member>
+<a name="79"><font size=-1>79     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityResult.#ctor(System.String[])">
+<a name="80"><font size=-1>80     </font></a>      <summary>Failure constructor that takes error messages</summary>
+<a name="81"><font size=-1>81     </font></a>    </member>
+<a name="82"><font size=-1>82     </font></a>    <member name="P:Microsoft.AspNet.Identity.IdentityResult.Errors">
+<a name="83"><font size=-1>83     </font></a>      <summary>List of errors</summary>
+<a name="84"><font size=-1>84     </font></a>    </member>
+<a name="85"><font size=-1>85     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityResult.Failed(System.String[])">
+<a name="86"><font size=-1>86     </font></a>      <summary>Failed helper method</summary>
+<a name="87"><font size=-1>87     </font></a>    </member>
+<a name="88"><font size=-1>88     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityResult.Succeeded">
+<a name="89"><font size=-1>89     </font></a>      <summary>Success helper method</summary>
+<a name="90"><font size=-1>90     </font></a>    </member>
+<a name="91"><font size=-1>91     </font></a>    <member name="P:Microsoft.AspNet.Identity.IdentityResult.Success">
+<a name="92"><font size=-1>92     </font></a>      <summary>True if the operation was successful</summary>
+<a name="93"><font size=-1>93     </font></a>    </member>
+<a name="94"><font size=-1>94     </font></a>    <member name="T:Microsoft.AspNet.Identity.IdentityRoleManager">
+<a name="95"><font size=-1>95     </font></a>      <summary>Roles API</summary>
+<a name="96"><font size=-1>96     </font></a>    </member>
+<a name="97"><font size=-1>97     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityRoleManager.#ctor(Microsoft.AspNet.Identity.IIdentityStore)">
+<a name="98"><font size=-1>98     </font></a>      <summary>Constructor</summary>
+<a name="99"><font size=-1>99     </font></a>    </member>
+<a name="100"><font size=-1>100     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityRoleManager.AddUserToRoleAsync(System.String,System.String,System.Threading.CancellationToken)">
+<a name="101"><font size=-1>101     </font></a>      <summary>Add a user to a role</summary>
+<a name="102"><font size=-1>102     </font></a>    </member>
+<a name="103"><font size=-1>103     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityRoleManager.CreateRoleAsync(Microsoft.AspNet.Identity.IRole,System.Threading.CancellationToken)">
+<a name="104"><font size=-1>104     </font></a>      <summary>Create a role</summary>
+<a name="105"><font size=-1>105     </font></a>    </member>
+<a name="106"><font size=-1>106     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityRoleManager.DeleteRoleAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
+<a name="107"><font size=-1>107     </font></a>      <summary>Delete a role, returns true if successful</summary>
+<a name="108"><font size=-1>108     </font></a>    </member>
+<a name="109"><font size=-1>109     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityRoleManager.FindRoleAsync(System.String,System.Threading.CancellationToken)">
+<a name="110"><font size=-1>110     </font></a>      <summary>Find a role by id</summary>
+<a name="111"><font size=-1>111     </font></a>    </member>
+<a name="112"><font size=-1>112     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityRoleManager.FindRoleByNameAsync(System.String,System.Threading.CancellationToken)">
+<a name="113"><font size=-1>113     </font></a>      <summary>Find a role by name</summary>
+<a name="114"><font size=-1>114     </font></a>    </member>
+<a name="115"><font size=-1>115     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityRoleManager.GetRolesForUserAsync(System.String,System.Threading.CancellationToken)">
+<a name="116"><font size=-1>116     </font></a>      <summary>Returns the roles for the user</summary>
+<a name="117"><font size=-1>117     </font></a>    </member>
+<a name="118"><font size=-1>118     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityRoleManager.GetUsersInRoleAsync(System.String,System.Threading.CancellationToken)">
+<a name="119"><font size=-1>119     </font></a>      <summary>Returns the users in the role</summary>
+<a name="120"><font size=-1>120     </font></a>    </member>
+<a name="121"><font size=-1>121     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityRoleManager.IsUserInRoleAsync(System.String,System.String,System.Threading.CancellationToken)">
+<a name="122"><font size=-1>122     </font></a>      <summary>Returns true if the user is in the specified role</summary>
+<a name="123"><font size=-1>123     </font></a>    </member>
+<a name="124"><font size=-1>124     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityRoleManager.RemoveUserFromRoleAsync(System.String,System.String,System.Threading.CancellationToken)">
+<a name="125"><font size=-1>125     </font></a>      <summary>Returns true if the user was removed from the role</summary>
+<a name="126"><font size=-1>126     </font></a>    </member>
+<a name="127"><font size=-1>127     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityRoleManager.RoleExistsAsync(System.String,System.Threading.CancellationToken)">
+<a name="128"><font size=-1>128     </font></a>      <summary>Returns true if the role exists</summary>
+<a name="129"><font size=-1>129     </font></a>    </member>
+<a name="130"><font size=-1>130     </font></a>    <member name="P:Microsoft.AspNet.Identity.IdentityRoleManager.Store">
+<a name="131"><font size=-1>131     </font></a>      <summary>Store to operate on</summary>
+<a name="132"><font size=-1>132     </font></a>    </member>
+<a name="133"><font size=-1>133     </font></a>    <member name="T:Microsoft.AspNet.Identity.IdentitySettings">
+<a name="134"><font size=-1>134     </font></a>      <summary>Class that holds various settings for the identity system</summary>
+<a name="135"><font size=-1>135     </font></a>    </member>
+<a name="136"><font size=-1>136     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentitySettings.#ctor"></member>
+<a name="137"><font size=-1>137     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentitySettings.Add(System.String,System.Object)">
+<a name="138"><font size=-1>138     </font></a>      <summary>Add a setting object with the specified key</summary>
+<a name="139"><font size=-1>139     </font></a>    </member>
+<a name="140"><font size=-1>140     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentitySettings.Get(System.String)">
+<a name="141"><font size=-1>141     </font></a>      <summary>Return a settings object, or create a new one if it does not exist</summary>
+<a name="142"><font size=-1>142     </font></a>    </member>
+<a name="143"><font size=-1>143     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentitySettings.GetIdentityOptions">
+<a name="144"><font size=-1>144     </font></a>      <summary>Return the IdentityManagerOptions</summary>
+<a name="145"><font size=-1>145     </font></a>    </member>
+<a name="146"><font size=-1>146     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentitySettings.GetOrCreate``1">
+<a name="147"><font size=-1>147     </font></a>      <summary>Return a settings object, or create a new one if it does not exist, will throw if the wrong type is present</summary>
+<a name="148"><font size=-1>148     </font></a>      <typeparam name="T"></typeparam>
+<a name="149"><font size=-1>149     </font></a>    </member>
+<a name="150"><font size=-1>150     </font></a>    <member name="T:Microsoft.AspNet.Identity.IdentityStoreContextExtensions">
+<a name="151"><font size=-1>151     </font></a>      <summary>Extension methods that use the default CancellationToken.None</summary>
+<a name="152"><font size=-1>152     </font></a>    </member>
+<a name="153"><font size=-1>153     </font></a>    <member name="M:Microsoft.AspNet.Identity.IdentityStoreContextExtensions.SaveChangesAsync(Microsoft.AspNet.Identity.IIdentityStore)">
+<a name="154"><font size=-1>154     </font></a>      <summary>Saves any changes to the stores (Note: stores are not required to support this pattern)</summary>
+<a name="155"><font size=-1>155     </font></a>    </member>
+<a name="156"><font size=-1>156     </font></a>    <member name="T:Microsoft.AspNet.Identity.IIdentityManagerFactory">
+<a name="157"><font size=-1>157     </font></a>      <summary>Factory used to construct IdentityManagers</summary>
+<a name="158"><font size=-1>158     </font></a>    </member>
+<a name="159"><font size=-1>159     </font></a>    <member name="M:Microsoft.AspNet.Identity.IIdentityManagerFactory.CreateStoreManager">
+<a name="160"><font size=-1>160     </font></a>      <summary>Factory method used to construct an IdentityManager with the specified settings and context</summary>
+<a name="161"><font size=-1>161     </font></a>    </member>
+<a name="162"><font size=-1>162     </font></a>    <member name="T:Microsoft.AspNet.Identity.IIdentityStore">
+<a name="163"><font size=-1>163     </font></a>      <summary>Used to coordinate operations involving the user, login, roles, and claims stores SaveChangesAsync will persist the changes (if the stores support this concept)</summary>
+<a name="164"><font size=-1>164     </font></a>    </member>
+<a name="165"><font size=-1>165     </font></a>    <member name="P:Microsoft.AspNet.Identity.IIdentityStore.Logins">
+<a name="166"><font size=-1>166     </font></a>      <summary>Maps local userIds to login providers, i.e. a local username/password, Google, Facebook, Twitter, Microsoft</summary>
+<a name="167"><font size=-1>167     </font></a>    </member>
+<a name="168"><font size=-1>168     </font></a>    <member name="P:Microsoft.AspNet.Identity.IIdentityStore.Roles">
+<a name="169"><font size=-1>169     </font></a>      <summary>Stores role information</summary>
+<a name="170"><font size=-1>170     </font></a>    </member>
+<a name="171"><font size=-1>171     </font></a>    <member name="M:Microsoft.AspNet.Identity.IIdentityStore.SaveChangesAsync(System.Threading.CancellationToken)">
+<a name="172"><font size=-1>172     </font></a>      <summary>Saves any changes to the stores (Note: stores are not required to support this pattern)</summary>
+<a name="173"><font size=-1>173     </font></a>    </member>
+<a name="174"><font size=-1>174     </font></a>    <member name="P:Microsoft.AspNet.Identity.IIdentityStore.Secrets">
+<a name="175"><font size=-1>175     </font></a>      <summary>Store used to store user name/hashed passwords</summary>
+<a name="176"><font size=-1>176     </font></a>    </member>
+<a name="177"><font size=-1>177     </font></a>    <member name="P:Microsoft.AspNet.Identity.IIdentityStore.Tokens">
+<a name="178"><font size=-1>178     </font></a>      <summary>Stores arbitrary tokens (i.e. access tokens, refresh tokens, confirmation tokens)</summary>
+<a name="179"><font size=-1>179     </font></a>    </member>
+<a name="180"><font size=-1>180     </font></a>    <member name="P:Microsoft.AspNet.Identity.IIdentityStore.UserClaims">
+<a name="181"><font size=-1>181     </font></a>      <summary>Stores claims for users</summary>
+<a name="182"><font size=-1>182     </font></a>    </member>
+<a name="183"><font size=-1>183     </font></a>    <member name="P:Microsoft.AspNet.Identity.IIdentityStore.UserManagement">
+<a name="184"><font size=-1>184     </font></a>      <summary>Store responsible for managing users (confirmation, lockout)</summary>
+<a name="185"><font size=-1>185     </font></a>    </member>
+<a name="186"><font size=-1>186     </font></a>    <member name="P:Microsoft.AspNet.Identity.IIdentityStore.Users">
+<a name="187"><font size=-1>187     </font></a>      <summary>Store responsible for creating/deleting/retrieving users by userId</summary>
+<a name="188"><font size=-1>188     </font></a>    </member>
+<a name="189"><font size=-1>189     </font></a>    <member name="T:Microsoft.AspNet.Identity.ILoginManager">
+<a name="190"><font size=-1>190     </font></a>      <summary>Login related APIs: managing local or external logins</summary>
+<a name="191"><font size=-1>191     </font></a>    </member>
+<a name="192"><font size=-1>192     </font></a>    <member name="M:Microsoft.AspNet.Identity.ILoginManager.AddLocalLoginAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
+<a name="193"><font size=-1>193     </font></a>      <summary>Create the specified user name and password local login</summary>
+<a name="194"><font size=-1>194     </font></a>    </member>
+<a name="195"><font size=-1>195     </font></a>    <member name="M:Microsoft.AspNet.Identity.ILoginManager.AddLoginAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
+<a name="196"><font size=-1>196     </font></a>      <summary>Associate a login with a user (external or local)</summary>
+<a name="197"><font size=-1>197     </font></a>    </member>
+<a name="198"><font size=-1>198     </font></a>    <member name="M:Microsoft.AspNet.Identity.ILoginManager.GetLoginsAsync(System.String,System.Threading.CancellationToken)">
+<a name="199"><font size=-1>199     </font></a>      <summary>Returns a list of logins for a user</summary>
+<a name="200"><font size=-1>200     </font></a>    </member>
+<a name="201"><font size=-1>201     </font></a>    <member name="M:Microsoft.AspNet.Identity.ILoginManager.GetUserIdForLocalLoginAsync(System.String,System.Threading.CancellationToken)">
+<a name="202"><font size=-1>202     </font></a>      <summary>Returns the local user id for a user login that matches</summary>
+<a name="203"><font size=-1>203     </font></a>    </member>
+<a name="204"><font size=-1>204     </font></a>    <member name="M:Microsoft.AspNet.Identity.ILoginManager.GetUserIdForLoginAsync(System.String,System.String,System.Threading.CancellationToken)">
+<a name="205"><font size=-1>205     </font></a>      <summary>Returns the userId if there is a local login with the specified userName, null otherwise</summary>
+<a name="206"><font size=-1>206     </font></a>    </member>
+<a name="207"><font size=-1>207     </font></a>    <member name="M:Microsoft.AspNet.Identity.ILoginManager.HasLocalLoginAsync(System.String,System.Threading.CancellationToken)">
+<a name="208"><font size=-1>208     </font></a>      <summary>Returns true if the userId has a local login</summary>
+<a name="209"><font size=-1>209     </font></a>    </member>
+<a name="210"><font size=-1>210     </font></a>    <member name="M:Microsoft.AspNet.Identity.ILoginManager.RemoveLoginAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
+<a name="211"><font size=-1>211     </font></a>      <summary>Remove a user login</summary>
+<a name="212"><font size=-1>212     </font></a>    </member>
+<a name="213"><font size=-1>213     </font></a>    <member name="T:Microsoft.AspNet.Identity.IPasswordManager">
+<a name="214"><font size=-1>214     </font></a>      <summary>Password related APIs: changing user name passwords, resetting passwords</summary>
+<a name="215"><font size=-1>215     </font></a>    </member>
+<a name="216"><font size=-1>216     </font></a>    <member name="M:Microsoft.AspNet.Identity.IPasswordManager.ChangePasswordAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
+<a name="217"><font size=-1>217     </font></a>      <summary>Change a user's password</summary>
+<a name="218"><font size=-1>218     </font></a>    </member>
+<a name="219"><font size=-1>219     </font></a>    <member name="M:Microsoft.AspNet.Identity.IPasswordManager.CheckPasswordAsync(System.String,System.String,System.Threading.CancellationToken)">
+<a name="220"><font size=-1>220     </font></a>      <summary>Validates a local user name/password combination</summary>
+<a name="221"><font size=-1>221     </font></a>    </member>
+<a name="222"><font size=-1>222     </font></a>    <member name="M:Microsoft.AspNet.Identity.IPasswordManager.GenerateResetPasswordTokenAsync(System.String,System.String,System.DateTime,System.Threading.CancellationToken)">
+<a name="223"><font size=-1>223     </font></a>      <summary>Create a token for the specified user that can be used to reset his password</summary>
+<a name="224"><font size=-1>224     </font></a>    </member>
+<a name="225"><font size=-1>225     </font></a>    <member name="M:Microsoft.AspNet.Identity.IPasswordManager.ResetPasswordAsync(System.String,System.String,System.Threading.CancellationToken)">
+<a name="226"><font size=-1>226     </font></a>      <summary>Reset a user's password with the reset password token</summary>
+<a name="227"><font size=-1>227     </font></a>    </member>
+<a name="228"><font size=-1>228     </font></a>    <member name="T:Microsoft.AspNet.Identity.IRole">
+<a name="229"><font size=-1>229     </font></a>      <summary> Minimal set of data needed to persist role data </summary>
+<a name="230"><font size=-1>230     </font></a>    </member>
+<a name="231"><font size=-1>231     </font></a>    <member name="P:Microsoft.AspNet.Identity.IRole.Id">
+<a name="232"><font size=-1>232     </font></a>      <summary> Id of the role </summary>
+<a name="233"><font size=-1>233     </font></a>    </member>
+<a name="234"><font size=-1>234     </font></a>    <member name="P:Microsoft.AspNet.Identity.IRole.Name"></member>
+<a name="235"><font size=-1>235     </font></a>    <member name="T:Microsoft.AspNet.Identity.IRoleManager">
+<a name="236"><font size=-1>236     </font></a>      <summary>Role related APIs</summary>
+<a name="237"><font size=-1>237     </font></a>    </member>
+<a name="238"><font size=-1>238     </font></a>    <member name="M:Microsoft.AspNet.Identity.IRoleManager.AddUserToRoleAsync(System.String,System.String,System.Threading.CancellationToken)">
+<a name="239"><font size=-1>239     </font></a>      <summary>Add a user to a role</summary>
+<a name="240"><font size=-1>240     </font></a>    </member>
+<a name="241"><font size=-1>241     </font></a>    <member name="M:Microsoft.AspNet.Identity.IRoleManager.CreateRoleAsync(Microsoft.AspNet.Identity.IRole,System.Threading.CancellationToken)">
+<a name="242"><font size=-1>242     </font></a>      <summary>Create a role</summary>
+<a name="243"><font size=-1>243     </font></a>    </member>
+<a name="244"><font size=-1>244     </font></a>    <member name="M:Microsoft.AspNet.Identity.IRoleManager.DeleteRoleAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
+<a name="245"><font size=-1>245     </font></a>      <summary>Delete a role, returns true if successful</summary>
+<a name="246"><font size=-1>246     </font></a>    </member>
+<a name="247"><font size=-1>247     </font></a>    <member name="M:Microsoft.AspNet.Identity.IRoleManager.FindRoleAsync(System.String,System.Threading.CancellationToken)">
+<a name="248"><font size=-1>248     </font></a>      <summary>Find a role by id</summary>
+<a name="249"><font size=-1>249     </font></a>    </member>
+<a name="250"><font size=-1>250     </font></a>    <member name="M:Microsoft.AspNet.Identity.IRoleManager.FindRoleByNameAsync(System.String,System.Threading.CancellationToken)">
+<a name="251"><font size=-1>251     </font></a>      <summary>Find a role by name</summary>
+<a name="252"><font size=-1>252     </font></a>    </member>
+<a name="253"><font size=-1>253     </font></a>    <member name="M:Microsoft.AspNet.Identity.IRoleManager.GetRolesForUserAsync(System.String,System.Threading.CancellationToken)">
+<a name="254"><font size=-1>254     </font></a>      <summary>Returns the roles for the user</summary>
+<a name="255"><font size=-1>255     </font></a>    </member>
+<a name="256"><font size=-1>256     </font></a>    <member name="M:Microsoft.AspNet.Identity.IRoleManager.GetUsersInRoleAsync(System.String,System.Threading.CancellationToken)">
+<a name="257"><font size=-1>257     </font></a>      <summary>Returns the users in the role</summary>
+<a name="258"><font size=-1>258     </font></a>    </member>
+<a name="259"><font size=-1>259     </font></a>    <member name="M:Microsoft.AspNet.Identity.IRoleManager.IsUserInRoleAsync(System.String,System.String,System.Threading.CancellationToken)">
+<a name="260"><font size=-1>260     </font></a>      <summary>Returns true if the user is in the specified role</summary>
+<a name="261"><font size=-1>261     </font></a>    </member>
+<a name="262"><font size=-1>262     </font></a>    <member name="M:Microsoft.AspNet.Identity.IRoleManager.RemoveUserFromRoleAsync(System.String,System.String,System.Threading.CancellationToken)">
+<a name="263"><font size=-1>263     </font></a>      <summary>Returns true if the user was removed from the role</summary>
+<a name="264"><font size=-1>264     </font></a>    </member>
+<a name="265"><font size=-1>265     </font></a>    <member name="M:Microsoft.AspNet.Identity.IRoleManager.RoleExistsAsync(System.String,System.Threading.CancellationToken)">
+<a name="266"><font size=-1>266     </font></a>      <summary>Returns true if the role exists</summary>
+<a name="267"><font size=-1>267     </font></a>    </member>
+<a name="268"><font size=-1>268     </font></a>    <member name="T:Microsoft.AspNet.Identity.IRoleStore">
+<a name="269"><font size=-1>269     </font></a>      <summary> Interface for managing the creation and membership of roles </summary>
+<a name="270"><font size=-1>270     </font></a>    </member>
+<a name="271"><font size=-1>271     </font></a>    <member name="M:Microsoft.AspNet.Identity.IRoleStore.AddUserToRoleAsync(System.String,System.String,System.Threading.CancellationToken)"></member>
+<a name="272"><font size=-1>272     </font></a>    <member name="M:Microsoft.AspNet.Identity.IRoleStore.CreateRoleAsync(Microsoft.AspNet.Identity.IRole,System.Threading.CancellationToken)"></member>
+<a name="273"><font size=-1>273     </font></a>    <member name="M:Microsoft.AspNet.Identity.IRoleStore.DeleteRoleAsync(System.String,System.Boolean,System.Threading.CancellationToken)"></member>
+<a name="274"><font size=-1>274     </font></a>    <member name="M:Microsoft.AspNet.Identity.IRoleStore.FindRoleAsync(System.String,System.Threading.CancellationToken)"></member>
+<a name="275"><font size=-1>275     </font></a>    <member name="M:Microsoft.AspNet.Identity.IRoleStore.FindRoleByNameAsync(System.String,System.Threading.CancellationToken)"></member>
+<a name="276"><font size=-1>276     </font></a>    <member name="M:Microsoft.AspNet.Identity.IRoleStore.GetRolesForUserAsync(System.String,System.Threading.CancellationToken)"></member>
+<a name="277"><font size=-1>277     </font></a>    <member name="M:Microsoft.AspNet.Identity.IRoleStore.GetUsersInRoleAsync(System.String,System.Threading.CancellationToken)"></member>
+<a name="278"><font size=-1>278     </font></a>    <member name="M:Microsoft.AspNet.Identity.IRoleStore.IsUserInRoleAsync(System.String,System.String,System.Threading.CancellationToken)"></member>
+<a name="279"><font size=-1>279     </font></a>    <member name="M:Microsoft.AspNet.Identity.IRoleStore.RemoveUserFromRoleAsync(System.String,System.String,System.Threading.CancellationToken)"></member>
+<a name="280"><font size=-1>280     </font></a>    <member name="M:Microsoft.AspNet.Identity.IRoleStore.RoleExistsAsync(System.String,System.Threading.CancellationToken)"></member>
+<a name="281"><font size=-1>281     </font></a>    <member name="T:Microsoft.AspNet.Identity.IStringValidator">
+<a name="282"><font size=-1>282     </font></a>      <summary>Interface used to specify custom username/text validation</summary>
+<a name="283"><font size=-1>283     </font></a>    </member>
+<a name="284"><font size=-1>284     </font></a>    <member name="M:Microsoft.AspNet.Identity.IStringValidator.Validate(System.String)">
+<a name="285"><font size=-1>285     </font></a>      <summary>Validates a string.</summary>
+<a name="286"><font size=-1>286     </font></a>      <returns>A result with <see cref="P:Microsoft.AspNet.Identity.IdentityResult.Success" /> set to <see cref="true" /> when validation succeeds; otherwise, a result with <see cref="P:Microsoft.AspNet.Identity.IdentityResult.Success" /> set to <see cref="false" />.</returns>
+<a name="287"><font size=-1>287     </font></a>    </member>
+<a name="288"><font size=-1>288     </font></a>    <member name="T:Microsoft.AspNet.Identity.IToken">
+<a name="289"><font size=-1>289     </font></a>      <summary>Interface for a token</summary>
+<a name="290"><font size=-1>290     </font></a>    </member>
+<a name="291"><font size=-1>291     </font></a>    <member name="P:Microsoft.AspNet.Identity.IToken.Id">
+<a name="292"><font size=-1>292     </font></a>      <summary>Unique identifier for the token</summary>
+<a name="293"><font size=-1>293     </font></a>    </member>
+<a name="294"><font size=-1>294     </font></a>    <member name="P:Microsoft.AspNet.Identity.IToken.ValidUntilUtc">
+<a name="295"><font size=-1>295     </font></a>      <summary>Token is valid until this date</summary>
+<a name="296"><font size=-1>296     </font></a>    </member>
+<a name="297"><font size=-1>297     </font></a>    <member name="P:Microsoft.AspNet.Identity.IToken.Value">
+<a name="298"><font size=-1>298     </font></a>      <summary>Value of the token</summary>
+<a name="299"><font size=-1>299     </font></a>    </member>
+<a name="300"><font size=-1>300     </font></a>    <member name="T:Microsoft.AspNet.Identity.ITokenManager">
+<a name="301"><font size=-1>301     </font></a>      <summary>Token related APIs</summary>
+<a name="302"><font size=-1>302     </font></a>    </member>
+<a name="303"><font size=-1>303     </font></a>    <member name="M:Microsoft.AspNet.Identity.ITokenManager.AddAsync(Microsoft.AspNet.Identity.IToken,System.Threading.CancellationToken)">
+<a name="304"><font size=-1>304     </font></a>      <summary>Add a new token to the store</summary>
+<a name="305"><font size=-1>305     </font></a>    </member>
+<a name="306"><font size=-1>306     </font></a>    <member name="M:Microsoft.AspNet.Identity.ITokenManager.FindAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
+<a name="307"><font size=-1>307     </font></a>      <summary>Find a token in the TokenStore</summary>
+<a name="308"><font size=-1>308     </font></a>    </member>
+<a name="309"><font size=-1>309     </font></a>    <member name="M:Microsoft.AspNet.Identity.ITokenManager.RemoveAsync(System.String,System.Threading.CancellationToken)">
+<a name="310"><font size=-1>310     </font></a>      <summary>Remove a token from the TokenStore</summary>
+<a name="311"><font size=-1>311     </font></a>    </member>
+<a name="312"><font size=-1>312     </font></a>    <member name="T:Microsoft.AspNet.Identity.ITokenStore">
+<a name="313"><font size=-1>313     </font></a>      <summary>Store that contains tokens which can be used for different purposes (confirmation, access, refresh) and with expiration</summary>
+<a name="314"><font size=-1>314     </font></a>    </member>
+<a name="315"><font size=-1>315     </font></a>    <member name="M:Microsoft.AspNet.Identity.ITokenStore.AddAsync(Microsoft.AspNet.Identity.IToken,System.Threading.CancellationToken)">
+<a name="316"><font size=-1>316     </font></a>      <summary>Add a token to the store</summary>
+<a name="317"><font size=-1>317     </font></a>    </member>
+<a name="318"><font size=-1>318     </font></a>    <member name="M:Microsoft.AspNet.Identity.ITokenStore.CreateNewInstance">
+<a name="319"><font size=-1>319     </font></a>      <summary>Creates the appropriate IToken instance</summary>
+<a name="320"><font size=-1>320     </font></a>    </member>
+<a name="321"><font size=-1>321     </font></a>    <member name="M:Microsoft.AspNet.Identity.ITokenStore.FindAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
+<a name="322"><font size=-1>322     </font></a>      <summary>Find a token</summary>
+<a name="323"><font size=-1>323     </font></a>    </member>
+<a name="324"><font size=-1>324     </font></a>    <member name="M:Microsoft.AspNet.Identity.ITokenStore.RemoveAsync(System.String,System.Threading.CancellationToken)">
+<a name="325"><font size=-1>325     </font></a>      <summary>Remove a token from the store</summary>
+<a name="326"><font size=-1>326     </font></a>    </member>
+<a name="327"><font size=-1>327     </font></a>    <member name="M:Microsoft.AspNet.Identity.ITokenStore.UpdateAsync(Microsoft.AspNet.Identity.IToken,System.Threading.CancellationToken)">
+<a name="328"><font size=-1>328     </font></a>      <summary>Update a token</summary>
+<a name="329"><font size=-1>329     </font></a>    </member>
+<a name="330"><font size=-1>330     </font></a>    <member name="T:Microsoft.AspNet.Identity.IUser">
+<a name="331"><font size=-1>331     </font></a>      <summary> Minimal interface for a user with a string user key </summary>
+<a name="332"><font size=-1>332     </font></a>    </member>
+<a name="333"><font size=-1>333     </font></a>    <member name="P:Microsoft.AspNet.Identity.IUser.Id">
+<a name="334"><font size=-1>334     </font></a>      <summary> Unique key for the user </summary>
+<a name="335"><font size=-1>335     </font></a>      <returns>The unique key for the user</returns>
+<a name="336"><font size=-1>336     </font></a>    </member>
+<a name="337"><font size=-1>337     </font></a>    <member name="P:Microsoft.AspNet.Identity.IUser.UserName"></member>
+<a name="338"><font size=-1>338     </font></a>    <member name="T:Microsoft.AspNet.Identity.IUserClaim">
+<a name="339"><font size=-1>339     </font></a>      <summary>Represents a claim for a user</summary>
+<a name="340"><font size=-1>340     </font></a>    </member>
+<a name="341"><font size=-1>341     </font></a>    <member name="P:Microsoft.AspNet.Identity.IUserClaim.ClaimType">
+<a name="342"><font size=-1>342     </font></a>      <summary>ClaimType for the user claim</summary>
+<a name="343"><font size=-1>343     </font></a>    </member>
+<a name="344"><font size=-1>344     </font></a>    <member name="P:Microsoft.AspNet.Identity.IUserClaim.ClaimValue">
+<a name="345"><font size=-1>345     </font></a>      <summary>value for the user's claim</summary>
+<a name="346"><font size=-1>346     </font></a>    </member>
+<a name="347"><font size=-1>347     </font></a>    <member name="P:Microsoft.AspNet.Identity.IUserClaim.UserId">
+<a name="348"><font size=-1>348     </font></a>      <summary>UserId for the user with the claim</summary>
+<a name="349"><font size=-1>349     </font></a>    </member>
+<a name="350"><font size=-1>350     </font></a>    <member name="T:Microsoft.AspNet.Identity.IUserClaimStore">
+<a name="351"><font size=-1>351     </font></a>      <summary>Stores claims for users.</summary>
+<a name="352"><font size=-1>352     </font></a>    </member>
+<a name="353"><font size=-1>353     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserClaimStore.AddAsync(Microsoft.AspNet.Identity.IUserClaim,System.Threading.CancellationToken)">
+<a name="354"><font size=-1>354     </font></a>      <summary>Store a claim for the user with the specified type/value.</summary>
+<a name="355"><font size=-1>355     </font></a>      <returns>The task that performs the asynchronous operation.</returns>
+<a name="356"><font size=-1>356     </font></a>      <param name="userClaim">The user claim.</param>
+<a name="357"><font size=-1>357     </font></a>      <param name="cancellationToken">The cancellation token.</param>
+<a name="358"><font size=-1>358     </font></a>    </member>
+<a name="359"><font size=-1>359     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserClaimStore.GetUserClaimsAsync(System.String,System.Threading.CancellationToken)">
+<a name="360"><font size=-1>360     </font></a>      <summary>Returns the claims for the user with the issuer set.</summary>
+<a name="361"><font size=-1>361     </font></a>      <returns>The task that performs the asynchronous operation.</returns>
+<a name="362"><font size=-1>362     </font></a>      <param name="userId">The user ID.</param>
+<a name="363"><font size=-1>363     </font></a>      <param name="cancellationToken">The cancellation token.</param>
+<a name="364"><font size=-1>364     </font></a>    </member>
+<a name="365"><font size=-1>365     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserClaimStore.RemoveAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
+<a name="366"><font size=-1>366     </font></a>      <summary>RemoveAsync a user claim.</summary>
+<a name="367"><font size=-1>367     </font></a>      <returns>The task that performs the asynchronous operation.</returns>
+<a name="368"><font size=-1>368     </font></a>      <param name="userId">The user ID.</param>
+<a name="369"><font size=-1>369     </font></a>      <param name="claimType">The claim type.</param>
+<a name="370"><font size=-1>370     </font></a>      <param name="claimValue">The claim value.</param>
+<a name="371"><font size=-1>371     </font></a>      <param name="cancellationToken">The cancellation token.</param>
+<a name="372"><font size=-1>372     </font></a>    </member>
+<a name="373"><font size=-1>373     </font></a>    <member name="T:Microsoft.AspNet.Identity.IUserLogin">
+<a name="374"><font size=-1>374     </font></a>      <summary> Represents a linked login for a user (i.e. a local username/password or a Facebook/Google account </summary>
+<a name="375"><font size=-1>375     </font></a>    </member>
+<a name="376"><font size=-1>376     </font></a>    <member name="P:Microsoft.AspNet.Identity.IUserLogin.LoginProvider">
+<a name="377"><font size=-1>377     </font></a>      <summary> Provider for the linked login, i.e. Local, Facebook, Google, etc. </summary>
+<a name="378"><font size=-1>378     </font></a>    </member>
+<a name="379"><font size=-1>379     </font></a>    <member name="P:Microsoft.AspNet.Identity.IUserLogin.ProviderKey">
+<a name="380"><font size=-1>380     </font></a>      <summary> Key for the linked login at the provider </summary>
+<a name="381"><font size=-1>381     </font></a>    </member>
+<a name="382"><font size=-1>382     </font></a>    <member name="P:Microsoft.AspNet.Identity.IUserLogin.UserId">
+<a name="383"><font size=-1>383     </font></a>      <summary> UserId for the user who owns this account </summary>
+<a name="384"><font size=-1>384     </font></a>    </member>
+<a name="385"><font size=-1>385     </font></a>    <member name="T:Microsoft.AspNet.Identity.IUserLoginStore">
+<a name="386"><font size=-1>386     </font></a>      <summary> Maps local userIds to account providers, i.e. a local username/password, Google, Facebook, Twitter, Microsoft </summary>
+<a name="387"><font size=-1>387     </font></a>    </member>
+<a name="388"><font size=-1>388     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserLoginStore.AddAsync(Microsoft.AspNet.Identity.IUserLogin,System.Threading.CancellationToken)"></member>
+<a name="389"><font size=-1>389     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserLoginStore.CreateNewInstance(System.String,System.String,System.String)"></member>
+<a name="390"><font size=-1>390     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserLoginStore.GetLoginsAsync(System.String,System.Threading.CancellationToken)"></member>
+<a name="391"><font size=-1>391     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserLoginStore.GetProviderKeyAsync(System.String,System.String,System.Threading.CancellationToken)"></member>
+<a name="392"><font size=-1>392     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserLoginStore.GetUserIdAsync(System.String,System.String,System.Threading.CancellationToken)"></member>
+<a name="393"><font size=-1>393     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserLoginStore.RemoveAsync(System.String,System.String,System.String,System.Threading.CancellationToken)"></member>
+<a name="394"><font size=-1>394     </font></a>    <member name="T:Microsoft.AspNet.Identity.IUserManagement">
+<a name="395"><font size=-1>395     </font></a>      <summary>Minimal interface for holding user management info (i.e. Confirmed, LastSignInTime)</summary>
+<a name="396"><font size=-1>396     </font></a>    </member>
+<a name="397"><font size=-1>397     </font></a>    <member name="P:Microsoft.AspNet.Identity.IUserManagement.DisableSignIn">
+<a name="398"><font size=-1>398     </font></a>      <summary>Set if user is not allowed to sign in</summary>
+<a name="399"><font size=-1>399     </font></a>    </member>
+<a name="400"><font size=-1>400     </font></a>    <member name="P:Microsoft.AspNet.Identity.IUserManagement.LastSignInTimeUtc">
+<a name="401"><font size=-1>401     </font></a>      <summary>Last time the user was signed in</summary>
+<a name="402"><font size=-1>402     </font></a>    </member>
+<a name="403"><font size=-1>403     </font></a>    <member name="P:Microsoft.AspNet.Identity.IUserManagement.UserId">
+<a name="404"><font size=-1>404     </font></a>      <summary>Unique key for the user</summary>
+<a name="405"><font size=-1>405     </font></a>    </member>
+<a name="406"><font size=-1>406     </font></a>    <member name="T:Microsoft.AspNet.Identity.IUserManagementStore">
+<a name="407"><font size=-1>407     </font></a>      <summary>Responsible for creating/deleting/retrieving user management info</summary>
+<a name="408"><font size=-1>408     </font></a>    </member>
+<a name="409"><font size=-1>409     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserManagementStore.CreateAsync(Microsoft.AspNet.Identity.IUserManagement,System.Threading.CancellationToken)">
+<a name="410"><font size=-1>410     </font></a>      <summary>Creates the specified IUserManagement object</summary>
+<a name="411"><font size=-1>411     </font></a>    </member>
+<a name="412"><font size=-1>412     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserManagementStore.CreateNewInstance(System.String)">
+<a name="413"><font size=-1>413     </font></a>      <summary>Creates the appropriate IUserManagement instance for the user</summary>
+<a name="414"><font size=-1>414     </font></a>    </member>
+<a name="415"><font size=-1>415     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserManagementStore.DeleteAsync(System.String,System.Threading.CancellationToken)">
+<a name="416"><font size=-1>416     </font></a>      <summary>Deletes the specified IUserManagement for the userId</summary>
+<a name="417"><font size=-1>417     </font></a>    </member>
+<a name="418"><font size=-1>418     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserManagementStore.FindAsync(System.String,System.Threading.CancellationToken)">
+<a name="419"><font size=-1>419     </font></a>      <summary>Finds an IUserManagement by its key</summary>
+<a name="420"><font size=-1>420     </font></a>    </member>
+<a name="421"><font size=-1>421     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserManagementStore.UpdateAsync(Microsoft.AspNet.Identity.IUserManagement,System.Threading.CancellationToken)">
+<a name="422"><font size=-1>422     </font></a>      <summary>Update the specified IUserManagement object</summary>
+<a name="423"><font size=-1>423     </font></a>    </member>
+<a name="424"><font size=-1>424     </font></a>    <member name="T:Microsoft.AspNet.Identity.IUserManager">
+<a name="425"><font size=-1>425     </font></a>      <summary>User related APIs: creating users, adding claims</summary>
+<a name="426"><font size=-1>426     </font></a>    </member>
+<a name="427"><font size=-1>427     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserManager.AddClaimAsync(Microsoft.AspNet.Identity.IUserClaim,System.Threading.CancellationToken)">
+<a name="428"><font size=-1>428     </font></a>      <summary>Add a new user claim to the store</summary>
+<a name="429"><font size=-1>429     </font></a>    </member>
+<a name="430"><font size=-1>430     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserManager.CreateExternalUserAsync(Microsoft.AspNet.Identity.IUser,System.String,System.String,System.Threading.CancellationToken)">
+<a name="431"><font size=-1>431     </font></a>      <summary>Create a user with an associated external login</summary>
+<a name="432"><font size=-1>432     </font></a>    </member>
+<a name="433"><font size=-1>433     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserManager.CreateLocalUserAsync(Microsoft.AspNet.Identity.IUser,System.String,System.Threading.CancellationToken)">
+<a name="434"><font size=-1>434     </font></a>      <summary>Create a user with a linked local login with the specified password</summary>
+<a name="435"><font size=-1>435     </font></a>    </member>
+<a name="436"><font size=-1>436     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserManager.CreateUserAsync(Microsoft.AspNet.Identity.IUser,System.Threading.CancellationToken)">
+<a name="437"><font size=-1>437     </font></a>      <summary>Create a user and its associated user management object</summary>
+<a name="438"><font size=-1>438     </font></a>    </member>
+<a name="439"><font size=-1>439     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserManager.GetUserClaimsAsync(System.String,System.Threading.CancellationToken)">
+<a name="440"><font size=-1>440     </font></a>      <summary>Get a users claims</summary>
+<a name="441"><font size=-1>441     </font></a>    </member>
+<a name="442"><font size=-1>442     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserManager.RemoveClaimAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
+<a name="443"><font size=-1>443     </font></a>      <summary>Remove a user claim</summary>
+<a name="444"><font size=-1>444     </font></a>    </member>
+<a name="445"><font size=-1>445     </font></a>    <member name="T:Microsoft.AspNet.Identity.IUserSecret">
+<a name="446"><font size=-1>446     </font></a>      <summary> Minimal set of data needed to persist login data </summary>
+<a name="447"><font size=-1>447     </font></a>    </member>
+<a name="448"><font size=-1>448     </font></a>    <member name="P:Microsoft.AspNet.Identity.IUserSecret.Secret">
+<a name="449"><font size=-1>449     </font></a>      <summary> Opaque string to validate the user, i.e. password </summary>
+<a name="450"><font size=-1>450     </font></a>    </member>
+<a name="451"><font size=-1>451     </font></a>    <member name="P:Microsoft.AspNet.Identity.IUserSecret.UserName">
+<a name="452"><font size=-1>452     </font></a>      <summary> Username </summary>
+<a name="453"><font size=-1>453     </font></a>    </member>
+<a name="454"><font size=-1>454     </font></a>    <member name="T:Microsoft.AspNet.Identity.IUserSecretStore">
+<a name="455"><font size=-1>455     </font></a>      <summary> Stores login information (username/secret) </summary>
+<a name="456"><font size=-1>456     </font></a>    </member>
+<a name="457"><font size=-1>457     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserSecretStore.CreateAsync(Microsoft.AspNet.Identity.IUserSecret,System.Threading.CancellationToken)"></member>
+<a name="458"><font size=-1>458     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserSecretStore.CreateNewInstance(System.String,System.String)"></member>
+<a name="459"><font size=-1>459     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserSecretStore.DeleteAsync(System.String,System.Threading.CancellationToken)"></member>
+<a name="460"><font size=-1>460     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserSecretStore.FindAsync(System.String,System.Threading.CancellationToken)"></member>
+<a name="461"><font size=-1>461     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserSecretStore.UpdateAsync(System.String,System.String,System.Threading.CancellationToken)"></member>
+<a name="462"><font size=-1>462     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserSecretStore.ValidateAsync(System.String,System.String,System.Threading.CancellationToken)"></member>
+<a name="463"><font size=-1>463     </font></a>    <member name="T:Microsoft.AspNet.Identity.IUserStore">
+<a name="464"><font size=-1>464     </font></a>      <summary> Responsible for creating/deleting/retrieving users by userId </summary>
+<a name="465"><font size=-1>465     </font></a>    </member>
+<a name="466"><font size=-1>466     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserStore.CreateAsync(Microsoft.AspNet.Identity.IUser,System.Threading.CancellationToken)"></member>
+<a name="467"><font size=-1>467     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserStore.DeleteAsync(System.String,System.Threading.CancellationToken)"></member>
+<a name="468"><font size=-1>468     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserStore.FindAsync(System.String,System.Threading.CancellationToken)"></member>
+<a name="469"><font size=-1>469     </font></a>    <member name="M:Microsoft.AspNet.Identity.IUserStore.FindByNameAsync(System.String,System.Threading.CancellationToken)"></member>
+<a name="470"><font size=-1>470     </font></a>    <member name="T:Microsoft.AspNet.Identity.LoginManager"></member>
+<a name="471"><font size=-1>471     </font></a>    <member name="M:Microsoft.AspNet.Identity.LoginManager.#ctor(Microsoft.AspNet.Identity.IdentityManager)"></member>
+<a name="472"><font size=-1>472     </font></a>    <member name="M:Microsoft.AspNet.Identity.LoginManager.AddLocalLoginAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
+<a name="473"><font size=-1>473     </font></a>      <summary>Create the specified user name and password local login</summary>
+<a name="474"><font size=-1>474     </font></a>    </member>
+<a name="475"><font size=-1>475     </font></a>    <member name="M:Microsoft.AspNet.Identity.LoginManager.AddLoginAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
+<a name="476"><font size=-1>476     </font></a>      <summary>Associate a login with a user (external or local)</summary>
+<a name="477"><font size=-1>477     </font></a>    </member>
+<a name="478"><font size=-1>478     </font></a>    <member name="M:Microsoft.AspNet.Identity.LoginManager.GetLoginsAsync(System.String,System.Threading.CancellationToken)">
+<a name="479"><font size=-1>479     </font></a>      <summary>Returns a list of logins for a user</summary>
+<a name="480"><font size=-1>480     </font></a>    </member>
+<a name="481"><font size=-1>481     </font></a>    <member name="M:Microsoft.AspNet.Identity.LoginManager.GetUserIdForLocalLoginAsync(System.String,System.Threading.CancellationToken)">
+<a name="482"><font size=-1>482     </font></a>      <summary>Returns the local user id for a user login that matches</summary>
+<a name="483"><font size=-1>483     </font></a>    </member>
+<a name="484"><font size=-1>484     </font></a>    <member name="M:Microsoft.AspNet.Identity.LoginManager.GetUserIdForLoginAsync(System.String,System.String,System.Threading.CancellationToken)">
+<a name="485"><font size=-1>485     </font></a>      <summary>Returns the userId if there is a local login with the specified userName, null otherwise</summary>
+<a name="486"><font size=-1>486     </font></a>    </member>
+<a name="487"><font size=-1>487     </font></a>    <member name="M:Microsoft.AspNet.Identity.LoginManager.HasLocalLoginAsync(System.String,System.Threading.CancellationToken)">
+<a name="488"><font size=-1>488     </font></a>      <summary>Returns true if the userId has a local login</summary>
+<a name="489"><font size=-1>489     </font></a>    </member>
+<a name="490"><font size=-1>490     </font></a>    <member name="M:Microsoft.AspNet.Identity.LoginManager.RemoveLoginAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
+<a name="491"><font size=-1>491     </font></a>      <summary>Remove a user login</summary>
+<a name="492"><font size=-1>492     </font></a>    </member>
+<a name="493"><font size=-1>493     </font></a>    <member name="P:Microsoft.AspNet.Identity.LoginManager.Store"></member>
+<a name="494"><font size=-1>494     </font></a>    <member name="T:Microsoft.AspNet.Identity.LoginManagerExtensions">
+<a name="495"><font size=-1>495     </font></a>      <summary>Extension methods for ILoginManager</summary>
+<a name="496"><font size=-1>496     </font></a>    </member>
+<a name="497"><font size=-1>497     </font></a>    <member name="M:Microsoft.AspNet.Identity.LoginManagerExtensions.AddLocalLogin(Microsoft.AspNet.Identity.ILoginManager,System.String,System.String,System.String)"></member>
+<a name="498"><font size=-1>498     </font></a>    <member name="M:Microsoft.AspNet.Identity.LoginManagerExtensions.AddLocalLoginAsync(Microsoft.AspNet.Identity.ILoginManager,System.String,System.String,System.String)"></member>
+<a name="499"><font size=-1>499     </font></a>    <member name="M:Microsoft.AspNet.Identity.LoginManagerExtensions.AddLogin(Microsoft.AspNet.Identity.ILoginManager,System.String,System.String,System.String)"></member>
+<a name="500"><font size=-1>500     </font></a>    <member name="M:Microsoft.AspNet.Identity.LoginManagerExtensions.AddLoginAsync(Microsoft.AspNet.Identity.ILoginManager,System.String,System.String,System.String)"></member>
+<a name="501"><font size=-1>501     </font></a>    <member name="M:Microsoft.AspNet.Identity.LoginManagerExtensions.GetLogins(Microsoft.AspNet.Identity.ILoginManager,System.String)"></member>
+<a name="502"><font size=-1>502     </font></a>    <member name="M:Microsoft.AspNet.Identity.LoginManagerExtensions.GetLoginsAsync(Microsoft.AspNet.Identity.ILoginManager,System.String)"></member>
+<a name="503"><font size=-1>503     </font></a>    <member name="M:Microsoft.AspNet.Identity.LoginManagerExtensions.GetUserIdForLocalLogin(Microsoft.AspNet.Identity.ILoginManager,System.String)"></member>
+<a name="504"><font size=-1>504     </font></a>    <member name="M:Microsoft.AspNet.Identity.LoginManagerExtensions.GetUserIdForLocalLoginAsync(Microsoft.AspNet.Identity.ILoginManager,System.String)"></member>
+<a name="505"><font size=-1>505     </font></a>    <member name="M:Microsoft.AspNet.Identity.LoginManagerExtensions.GetUserIdForLogin(Microsoft.AspNet.Identity.ILoginManager,System.String,System.String)"></member>
+<a name="506"><font size=-1>506     </font></a>    <member name="M:Microsoft.AspNet.Identity.LoginManagerExtensions.GetUserIdForLoginAsync(Microsoft.AspNet.Identity.ILoginManager,System.String,System.String)"></member>
+<a name="507"><font size=-1>507     </font></a>    <member name="M:Microsoft.AspNet.Identity.LoginManagerExtensions.HasLocalLogin(Microsoft.AspNet.Identity.ILoginManager,System.String)"></member>
+<a name="508"><font size=-1>508     </font></a>    <member name="M:Microsoft.AspNet.Identity.LoginManagerExtensions.HasLocalLoginAsync(Microsoft.AspNet.Identity.ILoginManager,System.String)"></member>
+<a name="509"><font size=-1>509     </font></a>    <member name="M:Microsoft.AspNet.Identity.LoginManagerExtensions.RemoveLogin(Microsoft.AspNet.Identity.ILoginManager,System.String,System.String,System.String)"></member>
+<a name="510"><font size=-1>510     </font></a>    <member name="M:Microsoft.AspNet.Identity.LoginManagerExtensions.RemoveLoginAsync(Microsoft.AspNet.Identity.ILoginManager,System.String,System.String,System.String)"></member>
+<a name="511"><font size=-1>511     </font></a>    <member name="T:Microsoft.AspNet.Identity.PasswordManager">
+<a name="512"><font size=-1>512     </font></a>      <summary>Password APIs</summary>
+<a name="513"><font size=-1>513     </font></a>    </member>
+<a name="514"><font size=-1>514     </font></a>    <member name="M:Microsoft.AspNet.Identity.PasswordManager.#ctor(Microsoft.AspNet.Identity.IdentityManager)">
+<a name="515"><font size=-1>515     </font></a>      <summary>Constructor</summary>
+<a name="516"><font size=-1>516     </font></a>    </member>
+<a name="517"><font size=-1>517     </font></a>    <member name="M:Microsoft.AspNet.Identity.PasswordManager.ChangePasswordAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
+<a name="518"><font size=-1>518     </font></a>      <summary>Change a user's password</summary>
+<a name="519"><font size=-1>519     </font></a>    </member>
+<a name="520"><font size=-1>520     </font></a>    <member name="M:Microsoft.AspNet.Identity.PasswordManager.CheckPasswordAsync(System.String,System.String,System.Threading.CancellationToken)">
+<a name="521"><font size=-1>521     </font></a>      <summary>Validates a local user name/password combination</summary>
+<a name="522"><font size=-1>522     </font></a>    </member>
+<a name="523"><font size=-1>523     </font></a>    <member name="M:Microsoft.AspNet.Identity.PasswordManager.GenerateResetPasswordTokenAsync(System.String,System.String,System.DateTime,System.Threading.CancellationToken)">
+<a name="524"><font size=-1>524     </font></a>      <summary>Create a token for the specified user that can be used to reset his password</summary>
+<a name="525"><font size=-1>525     </font></a>    </member>
+<a name="526"><font size=-1>526     </font></a>    <member name="P:Microsoft.AspNet.Identity.PasswordManager.Manager"></member>
+<a name="527"><font size=-1>527     </font></a>    <member name="M:Microsoft.AspNet.Identity.PasswordManager.ResetPasswordAsync(System.String,System.String,System.Threading.CancellationToken)">
+<a name="528"><font size=-1>528     </font></a>      <summary>Reset a user's password with the reset password token</summary>
+<a name="529"><font size=-1>529     </font></a>    </member>
+<a name="530"><font size=-1>530     </font></a>    <member name="T:Microsoft.AspNet.Identity.PasswordManagerExtensions">
+<a name="531"><font size=-1>531     </font></a>      <summary>Extension methods for IPasswordManager</summary>
+<a name="532"><font size=-1>532     </font></a>    </member>
+<a name="533"><font size=-1>533     </font></a>    <member name="M:Microsoft.AspNet.Identity.PasswordManagerExtensions.ChangePassword(Microsoft.AspNet.Identity.IPasswordManager,System.String,System.String,System.String)"></member>
+<a name="534"><font size=-1>534     </font></a>    <member name="M:Microsoft.AspNet.Identity.PasswordManagerExtensions.ChangePasswordAsync(Microsoft.AspNet.Identity.IPasswordManager,System.String,System.String,System.String)"></member>
+<a name="535"><font size=-1>535     </font></a>    <member name="M:Microsoft.AspNet.Identity.PasswordManagerExtensions.CheckPassword(Microsoft.AspNet.Identity.IPasswordManager,System.String,System.String)"></member>
+<a name="536"><font size=-1>536     </font></a>    <member name="M:Microsoft.AspNet.Identity.PasswordManagerExtensions.CheckPasswordAsync(Microsoft.AspNet.Identity.IPasswordManager,System.String,System.String)"></member>
+<a name="537"><font size=-1>537     </font></a>    <member name="M:Microsoft.AspNet.Identity.PasswordManagerExtensions.GenerateResetPasswordToken(Microsoft.AspNet.Identity.IPasswordManager,System.String,System.String,System.DateTime)"></member>
+<a name="538"><font size=-1>538     </font></a>    <member name="M:Microsoft.AspNet.Identity.PasswordManagerExtensions.GenerateResetPasswordTokenAsync(Microsoft.AspNet.Identity.IPasswordManager,System.String,System.String,System.DateTime)"></member>
+<a name="539"><font size=-1>539     </font></a>    <member name="M:Microsoft.AspNet.Identity.PasswordManagerExtensions.ResetPassword(Microsoft.AspNet.Identity.IPasswordManager,System.String,System.String)"></member>
+<a name="540"><font size=-1>540     </font></a>    <member name="M:Microsoft.AspNet.Identity.PasswordManagerExtensions.ResetPasswordAsync(Microsoft.AspNet.Identity.IPasswordManager,System.String,System.String)"></member>
+<a name="541"><font size=-1>541     </font></a>    <member name="T:Microsoft.AspNet.Identity.RoleManagerExtensions">
+<a name="542"><font size=-1>542     </font></a>      <summary>Extension methods for IRoleManager</summary>
+<a name="543"><font size=-1>543     </font></a>    </member>
+<a name="544"><font size=-1>544     </font></a>    <member name="M:Microsoft.AspNet.Identity.RoleManagerExtensions.AddUserToRoleAsync(Microsoft.AspNet.Identity.IRoleManager,System.String,System.String)">
+<a name="545"><font size=-1>545     </font></a>      <summary>Add a user to a role</summary>
+<a name="546"><font size=-1>546     </font></a>    </member>
+<a name="547"><font size=-1>547     </font></a>    <member name="M:Microsoft.AspNet.Identity.RoleManagerExtensions.CreateRoleAsync(Microsoft.AspNet.Identity.IRoleManager,Microsoft.AspNet.Identity.IRole)">
+<a name="548"><font size=-1>548     </font></a>      <summary>Create a role</summary>
+<a name="549"><font size=-1>549     </font></a>    </member>
+<a name="550"><font size=-1>550     </font></a>    <member name="M:Microsoft.AspNet.Identity.RoleManagerExtensions.DeleteRoleAsync(Microsoft.AspNet.Identity.IRoleManager,System.String,System.Boolean)">
+<a name="551"><font size=-1>551     </font></a>      <summary>Delete a role, returns true if successful</summary>
+<a name="552"><font size=-1>552     </font></a>    </member>
+<a name="553"><font size=-1>553     </font></a>    <member name="M:Microsoft.AspNet.Identity.RoleManagerExtensions.FindRoleAsync(Microsoft.AspNet.Identity.IRoleManager,System.String)">
+<a name="554"><font size=-1>554     </font></a>      <summary>Find a role by id</summary>
+<a name="555"><font size=-1>555     </font></a>    </member>
+<a name="556"><font size=-1>556     </font></a>    <member name="M:Microsoft.AspNet.Identity.RoleManagerExtensions.FindRoleByNameAsync(Microsoft.AspNet.Identity.IRoleManager,System.String)">
+<a name="557"><font size=-1>557     </font></a>      <summary>Find a role by name</summary>
+<a name="558"><font size=-1>558     </font></a>    </member>
+<a name="559"><font size=-1>559     </font></a>    <member name="M:Microsoft.AspNet.Identity.RoleManagerExtensions.GetRolesForUserAsync(Microsoft.AspNet.Identity.IRoleManager,System.String)">
+<a name="560"><font size=-1>560     </font></a>      <summary>Returns the roles for the user</summary>
+<a name="561"><font size=-1>561     </font></a>    </member>
+<a name="562"><font size=-1>562     </font></a>    <member name="M:Microsoft.AspNet.Identity.RoleManagerExtensions.GetUsersInRoleAsync(Microsoft.AspNet.Identity.IRoleManager,System.String)">
+<a name="563"><font size=-1>563     </font></a>      <summary>Returns the users in the role</summary>
+<a name="564"><font size=-1>564     </font></a>    </member>
+<a name="565"><font size=-1>565     </font></a>    <member name="M:Microsoft.AspNet.Identity.RoleManagerExtensions.IsUserInRoleAsync(Microsoft.AspNet.Identity.IRoleManager,System.String,System.String)">
+<a name="566"><font size=-1>566     </font></a>      <summary>Returns true if the user is in the specified role</summary>
+<a name="567"><font size=-1>567     </font></a>    </member>
+<a name="568"><font size=-1>568     </font></a>    <member name="M:Microsoft.AspNet.Identity.RoleManagerExtensions.RemoveUserFromRoleAsync(Microsoft.AspNet.Identity.IRoleManager,System.String,System.String)">
+<a name="569"><font size=-1>569     </font></a>      <summary>Returns true if the user was removed from the role</summary>
+<a name="570"><font size=-1>570     </font></a>    </member>
+<a name="571"><font size=-1>571     </font></a>    <member name="M:Microsoft.AspNet.Identity.RoleManagerExtensions.RoleExistsAsync(Microsoft.AspNet.Identity.IRoleManager,System.String)">
+<a name="572"><font size=-1>572     </font></a>      <summary>Returns true if the role exists</summary>
+<a name="573"><font size=-1>573     </font></a>    </member>
+<a name="574"><font size=-1>574     </font></a>    <member name="T:Microsoft.AspNet.Identity.TokenManager">
+<a name="575"><font size=-1>575     </font></a>      <summary>Token related APIs</summary>
+<a name="576"><font size=-1>576     </font></a>    </member>
+<a name="577"><font size=-1>577     </font></a>    <member name="M:Microsoft.AspNet.Identity.TokenManager.#ctor(Microsoft.AspNet.Identity.IIdentityStore)">
+<a name="578"><font size=-1>578     </font></a>      <summary>Constructor</summary>
+<a name="579"><font size=-1>579     </font></a>    </member>
+<a name="580"><font size=-1>580     </font></a>    <member name="M:Microsoft.AspNet.Identity.TokenManager.AddAsync(Microsoft.AspNet.Identity.IToken,System.Threading.CancellationToken)">
+<a name="581"><font size=-1>581     </font></a>      <summary>Add a new token to the store</summary>
+<a name="582"><font size=-1>582     </font></a>    </member>
+<a name="583"><font size=-1>583     </font></a>    <member name="M:Microsoft.AspNet.Identity.TokenManager.FindAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
+<a name="584"><font size=-1>584     </font></a>      <summary>Find a token in the TokenStore</summary>
+<a name="585"><font size=-1>585     </font></a>    </member>
+<a name="586"><font size=-1>586     </font></a>    <member name="M:Microsoft.AspNet.Identity.TokenManager.RemoveAsync(System.String,System.Threading.CancellationToken)">
+<a name="587"><font size=-1>587     </font></a>      <summary>Remove a token from the TokenStore</summary>
+<a name="588"><font size=-1>588     </font></a>    </member>
+<a name="589"><font size=-1>589     </font></a>    <member name="P:Microsoft.AspNet.Identity.TokenManager.Store">
+<a name="590"><font size=-1>590     </font></a>      <summary>Store to operate on</summary>
+<a name="591"><font size=-1>591     </font></a>    </member>
+<a name="592"><font size=-1>592     </font></a>    <member name="T:Microsoft.AspNet.Identity.TokenManagerExtensions">
+<a name="593"><font size=-1>593     </font></a>      <summary>Extension methods for ITokenManager</summary>
+<a name="594"><font size=-1>594     </font></a>    </member>
+<a name="595"><font size=-1>595     </font></a>    <member name="M:Microsoft.AspNet.Identity.TokenManagerExtensions.Add(Microsoft.AspNet.Identity.ITokenManager,Microsoft.AspNet.Identity.IToken)"></member>
+<a name="596"><font size=-1>596     </font></a>    <member name="M:Microsoft.AspNet.Identity.TokenManagerExtensions.AddAsync(Microsoft.AspNet.Identity.ITokenManager,Microsoft.AspNet.Identity.IToken)"></member>
+<a name="597"><font size=-1>597     </font></a>    <member name="M:Microsoft.AspNet.Identity.TokenManagerExtensions.Find(Microsoft.AspNet.Identity.ITokenManager,System.String,System.Boolean)"></member>
+<a name="598"><font size=-1>598     </font></a>    <member name="M:Microsoft.AspNet.Identity.TokenManagerExtensions.FindAsync(Microsoft.AspNet.Identity.ITokenManager,System.String,System.Boolean)"></member>
+<a name="599"><font size=-1>599     </font></a>    <member name="M:Microsoft.AspNet.Identity.TokenManagerExtensions.Remove(Microsoft.AspNet.Identity.ITokenManager,System.String)"></member>
+<a name="600"><font size=-1>600     </font></a>    <member name="M:Microsoft.AspNet.Identity.TokenManagerExtensions.RemoveAsync(Microsoft.AspNet.Identity.ITokenManager,System.String)"></member>
+<a name="601"><font size=-1>601     </font></a>    <member name="T:Microsoft.AspNet.Identity.UserManager">
+<a name="602"><font size=-1>602     </font></a>      <summary>User related API</summary>
+<a name="603"><font size=-1>603     </font></a>    </member>
+<a name="604"><font size=-1>604     </font></a>    <member name="M:Microsoft.AspNet.Identity.UserManager.#ctor(Microsoft.AspNet.Identity.IdentityManager)">
+<a name="605"><font size=-1>605     </font></a>      <summary>Constructor</summary>
+<a name="606"><font size=-1>606     </font></a>    </member>
+<a name="607"><font size=-1>607     </font></a>    <member name="M:Microsoft.AspNet.Identity.UserManager.AddClaimAsync(Microsoft.AspNet.Identity.IUserClaim,System.Threading.CancellationToken)">
+<a name="608"><font size=-1>608     </font></a>      <summary>Add a new user claim to the store</summary>
+<a name="609"><font size=-1>609     </font></a>    </member>
+<a name="610"><font size=-1>610     </font></a>    <member name="M:Microsoft.AspNet.Identity.UserManager.CreateExternalUserAsync(Microsoft.AspNet.Identity.IUser,System.String,System.String,System.Threading.CancellationToken)">
+<a name="611"><font size=-1>611     </font></a>      <summary>Create a user with an associated external login</summary>
+<a name="612"><font size=-1>612     </font></a>    </member>
+<a name="613"><font size=-1>613     </font></a>    <member name="M:Microsoft.AspNet.Identity.UserManager.CreateLocalUserAsync(Microsoft.AspNet.Identity.IUser,System.String,System.Threading.CancellationToken)">
+<a name="614"><font size=-1>614     </font></a>      <summary>Create a user with a linked local login with the specified password</summary>
+<a name="615"><font size=-1>615     </font></a>    </member>
+<a name="616"><font size=-1>616     </font></a>    <member name="M:Microsoft.AspNet.Identity.UserManager.CreateUserAsync(Microsoft.AspNet.Identity.IUser,System.Threading.CancellationToken)">
+<a name="617"><font size=-1>617     </font></a>      <summary>Create a user and its associated user management object</summary>
+<a name="618"><font size=-1>618     </font></a>    </member>
+<a name="619"><font size=-1>619     </font></a>    <member name="M:Microsoft.AspNet.Identity.UserManager.GetUserClaimsAsync(System.String,System.Threading.CancellationToken)">
+<a name="620"><font size=-1>620     </font></a>      <summary>Get a users claims</summary>
+<a name="621"><font size=-1>621     </font></a>    </member>
+<a name="622"><font size=-1>622     </font></a>    <member name="P:Microsoft.AspNet.Identity.UserManager.Manager">
+<a name="623"><font size=-1>623     </font></a>      <summary>IdentityManager to operate on</summary>
+<a name="624"><font size=-1>624     </font></a>    </member>
+<a name="625"><font size=-1>625     </font></a>    <member name="M:Microsoft.AspNet.Identity.UserManager.RemoveClaimAsync(System.String,System.String,System.String,System.Threading.CancellationToken)">
+<a name="626"><font size=-1>626     </font></a>      <summary>Remove a user claim</summary>
+<a name="627"><font size=-1>627     </font></a>    </member>
+<a name="628"><font size=-1>628     </font></a>    <member name="T:Microsoft.AspNet.Identity.UserManagerExtensions">
+<a name="629"><font size=-1>629     </font></a>      <summary>Extension methods for IUserManager</summary>
+<a name="630"><font size=-1>630     </font></a>    </member>
+<a name="631"><font size=-1>631     </font></a>    <member name="M:Microsoft.AspNet.Identity.UserManagerExtensions.CreateExternalUser(Microsoft.AspNet.Identity.IUserManager,Microsoft.AspNet.Identity.IUser,System.String,System.String)"></member>
+<a name="632"><font size=-1>632     </font></a>    <member name="M:Microsoft.AspNet.Identity.UserManagerExtensions.CreateExternalUserAsync(Microsoft.AspNet.Identity.IUserManager,Microsoft.AspNet.Identity.IUser,System.String,System.String)">
+<a name="633"><font size=-1>633     </font></a>      <summary>Createa user with an associated external login</summary>
+<a name="634"><font size=-1>634     </font></a>    </member>
+<a name="635"><font size=-1>635     </font></a>    <member name="M:Microsoft.AspNet.Identity.UserManagerExtensions.CreateLocalUser(Microsoft.AspNet.Identity.IUserManager,Microsoft.AspNet.Identity.IUser,System.String)"></member>
+<a name="636"><font size=-1>636     </font></a>    <member name="M:Microsoft.AspNet.Identity.UserManagerExtensions.CreateLocalUserAsync(Microsoft.AspNet.Identity.IUserManager,Microsoft.AspNet.Identity.IUser,System.String)">
+<a name="637"><font size=-1>637     </font></a>      <summary>CreateAsync a user with a linked local login with the specified password</summary>
+<a name="638"><font size=-1>638     </font></a>    </member>
+<a name="639"><font size=-1>639     </font></a>    <member name="M:Microsoft.AspNet.Identity.UserManagerExtensions.CreateUser(Microsoft.AspNet.Identity.IUserManager,Microsoft.AspNet.Identity.IUser)">
+<a name="640"><font size=-1>640     </font></a>      <summary>Create a user and its associated user management object</summary>
+<a name="641"><font size=-1>641     </font></a>    </member>
+<a name="642"><font size=-1>642     </font></a>    <member name="M:Microsoft.AspNet.Identity.UserManagerExtensions.CreateUserAsync(Microsoft.AspNet.Identity.IUserManager,Microsoft.AspNet.Identity.IUser)">
+<a name="643"><font size=-1>643     </font></a>      <summary>Create a user and its associated user management object</summary>
+<a name="644"><font size=-1>644     </font></a>    </member>
+<a name="645"><font size=-1>645     </font></a>  </members>
+<a name="646"><font size=-1>646     </font></a></doc>
+</pre></body></html>

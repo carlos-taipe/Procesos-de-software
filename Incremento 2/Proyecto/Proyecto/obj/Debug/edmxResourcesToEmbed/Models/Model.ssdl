@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EdicasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Categorias">
+    <Key>
+      <PropertyRef Name="IDCategoria" />
+    </Key>
+    <Property Name="IDCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="catNombre" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Productos">
+    <Key>
+      <PropertyRef Name="IDProducto" />
+    </Key>
+    <Property Name="IDProducto" Type="int" Nullable="false" />
+    <Property Name="proNombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="proCantidad" Type="int" Nullable="false" />
+    <Property Name="proPrecioVenta" Type="decimal" Precision="7" Scale="2" Nullable="false" />
+    <Property Name="proImagen" Type="varbinary(max)" Nullable="false" />
+    <Property Name="proEstado" Type="bit" Nullable="false" />
+    <Property Name="IDCategoria" Type="int" Nullable="false" />
+    <Property Name="RUC" Type="varchar" MaxLength="11" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Proveedores">
+    <Key>
+      <PropertyRef Name="RUC" />
+    </Key>
+    <Property Name="RUC" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="provNombres" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="provDireccion" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="provTelefono" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="provEstado" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Productos__RUC__300424B4">
+    <End Role="Proveedores" Type="Self.Proveedores" Multiplicity="1" />
+    <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedores">
+        <PropertyRef Name="RUC" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="RUC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Table__IDCategor__2C3393D0">
+    <End Role="Categorias" Type="Self.Categorias" Multiplicity="1" />
+    <End Role="Productos" Type="Self.Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categorias">
+        <PropertyRef Name="IDCategoria" />
+      </Principal>
+      <Dependent Role="Productos">
+        <PropertyRef Name="IDCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="sp_A_Producto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="proNombre" Type="varchar" Mode="In" />
+    <Parameter Name="proCantidad" Type="int" Mode="In" />
+    <Parameter Name="proPrecioVenta" Type="decimal" Mode="In" />
+    <Parameter Name="proImagen" Type="varbinary(max)" Mode="In" />
+    <Parameter Name="IDCategoria" Type="int" Mode="In" />
+    <Parameter Name="RUC" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_C_Productos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_E_Producto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IDProducto" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_M_Producto" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IDProducto" Type="int" Mode="In" />
+    <Parameter Name="proNombre" Type="varchar" Mode="In" />
+    <Parameter Name="proCantidad" Type="int" Mode="In" />
+    <Parameter Name="proPrecioVenta" Type="decimal" Mode="In" />
+    <Parameter Name="proImagen" Type="varbinary(max)" Mode="In" />
+    <Parameter Name="IDCategoria" Type="int" Mode="In" />
+    <Parameter Name="RUC" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="EdicasModelStoreContainer">
+    <EntitySet Name="Categorias" EntityType="Self.Categorias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Productos" EntityType="Self.Productos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Proveedores" EntityType="Self.Proveedores" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Productos__RUC__300424B4" Association="Self.FK__Productos__RUC__300424B4">
+      <End Role="Proveedores" EntitySet="Proveedores" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Table__IDCategor__2C3393D0" Association="Self.FK__Table__IDCategor__2C3393D0">
+      <End Role="Categorias" EntitySet="Categorias" />
+      <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

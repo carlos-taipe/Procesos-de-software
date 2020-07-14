@@ -1,0 +1,435 @@
+<html><head><title>Microsoft.AspNet.Identity.EntityFramework.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body>
+<h3>File: D:\Proyecto\packages\Microsoft.AspNet.Identity.EntityFramework.es.2.2.2\lib\net45\es\Microsoft.AspNet.Identity.EntityFramework.xml</h3>
+<SCRIPT>
+ defaultStatus = "File: D:\\Proyecto\\packages\\Microsoft.AspNet.Identity.EntityFramework.es.2.2.2\\lib\\net45\\es\\Microsoft.AspNet.Identity.EntityFramework.xml";
+top.document.title  = "Microsoft.AspNet.Identity.EntityFramework.xml";
+</SCRIPT>
+<pre><a name="1"><font size=-1>1     </font></a><?xml version="1.0" encoding="utf-8"?>
+<a name="2"><font size=-1>2     </font></a><doc>
+<a name="3"><font size=-1>3     </font></a>  <assembly>
+<a name="4"><font size=-1>4     </font></a>    <name>Microsoft.AspNet.Identity.EntityFramework</name>
+<a name="5"><font size=-1>5     </font></a>  </assembly>
+<a name="6"><font size=-1>6     </font></a>  <members>
+<a name="7"><font size=-1>7     </font></a>    <member name="T:Microsoft.AspNet.Identity.EntityFramework.DefaultIdentityDbContext">
+<a name="8"><font size=-1>8     </font></a>      <summary>Concrete instance of the IdentityDbContext which uses the default framework entities</summary>
+<a name="9"><font size=-1>9     </font></a>    </member>
+<a name="10"><font size=-1>10     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.DefaultIdentityDbContext.#ctor">
+<a name="11"><font size=-1>11     </font></a>      <summary>Default constructor which uses the "DefaultConnection" connectionString</summary>
+<a name="12"><font size=-1>12     </font></a>    </member>
+<a name="13"><font size=-1>13     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.DefaultIdentityDbContext.#ctor(System.String)">
+<a name="14"><font size=-1>14     </font></a>      <summary>Constructor which takes the connection string to use</summary>
+<a name="15"><font size=-1>15     </font></a>      <param name="nameOrConnectionString">The connection string to use.</param>
+<a name="16"><font size=-1>16     </font></a>    </member>
+<a name="17"><font size=-1>17     </font></a>    <member name="T:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`8">
+<a name="18"><font size=-1>18     </font></a>      <summary>Generic Context which takes entities for all of the sets needed for IIdentityManager</summary>
+<a name="19"><font size=-1>19     </font></a>      <typeparam name="TUser"></typeparam>
+<a name="20"><font size=-1>20     </font></a>      <typeparam name="TUserClaim"></typeparam>
+<a name="21"><font size=-1>21     </font></a>      <typeparam name="TUserSecret"></typeparam>
+<a name="22"><font size=-1>22     </font></a>      <typeparam name="TUserLogin"></typeparam>
+<a name="23"><font size=-1>23     </font></a>      <typeparam name="TRole"></typeparam>
+<a name="24"><font size=-1>24     </font></a>      <typeparam name="TUserRole"></typeparam>
+<a name="25"><font size=-1>25     </font></a>      <typeparam name="TToken"></typeparam>
+<a name="26"><font size=-1>26     </font></a>      <typeparam name="TUserManagement"></typeparam>
+<a name="27"><font size=-1>27     </font></a>    </member>
+<a name="28"><font size=-1>28     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`8.#ctor">
+<a name="29"><font size=-1>29     </font></a>      <summary>Default constructor which uses the "DefaultConnection" connectionString</summary>
+<a name="30"><font size=-1>30     </font></a>    </member>
+<a name="31"><font size=-1>31     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`8.#ctor(System.String)">
+<a name="32"><font size=-1>32     </font></a>      <summary>Constructor which takes the connection string to use</summary>
+<a name="33"><font size=-1>33     </font></a>    </member>
+<a name="34"><font size=-1>34     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`8.Roles">
+<a name="35"><font size=-1>35     </font></a>      <summary>EntitySet of Roles</summary>
+<a name="36"><font size=-1>36     </font></a>    </member>
+<a name="37"><font size=-1>37     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`8.Tokens">
+<a name="38"><font size=-1>38     </font></a>      <summary>EntitySet of Tokens</summary>
+<a name="39"><font size=-1>39     </font></a>    </member>
+<a name="40"><font size=-1>40     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`8.UserClaims">
+<a name="41"><font size=-1>41     </font></a>      <summary>EntitySet of UserClaims</summary>
+<a name="42"><font size=-1>42     </font></a>    </member>
+<a name="43"><font size=-1>43     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`8.UserLogins">
+<a name="44"><font size=-1>44     </font></a>      <summary>EntitySet of UserLogins</summary>
+<a name="45"><font size=-1>45     </font></a>    </member>
+<a name="46"><font size=-1>46     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`8.UserManagement">
+<a name="47"><font size=-1>47     </font></a>      <summary>EntitySet of UserManagement</summary>
+<a name="48"><font size=-1>48     </font></a>    </member>
+<a name="49"><font size=-1>49     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`8.UserRoles">
+<a name="50"><font size=-1>50     </font></a>      <summary>EntitySet of UserRoles</summary>
+<a name="51"><font size=-1>51     </font></a>    </member>
+<a name="52"><font size=-1>52     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`8.Users">
+<a name="53"><font size=-1>53     </font></a>      <summary>EntitySet of Users</summary>
+<a name="54"><font size=-1>54     </font></a>    </member>
+<a name="55"><font size=-1>55     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`8.UserSecrets">
+<a name="56"><font size=-1>56     </font></a>      <summary>EntitySet of UserSecrets</summary>
+<a name="57"><font size=-1>57     </font></a>    </member>
+<a name="58"><font size=-1>58     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContext`8.ValidateEntity(System.Data.Entity.Infrastructure.DbEntityEntry,System.Collections.Generic.IDictionary{System.Object,System.Object})">
+<a name="59"><font size=-1>59     </font></a>      <summary>Validates that UserNames are unique and case insenstive</summary>
+<a name="60"><font size=-1>60     </font></a>    </member>
+<a name="61"><font size=-1>61     </font></a>    <member name="T:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContextWithCustomUser`1">
+<a name="62"><font size=-1>62     </font></a>      <summary>Concrete instance of the IdentityDbContext which uses a custom user entity but otherwise uses default framework entities</summary>
+<a name="63"><font size=-1>63     </font></a>      <typeparam name="TUser"></typeparam>
+<a name="64"><font size=-1>64     </font></a>    </member>
+<a name="65"><font size=-1>65     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityDbContextWithCustomUser`1.#ctor"></member>
+<a name="66"><font size=-1>66     </font></a>    <member name="T:Microsoft.AspNet.Identity.EntityFramework.IdentityManagerFactory">
+<a name="67"><font size=-1>67     </font></a>      <summary>Factory implementation that returns an IdentityManager</summary>
+<a name="68"><font size=-1>68     </font></a>    </member>
+<a name="69"><font size=-1>69     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityManagerFactory.#ctor(Microsoft.AspNet.Identity.IdentitySettings,System.Func{Microsoft.AspNet.Identity.IIdentityStore})"></member>
+<a name="70"><font size=-1>70     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityManagerFactory.ContextFactory">
+<a name="71"><font size=-1>71     </font></a>      <summary>Factory method that creates an identity store context</summary>
+<a name="72"><font size=-1>72     </font></a>    </member>
+<a name="73"><font size=-1>73     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityManagerFactory.CreateStoreManager">
+<a name="74"><font size=-1>74     </font></a>      <summary>Factory method that creates an IdentityManager</summary>
+<a name="75"><font size=-1>75     </font></a>    </member>
+<a name="76"><font size=-1>76     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityManagerFactory.Settings">
+<a name="77"><font size=-1>77     </font></a>      <summary>IdentitySettings to use when creating IdentityManagers</summary>
+<a name="78"><font size=-1>78     </font></a>    </member>
+<a name="79"><font size=-1>79     </font></a>    <member name="T:Microsoft.AspNet.Identity.EntityFramework.IdentityStore">
+<a name="80"><font size=-1>80     </font></a>      <summary>Implements IIdentityStoreContext <see cref="T:Microsoft.AspNet.Identity.IIdentityStore" /></summary>
+<a name="81"><font size=-1>81     </font></a>    </member>
+<a name="82"><font size=-1>82     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityStore.#ctor">
+<a name="83"><font size=-1>83     </font></a>      <summary>Default constuctor which uses a new instance of a DefaultIdentityDbContext</summary>
+<a name="84"><font size=-1>84     </font></a>    </member>
+<a name="85"><font size=-1>85     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityStore.#ctor(System.Data.Entity.DbContext)">
+<a name="86"><font size=-1>86     </font></a>      <summary>Constructor which takes a db context and wires up the stores with default instances using the context</summary>
+<a name="87"><font size=-1>87     </font></a>    </member>
+<a name="88"><font size=-1>88     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityStore.DbContext">
+<a name="89"><font size=-1>89     </font></a>      <summary>Context which encapsulates the unit of work</summary>
+<a name="90"><font size=-1>90     </font></a>    </member>
+<a name="91"><font size=-1>91     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityStore.Dispose">
+<a name="92"><font size=-1>92     </font></a>      <summary>Dispose the stores and dbcontext</summary>
+<a name="93"><font size=-1>93     </font></a>    </member>
+<a name="94"><font size=-1>94     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityStore.Dispose(System.Boolean)">
+<a name="95"><font size=-1>95     </font></a>      <summary>If disposing, calls dispose on the stores and Context. Always nulls out the stores/dbcontext</summary>
+<a name="96"><font size=-1>96     </font></a>    </member>
+<a name="97"><font size=-1>97     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityStore.Logins"></member>
+<a name="98"><font size=-1>98     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityStore.Roles"></member>
+<a name="99"><font size=-1>99     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.IdentityStore.SaveChangesAsync(System.Threading.CancellationToken)">
+<a name="100"><font size=-1>100     </font></a>      <summary>Calls SaveChangesAsync on the Context</summary>
+<a name="101"><font size=-1>101     </font></a>    </member>
+<a name="102"><font size=-1>102     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityStore.Secrets"></member>
+<a name="103"><font size=-1>103     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityStore.Tokens"></member>
+<a name="104"><font size=-1>104     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityStore.UserClaims"></member>
+<a name="105"><font size=-1>105     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityStore.UserManagement"></member>
+<a name="106"><font size=-1>106     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.IdentityStore.Users"></member>
+<a name="107"><font size=-1>107     </font></a>    <member name="T:Microsoft.AspNet.Identity.EntityFramework.IUserRole">
+<a name="108"><font size=-1>108     </font></a>      <summary> Represents a user being in a role </summary>
+<a name="109"><font size=-1>109     </font></a>    </member>
+<a name="110"><font size=-1>110     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.IUserRole.RoleId">
+<a name="111"><font size=-1>111     </font></a>      <summary> id of the role </summary>
+<a name="112"><font size=-1>112     </font></a>    </member>
+<a name="113"><font size=-1>113     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.IUserRole.UserId">
+<a name="114"><font size=-1>114     </font></a>      <summary> id of the user </summary>
+<a name="115"><font size=-1>115     </font></a>    </member>
+<a name="116"><font size=-1>116     </font></a>    <member name="T:Microsoft.AspNet.Identity.EntityFramework.Role">
+<a name="117"><font size=-1>117     </font></a>      <summary>Implements IRole <see cref="T:Microsoft.AspNet.Identity.IRole" /></summary>
+<a name="118"><font size=-1>118     </font></a>    </member>
+<a name="119"><font size=-1>119     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.Role.#ctor">
+<a name="120"><font size=-1>120     </font></a>      <summary>Initializes a new instance of the <see cref="T:Microsoft.AspNet.Identity.EntityFramework.Role" /> class.</summary>
+<a name="121"><font size=-1>121     </font></a>    </member>
+<a name="122"><font size=-1>122     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.Role.#ctor(System.String)">
+<a name="123"><font size=-1>123     </font></a>      <summary>Initializes a new instance of the <see cref="T:Microsoft.AspNet.Identity.EntityFramework.Role" /> class.</summary>
+<a name="124"><font size=-1>124     </font></a>      <param name="roleName">The name of the role.</param>
+<a name="125"><font size=-1>125     </font></a>    </member>
+<a name="126"><font size=-1>126     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.Role.Id">
+<a name="127"><font size=-1>127     </font></a>      <summary>Gets the identifier of this role.</summary>
+<a name="128"><font size=-1>128     </font></a>      <returns>The identifier of this role.</returns>
+<a name="129"><font size=-1>129     </font></a>    </member>
+<a name="130"><font size=-1>130     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.Role.Name">
+<a name="131"><font size=-1>131     </font></a>      <summary>Gets the name of this role.</summary>
+<a name="132"><font size=-1>132     </font></a>      <returns>The name of this role.</returns>
+<a name="133"><font size=-1>133     </font></a>    </member>
+<a name="134"><font size=-1>134     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.Role.UserRoles">
+<a name="135"><font size=-1>135     </font></a>      <summary>Gets a collection of user roles.</summary>
+<a name="136"><font size=-1>136     </font></a>      <returns>A collection of user roles.</returns>
+<a name="137"><font size=-1>137     </font></a>    </member>
+<a name="138"><font size=-1>138     </font></a>    <member name="T:Microsoft.AspNet.Identity.EntityFramework.RoleStore`2">
+<a name="139"><font size=-1>139     </font></a>      <summary>Base class for RoleStores using EF where TRole is the entity type of the role, and TUserInRole is the entity type of the user/role membership</summary>
+<a name="140"><font size=-1>140     </font></a>      <typeparam name="TRole"></typeparam>
+<a name="141"><font size=-1>141     </font></a>      <typeparam name="TUserInRole"></typeparam>
+<a name="142"><font size=-1>142     </font></a>    </member>
+<a name="143"><font size=-1>143     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.RoleStore`2.#ctor(System.Data.Entity.DbContext)">
+<a name="144"><font size=-1>144     </font></a>      <summary>Constructor that takes the db context</summary>
+<a name="145"><font size=-1>145     </font></a>    </member>
+<a name="146"><font size=-1>146     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.RoleStore`2.AddUserToRoleAsync(System.String,System.String,System.Threading.CancellationToken)">
+<a name="147"><font size=-1>147     </font></a>      <summary>Returns true if the user is successfully added to the role</summary>
+<a name="148"><font size=-1>148     </font></a>    </member>
+<a name="149"><font size=-1>149     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.RoleStore`2.CreateRoleAsync(Microsoft.AspNet.Identity.IRole,System.Threading.CancellationToken)">
+<a name="150"><font size=-1>150     </font></a>      <summary>Creates a role, returns true if successful, false if not (role already exists)</summary>
+<a name="151"><font size=-1>151     </font></a>    </member>
+<a name="152"><font size=-1>152     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.RoleStore`2.DeleteRoleAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
+<a name="153"><font size=-1>153     </font></a>      <summary>DeleteById a role, returns true if successful</summary>
+<a name="154"><font size=-1>154     </font></a>    </member>
+<a name="155"><font size=-1>155     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.RoleStore`2.FindRoleAsync(System.String,System.Threading.CancellationToken)"></member>
+<a name="156"><font size=-1>156     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.RoleStore`2.FindRoleByNameAsync(System.String,System.Threading.CancellationToken)"></member>
+<a name="157"><font size=-1>157     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.RoleStore`2.GetRolesForUserAsync(System.String,System.Threading.CancellationToken)">
+<a name="158"><font size=-1>158     </font></a>      <summary>Returns the roles for th euser</summary>
+<a name="159"><font size=-1>159     </font></a>    </member>
+<a name="160"><font size=-1>160     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.RoleStore`2.GetUsersInRoleAsync(System.String,System.Threading.CancellationToken)"></member>
+<a name="161"><font size=-1>161     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.RoleStore`2.IsUserInRoleAsync(System.String,System.String,System.Threading.CancellationToken)">
+<a name="162"><font size=-1>162     </font></a>      <summary>Returns true if the user is in the specified role</summary>
+<a name="163"><font size=-1>163     </font></a>    </member>
+<a name="164"><font size=-1>164     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.RoleStore`2.RemoveUserFromRoleAsync(System.String,System.String,System.Threading.CancellationToken)">
+<a name="165"><font size=-1>165     </font></a>      <summary>Returns true if the user was removed from the role</summary>
+<a name="166"><font size=-1>166     </font></a>    </member>
+<a name="167"><font size=-1>167     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.RoleStore`2.RoleExistsAsync(System.String,System.Threading.CancellationToken)">
+<a name="168"><font size=-1>168     </font></a>      <summary>Returns true if the role exists</summary>
+<a name="169"><font size=-1>169     </font></a>    </member>
+<a name="170"><font size=-1>170     </font></a>    <member name="T:Microsoft.AspNet.Identity.EntityFramework.Store`1">
+<a name="171"><font size=-1>171     </font></a>      <summary>EntityFramework based Store that allows query/manipulation of a TEntity set</summary>
+<a name="172"><font size=-1>172     </font></a>      <typeparam name="TEntity"></typeparam>
+<a name="173"><font size=-1>173     </font></a>    </member>
+<a name="174"><font size=-1>174     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.Store`1.#ctor(System.Data.Entity.DbContext)">
+<a name="175"><font size=-1>175     </font></a>      <summary>Constructor that takes a Context</summary>
+<a name="176"><font size=-1>176     </font></a>    </member>
+<a name="177"><font size=-1>177     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.Store`1.Context">
+<a name="178"><font size=-1>178     </font></a>      <summary>Context for the store</summary>
+<a name="179"><font size=-1>179     </font></a>    </member>
+<a name="180"><font size=-1>180     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.Store`1.Delete(`0)">
+<a name="181"><font size=-1>181     </font></a>      <summary>Mark an entity for deletion</summary>
+<a name="182"><font size=-1>182     </font></a>    </member>
+<a name="183"><font size=-1>183     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.Store`1.DeleteById(System.Object)">
+<a name="184"><font size=-1>184     </font></a>      <summary>Overload that deletes an entity</summary>
+<a name="185"><font size=-1>185     </font></a>    </member>
+<a name="186"><font size=-1>186     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.Store`1.EntitySet">
+<a name="187"><font size=-1>187     </font></a>      <summary>EntitySet for this store</summary>
+<a name="188"><font size=-1>188     </font></a>    </member>
+<a name="189"><font size=-1>189     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.Store`1.GetByIdAsync(System.Object,System.Threading.CancellationToken)">
+<a name="190"><font size=-1>190     </font></a>      <summary>FindAsync an entity by ID</summary>
+<a name="191"><font size=-1>191     </font></a>    </member>
+<a name="192"><font size=-1>192     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.Store`1.Insert(`0)">
+<a name="193"><font size=-1>193     </font></a>      <summary>Insert an entity</summary>
+<a name="194"><font size=-1>194     </font></a>    </member>
+<a name="195"><font size=-1>195     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.Store`1.Update(`0)">
+<a name="196"><font size=-1>196     </font></a>      <summary>Update an entity</summary>
+<a name="197"><font size=-1>197     </font></a>    </member>
+<a name="198"><font size=-1>198     </font></a>    <member name="T:Microsoft.AspNet.Identity.EntityFramework.Token">
+<a name="199"><font size=-1>199     </font></a>      <summary>EntityType that implements IToken <see cref="T:Microsoft.AspNet.Identity.IToken" /></summary>
+<a name="200"><font size=-1>200     </font></a>    </member>
+<a name="201"><font size=-1>201     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.Token.#ctor">
+<a name="202"><font size=-1>202     </font></a>      <summary>Initializes a new instance of the <see cref="T:Microsoft.AspNet.Identity.EntityFramework.Token" /> class.</summary>
+<a name="203"><font size=-1>203     </font></a>    </member>
+<a name="204"><font size=-1>204     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.Token.Id">
+<a name="205"><font size=-1>205     </font></a>      <summary>Gets the identifier of this token.</summary>
+<a name="206"><font size=-1>206     </font></a>      <returns>The identifier of this token.</returns>
+<a name="207"><font size=-1>207     </font></a>    </member>
+<a name="208"><font size=-1>208     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.Token.ValidUntilUtc">
+<a name="209"><font size=-1>209     </font></a>      <summary>Gets the date and time the token is valid.</summary>
+<a name="210"><font size=-1>210     </font></a>      <returns>The date and time the token is valid.</returns>
+<a name="211"><font size=-1>211     </font></a>    </member>
+<a name="212"><font size=-1>212     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.Token.Value">
+<a name="213"><font size=-1>213     </font></a>      <summary>Gets the value of this token.</summary>
+<a name="214"><font size=-1>214     </font></a>      <returns>The value of this token.</returns>
+<a name="215"><font size=-1>215     </font></a>    </member>
+<a name="216"><font size=-1>216     </font></a>    <member name="T:Microsoft.AspNet.Identity.EntityFramework.TokenStore`1">
+<a name="217"><font size=-1>217     </font></a>      <summary>Implements ITokenStore using EntityFramework where TToken is the entity type of the token being stored</summary>
+<a name="218"><font size=-1>218     </font></a>      <typeparam name="TToken"></typeparam>
+<a name="219"><font size=-1>219     </font></a>    </member>
+<a name="220"><font size=-1>220     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.TokenStore`1.#ctor(System.Data.Entity.DbContext)">
+<a name="221"><font size=-1>221     </font></a>      <summary>Constructor that takes the db context</summary>
+<a name="222"><font size=-1>222     </font></a>    </member>
+<a name="223"><font size=-1>223     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.TokenStore`1.AddAsync(Microsoft.AspNet.Identity.IToken,System.Threading.CancellationToken)"></member>
+<a name="224"><font size=-1>224     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.TokenStore`1.CreateNewInstance"></member>
+<a name="225"><font size=-1>225     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.TokenStore`1.FindAsync(System.String,System.Boolean,System.Threading.CancellationToken)"></member>
+<a name="226"><font size=-1>226     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.TokenStore`1.RemoveAsync(System.String,System.Threading.CancellationToken)"></member>
+<a name="227"><font size=-1>227     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.TokenStore`1.UpdateAsync(Microsoft.AspNet.Identity.IToken,System.Threading.CancellationToken)"></member>
+<a name="228"><font size=-1>228     </font></a>    <member name="T:Microsoft.AspNet.Identity.EntityFramework.User">
+<a name="229"><font size=-1>229     </font></a>      <summary>EntityType that implements IUser <see cref="T:Microsoft.AspNet.Identity.IUser" /></summary>
+<a name="230"><font size=-1>230     </font></a>    </member>
+<a name="231"><font size=-1>231     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.User.#ctor">
+<a name="232"><font size=-1>232     </font></a>      <summary>Constructor</summary>
+<a name="233"><font size=-1>233     </font></a>    </member>
+<a name="234"><font size=-1>234     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.User.#ctor(System.String)">
+<a name="235"><font size=-1>235     </font></a>      <summary>Constructor that takes userName</summary>
+<a name="236"><font size=-1>236     </font></a>    </member>
+<a name="237"><font size=-1>237     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.User.Id"></member>
+<a name="238"><font size=-1>238     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.User.Logins">
+<a name="239"><font size=-1>239     </font></a>      <summary>The user's logins</summary>
+<a name="240"><font size=-1>240     </font></a>    </member>
+<a name="241"><font size=-1>241     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.User.Management">
+<a name="242"><font size=-1>242     </font></a>      <summary>The user's management object</summary>
+<a name="243"><font size=-1>243     </font></a>    </member>
+<a name="244"><font size=-1>244     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.User.Roles">
+<a name="245"><font size=-1>245     </font></a>      <summary>The user's roles</summary>
+<a name="246"><font size=-1>246     </font></a>    </member>
+<a name="247"><font size=-1>247     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.User.UserName"></member>
+<a name="248"><font size=-1>248     </font></a>    <member name="T:Microsoft.AspNet.Identity.EntityFramework.UserClaim">
+<a name="249"><font size=-1>249     </font></a>      <summary>EntityType that represents one specific user claim <see cref="T:Microsoft.AspNet.Identity.IUserClaim" /></summary>
+<a name="250"><font size=-1>250     </font></a>    </member>
+<a name="251"><font size=-1>251     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserClaim.#ctor">
+<a name="252"><font size=-1>252     </font></a>      <summary>Constructor</summary>
+<a name="253"><font size=-1>253     </font></a>    </member>
+<a name="254"><font size=-1>254     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserClaim.ClaimType">
+<a name="255"><font size=-1>255     </font></a>      <summary>Gets or sets the type of the claim associated with the user.</summary>
+<a name="256"><font size=-1>256     </font></a>      <returns>The type of the claim associated with the user.</returns>
+<a name="257"><font size=-1>257     </font></a>    </member>
+<a name="258"><font size=-1>258     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserClaim.ClaimValue">
+<a name="259"><font size=-1>259     </font></a>      <summary>Gets or sets the value of the claim.</summary>
+<a name="260"><font size=-1>260     </font></a>      <returns>The value of the claim.</returns>
+<a name="261"><font size=-1>261     </font></a>    </member>
+<a name="262"><font size=-1>262     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserClaim.Key">
+<a name="263"><font size=-1>263     </font></a>      <summary>Unique key for the user claim</summary>
+<a name="264"><font size=-1>264     </font></a>      <returns>The unique key for the user claim.</returns>
+<a name="265"><font size=-1>265     </font></a>    </member>
+<a name="266"><font size=-1>266     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserClaim.User">
+<a name="267"><font size=-1>267     </font></a>      <summary>Navigation property setting up the foreign key for User</summary>
+<a name="268"><font size=-1>268     </font></a>    </member>
+<a name="269"><font size=-1>269     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserClaim.UserId">
+<a name="270"><font size=-1>270     </font></a>      <summary>Gets or sets the user identifier associated with the claim.</summary>
+<a name="271"><font size=-1>271     </font></a>      <returns>The user identifier associated with the claim.</returns>
+<a name="272"><font size=-1>272     </font></a>    </member>
+<a name="273"><font size=-1>273     </font></a>    <member name="T:Microsoft.AspNet.Identity.EntityFramework.UserClaimStore`1">
+<a name="274"><font size=-1>274     </font></a>      <summary>Implements IUserClaimStore using EntityFramework where TUserSecret is the entity type of the user claim being stored</summary>
+<a name="275"><font size=-1>275     </font></a>      <typeparam name="TUserClaim"></typeparam>
+<a name="276"><font size=-1>276     </font></a>    </member>
+<a name="277"><font size=-1>277     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserClaimStore`1.#ctor(System.Data.Entity.DbContext)">
+<a name="278"><font size=-1>278     </font></a>      <summary>Constructor that takes the db context</summary>
+<a name="279"><font size=-1>279     </font></a>    </member>
+<a name="280"><font size=-1>280     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserClaimStore`1.AddAsync(Microsoft.AspNet.Identity.IUserClaim,System.Threading.CancellationToken)"></member>
+<a name="281"><font size=-1>281     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserClaimStore`1.GetUserClaimsAsync(System.String,System.Threading.CancellationToken)"></member>
+<a name="282"><font size=-1>282     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserClaimStore`1.RemoveAsync(System.String,System.String,System.String,System.Threading.CancellationToken)"></member>
+<a name="283"><font size=-1>283     </font></a>    <member name="T:Microsoft.AspNet.Identity.EntityFramework.UserLogin">
+<a name="284"><font size=-1>284     </font></a>      <summary>Entity type for a user's login (i.e. facebook, local password, google)</summary>
+<a name="285"><font size=-1>285     </font></a>    </member>
+<a name="286"><font size=-1>286     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserLogin.#ctor">
+<a name="287"><font size=-1>287     </font></a>      <summary>Default constructor</summary>
+<a name="288"><font size=-1>288     </font></a>    </member>
+<a name="289"><font size=-1>289     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserLogin.#ctor(System.String,System.String,System.String)">
+<a name="290"><font size=-1>290     </font></a>      <summary>Constructor</summary>
+<a name="291"><font size=-1>291     </font></a>    </member>
+<a name="292"><font size=-1>292     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserLogin.LoginProvider"></member>
+<a name="293"><font size=-1>293     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserLogin.ProviderKey"></member>
+<a name="294"><font size=-1>294     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserLogin.User">
+<a name="295"><font size=-1>295     </font></a>      <summary>Navigation property setting up the foreign key for User</summary>
+<a name="296"><font size=-1>296     </font></a>    </member>
+<a name="297"><font size=-1>297     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserLogin.UserId"></member>
+<a name="298"><font size=-1>298     </font></a>    <member name="T:Microsoft.AspNet.Identity.EntityFramework.UserLoginStore`1">
+<a name="299"><font size=-1>299     </font></a>      <summary>Implements IUserLoginStore using EntityFramework where TUserLogin is the entity type of the user login being stored</summary>
+<a name="300"><font size=-1>300     </font></a>      <typeparam name="TUserLogin"></typeparam>
+<a name="301"><font size=-1>301     </font></a>    </member>
+<a name="302"><font size=-1>302     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserLoginStore`1.#ctor(System.Data.Entity.DbContext)">
+<a name="303"><font size=-1>303     </font></a>      <summary>Constructor that takes a db context</summary>
+<a name="304"><font size=-1>304     </font></a>    </member>
+<a name="305"><font size=-1>305     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserLoginStore`1.AddAsync(Microsoft.AspNet.Identity.IUserLogin,System.Threading.CancellationToken)"></member>
+<a name="306"><font size=-1>306     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserLoginStore`1.CreateNewInstance(System.String,System.String,System.String)"></member>
+<a name="307"><font size=-1>307     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserLoginStore`1.GetLoginsAsync(System.String,System.Threading.CancellationToken)"></member>
+<a name="308"><font size=-1>308     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserLoginStore`1.GetProviderKeyAsync(System.String,System.String,System.Threading.CancellationToken)"></member>
+<a name="309"><font size=-1>309     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserLoginStore`1.GetUserIdAsync(System.String,System.String,System.Threading.CancellationToken)"></member>
+<a name="310"><font size=-1>310     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserLoginStore`1.RemoveAsync(System.String,System.String,System.String,System.Threading.CancellationToken)"></member>
+<a name="311"><font size=-1>311     </font></a>    <member name="T:Microsoft.AspNet.Identity.EntityFramework.UserManagement">
+<a name="312"><font size=-1>312     </font></a>      <summary>Represents the user management instance.</summary>
+<a name="313"><font size=-1>313     </font></a>    </member>
+<a name="314"><font size=-1>314     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserManagement.#ctor">
+<a name="315"><font size=-1>315     </font></a>      <summary>Initializes a new instance of the <see cref="T:Microsoft.AspNet.Identity.EntityFramework.UserManagement" /> class.</summary>
+<a name="316"><font size=-1>316     </font></a>    </member>
+<a name="317"><font size=-1>317     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserManagement.#ctor(System.String)">
+<a name="318"><font size=-1>318     </font></a>      <summary>Initializes a new instance of the <see cref="T:Microsoft.AspNet.Identity.EntityFramework.UserManagement" /> class using the specified user identifier..</summary>
+<a name="319"><font size=-1>319     </font></a>      <param name="userId">The unique identifier of the user.</param>
+<a name="320"><font size=-1>320     </font></a>    </member>
+<a name="321"><font size=-1>321     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserManagement.DisableSignIn">
+<a name="322"><font size=-1>322     </font></a>      <summary>Gets or sets whether to disable the user sign in.</summary>
+<a name="323"><font size=-1>323     </font></a>      <returns>true to disable the user sign in; otherwise, false.</returns>
+<a name="324"><font size=-1>324     </font></a>    </member>
+<a name="325"><font size=-1>325     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserManagement.LastSignInTimeUtc">
+<a name="326"><font size=-1>326     </font></a>      <summary>Gets or sets the time when the user recently signed in.</summary>
+<a name="327"><font size=-1>327     </font></a>      <returns>The time when the user recently signed in.</returns>
+<a name="328"><font size=-1>328     </font></a>    </member>
+<a name="329"><font size=-1>329     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserManagement.User">
+<a name="330"><font size=-1>330     </font></a>      <summary>Navigation property setting up the foreign key for User</summary>
+<a name="331"><font size=-1>331     </font></a>    </member>
+<a name="332"><font size=-1>332     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserManagement.UserId">
+<a name="333"><font size=-1>333     </font></a>      <summary>Gets or sets the unique identifier of the user.</summary>
+<a name="334"><font size=-1>334     </font></a>      <returns>The unique identifier of the user.</returns>
+<a name="335"><font size=-1>335     </font></a>    </member>
+<a name="336"><font size=-1>336     </font></a>    <member name="T:Microsoft.AspNet.Identity.EntityFramework.UserManagementStore`1">
+<a name="337"><font size=-1>337     </font></a>      <summary>Represents the user management store.</summary>
+<a name="338"><font size=-1>338     </font></a>      <typeparam name="TUser">The type of the user.</typeparam>
+<a name="339"><font size=-1>339     </font></a>    </member>
+<a name="340"><font size=-1>340     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserManagementStore`1.#ctor(System.Data.Entity.DbContext)">
+<a name="341"><font size=-1>341     </font></a>      <summary>Initializes a new instance of the <see cref="T:Microsoft.AspNet.Identity.EntityFramework.UserManagementStore`1" /> class.</summary>
+<a name="342"><font size=-1>342     </font></a>      <param name="db">The context for the store.</param>
+<a name="343"><font size=-1>343     </font></a>    </member>
+<a name="344"><font size=-1>344     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserManagementStore`1.CreateAsync(Microsoft.AspNet.Identity.IUserManagement,System.Threading.CancellationToken)">
+<a name="345"><font size=-1>345     </font></a>      <summary>Creates a user management.</summary>
+<a name="346"><font size=-1>346     </font></a>      <returns>The created management store.</returns>
+<a name="347"><font size=-1>347     </font></a>      <param name="info">The user management information.</param>
+<a name="348"><font size=-1>348     </font></a>      <param name="cancellationToken">The cancellation token.</param>
+<a name="349"><font size=-1>349     </font></a>    </member>
+<a name="350"><font size=-1>350     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserManagementStore`1.CreateNewInstance(System.String)"></member>
+<a name="351"><font size=-1>351     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserManagementStore`1.DeleteAsync(System.String,System.Threading.CancellationToken)">
+<a name="352"><font size=-1>352     </font></a>      <summary>Deletes a user management.</summary>
+<a name="353"><font size=-1>353     </font></a>      <returns>The deleted user management.</returns>
+<a name="354"><font size=-1>354     </font></a>      <param name="userId">The user identifier where the management will be deleted.</param>
+<a name="355"><font size=-1>355     </font></a>      <param name="cancellationToken">The cancellation token.</param>
+<a name="356"><font size=-1>356     </font></a>    </member>
+<a name="357"><font size=-1>357     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserManagementStore`1.FindAsync(System.String,System.Threading.CancellationToken)">
+<a name="358"><font size=-1>358     </font></a>      <summary>Searches for a user management of a specific user.</summary>
+<a name="359"><font size=-1>359     </font></a>      <returns>The searched user management.</returns>
+<a name="360"><font size=-1>360     </font></a>      <param name="userId">The user identifier.</param>
+<a name="361"><font size=-1>361     </font></a>      <param name="cancellationToken">The cancellation token.</param>
+<a name="362"><font size=-1>362     </font></a>    </member>
+<a name="363"><font size=-1>363     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserManagementStore`1.UpdateAsync(Microsoft.AspNet.Identity.IUserManagement,System.Threading.CancellationToken)">
+<a name="364"><font size=-1>364     </font></a>      <summary>Updates a user management.</summary>
+<a name="365"><font size=-1>365     </font></a>      <returns>The updated user management information.</returns>
+<a name="366"><font size=-1>366     </font></a>      <param name="info">The user management information.</param>
+<a name="367"><font size=-1>367     </font></a>      <param name="cancellationToken">The cancellation token.</param>
+<a name="368"><font size=-1>368     </font></a>    </member>
+<a name="369"><font size=-1>369     </font></a>    <member name="T:Microsoft.AspNet.Identity.EntityFramework.UserRole">
+<a name="370"><font size=-1>370     </font></a>      <summary>EntityType that represents a user belonging to a role <see cref="T:Microsoft.AspNet.Identity.EntityFramework.IUserRole" /></summary>
+<a name="371"><font size=-1>371     </font></a>    </member>
+<a name="372"><font size=-1>372     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserRole.#ctor">
+<a name="373"><font size=-1>373     </font></a>      <summary>Initializes a new instance of the <see cref="T:Microsoft.AspNet.Identity.EntityFramework.UserRole" /> class.</summary>
+<a name="374"><font size=-1>374     </font></a>    </member>
+<a name="375"><font size=-1>375     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserRole.Role">
+<a name="376"><font size=-1>376     </font></a>      <summary>Navigation property setting up the foreign key for Role</summary>
+<a name="377"><font size=-1>377     </font></a>    </member>
+<a name="378"><font size=-1>378     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserRole.RoleId">
+<a name="379"><font size=-1>379     </font></a>      <summary>Gets or sets the role identifier.</summary>
+<a name="380"><font size=-1>380     </font></a>      <returns>The role identifier.</returns>
+<a name="381"><font size=-1>381     </font></a>    </member>
+<a name="382"><font size=-1>382     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserRole.User">
+<a name="383"><font size=-1>383     </font></a>      <summary>Navigation property setting up the foreign key for User</summary>
+<a name="384"><font size=-1>384     </font></a>    </member>
+<a name="385"><font size=-1>385     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserRole.UserId">
+<a name="386"><font size=-1>386     </font></a>      <summary>Gets or sets the user identifier.</summary>
+<a name="387"><font size=-1>387     </font></a>      <returns>The user identifier.</returns>
+<a name="388"><font size=-1>388     </font></a>    </member>
+<a name="389"><font size=-1>389     </font></a>    <member name="T:Microsoft.AspNet.Identity.EntityFramework.UserSecret">
+<a name="390"><font size=-1>390     </font></a>      <summary>EntityType that represents a username and secret(i.e. hashed password) <see cref="T:Microsoft.AspNet.Identity.IUserSecret" /></summary>
+<a name="391"><font size=-1>391     </font></a>    </member>
+<a name="392"><font size=-1>392     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserSecret.#ctor">
+<a name="393"><font size=-1>393     </font></a>      <summary>Constructor</summary>
+<a name="394"><font size=-1>394     </font></a>    </member>
+<a name="395"><font size=-1>395     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserSecret.#ctor(System.String,System.String)">
+<a name="396"><font size=-1>396     </font></a>      <summary>Constructor</summary>
+<a name="397"><font size=-1>397     </font></a>    </member>
+<a name="398"><font size=-1>398     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserSecret.Secret"></member>
+<a name="399"><font size=-1>399     </font></a>    <member name="P:Microsoft.AspNet.Identity.EntityFramework.UserSecret.UserName"></member>
+<a name="400"><font size=-1>400     </font></a>    <member name="T:Microsoft.AspNet.Identity.EntityFramework.UserSecretStore`1">
+<a name="401"><font size=-1>401     </font></a>      <summary>Implements IUserSecretStore using EntityFramework where TUserSecret is the entity type of the user secret being stored</summary>
+<a name="402"><font size=-1>402     </font></a>      <typeparam name="TUserSecret"></typeparam>
+<a name="403"><font size=-1>403     </font></a>    </member>
+<a name="404"><font size=-1>404     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserSecretStore`1.#ctor(System.Data.Entity.DbContext)">
+<a name="405"><font size=-1>405     </font></a>      <summary>Constructor that takes a db context</summary>
+<a name="406"><font size=-1>406     </font></a>    </member>
+<a name="407"><font size=-1>407     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserSecretStore`1.CreateAsync(Microsoft.AspNet.Identity.IUserSecret,System.Threading.CancellationToken)"></member>
+<a name="408"><font size=-1>408     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserSecretStore`1.CreateNewInstance(System.String,System.String)"></member>
+<a name="409"><font size=-1>409     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserSecretStore`1.DeleteAsync(System.String,System.Threading.CancellationToken)"></member>
+<a name="410"><font size=-1>410     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserSecretStore`1.FindAsync(System.String,System.Threading.CancellationToken)"></member>
+<a name="411"><font size=-1>411     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserSecretStore`1.UpdateAsync(System.String,System.String,System.Threading.CancellationToken)"></member>
+<a name="412"><font size=-1>412     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserSecretStore`1.ValidateAsync(System.String,System.String,System.Threading.CancellationToken)"></member>
+<a name="413"><font size=-1>413     </font></a>    <member name="T:Microsoft.AspNet.Identity.EntityFramework.UserStore`1">
+<a name="414"><font size=-1>414     </font></a>      <summary>Implements IUserStore using EntityFramework where TUser is the entity type of the user being stored</summary>
+<a name="415"><font size=-1>415     </font></a>      <typeparam name="TUser"></typeparam>
+<a name="416"><font size=-1>416     </font></a>    </member>
+<a name="417"><font size=-1>417     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`1.#ctor(System.Data.Entity.DbContext)">
+<a name="418"><font size=-1>418     </font></a>      <summary>Constructor that takes the db context</summary>
+<a name="419"><font size=-1>419     </font></a>    </member>
+<a name="420"><font size=-1>420     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`1.CreateAsync(Microsoft.AspNet.Identity.IUser,System.Threading.CancellationToken)"></member>
+<a name="421"><font size=-1>421     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`1.DeleteAsync(System.String,System.Threading.CancellationToken)"></member>
+<a name="422"><font size=-1>422     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`1.FindAsync(System.String,System.Threading.CancellationToken)"></member>
+<a name="423"><font size=-1>423     </font></a>    <member name="M:Microsoft.AspNet.Identity.EntityFramework.UserStore`1.FindByNameAsync(System.String,System.Threading.CancellationToken)"></member>
+<a name="424"><font size=-1>424     </font></a>  </members>
+<a name="425"><font size=-1>425     </font></a></doc>
+</pre></body></html>

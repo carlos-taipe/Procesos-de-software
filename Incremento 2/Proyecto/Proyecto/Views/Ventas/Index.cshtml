@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div class="bg-light">
+    <div class="card bg-dark" style="margin-bottom:20px">
+        <div class="card-body text-center">
+            <h2 class="text-white">Venta de productos</h2>
+        </div>
+        <img src="~/Imagenes/Ventas.jpg" class="card-img-top" style="height:350px;object-fit:cover">
+    </div>
+    <div class="container" style="margin-bottom:20px">
+        <div class="card bg-dark" >
+            @using (Html.BeginForm("buscarxNombre", "Ventas", FormMethod.Post))
+            {
+                <div class="card-body" style="margin-bottom:50px">
+                    <h4 class="card-title text-white">Buscar por nombre:</h4>
+                    <div class="container" style="margin-bottom:20px">
+                        <input type="text" required name="Nombre" class="form-control" />
+                    </div>
+                    <div class="container">
+                        <input type="submit" value="Buscar" class="btn btn-primary" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+
+    <div class="container overflow-auto">
+        @if (Model.Rows.Count != 0)
+        {
+            <div class="container" style="padding-bottom:35px">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr class="text-uppercase">
+                            <th>Nombre</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>Proveedor</th>
+                            <th>Categoría</th>
+                            <th>Cantidad a vender</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.Rows.Count; i++)
+                        {
+                            <tr>
+                                <td>@Model.Rows[i][0]</td>
+                                <td>@Model.Rows[i][1]</td>
+                                <td>S/. @Model.Rows[i][2]</td>
+                                <td>@Model.Rows[i][3]</td>
+                                <td>@Model.Rows[i][4]</td>
+                                <td>
+                                    @using (Html.BeginForm("CarritoCompras", "Ventas", FormMethod.Get))
+                                    {
+                                        <div class="container">
+                                            <div class="row">
+                                                <input type="hidden" name="IDProducto" value="@Model.Rows[i][5]" />
+                                                <input type="hidden" name="Precio" value="@Model.Rows[i][2]" />
+                                                <input type="hidden" name="Nombre" value="@Model.Rows[i][0]" />
+                                                <input type="number" required min="1" max="@Model.Rows[i][1]" name="cantidad" class="form-control col-12 col-sm-12 col-md-12 col-lg-5" style="margin-right:5px" />
+                                                <input type="submit" value="Agregar" class="btn btn-primary col col-sm col-md col-lg-3" />
+                                            </div>
+                                        </div>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-danger" role="alert">
+                Busque productos a vender.
+            </div>
+        }
+    </div>
+</div>
+

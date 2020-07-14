@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EdicasModelStoreContainer" CdmEntityContainer="EdicasEntities1">
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="EdicasModel.AspNetRoles">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="EdicasModel.AspNetUserClaims">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="EdicasModel.AspNetUserLogins">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="EdicasModel.AspNetUsers">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categorias">
+      <EntityTypeMapping TypeName="EdicasModel.Categorias">
+        <MappingFragment StoreEntitySet="Categorias">
+          <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+          <ScalarProperty Name="catNombre" ColumnName="catNombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Productos">
+      <EntityTypeMapping TypeName="EdicasModel.Productos">
+        <MappingFragment StoreEntitySet="Productos">
+          <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+          <ScalarProperty Name="proNombre" ColumnName="proNombre" />
+          <ScalarProperty Name="proCantidad" ColumnName="proCantidad" />
+          <ScalarProperty Name="proPrecioVenta" ColumnName="proPrecioVenta" />
+          <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+          <ScalarProperty Name="RUC" ColumnName="RUC" />
+          <ScalarProperty Name="proImagen" ColumnName="proImagen" />
+          <ScalarProperty Name="proEstado" ColumnName="proEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proveedores">
+      <EntityTypeMapping TypeName="EdicasModel.Proveedores">
+        <MappingFragment StoreEntitySet="Proveedores">
+          <ScalarProperty Name="RUC" ColumnName="RUC" />
+          <ScalarProperty Name="provNombres" ColumnName="provNombres" />
+          <ScalarProperty Name="provDireccion" ColumnName="provDireccion" />
+          <ScalarProperty Name="provTelefono" ColumnName="provTelefono" />
+          <ScalarProperty Name="provEstado" ColumnName="provEstado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="EdicasModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="sp_A_Producto" FunctionName="EdicasModel.Store.sp_A_Producto" />
+    <FunctionImportMapping FunctionImportName="sp_C_Productos" FunctionName="EdicasModel.Store.sp_C_Productos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EdicasModel.sp_C_Productos_Result">
+          <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+          <ScalarProperty Name="proNombre" ColumnName="proNombre" />
+          <ScalarProperty Name="proCantidad" ColumnName="proCantidad" />
+          <ScalarProperty Name="proPrecioVenta" ColumnName="proPrecioVenta" />
+          <ScalarProperty Name="catNombre" ColumnName="catNombre" />
+          <ScalarProperty Name="provNombres" ColumnName="provNombres" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_E_Producto" FunctionName="EdicasModel.Store.sp_E_Producto" />
+    <FunctionImportMapping FunctionImportName="sp_M_Producto" FunctionName="EdicasModel.Store.sp_M_Producto" />
+    <FunctionImportMapping FunctionImportName="sp_C_ProductoxID" FunctionName="EdicasModel.Store.sp_C_ProductoxID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EdicasModel.sp_C_ProductoxID_Result">
+          <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+          <ScalarProperty Name="proNombre" ColumnName="proNombre" />
+          <ScalarProperty Name="proCantidad" ColumnName="proCantidad" />
+          <ScalarProperty Name="proPrecioVenta" ColumnName="proPrecioVenta" />
+          <ScalarProperty Name="IDCategoria" ColumnName="IDCategoria" />
+          <ScalarProperty Name="RUC" ColumnName="RUC" />
+          <ScalarProperty Name="provNombres" ColumnName="provNombres" />
+          <ScalarProperty Name="catNombre" ColumnName="catNombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_A_Proveedor" FunctionName="EdicasModel.Store.sp_A_Proveedor" />
+    <FunctionImportMapping FunctionImportName="sp_C_Proveedores" FunctionName="EdicasModel.Store.sp_C_Proveedores">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EdicasModel.sp_C_Proveedores_Result">
+          <ScalarProperty Name="provNombres" ColumnName="provNombres" />
+          <ScalarProperty Name="provDireccion" ColumnName="provDireccion" />
+          <ScalarProperty Name="provTelefono" ColumnName="provTelefono" />
+          <ScalarProperty Name="RUC" ColumnName="RUC" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_C_ProveedorxRUC" FunctionName="EdicasModel.Store.sp_C_ProveedorxRUC">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EdicasModel.sp_C_ProveedorxRUC_Result">
+          <ScalarProperty Name="RUC" ColumnName="RUC" />
+          <ScalarProperty Name="provNombres" ColumnName="provNombres" />
+          <ScalarProperty Name="provDireccion" ColumnName="provDireccion" />
+          <ScalarProperty Name="provTelefono" ColumnName="provTelefono" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_E_Proveedor" FunctionName="EdicasModel.Store.sp_E_Proveedor" />
+    <FunctionImportMapping FunctionImportName="sp_M_Proveedor" FunctionName="EdicasModel.Store.sp_M_Proveedor" />
+    <FunctionImportMapping FunctionImportName="sp_A_Categoria" FunctionName="EdicasModel.Store.sp_A_Categoria" />
+    <FunctionImportMapping FunctionImportName="sp_C_Productos_Agotados" FunctionName="EdicasModel.Store.sp_C_Productos_Agotados">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EdicasModel.sp_C_Productos_Agotados_Result">
+          <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+          <ScalarProperty Name="proNombre" ColumnName="proNombre" />
+          <ScalarProperty Name="proCantidad" ColumnName="proCantidad" />
+          <ScalarProperty Name="proPrecioVenta" ColumnName="proPrecioVenta" />
+          <ScalarProperty Name="catNombre" ColumnName="catNombre" />
+          <ScalarProperty Name="provNombres" ColumnName="provNombres" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_C_ProductoxCategoria" FunctionName="EdicasModel.Store.sp_C_ProductoxCategoria">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EdicasModel.sp_C_ProductoxCategoria_Result">
+          <ScalarProperty Name="proNombre" ColumnName="proNombre" />
+          <ScalarProperty Name="proCantidad" ColumnName="proCantidad" />
+          <ScalarProperty Name="proPrecioVenta" ColumnName="proPrecioVenta" />
+          <ScalarProperty Name="catNombre" ColumnName="catNombre" />
+          <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_C_ProductoxNombre" FunctionName="EdicasModel.Store.sp_C_ProductoxNombre">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EdicasModel.sp_C_ProductoxNombre_Result">
+          <ScalarProperty Name="proNombre" ColumnName="proNombre" />
+          <ScalarProperty Name="proCantidad" ColumnName="proCantidad" />
+          <ScalarProperty Name="proPrecioVenta" ColumnName="proPrecioVenta" />
+          <ScalarProperty Name="catNombre" ColumnName="catNombre" />
+          <ScalarProperty Name="provNombres" ColumnName="provNombres" />
+          <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_M_Producto_Cantidad" FunctionName="EdicasModel.Store.sp_M_Producto_Cantidad" />
+    <FunctionImportMapping FunctionImportName="sp_C_Usuarios_Roles" FunctionName="EdicasModel.Store.sp_C_Usuarios_Roles">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EdicasModel.sp_C_Usuarios_Roles_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="DetalleVenta">
+      <EntityTypeMapping TypeName="EdicasModel.DetalleVenta">
+        <MappingFragment StoreEntitySet="DetalleVenta">
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="IDProducto" ColumnName="IDProducto" />
+          <ScalarProperty Name="IDVenta" ColumnName="IDVenta" />
+          <ScalarProperty Name="IDDetalleVenta" ColumnName="IDDetalleVenta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ventas">
+      <EntityTypeMapping TypeName="EdicasModel.Ventas">
+        <MappingFragment StoreEntitySet="Ventas">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="IDVenta" ColumnName="IDVenta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_A_Venta" FunctionName="EdicasModel.Store.sp_A_Venta">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EdicasModel.sp_C_IDVenta_Result">
+          <ScalarProperty Name="IDVenta" ColumnName="IDVenta" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_A_DetalleVenta" FunctionName="EdicasModel.Store.sp_A_DetalleVenta" />
+    <FunctionImportMapping FunctionImportName="sp_M_Venta_Stock" FunctionName="EdicasModel.Store.sp_M_Venta_Stock" />
+  </EntityContainerMapping>
+</Mapping>

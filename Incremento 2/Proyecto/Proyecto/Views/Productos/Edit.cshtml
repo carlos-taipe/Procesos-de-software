@@ -1,0 +1,94 @@
+﻿@model Proyecto.Models.Productos
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+
+<body>
+    <form style="width:100%;max-width:6000px;padding:15px;margin:auto">
+        <h2>Editar</h2>
+        <div class="container" style="margin-top:20px">
+            @using (Html.BeginForm("Edit", "Productos", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <h4>Productos</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.IDProducto)
+
+                    <div class="form-group">
+                        <h6 class="text-uppercase"><strong>Nombre:</strong></h6>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.proNombre, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.proNombre, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h6 class="text-uppercase"><strong>Precio:</strong></h6>
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.proPrecioVenta, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.proPrecioVenta, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h6 class="text-uppercase"><strong>Categoría:</strong></h6>
+                        <div class="col-md-10 row">
+                            <div class="col-auto">
+                                @Html.DropDownList("IDCategoria", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.IDCategoria, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col">
+                                @Html.ActionLink("Agregar categoría", "Create", "Categorías", routeValues: new { idproducto = Model.IDProducto }, htmlAttributes: new { @class = "btn btn-primary" })
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h6 class="text-uppercase"><strong>Proveedor:</strong></h6>
+                        <div class="col-md-10 row">
+                            <div class="col-auto">
+                                @Html.DropDownList("RUC", null, htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.RUC, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col">
+                                @Html.ActionLink("Agregar proveedor", "Create", "Proveedores", routeValues: null, htmlAttributes: new { @class = "btn btn-primary" })
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h6 class="text-uppercase"><strong>Cambiar imagen:</strong></h6>
+                        <div class="col-auto">
+                            <img width="100" height="100" src="@Url.Action("obtenerImagen","Productos",new { id = Model.IDProducto})" alt="Alternate Text" />
+                        </div>
+                        <div class="col-auto">
+                            <input style="margin-top:15px" type="file" name="Imagen" value="Imagen" accept=".jpg,.png" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Save" class="btn btn-info" />
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div>
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-danger" })
+            </div>
+        </div>
+    </form>
+</body>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

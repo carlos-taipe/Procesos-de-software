@@ -1,0 +1,98 @@
+﻿@model Proyecto.Models.Productos
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<body>
+    
+        <h2>Crear producto</h2>
+        <div class="container" style="margin-top:20px">
+
+
+            @using (Html.BeginForm("Create", "Productos", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                <h4>Productos</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    <h6 class="text-uppercase"><strong>Nombre:</strong></h6>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.proNombre, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.proNombre, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h6 class="text-uppercase"><strong>Cantidad:</strong></h6>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.proCantidad, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.proCantidad, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h6 class="text-uppercase"><strong>Precio de venta:</strong></h6>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.proPrecioVenta, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.proPrecioVenta, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h6 class="text-uppercase"><strong>Categoría:</strong></h6>
+                    <div class="col-md-10 row">
+                        <div class="col-auto">
+                            @Html.DropDownList("IDCategoria", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.IDCategoria, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col">
+                            @Html.ActionLink("Agregar categoría", "Create", "Categorías", routeValues: null, htmlAttributes: new { @class = "btn btn-primary" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h6 class="text-uppercase"><strong>Proveedor:</strong></h6>
+                    <div class="col-md-10 row">
+                        <div class="col-auto">
+                            @Html.DropDownList("RUC", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.RUC, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="col">
+                            @Html.ActionLink("Agregar proveedor", "Create", "Proveedores", routeValues: null, htmlAttributes: new { @class = "btn btn-primary" })
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <h6 class="text-uppercase"><strong>Subir imagen:</strong></h6>
+                    <div class="col-md-10">
+                        <input type="file" required name="Imagen" value="Imagen" accept=".png,.jpg" class="form-control-file" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-success" />
+                    </div>
+                </div>
+
+            }
+
+            <div>
+                @Html.ActionLink("Volver a la lista", "Index", null, new { @class = "btn btn-danger" })
+            </div>
+        </div>
+
+ 
+    
+</body>
+    
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

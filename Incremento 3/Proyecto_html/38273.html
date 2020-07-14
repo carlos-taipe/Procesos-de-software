@@ -1,0 +1,56 @@
+<html><head><title>AspNetUsers.cs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body link="blue" vlink="blue">
+<h3>File: D:\Proyecto\Proyecto\Models\AspNetUsers.cs</h3>
+<SCRIPT>
+defaultStatus = "File: D:\\Proyecto\\Proyecto\\Models\\AspNetUsers.cs";
+top.document.title  = "AspNetUsers.cs";
+</SCRIPT>
+<pre><span class="default"></span><a name="1"><font size=-1>1     </font></a><span class="default"></span><span class="comment">//------------------------------------------------------------------------------</span>
+<a name="2"><font size=-1>2     </font></a><span class="comment">// &lt;auto-generated&gt;</span>
+<a name="3"><font size=-1>3     </font></a><span class="comment">//     Este cÃ³digo se generÃ³ a partir de una plantilla.</span>
+<a name="4"><font size=-1>4     </font></a><span class="comment">//</span>
+<a name="5"><font size=-1>5     </font></a><span class="comment">//     Los cambios manuales en este archivo pueden causar un comportamiento inesperado de la aplicaciÃ³n.</span>
+<a name="6"><font size=-1>6     </font></a><span class="comment">//     Los cambios manuales en este archivo se sobrescribirÃ¡n si se regenera el cÃ³digo.</span>
+<a name="7"><font size=-1>7     </font></a><span class="comment">// &lt;/auto-generated&gt;</span>
+<a name="8"><font size=-1>8     </font></a><span class="comment">//------------------------------------------------------------------------------</span>
+<a name="9"><font size=-1>9     </font></a><span class="comment"></span>
+<a name="10"><font size=-1>10     </font></a><span class="comment"></span><span class="keyword">namespace </span><span class="default">Proyecto.Models</span>
+<a name="11"><font size=-1>11     </font></a><span class="default">{</span>
+<a name="12"><font size=-1>12     </font></a><span class="default">    </span><span class="keyword">using </span><span class="default">System;</span>
+<a name="13"><font size=-1>13     </font></a><span class="default">    </span><span class="keyword">using </span><span class="default">System.Collections.Generic;</span>
+<a name="14"><font size=-1>14     </font></a><span class="default">    </span>
+<a name="15"><font size=-1>15     </font></a><span class="default">    </span><span class="keyword">public </span><span class="default">partial </span><span class="keyword">class <a href="dictionary_P.html#357">AspNetUsers</a></span>
+<a name="16"><font size=-1>16     </font></a><span class="keyword">    </span><span class="default">{</span>
+<a name="17"><font size=-1>17     </font></a><span class="default">        [System.Diagnostics.CodeAnalysis.SuppressMessage(</span><span class="string">&quot;Microsoft.Usage&quot;</span><span class="default">, </span><span class="string">&quot;CA2214:DoNotCallOverridableMethodsInConstructors&quot;</span><span class="default">)]</span>
+<a name="18"><font size=-1>18     </font></a><span class="default">        </span><span class="keyword">public <a href="dictionary_P.html#38290">AspNetUsers</a></span><span class="default">()</span>
+<a name="19"><font size=-1>19     </font></a><span class="default">        {</span>
+<a name="20"><font size=-1>20     </font></a><span class="default">            </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#38282">AspNetUserClaims</a> = </span><span class="keyword">new </span><span class="default">HashSet&lt;<a href="dictionary_P.html#38268">AspNetUserClaims</a>&gt;();</span>
+<a name="21"><font size=-1>21     </font></a><span class="default">            </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#38286">AspNetUserLogins</a> = </span><span class="keyword">new </span><span class="default">HashSet&lt;<a href="dictionary_P.html#38269">AspNetUserLogins</a>&gt;();</span>
+<a name="22"><font size=-1>22     </font></a><span class="default">            </span><span class="keyword">this</span><span class="default">.<a href="dictionary_P.html#38278">AspNetRoles</a> = </span><span class="keyword">new </span><span class="default">HashSet&lt;<a href="dictionary_P.html#342">AspNetRoles</a>&gt;();</span>
+<a name="23"><font size=-1>23     </font></a><span class="default">        }</span>
+<a name="24"><font size=-1>24     </font></a><span class="default">    </span>
+<a name="25"><font size=-1>25     </font></a><span class="default">        </span><span class="keyword">public string <a href="dictionary_P.html#38299">Id</a> </span><span class="default">{ <a href="dictionary_P.html#38300">get</a>; <a href="dictionary_P.html#38301">set</a>; }</span>
+<a name="26"><font size=-1>26     </font></a><span class="default">        </span><span class="keyword">public string <a href="dictionary_P.html#38291">Email</a> </span><span class="default">{ <a href="dictionary_P.html#38292">get</a>; <a href="dictionary_P.html#38293">set</a>; }</span>
+<a name="27"><font size=-1>27     </font></a><span class="default">        </span><span class="keyword">public bool <a href="dictionary_P.html#38295">EmailConfirmed</a> </span><span class="default">{ <a href="dictionary_P.html#38296">get</a>; <a href="dictionary_P.html#38297">set</a>; }</span>
+<a name="28"><font size=-1>28     </font></a><span class="default">        </span><span class="keyword">public string <a href="dictionary_P.html#38311">PasswordHash</a> </span><span class="default">{ <a href="dictionary_P.html#38312">get</a>; <a href="dictionary_P.html#38313">set</a>; }</span>
+<a name="29"><font size=-1>29     </font></a><span class="default">        </span><span class="keyword">public string <a href="dictionary_P.html#38323">SecurityStamp</a> </span><span class="default">{ <a href="dictionary_P.html#38324">get</a>; <a href="dictionary_P.html#38325">set</a>; }</span>
+<a name="30"><font size=-1>30     </font></a><span class="default">        </span><span class="keyword">public string <a href="dictionary_P.html#38315">PhoneNumber</a> </span><span class="default">{ <a href="dictionary_P.html#38316">get</a>; <a href="dictionary_P.html#38317">set</a>; }</span>
+<a name="31"><font size=-1>31     </font></a><span class="default">        </span><span class="keyword">public bool <a href="dictionary_P.html#38319">PhoneNumberConfirmed</a> </span><span class="default">{ <a href="dictionary_P.html#38320">get</a>; <a href="dictionary_P.html#38321">set</a>; }</span>
+<a name="32"><font size=-1>32     </font></a><span class="default">        </span><span class="keyword">public bool <a href="dictionary_P.html#38327">TwoFactorEnabled</a> </span><span class="default">{ <a href="dictionary_P.html#38328">get</a>; <a href="dictionary_P.html#38329">set</a>; }</span>
+<a name="33"><font size=-1>33     </font></a><span class="default">        </span><span class="keyword">public </span><span class="default">Nullable&lt;System.DateTime&gt; <a href="dictionary_P.html#38307">LockoutEndDateUtc</a> { <a href="dictionary_P.html#38308">get</a>; <a href="dictionary_P.html#38309">set</a>; }</span>
+<a name="34"><font size=-1>34     </font></a><span class="default">        </span><span class="keyword">public bool <a href="dictionary_P.html#38303">LockoutEnabled</a> </span><span class="default">{ <a href="dictionary_P.html#38304">get</a>; <a href="dictionary_P.html#38305">set</a>; }</span>
+<a name="35"><font size=-1>35     </font></a><span class="default">        </span><span class="keyword">public int <a href="dictionary_P.html#38274">AccessFailedCount</a> </span><span class="default">{ <a href="dictionary_P.html#38275">get</a>; <a href="dictionary_P.html#38276">set</a>; }</span>
+<a name="36"><font size=-1>36     </font></a><span class="default">        </span><span class="keyword">public string <a href="dictionary_P.html#38331">UserName</a> </span><span class="default">{ <a href="dictionary_P.html#38332">get</a>; <a href="dictionary_P.html#38333">set</a>; }</span>
+<a name="37"><font size=-1>37     </font></a><span class="default">    </span>
+<a name="38"><font size=-1>38     </font></a><span class="default">        [System.Diagnostics.CodeAnalysis.SuppressMessage(</span><span class="string">&quot;Microsoft.Usage&quot;</span><span class="default">, </span><span class="string">&quot;CA2227:CollectionPropertiesShouldBeReadOnly&quot;</span><span class="default">)]</span>
+<a name="39"><font size=-1>39     </font></a><span class="default">        </span><span class="keyword">public virtual </span><span class="default">ICollection&lt;<a href="dictionary_P.html#38268">AspNetUserClaims</a>&gt; <a href="dictionary_P.html#38282">AspNetUserClaims</a> { <a href="dictionary_P.html#38283">get</a>; <a href="dictionary_P.html#38284">set</a>; }</span>
+<a name="40"><font size=-1>40     </font></a><span class="default">        [System.Diagnostics.CodeAnalysis.SuppressMessage(</span><span class="string">&quot;Microsoft.Usage&quot;</span><span class="default">, </span><span class="string">&quot;CA2227:CollectionPropertiesShouldBeReadOnly&quot;</span><span class="default">)]</span>
+<a name="41"><font size=-1>41     </font></a><span class="default">        </span><span class="keyword">public virtual </span><span class="default">ICollection&lt;<a href="dictionary_P.html#38269">AspNetUserLogins</a>&gt; <a href="dictionary_P.html#38286">AspNetUserLogins</a> { <a href="dictionary_P.html#38287">get</a>; <a href="dictionary_P.html#38288">set</a>; }</span>
+<a name="42"><font size=-1>42     </font></a><span class="default">        [System.Diagnostics.CodeAnalysis.SuppressMessage(</span><span class="string">&quot;Microsoft.Usage&quot;</span><span class="default">, </span><span class="string">&quot;CA2227:CollectionPropertiesShouldBeReadOnly&quot;</span><span class="default">)]</span>
+<a name="43"><font size=-1>43     </font></a><span class="default">        </span><span class="keyword">public virtual </span><span class="default">ICollection&lt;<a href="dictionary_P.html#342">AspNetRoles</a>&gt; <a href="dictionary_P.html#38278">AspNetRoles</a> { <a href="dictionary_P.html#38279">get</a>; <a href="dictionary_P.html#38280">set</a>; }</span>
+<a name="44"><font size=-1>44     </font></a><span class="default">    }</span>
+<a name="45"><font size=-1>45     </font></a><span class="default">}</span>
+<a name="46"><font size=-1>46     </font></a><span class="default"></span>
+</pre></body></html>

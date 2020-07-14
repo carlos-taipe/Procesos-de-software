@@ -1,0 +1,62 @@
+﻿@model Edicas.Models.sp_C_ProductoxID_Result
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>sp_M_ProductoxID_Result</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.proNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.proNombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.proCantidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.proCantidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.proPrecio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.proPrecio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.catNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.catNombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.provNombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.provNombre)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,19 @@
+﻿body {
+    font-family: 'Titillium Web',sans-serif;
+    /*background-image: url(/Imagenes/Fondo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    background-attachment: fixed;*/
+}
+
+.navbar{
+    background-color:white;
+    box-shadow:0 2px 4px 0 rgba(0,0,0,.05);
+}
+
+.nav-link{
+    color:white ;
+}
+
+.nav-link:hover{color:white;}

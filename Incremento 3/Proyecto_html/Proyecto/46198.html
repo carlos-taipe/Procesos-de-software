@@ -1,0 +1,201 @@
+<html><head><title>Microsoft.Owin.Security.Facebook.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="sourcestyles.css" />
+</head><body>
+<h3>File: D:\Proyecto\packages\Microsoft.Owin.Security.Facebook.es.4.0.0\lib\net45\es\Microsoft.Owin.Security.Facebook.xml</h3>
+<SCRIPT>
+ defaultStatus = "File: D:\\Proyecto\\packages\\Microsoft.Owin.Security.Facebook.es.4.0.0\\lib\\net45\\es\\Microsoft.Owin.Security.Facebook.xml";
+top.document.title  = "Microsoft.Owin.Security.Facebook.xml";
+</SCRIPT>
+<pre><a name="1"><font size=-1>1     </font></a><?xml version="1.0" encoding="utf-8"?>
+<a name="2"><font size=-1>2     </font></a><doc>
+<a name="3"><font size=-1>3     </font></a>  <assembly>
+<a name="4"><font size=-1>4     </font></a>    <name>Microsoft.Owin.Security.Facebook</name>
+<a name="5"><font size=-1>5     </font></a>  </assembly>
+<a name="6"><font size=-1>6     </font></a>  <members>
+<a name="7"><font size=-1>7     </font></a>    <member name="T:Microsoft.Owin.Security.Facebook.FacebookApplyRedirectContext">
+<a name="8"><font size=-1>8     </font></a>      <summary>El contexto se pasa cuando un elemento Challenge da lugar a un redireccionamiento para autorizar un extremo en el middleware de Facebook</summary>
+<a name="9"><font size=-1>9     </font></a>    </member>
+<a name="10"><font size=-1>10     </font></a>    <member name="M:Microsoft.Owin.Security.Facebook.FacebookApplyRedirectContext.#ctor(Microsoft.Owin.IOwinContext,Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions,Microsoft.Owin.Security.AuthenticationProperties,System.String)">
+<a name="11"><font size=-1>11     </font></a>      <summary>Crea un objeto de contexto nuevo.</summary>
+<a name="12"><font size=-1>12     </font></a>      <param name="context">Contexto de solicitud OWIN</param>
+<a name="13"><font size=-1>13     </font></a>      <param name="options">Opciones de middleware de Facebook</param>
+<a name="14"><font size=-1>14     </font></a>      <param name="properties">Propiedades de autenticación del desafío</param>
+<a name="15"><font size=-1>15     </font></a>      <param name="redirectUri">URI de redireccionamiento inicial</param>
+<a name="16"><font size=-1>16     </font></a>    </member>
+<a name="17"><font size=-1>17     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookApplyRedirectContext.Properties">
+<a name="18"><font size=-1>18     </font></a>      <summary>Obtiene las propiedades de autenticación del desafío</summary>
+<a name="19"><font size=-1>19     </font></a>    </member>
+<a name="20"><font size=-1>20     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookApplyRedirectContext.RedirectUri">
+<a name="21"><font size=-1>21     </font></a>      <summary>Obtiene el URI usado para la operación de redireccionamiento.</summary>
+<a name="22"><font size=-1>22     </font></a>    </member>
+<a name="23"><font size=-1>23     </font></a>    <member name="T:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext">
+<a name="24"><font size=-1>24     </font></a>      <summary>Contiene información acerca de la sesión de inicio de sesión, así como el objeto <see cref="T:System.Security.Claims.ClaimsIdentity" /> del usuario.</summary>
+<a name="25"><font size=-1>25     </font></a>    </member>
+<a name="26"><font size=-1>26     </font></a>    <member name="M:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.#ctor(Microsoft.Owin.IOwinContext,Newtonsoft.Json.Linq.JObject,System.String,System.String)">
+<a name="27"><font size=-1>27     </font></a>      <summary>Inicializa un objeto <see cref="T:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext" /></summary>
+<a name="28"><font size=-1>28     </font></a>      <param name="context">El entorno OWIN.</param>
+<a name="29"><font size=-1>29     </font></a>      <param name="user">El usuario serializado por JSON</param>
+<a name="30"><font size=-1>30     </font></a>      <param name="accessToken">Token de acceso a Facebook.</param>
+<a name="31"><font size=-1>31     </font></a>      <param name="expires">Segundos para la expiración.</param>
+<a name="32"><font size=-1>32     </font></a>    </member>
+<a name="33"><font size=-1>33     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.AccessToken">
+<a name="34"><font size=-1>34     </font></a>      <summary>Obtiene el token de acceso de Facebook</summary>
+<a name="35"><font size=-1>35     </font></a>    </member>
+<a name="36"><font size=-1>36     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.Email">
+<a name="37"><font size=-1>37     </font></a>      <summary>Obtiene el correo electrónico de Facebook</summary>
+<a name="38"><font size=-1>38     </font></a>    </member>
+<a name="39"><font size=-1>39     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.ExpiresIn">
+<a name="40"><font size=-1>40     </font></a>      <summary>Obtiene el tiempo para que expire el token de acceso a Facebook.</summary>
+<a name="41"><font size=-1>41     </font></a>    </member>
+<a name="42"><font size=-1>42     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.Id">
+<a name="43"><font size=-1>43     </font></a>      <summary>Obtiene el identificador de usuario de Facebook</summary>
+<a name="44"><font size=-1>44     </font></a>    </member>
+<a name="45"><font size=-1>45     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.Identity">
+<a name="46"><font size=-1>46     </font></a>      <summary>Obtiene el objeto <see cref="T:System.Security.Claims.ClaimsIdentity" /> que representa el usuario</summary>
+<a name="47"><font size=-1>47     </font></a>    </member>
+<a name="48"><font size=-1>48     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.Link">
+<a name="49"><font size=-1>49     </font></a>      <summary>Obtiene o establece el vínculo con <see cref="T:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext" />.</summary>
+<a name="50"><font size=-1>50     </font></a>      <returns>Vínculo con <see cref="T:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext" />.</returns>
+<a name="51"><font size=-1>51     </font></a>    </member>
+<a name="52"><font size=-1>52     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.Name">
+<a name="53"><font size=-1>53     </font></a>      <summary>Obtiene el nombre del usuario</summary>
+<a name="54"><font size=-1>54     </font></a>    </member>
+<a name="55"><font size=-1>55     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.Properties">
+<a name="56"><font size=-1>56     </font></a>      <summary>Obtiene o establece un contenedor de propiedades para las propiedades de autenticación comunes</summary>
+<a name="57"><font size=-1>57     </font></a>    </member>
+<a name="58"><font size=-1>58     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.User">
+<a name="59"><font size=-1>59     </font></a>      <summary>Obtiene el usuario serializado por JSON</summary>
+<a name="60"><font size=-1>60     </font></a>    </member>
+<a name="61"><font size=-1>61     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext.UserName">
+<a name="62"><font size=-1>62     </font></a>      <summary>Obtiene el nombre de usuario de Facebook</summary>
+<a name="63"><font size=-1>63     </font></a>    </member>
+<a name="64"><font size=-1>64     </font></a>    <member name="T:Microsoft.Owin.Security.Facebook.FacebookAuthenticationMiddleware">
+<a name="65"><font size=-1>65     </font></a>      <summary>Middleware de OWIN para la autenticación de usuarios mediante Facebook</summary>
+<a name="66"><font size=-1>66     </font></a>    </member>
+<a name="67"><font size=-1>67     </font></a>    <member name="M:Microsoft.Owin.Security.Facebook.FacebookAuthenticationMiddleware.#ctor(Microsoft.Owin.OwinMiddleware,Owin.IAppBuilder,Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions)">
+<a name="68"><font size=-1>68     </font></a>      <summary>Inicializa un objeto <see cref="T:Microsoft.Owin.Security.Facebook.FacebookAuthenticationMiddleware" /></summary>
+<a name="69"><font size=-1>69     </font></a>      <param name="next">El siguiente middleware en la canalización OWIN que se debe invocar</param>
+<a name="70"><font size=-1>70     </font></a>      <param name="app">La aplicación OWIN</param>
+<a name="71"><font size=-1>71     </font></a>      <param name="options">Las opciones de configuración del middleware</param>
+<a name="72"><font size=-1>72     </font></a>    </member>
+<a name="73"><font size=-1>73     </font></a>    <member name="M:Microsoft.Owin.Security.Facebook.FacebookAuthenticationMiddleware.CreateHandler">
+<a name="74"><font size=-1>74     </font></a>      <summary>Proporciona el objeto <see cref="T:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler" /> para el procesamiento de las solicitudes relacionadas con la autenticación.</summary>
+<a name="75"><font size=-1>75     </font></a>      <returns>Un objeto <see cref="T:Microsoft.Owin.Security.Infrastructure.AuthenticationHandler" /> configurado con el objeto <see cref="T:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions" /> que se proporciona al constructor.</returns>
+<a name="76"><font size=-1>76     </font></a>    </member>
+<a name="77"><font size=-1>77     </font></a>    <member name="T:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions">
+<a name="78"><font size=-1>78     </font></a>      <summary>Opciones de configuración para <see cref="T:Microsoft.Owin.Security.Facebook.FacebookAuthenticationMiddleware" /></summary>
+<a name="79"><font size=-1>79     </font></a>    </member>
+<a name="80"><font size=-1>80     </font></a>    <member name="M:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.#ctor">
+<a name="81"><font size=-1>81     </font></a>      <summary>Inicializa un objeto <see cref="T:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions" /> nuevo.</summary>
+<a name="82"><font size=-1>82     </font></a>    </member>
+<a name="83"><font size=-1>83     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.AppId">
+<a name="84"><font size=-1>84     </font></a>      <summary>Obtiene o establece el objeto AppId asignado de Facebook.</summary>
+<a name="85"><font size=-1>85     </font></a>    </member>
+<a name="86"><font size=-1>86     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.AppSecret">
+<a name="87"><font size=-1>87     </font></a>      <summary>Obtiene o establece el secreto de aplicación asignado de Facebook.</summary>
+<a name="88"><font size=-1>88     </font></a>    </member>
+<a name="89"><font size=-1>89     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.BackchannelCertificateValidator">
+<a name="90"><font size=-1>90     </font></a>      <summary>Obtiene o define un validador de certificado anclado que se usará para validar los extremos que se usan en las comunicaciones de canal secundario que pertenecen a Facebook.</summary>
+<a name="91"><font size=-1>91     </font></a>      <returns>El validador de certificado anclado.</returns>
+<a name="92"><font size=-1>92     </font></a>    </member>
+<a name="93"><font size=-1>93     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.BackchannelHttpHandler">
+<a name="94"><font size=-1>94     </font></a>      <summary>HttpMessageHandler que se usa para comunicarse con Facebook.Esto no puede establecerse al mismo tiempo que el objeto BackchannelCertificateValidator a menos que el valor se pueda convertir a tipo heredado de un objeto WebRequestHandler.</summary>
+<a name="95"><font size=-1>95     </font></a>    </member>
+<a name="96"><font size=-1>96     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.BackchannelTimeout">
+<a name="97"><font size=-1>97     </font></a>      <summary>Obtiene o define un valor de tiempo de espera en milisegundos para las comunicaciones de canal secundario con Facebook.</summary>
+<a name="98"><font size=-1>98     </font></a>      <returns>Tiempo de espera de canal secundario en milisegundos.</returns>
+<a name="99"><font size=-1>99     </font></a>    </member>
+<a name="100"><font size=-1>100     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.CallbackPath">
+<a name="101"><font size=-1>101     </font></a>      <summary>La ruta de acceso de la solicitud en la ruta de acceso base de la aplicación en la que se devolverá el agente de usuario.El middleware procesará esta solicitud cuando llegue.El valor predeterminado es "/signin-facebook".</summary>
+<a name="102"><font size=-1>102     </font></a>    </member>
+<a name="103"><font size=-1>103     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.Caption">
+<a name="104"><font size=-1>104     </font></a>      <summary>Obtiene o establece el texto que el usuario puede mostrar en una interfaz de usuario de inicio de sesión.</summary>
+<a name="105"><font size=-1>105     </font></a>    </member>
+<a name="106"><font size=-1>106     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.Provider">
+<a name="107"><font size=-1>107     </font></a>      <summary>Obtiene o establece el objeto <see cref="T:Microsoft.Owin.Security.Facebook.IFacebookAuthenticationProvider" /> que se utiliza para controlar los eventos de autenticación.</summary>
+<a name="108"><font size=-1>108     </font></a>    </member>
+<a name="109"><font size=-1>109     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.Scope">
+<a name="110"><font size=-1>110     </font></a>      <summary>Una lista de los permisos que se deben solicitar.</summary>
+<a name="111"><font size=-1>111     </font></a>    </member>
+<a name="112"><font size=-1>112     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.SendAppSecretProof">
+<a name="113"><font size=-1>113     </font></a>      <summary>Obtiene o establece si se debe generar appsecret_proof y enviarse con las llamadas de la API de Facebook.Este valor está habilitado de forma predeterminada.</summary>
+<a name="114"><font size=-1>114     </font></a>    </member>
+<a name="115"><font size=-1>115     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.SignInAsAuthenticationType">
+<a name="116"><font size=-1>116     </font></a>      <summary>Obtiene o establece el nombre de otro middleware de autenticación que será responsable de emitir realmente un objeto <see cref="T:System.Security.Claims.ClaimsIdentity" /> de usuario.</summary>
+<a name="117"><font size=-1>117     </font></a>    </member>
+<a name="118"><font size=-1>118     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions.StateDataFormat">
+<a name="119"><font size=-1>119     </font></a>      <summary>Obtiene o establece el tipo que se usa para proteger los datos que controla el middleware.</summary>
+<a name="120"><font size=-1>120     </font></a>    </member>
+<a name="121"><font size=-1>121     </font></a>    <member name="T:Microsoft.Owin.Security.Facebook.FacebookAuthenticationProvider">
+<a name="122"><font size=-1>122     </font></a>      <summary>Implementación de <see cref="T:Microsoft.Owin.Security.Facebook.IFacebookAuthenticationProvider" /> predeterminada.</summary>
+<a name="123"><font size=-1>123     </font></a>    </member>
+<a name="124"><font size=-1>124     </font></a>    <member name="M:Microsoft.Owin.Security.Facebook.FacebookAuthenticationProvider.#ctor">
+<a name="125"><font size=-1>125     </font></a>      <summary>Inicializa un objeto <see cref="T:Microsoft.Owin.Security.Facebook.FacebookAuthenticationProvider" /></summary>
+<a name="126"><font size=-1>126     </font></a>    </member>
+<a name="127"><font size=-1>127     </font></a>    <member name="M:Microsoft.Owin.Security.Facebook.FacebookAuthenticationProvider.ApplyRedirect(Microsoft.Owin.Security.Facebook.FacebookApplyRedirectContext)">
+<a name="128"><font size=-1>128     </font></a>      <summary>Se llama cuando un elemento Challenge da lugar a un redireccionamiento para autorizar un extremo en el middleware de Facebook</summary>
+<a name="129"><font size=-1>129     </font></a>      <param name="context">Contiene el URI de redireccionamiento y <see cref="T:Microsoft.Owin.Security.AuthenticationProperties" /> del desafío</param>
+<a name="130"><font size=-1>130     </font></a>    </member>
+<a name="131"><font size=-1>131     </font></a>    <member name="M:Microsoft.Owin.Security.Facebook.FacebookAuthenticationProvider.Authenticated(Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext)">
+<a name="132"><font size=-1>132     </font></a>      <summary>Se invoca cuando Facebook autentica un usuario correctamente</summary>
+<a name="133"><font size=-1>133     </font></a>      <returns>Un objeto <see cref="T:System.Threading.Tasks.Task" /> que representa la operación completada.</returns>
+<a name="134"><font size=-1>134     </font></a>      <param name="context">Contiene información acerca de la sesión de inicio de sesión, así como el objeto <see cref="T:System.Security.Claims.ClaimsIdentity" /> del usuario.</param>
+<a name="135"><font size=-1>135     </font></a>    </member>
+<a name="136"><font size=-1>136     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationProvider.OnApplyRedirect">
+<a name="137"><font size=-1>137     </font></a>      <summary>Obtiene o establece el delegado que se invoca cuando se invoca el método ApplyRedirect.</summary>
+<a name="138"><font size=-1>138     </font></a>    </member>
+<a name="139"><font size=-1>139     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationProvider.OnAuthenticated">
+<a name="140"><font size=-1>140     </font></a>      <summary>Obtiene o establece la función que se invoca cuando se invoca el método Authenticated.</summary>
+<a name="141"><font size=-1>141     </font></a>    </member>
+<a name="142"><font size=-1>142     </font></a>    <member name="P:Microsoft.Owin.Security.Facebook.FacebookAuthenticationProvider.OnReturnEndpoint">
+<a name="143"><font size=-1>143     </font></a>      <summary>Obtiene o establece la función que se invoca cuando se invoca el método ReturnEndpoint.</summary>
+<a name="144"><font size=-1>144     </font></a>    </member>
+<a name="145"><font size=-1>145     </font></a>    <member name="M:Microsoft.Owin.Security.Facebook.FacebookAuthenticationProvider.ReturnEndpoint(Microsoft.Owin.Security.Facebook.FacebookReturnEndpointContext)">
+<a name="146"><font size=-1>146     </font></a>      <summary>Se invoca antes de que el objeto <see cref="T:System.Security.Claims.ClaimsIdentity" /> se guarde en una cookie local y el explorador se redirija a la dirección URL solicitada originalmente.</summary>
+<a name="147"><font size=-1>147     </font></a>      <returns>Un objeto <see cref="T:System.Threading.Tasks.Task" /> que representa la operación completada.</returns>
+<a name="148"><font size=-1>148     </font></a>    </member>
+<a name="149"><font size=-1>149     </font></a>    <member name="T:Microsoft.Owin.Security.Facebook.FacebookReturnEndpointContext">
+<a name="150"><font size=-1>150     </font></a>      <summary>Proporciona información de contexto a los proveedores de middleware.</summary>
+<a name="151"><font size=-1>151     </font></a>    </member>
+<a name="152"><font size=-1>152     </font></a>    <member name="M:Microsoft.Owin.Security.Facebook.FacebookReturnEndpointContext.#ctor(Microsoft.Owin.IOwinContext,Microsoft.Owin.Security.AuthenticationTicket)">
+<a name="153"><font size=-1>153     </font></a>      <param name="context">Entorno OWIN</param>
+<a name="154"><font size=-1>154     </font></a>      <param name="ticket">El vale de autenticación.</param>
+<a name="155"><font size=-1>155     </font></a>    </member>
+<a name="156"><font size=-1>156     </font></a>    <member name="T:Microsoft.Owin.Security.Facebook.IFacebookAuthenticationProvider">
+<a name="157"><font size=-1>157     </font></a>      <summary>Especifica los métodos de devolución de llamada que el objeto <see cref="T:Microsoft.Owin.Security.Facebook.FacebookAuthenticationMiddleware" /> invoca para habilitar el control del desarrollador sobre el proceso de autenticación./&amp;amp;gt;</summary>
+<a name="158"><font size=-1>158     </font></a>    </member>
+<a name="159"><font size=-1>159     </font></a>    <member name="M:Microsoft.Owin.Security.Facebook.IFacebookAuthenticationProvider.ApplyRedirect(Microsoft.Owin.Security.Facebook.FacebookApplyRedirectContext)">
+<a name="160"><font size=-1>160     </font></a>      <summary>Se llama cuando un elemento Challenge da lugar a un redireccionamiento para autorizar un extremo en el middleware de Facebook</summary>
+<a name="161"><font size=-1>161     </font></a>      <param name="context">Contiene el URI de redireccionamiento y <see cref="T:Microsoft.Owin.Security.AuthenticationProperties" /> del desafío</param>
+<a name="162"><font size=-1>162     </font></a>    </member>
+<a name="163"><font size=-1>163     </font></a>    <member name="M:Microsoft.Owin.Security.Facebook.IFacebookAuthenticationProvider.Authenticated(Microsoft.Owin.Security.Facebook.FacebookAuthenticatedContext)">
+<a name="164"><font size=-1>164     </font></a>      <summary>Se invoca cuando Facebook autentica un usuario correctamente</summary>
+<a name="165"><font size=-1>165     </font></a>      <returns>Un objeto <see cref="T:System.Threading.Tasks.Task" /> que representa la operación completada.</returns>
+<a name="166"><font size=-1>166     </font></a>      <param name="context">Contiene información acerca de la sesión de inicio de sesión, así como el objeto <see cref="T:System.Security.Claims.ClaimsIdentity" /> del usuario.</param>
+<a name="167"><font size=-1>167     </font></a>    </member>
+<a name="168"><font size=-1>168     </font></a>    <member name="M:Microsoft.Owin.Security.Facebook.IFacebookAuthenticationProvider.ReturnEndpoint(Microsoft.Owin.Security.Facebook.FacebookReturnEndpointContext)">
+<a name="169"><font size=-1>169     </font></a>      <summary>Se invoca antes de que el objeto <see cref="T:System.Security.Claims.ClaimsIdentity" /> se guarde en una cookie local y el explorador se redirija a la dirección URL solicitada originalmente.</summary>
+<a name="170"><font size=-1>170     </font></a>      <returns>Un objeto <see cref="T:System.Threading.Tasks.Task" /> que representa la operación completada.</returns>
+<a name="171"><font size=-1>171     </font></a>    </member>
+<a name="172"><font size=-1>172     </font></a>    <member name="T:Owin.FacebookAuthenticationExtensions">
+<a name="173"><font size=-1>173     </font></a>      <summary>Proporciona métodos de extensión para la autenticación de Facebook.</summary>
+<a name="174"><font size=-1>174     </font></a>    </member>
+<a name="175"><font size=-1>175     </font></a>    <member name="M:Owin.FacebookAuthenticationExtensions.UseFacebookAuthentication(Owin.IAppBuilder,Microsoft.Owin.Security.Facebook.FacebookAuthenticationOptions)">
+<a name="176"><font size=-1>176     </font></a>      <summary>Genera una autenticación de Facebook para una aplicación OWIN.</summary>
+<a name="177"><font size=-1>177     </font></a>      <returns>
+<a name="178"><font size=-1>178     </font></a>        <see cref="T:Owin.IAppBuilder" /> que genera la autenticación.</returns>
+<a name="179"><font size=-1>179     </font></a>      <param name="app">El generador de aplicación.</param>
+<a name="180"><font size=-1>180     </font></a>      <param name="options">Opciones de autenticación de Facebook.</param>
+<a name="181"><font size=-1>181     </font></a>    </member>
+<a name="182"><font size=-1>182     </font></a>    <member name="M:Owin.FacebookAuthenticationExtensions.UseFacebookAuthentication(Owin.IAppBuilder,System.String,System.String)">
+<a name="183"><font size=-1>183     </font></a>      <summary>Genera una autenticación de Facebook para una aplicación OWIN.</summary>
+<a name="184"><font size=-1>184     </font></a>      <returns>
+<a name="185"><font size=-1>185     </font></a>        <see cref="T:Owin.IAppBuilder" /> que genera la autenticación.</returns>
+<a name="186"><font size=-1>186     </font></a>      <param name="app">El generador de aplicación.</param>
+<a name="187"><font size=-1>187     </font></a>      <param name="appId">Identificador de la aplicación.</param>
+<a name="188"><font size=-1>188     </font></a>      <param name="appSecret">Secreto de la aplicación.</param>
+<a name="189"><font size=-1>189     </font></a>    </member>
+<a name="190"><font size=-1>190     </font></a>  </members>
+<a name="191"><font size=-1>191     </font></a></doc>
+</pre></body></html>
